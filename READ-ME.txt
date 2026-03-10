@@ -1,0 +1,26 @@
+  =>  Project Name      : EMIS Website
+
+  =>  Project Description:
+      Official website for Epitome Model Islamic School (EMIS),
+      a private Islamic school offering a blend of Islamic and Western education.
+
+  =>  School Profile:
+      EMIS is a private Islamic school with Creche, Nursery, Primary,
+      Junior Secondary, and Senior Secondary sections.
+      The school also runs Tahfeezul-Qur’an from age 3 and an unrivaled
+      Islamiyyah program.
+
+  =>  Contact Number    : 0817 202 2402
+
+  =>  Built With        : Flask, HTML, CSS, JavaScript, Bootstrap
+
+  =>  Original Template : eLEARNING - eLearning HTML Template
+
+  =>  Template Source   : https://htmlcodex.com/elearning-html-template
+
+  =>  Template License  : https://htmlcodex.com/license
+      (See LICENSE.txt for full details)
+
+  =>  Template Author   : Ace Tosin
+
+  =>  Customization     : Redesigned and adapted for EMIS branding and school website use

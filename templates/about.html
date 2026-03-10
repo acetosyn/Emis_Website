@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ page_title or 'About EMIS' }}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="EMIS, Epitome Model Islamic School, Islamic School, Nursery, Primary, Secondary, Tahfeez, Islamiyyah" name="keywords">
+    <meta content="Learn more about Epitome Model Islamic School, a private Islamic school offering a blend of Islamic and Western education from Creche to Senior Secondary level." name="description">
+
+    <!-- Favicon -->
+    <link href="{{ url_for('static', filename='images/emis.png') }}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Main Template Stylesheet -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <!-- About Page Stylesheet -->
+    <link href="{{ url_for('static', filename='css/about.css') }}" rel="stylesheet">
+</head>
+
+<body class="about-page">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary spinner-loader" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="{{ url_for('home') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="{{ url_for('static', filename='images/emis.png') }}" alt="EMIS Logo" class="navbar-logo me-2">
+            <h2 class="m-0 text-primary">EMIS</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="{{ url_for('home') }}" class="nav-item nav-link">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-item nav-link active">About</a>
+                <a href="{{ url_for('programs') }}" class="nav-item nav-link">Programs</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="{{ url_for('staff') }}" class="dropdown-item">Our Staff</a>
+                        <a href="{{ url_for('testimonials') }}" class="dropdown-item">Testimonials</a>
+                        <a href="{{ url_for('page_404') }}" class="dropdown-item">404 Page</a>
+                    </div>
+                </div>
+                <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="{{ url_for('programs') }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
+                View Programs
+                <i class="fa fa-arrow-right ms-3"></i>
+            </a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Start -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-inner">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7">
+                        <div class="about-hero-content wow fadeInUp" data-wow-delay="0.1s">
+                            <span class="about-badge">About Epitome Model Islamic School</span>
+                            <h1 class="about-hero-title">Raising excellent learners with knowledge, character, and faith.</h1>
+                            <p class="about-hero-text">
+                                Epitome Model Islamic School (EMIS) is a private Islamic school dedicated to nurturing children
+                                through a strong blend of Islamic and Western education. From Creche to Senior Secondary level,
+                                we are committed to excellence, discipline, sound morals, and purposeful learning.
+                            </p>
+
+                            <div class="about-hero-pills">
+                                <span class="about-pill"><i class="fa fa-school"></i> Creche to Senior Secondary</span>
+                                <span class="about-pill"><i class="fa fa-mosque"></i> Tahfeez & Islamiyyah</span>
+                                <span class="about-pill"><i class="fa fa-book-reader"></i> Islamic & Western Education</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="about-hero-panel wow fadeInUp" data-wow-delay="0.3s">
+                            <h4 class="mb-4">At a Glance</h4>
+
+                            <div class="hero-stat-row">
+                                <div class="hero-stat-box">
+                                    <h3>6+</h3>
+                                    <p>Learning Stages</p>
+                                </div>
+                                <div class="hero-stat-box">
+                                    <h3>2.8K</h3>
+                                    <p>Community Followers</p>
+                                </div>
+                            </div>
+
+                            <div class="about-panel-points">
+                                <div class="about-panel-point">
+                                    <i class="fa fa-check-circle"></i>
+                                    <span>Private Islamic school with a strong value-based system</span>
+                                </div>
+                                <div class="about-panel-point">
+                                    <i class="fa fa-check-circle"></i>
+                                    <span>Balanced academic, moral, and spiritual development</span>
+                                </div>
+                                <div class="about-panel-point">
+                                    <i class="fa fa-check-circle"></i>
+                                    <span>Located at Off Sani Abacha Road, Old KAR Rd, Angwar Hashimu, 961105</span>
+                                </div>
+                            </div>
+
+                            <a href="{{ url_for('programs') }}" class="btn btn-primary w-100 py-3 mt-3">
+                                Explore Our Programs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+
+
+    <!-- Identity Cards Start -->
+    <section class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="about-feature-card">
+                        <div class="about-feature-icon"><i class="fa fa-school"></i></div>
+                        <h5>Who We Are</h5>
+                        <p>A trusted private Islamic school committed to raising learners with excellence, discipline, and purpose.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="about-feature-card">
+                        <div class="about-feature-icon"><i class="fa fa-balance-scale"></i></div>
+                        <h5>Balanced Learning</h5>
+                        <p>A complete blend of Islamic and Western education designed for total child development.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="about-feature-card">
+                        <div class="about-feature-icon"><i class="fa fa-mosque"></i></div>
+                        <h5>Faith Foundation</h5>
+                        <p>Tahfeezul-Qur’an from age 3 and an Islamiyyah programme that supports sound Islamic upbringing.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="about-feature-card">
+                        <div class="about-feature-icon"><i class="fa fa-user-graduate"></i></div>
+                        <h5>Future Leaders</h5>
+                        <p>We prepare children to grow into confident, responsible, knowledgeable, and God-conscious leaders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Identity Cards End -->
+
+
+    <!-- Story Section Start -->
+    <section class="container-xxl pb-5">
+        <div class="container">
+            <div class="about-story-wrap">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                        <div class="about-story-image">
+                            <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="About EMIS">
+                            <div class="story-image-badge">
+                                <i class="fa fa-map-marker-alt me-2"></i>
+                                Located at Off Sani Abacha Road, Old KAR Rd, Angwar Hashimu, 961105
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="about-story-content">
+                            <span class="section-kicker">Our Story</span>
+                            <h2>Building minds, shaping character, strengthening faith.</h2>
+                            <p>
+                                EMIS was built on the belief that education should not only inform the mind, but also refine
+                                character and strengthen faith. Our school exists to provide children with a learning environment
+                                where academic excellence and Islamic values grow side by side.
+                            </p>
+                            <p>
+                                We serve learners across Creche, Nursery, Primary, Junior Secondary, and Senior Secondary levels.
+                                Through a thoughtful structure that includes Tahfeez and Islamiyyah, we help students grow into
+                                capable, disciplined, and morally grounded individuals.
+                            </p>
+
+                            <div class="about-inline-list">
+                                <div><i class="fa fa-check-circle"></i> Strong academic guidance</div>
+                                <div><i class="fa fa-check-circle"></i> Sound moral discipline</div>
+                                <div><i class="fa fa-check-circle"></i> Islamic upbringing</div>
+                                <div><i class="fa fa-check-circle"></i> Purposeful leadership development</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Story Section End -->
+
+
+    <!-- Vision Mission Start -->
+    <section class="container-xxl pb-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our Foundation</h6>
+                <h1 class="mb-3">Vision, Mission & Core Purpose</h1>
+                <p class="about-section-lead mx-auto">
+                    Everything at EMIS is guided by a clear educational purpose rooted in faith, excellence, and service.
+                </p>
+            </div>
+
+            <div class="row g-4 mt-2">
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="foundation-card foundation-card-vision">
+                        <div class="foundation-icon"><i class="fa fa-eye"></i></div>
+                        <h3>Our Vision</h3>
+                        <p>
+                            To nurture a generation of learners who excel academically, uphold strong Islamic values,
+                            and grow into responsible leaders in society.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="foundation-card foundation-card-mission">
+                        <div class="foundation-icon"><i class="fa fa-bullseye"></i></div>
+                        <h3>Our Mission</h3>
+                        <p>
+                            To deliver a rich blend of Islamic and Western education in a disciplined, supportive,
+                            and inspiring learning environment that promotes knowledge, character, and faith.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="foundation-card foundation-card-purpose">
+                        <div class="foundation-icon"><i class="fa fa-star"></i></div>
+                        <h3>Our Core Purpose</h3>
+                        <p>
+                            To shape children into confident, morally upright, knowledgeable, and purpose-driven
+                            individuals prepared for life, leadership, and service.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Vision Mission End -->
+
+
+    <!-- Goals Start -->
+    <section class="container-xxl pb-5">
+        <div class="container">
+            <div class="goals-panel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-5">
+                        <div class="goals-intro">
+                            <span class="section-kicker">Goals & Objectives</span>
+                            <h2>What EMIS is committed to achieving</h2>
+                            <p>
+                                Our objectives go beyond classroom success. We aim to build children who are intellectually sound,
+                                spiritually aware, emotionally disciplined, and socially responsible.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="goals-grid">
+                            <div class="goal-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>Promote academic excellence at every stage of learning</span>
+                            </div>
+                            <div class="goal-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>Instill strong Islamic values and moral discipline</span>
+                            </div>
+                            <div class="goal-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>Develop confident, articulate, and responsible learners</span>
+                            </div>
+                            <div class="goal-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>Encourage leadership, service, and good conduct</span>
+                            </div>
+                            <div class="goal-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>Support Qur’anic memorization and Islamic understanding from an early age</span>
+                            </div>
+                            <div class="goal-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>Create a safe, inspiring, and disciplined school culture</span>
+                            </div>
+                            <div class="goal-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>Equip children to thrive in both faith-based and modern academic spaces</span>
+                            </div>
+                            <div class="goal-item">
+                                <i class="fa fa-check-circle"></i>
+                                <span>Partner with parents in raising children with purpose and direction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Goals End -->
+
+
+    <!-- Why Choose Start -->
+    <section class="container-xxl pb-5">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                    <div class="why-card why-card-dark">
+                        <span class="section-kicker section-kicker-dark">Why Parents Choose EMIS</span>
+                        <h2>A school environment built on trust, values, and excellence.</h2>
+                        <p>
+                            Parents choose EMIS because we do more than teach subjects. We build learners with strong
+                            foundations in academics, morals, faith, discipline, and self-confidence.
+                        </p>
+
+                        <div class="why-list">
+                            <div><i class="fa fa-check-circle"></i> Safe and disciplined environment</div>
+                            <div><i class="fa fa-check-circle"></i> Strong Islamic upbringing</div>
+                            <div><i class="fa fa-check-circle"></i> Balanced academic development</div>
+                            <div><i class="fa fa-check-circle"></i> Purposeful child formation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="why-card why-card-light">
+                        <span class="section-kicker">Educational Structure</span>
+                        <h2>Comprehensive learning from early years to senior level.</h2>
+                        <p>
+                            EMIS provides a continuous learning path that helps children grow confidently through each stage
+                            of education while maintaining a strong spiritual and moral foundation.
+                        </p>
+
+                        <div class="structure-grid">
+                            <span>Creche</span>
+                            <span>Nursery</span>
+                            <span>Primary</span>
+                            <span>Junior Secondary</span>
+                            <span>Senior Secondary</span>
+                            <span>Tahfeezul-Qur’an</span>
+                            <span>Islamiyyah Programme</span>
+                            <span>Online & In-Person Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Links</h4>
+                    <a class="btn btn-link" href="{{ url_for('about') }}">About Us</a>
+                    <a class="btn btn-link" href="{{ url_for('programs') }}">Programs</a>
+                    <a class="btn btn-link" href="{{ url_for('staff') }}">Our Staff</a>
+                    <a class="btn btn-link" href="{{ url_for('testimonials') }}">Testimonials</a>
+                    <a class="btn btn-link" href="{{ url_for('contact') }}">Contact Us</a>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Location</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Off Sani Abacha Road, Old KAR Rd, Angwar Hashimu, 961105</p>
+                    <p class="mb-0">
+                        EMIS is strategically located in a welcoming environment that supports excellent learning and moral development.
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-1.jpg') }}" alt="Gallery 1">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-2.jpg') }}" alt="Gallery 2">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-3.jpg') }}" alt="Gallery 3">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-2.jpg') }}" alt="Gallery 4">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-3.jpg') }}" alt="Gallery 5">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-1.jpg') }}" alt="Gallery 6">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">About EMIS</h4>
+                    <p>
+                        EMIS is a private Islamic school offering a total blend of Islamic and Western education from Creche to Senior Secondary level.
+                    </p>
+                    <a href="{{ url_for('programs') }}" class="btn btn-primary py-2 px-4 mt-2">View Programs</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="{{ url_for('home') }}">EMIS</a>, All Rights Reserved.
+                        Designed by <a class="border-bottom" href="https://hakeem-portfolio-nv53.onrender.com/" target="_blank" rel="noopener noreferrer">Ace Tosin</a> | 08036691680
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="{{ url_for('home') }}">Home</a>
+                            <a href="{{ url_for('about') }}">About</a>
+                            <a href="{{ url_for('programs') }}">Programs</a>
+                            <a href="{{ url_for('contact') }}">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
