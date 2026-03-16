@@ -41,54 +41,28 @@
     <!-- Spinner End -->
 
 
-    <!-- Announcement Bar Start -->
-    <div class="announcement-bar">
-        <div class="container-fluid">
-            <div class="announcement-inner">
-                <span class="announcement-label">
-                    <i class="fa fa-bullhorn me-2"></i>Announcement:
-                </span>
-                <div class="announcement-marquee-wrap">
-                    <marquee behavior="scroll" direction="left" scrollamount="6">
+ <!-- Announcement Bar Start -->
+<div class="announcement-bar">
+    <div class="container-fluid">
+        <div class="announcement-inner">
+            <span class="announcement-label">
+                <i class="fa fa-bullhorn me-2"></i>Announcement:
+            </span>
+
+            <div class="announcement-marquee-wrap">
+                <div class="announcement-marquee-track">
+                    <span>
                         Admissions are ongoing at Epitome Model Islamic School • Nursery • Primary • Secondary • Full-Time Tahfeez • Adult Classes • Contact us for enquiries and enrollment support.
-                    </marquee>
+                    </span>
+                    <span aria-hidden="true">
+                        Admissions are ongoing at Epitome Model Islamic School • Nursery • Primary • Secondary • Full-Time Tahfeez • Adult Classes • Contact us for enquiries and enrollment support.
+                    </span>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Announcement Bar End -->
-
-
-    <!-- Top Header Start -->
-    <div class="topbar-wrap">
-        <div class="container-fluid">
-            <div class="topbar-content">
-                <div class="topbar-left">
-                    <a href="mailto:epitomeschools17@gmail.com" class="topbar-link">
-                        <i class="fa fa-envelope-open me-2"></i>epitomeschools17@gmail.com
-                    </a>
-                    <a href="tel:08172022402" class="topbar-link">
-                        <i class="fa fa-phone-alt me-2"></i>0817 202 2402
-                    </a>
-                </div>
-                <div class="topbar-right">
-                    <a class="topbar-social" href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="topbar-social" href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="topbar-social" href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a class="topbar-social" href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Top Header End -->
+</div>
+<!-- Announcement Bar End -->
 
 
     <!-- Navbar Start -->
@@ -183,8 +157,8 @@
                     <a class="header-social-link" href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a class="header-social-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                        <i class="fab fa-tiktok"></i>
+                    <a class="header-social-link" href="mailto:epitomeschools17@gmail.com" aria-label="Email EMIS">
+                        <i class="fa fa-envelope"></i>
                     </a>
                 </div>
 
@@ -206,58 +180,59 @@
                 <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-start">
-                            <div class="col-sm-11 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Welcome to EMIS</h5>
-                                <h1 class="display-3 text-white animated slideInDown">A Beautiful Environment for Learning and Character Building</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">
-                                    Epitome Model Islamic School provides a nurturing environment where academic excellence,
-                                    Islamic values, and discipline grow together.
-                                </p>
-                                <div class="hero-btn-group">
-                                    <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
-                                    <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Enroll Today</a>
+                            <div class="col-sm-11 col-lg-7 col-xl-6">
+                                <div class="hero-simple-card animated slideInLeft">
+                                    <span class="hero-simple-kicker">Welcome to EMIS</span>
+                                    <h1 class="hero-simple-title">Explore Our World of Learning</h1>
+                                    <p class="hero-simple-text">Register with us today and give your child a strong foundation in knowledge, discipline, and faith.</p>
+                                    <div class="hero-btn-group">
+                                        <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
+                                        <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Enroll Today</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="{{ url_for('static', filename='images/school2.jpeg') }}" alt="EMIS School Building Slide 2">
                 <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-start">
-                            <div class="col-sm-11 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Our Programs</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Nursery, Primary, Secondary and Full-Time Tahfeez</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">
-                                    We serve learners across key stages with a balanced blend of Islamic and Western education.
-                                </p>
-                                <div class="hero-btn-group">
-                                    <a href="{{ url_for('programs') }}" class="btn btn-primary animated slideInLeft">View Programs</a>
-                                    <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Make Enquiry</a>
+                            <div class="col-sm-11 col-lg-7 col-xl-6">
+                                <div class="hero-simple-card animated slideInLeft">
+                                    <span class="hero-simple-kicker">Admissions Open</span>
+                                    <h1 class="hero-simple-title">A Calm Place to Learn and Grow</h1>
+                                    <p class="hero-simple-text">Explore our programs and discover a school environment built for excellence and care.</p>
+                                    <div class="hero-btn-group">
+                                        <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
+                                        <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Enroll Today</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="{{ url_for('static', filename='images/school3.JPG') }}" alt="EMIS School Building Slide 3">
                 <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-start">
-                            <div class="col-sm-11 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Academic Excellence</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Raising Learners with Knowledge, Discipline and Faith</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">
-                                    EMIS is committed to sound academics, moral training, and strong Islamic upbringing.
-                                </p>
-                                <div class="hero-btn-group">
-                                    <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Discover EMIS</a>
-                                    <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Visit School</a>
+                            <div class="col-sm-11 col-lg-7 col-xl-6">
+                                <div class="hero-simple-card animated slideInLeft">
+                                    <span class="hero-simple-kicker">Academic Excellence</span>
+                                    <h1 class="hero-simple-title">Explore Our Programs</h1>
+                                    <p class="hero-simple-text">From Nursery to Tahfeez, EMIS supports every learner with structure, purpose, and guidance.</p>
+                                    <div class="hero-btn-group">
+                                        <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
+                                        <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Enroll Today</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -265,20 +240,21 @@
                 </div>
             </div>
 
+
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="{{ url_for('static', filename='images/school4.jpg') }}" alt="EMIS School Building Slide 4">
                 <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-start">
-                            <div class="col-sm-11 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Admissions Ongoing</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Join a School Built for Total Academic Excellence</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">
-                                    From early years to advanced learning, EMIS supports every learner with care, structure, and purpose.
-                                </p>
-                                <div class="hero-btn-group">
-                                    <a href="{{ url_for('contact') }}" class="btn btn-primary animated slideInLeft">Apply Now</a>
-                                    <a href="{{ url_for('programs') }}" class="btn btn-light animated slideInRight">Explore Sections</a>
+                            <div class="col-sm-11 col-lg-7 col-xl-6">
+                                <div class="hero-simple-card animated slideInLeft">
+                                    <span class="hero-simple-kicker">Join EMIS</span>
+                                    <h1 class="hero-simple-title">Register With Us Today</h1>
+                                    <p class="hero-simple-text">A beautiful learning community where children are nurtured with sound academics and Islamic values.</p>
+                                    <div class="hero-btn-group">
+                                        <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
+                                        <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Enroll Today</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -675,7 +651,7 @@
                         <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-outline-light btn-social" href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="mailto:epitomeschools17@gmail.com" aria-label="Email EMIS"><i class="fa fa-envelope"></i></a>
                     </div>
                 </div>
 
