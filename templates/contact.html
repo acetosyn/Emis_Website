@@ -32,6 +32,92 @@
 
     <!-- Contact Page Stylesheet -->
     <link href="{{ url_for('static', filename='css/contact.css') }}" rel="stylesheet">
+
+    <style>
+        .map-big-btn {
+            padding: 16px 34px !important;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 12px;
+            min-width: 220px;
+            text-align: center;
+        }
+
+        .contact-summary-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+            height: 100%;
+        }
+
+        .contact-summary-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .contact-summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .contact-summary-item i {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: rgba(6, 187, 204, 0.12);
+            color: #06BBCC;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-summary-item h6 {
+            margin-bottom: 5px;
+        }
+
+        .contact-summary-item a,
+        .contact-summary-item span {
+            color: #52565b;
+            text-decoration: none;
+        }
+
+        .contact-summary-item a:hover {
+            color: #06BBCC;
+        }
+
+        .contact-hero-actions .btn {
+            min-width: 190px;
+        }
+
+        .contact-card-link span {
+            font-weight: 700;
+        }
+
+        .map-overlay-card p {
+            margin-bottom: 10px;
+        }
+
+        .visit-benefit-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0 0 24px;
+        }
+
+        .visit-benefit-list li {
+            margin-bottom: 12px;
+        }
+
+        .visit-benefit-list i {
+            color: #06BBCC;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 
 <body class="contact-page">
@@ -85,10 +171,11 @@
                     <div class="col-lg-7">
                         <div class="contact-hero-content wow fadeInUp" data-wow-delay="0.1s">
                             <span class="contact-badge">Contact Epitome Model Islamic School</span>
-                            <h1 class="contact-hero-title">We’re here to guide you every step of the way.</h1>
+                            <h1 class="contact-hero-title">We’re here to help parents and guardians with every enquiry.</h1>
                             <p class="contact-hero-text">
-                                Reach out to EMIS for admissions, school enquiries, class information, Tahfeez and Islamiyyah questions,
-                                or general support. We offer a welcoming learning environment with both online and in-person classes.
+                                Reach out to EMIS for admissions, school enquiries, class information,
+                                Tahfeez and Islamiyyah questions, or general support. We’ve simplified this page
+                                so the important contact options are easier to find and use.
                             </p>
 
                             <div class="contact-hero-actions">
@@ -96,7 +183,7 @@
                                     <i class="fa fa-phone-alt me-2"></i>Call School
                                 </a>
                                 <a href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg mb-2 contact-hero-outline">
-                                    <i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp
+                                    <i class="fab fa-whatsapp me-2"></i>WhatsApp Chat
                                 </a>
                             </div>
 
@@ -105,7 +192,7 @@
                                     <i class="fa fa-envelope"></i>
                                     <span>Email Us</span>
                                 </a>
-                                <a href="https://maps.google.com/?q=OFF+SANI+ABACHA+ROAD,+OLD+KAR+RD,+ANGWAR+HASHIMU,+961105" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                                <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer" class="contact-pill">
                                     <i class="fa fa-map-marker-alt"></i>
                                     <span>Open Map</span>
                                 </a>
@@ -122,47 +209,55 @@
                     </div>
 
                     <div class="col-lg-5">
-                        <div class="contact-hero-panel wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="hero-panel-glow"></div>
-                            <h4 class="mb-4">Quick Contact Overview</h4>
+                        <div class="contact-summary-card wow fadeInUp" data-wow-delay="0.3s">
+                            <span class="panel-tag">Quick Overview</span>
+                            <h4 class="mt-2 mb-3">Contact details at a glance</h4>
+                            <p class="mb-0">
+                                Everything essential is shown once here clearly, without repeating the same number all over the page.
+                            </p>
 
-                            <div class="hero-contact-mini">
-                                <i class="fa fa-phone-alt"></i>
-                                <div>
-                                    <small>Phone</small>
-                                    <a href="tel:08172022402">0817 202 2402</a>
+                            <div class="contact-summary-list">
+                                <div class="contact-summary-item">
+                                    <i class="fa fa-phone-alt"></i>
+                                    <div>
+                                        <h6>Phone</h6>
+                                        <a href="tel:08172022402">0817 202 2402</a>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="hero-contact-mini">
-                                <i class="fab fa-whatsapp"></i>
-                                <div>
-                                    <small>WhatsApp</small>
-                                    <a href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer">+234 817 202 2402</a>
+                                <div class="contact-summary-item">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <div>
+                                        <h6>WhatsApp</h6>
+                                        <a href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer">+234 817 202 2402</a>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="hero-contact-mini">
-                                <i class="fa fa-envelope-open"></i>
-                                <div>
-                                    <small>Email</small>
-                                    <a href="mailto:epitomeschools17@gmail.com">epitomeschools17@gmail.com</a>
+                                <div class="contact-summary-item">
+                                    <i class="fa fa-envelope-open"></i>
+                                    <div>
+                                        <h6>Email</h6>
+                                        <a href="mailto:epitomeschools17@gmail.com">epitomeschools17@gmail.com</a>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="hero-contact-mini">
-                                <i class="fa fa-map-marker-alt"></i>
-                                <div>
-                                    <small>Address</small>
-                                    <a href="https://maps.google.com/?q=OFF+SANI+ABACHA+ROAD,+OLD+KAR+RD,+ANGWAR+HASHIMU,+961105" target="_blank" rel="noopener noreferrer">
-                                        OFF SANI ABACHA ROAD, OLD KAR RD, ANGWAR HASHIMU, 961105
-                                    </a>
+                                <div class="contact-summary-item">
+                                    <i class="fa fa-clock"></i>
+                                    <div>
+                                        <h6>School Hours</h6>
+                                        <span>Monday – Friday: 8:00am – 2:00pm</span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="hero-panel-note">
-                                <i class="fa fa-clock me-2"></i>
-                                Monday – Friday: 8:00am – 2:00pm
+                                <div class="contact-summary-item">
+                                    <i class="fa fa-map-marker-alt"></i>
+                                    <div>
+                                        <h6>Location</h6>
+                                        <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer">
+                                            Epitome Model Islamic Schools, Mararaba
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -178,46 +273,37 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Get In Touch</h6>
-                <h1 class="mb-3">Choose the Fastest Way to Reach Us</h1>
+                <h1 class="mb-3">Choose the best way to reach us</h1>
                 <p class="contact-section-lead mx-auto">
-                    Every contact route below is clickable, so parents and guardians can reach EMIS instantly.
+                    The options below are simple, direct, and easy for parents and guardians to use instantly.
                 </p>
             </div>
 
             <div class="row g-4 mt-2">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <a href="tel:08172022402" class="contact-card contact-card-link">
                         <div class="contact-card-icon"><i class="fa fa-phone-alt"></i></div>
                         <h5>Call School</h5>
-                        <p>Speak directly with us about admissions, class details, and enquiries.</p>
+                        <p>Speak directly with us for admissions, support, and general school enquiries.</p>
                         <span>0817 202 2402</span>
                     </a>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <a href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer" class="contact-card contact-card-link">
-                        <div class="contact-card-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
-                        <h5>WhatsApp</h5>
-                        <p>Start a direct conversation with the school on WhatsApp.</p>
-                        <span>+234 817 202 2402</span>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                     <a href="mailto:epitomeschools17@gmail.com" class="contact-card contact-card-link">
                         <div class="contact-card-icon"><i class="fa fa-envelope-open"></i></div>
-                        <h5>Email</h5>
-                        <p>Send us your enquiries, requests, or school-related messages.</p>
+                        <h5>Email Us</h5>
+                        <p>Send your message anytime and we’ll respond to your school-related enquiries.</p>
                         <span>epitomeschools17@gmail.com</span>
                     </a>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                    <a href="https://maps.google.com/?q=OFF+SANI+ABACHA+ROAD,+OLD+KAR+RD,+ANGWAR+HASHIMU,+961105" target="_blank" rel="noopener noreferrer" class="contact-card contact-card-link">
+                <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s">
+                    <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer" class="contact-card contact-card-link">
                         <div class="contact-card-icon"><i class="fa fa-map-marker-alt"></i></div>
                         <h5>Visit Campus</h5>
-                        <p>Open our address in Google Maps and get directions instantly.</p>
-                        <span>View Location</span>
+                        <p>Open the school directly in Google Maps and get directions faster.</p>
+                        <span>Open School Location</span>
                     </a>
                 </div>
             </div>
@@ -236,7 +322,7 @@
                         <div class="contact-info-panel h-100">
                             <div class="contact-info-top">
                                 <span class="panel-tag">School Contact Hub</span>
-                                <h2>Everything you need in one place.</h2>
+                                <h2>Everything you need in one clean section.</h2>
                                 <p>
                                     EMIS is a private Islamic school offering a total blend of Islamic and Western education,
                                     from Creche to Senior Secondary level, with Tahfeezul-Qur’an and Islamiyyah programmes.
@@ -247,34 +333,26 @@
                                 <div class="contact-info-item">
                                     <div class="contact-info-icon"><i class="fa fa-map-marker-alt"></i></div>
                                     <div>
-                                        <h6>School Address</h6>
-                                        <a href="https://maps.google.com/?q=OFF+SANI+ABACHA+ROAD,+OLD+KAR+RD,+ANGWAR+HASHIMU,+961105" target="_blank" rel="noopener noreferrer">
-                                            OFF SANI ABACHA ROAD, OLD KAR RD, ANGWAR HASHIMU, 961105
+                                        <h6>School Location</h6>
+                                        <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer">
+                                            Epitome Model Islamic Schools, Mararaba
                                         </a>
-                                    </div>
-                                </div>
-
-                                <div class="contact-info-item">
-                                    <div class="contact-info-icon"><i class="fa fa-phone-alt"></i></div>
-                                    <div>
-                                        <h6>Call Us</h6>
-                                        <a href="tel:08172022402">0817 202 2402</a>
-                                    </div>
-                                </div>
-
-                                <div class="contact-info-item">
-                                    <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
-                                    <div>
-                                        <h6>WhatsApp</h6>
-                                        <a href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer">+234 817 202 2402</a>
                                     </div>
                                 </div>
 
                                 <div class="contact-info-item">
                                     <div class="contact-info-icon"><i class="fa fa-envelope"></i></div>
                                     <div>
-                                        <h6>Email</h6>
+                                        <h6>Email Address</h6>
                                         <a href="mailto:epitomeschools17@gmail.com">epitomeschools17@gmail.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="contact-info-item">
+                                    <div class="contact-info-icon"><i class="fa fa-clock"></i></div>
+                                    <div>
+                                        <h6>Opening Hours</h6>
+                                        <span>Monday – Friday: 8:00am – 2:00pm</span>
                                     </div>
                                 </div>
                             </div>
@@ -312,8 +390,8 @@
                                 <span class="panel-tag">Enquiry Form</span>
                                 <h2>Send us a message</h2>
                                 <p>
-                                    Fill in your details and your message clearly. This layout is designed to feel cleaner,
-                                    easier to scan, and more trustworthy for parents and guardians.
+                                    Fill in your details and message clearly. For urgent enquiries,
+                                    calling or WhatsApp is usually the fastest option.
                                 </p>
                             </div>
 
@@ -381,7 +459,7 @@
                                         <div class="contact-note-card">
                                             <h6><i class="fa fa-info-circle me-2"></i>Quick Help</h6>
                                             <p class="mb-0">
-                                                For faster response, you can also use the WhatsApp button or call the school directly.
+                                                For the fastest response, use the call or WhatsApp button at the top of this page.
                                             </p>
                                         </div>
                                     </div>
@@ -409,12 +487,12 @@
             <div class="map-visit-wrap wow fadeInUp" data-wow-delay="0.1s">
                 <div class="row g-0 align-items-stretch">
                     <div class="col-lg-7">
-                        <a href="https://maps.google.com/?q=OFF+SANI+ABACHA+ROAD,+OLD+KAR+RD,+ANGWAR+HASHIMU,+961105" target="_blank" rel="noopener noreferrer" class="map-visual">
+                        <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer" class="map-visual">
                             <div class="map-overlay-card">
                                 <span class="map-mini-badge">Open in Google Maps</span>
-                                <h3>Visit Our School Location</h3>
-                                <p>OFF SANI ABACHA ROAD, OLD KAR RD, ANGWAR HASHIMU, 961105</p>
-                                <span class="map-cta">Tap to get directions <i class="fa fa-arrow-right ms-2"></i></span>
+                                <h3>Find Epitome Model Islamic Schools, Mararaba</h3>
+                                <p>Tap below to open the school directly on Google Maps.</p>
+                                <span class="map-cta">Get directions now <i class="fa fa-arrow-right ms-2"></i></span>
                             </div>
                         </a>
                     </div>
@@ -424,23 +502,24 @@
                             <span class="panel-tag">Visit & Connect</span>
                             <h3>Planning a visit?</h3>
                             <p>
-                                Use the map button to open the school’s address in Google Maps. Parents can also
-                                call, WhatsApp, or message on social media for guidance before visiting.
+                                Use the larger map button below to open the school directly on Google Maps.
+                                This now points to <strong>Epitome Model Islamic Schools Mararaba</strong>
+                                instead of the older address search.
                             </p>
 
                             <ul class="visit-benefit-list">
-                                <li><i class="fa fa-check-circle"></i> One-tap map directions</li>
-                                <li><i class="fa fa-check-circle"></i> Click-to-call support</li>
-                                <li><i class="fa fa-check-circle"></i> WhatsApp for fast enquiries</li>
-                                <li><i class="fa fa-check-circle"></i> Instagram and Facebook presence</li>
+                                <li><i class="fa fa-check-circle"></i> Direct Google Maps search result</li>
+                                <li><i class="fa fa-check-circle"></i> Bigger and easier-to-click map button</li>
+                                <li><i class="fa fa-check-circle"></i> Fast access for parents and visitors</li>
+                                <li><i class="fa fa-check-circle"></i> Quick phone support before visiting</li>
                             </ul>
 
                             <div class="visit-actions">
-                                <a href="https://maps.google.com/?q=OFF+SANI+ABACHA+ROAD,+OLD+KAR+RD,+ANGWAR+HASHIMU,+961105" target="_blank" rel="noopener noreferrer" class="btn btn-primary me-2 mb-2">
-                                    <i class="fa fa-map-marked-alt me-2"></i>Open Map
+                                <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer" class="btn btn-primary map-big-btn me-2 mb-2">
+                                    <i class="fa fa-map-marked-alt me-2"></i>Open School on Map
                                 </a>
                                 <a href="tel:08172022402" class="btn btn-outline-primary mb-2">
-                                    <i class="fa fa-phone-alt me-2"></i>Call First
+                                    <i class="fa fa-phone-alt me-2"></i>Call School
                                 </a>
                             </div>
                         </div>
@@ -450,8 +529,6 @@
         </div>
     </section>
     <!-- Map + Visit Section End -->
-
-
 
 
     <!-- Footer Start -->
@@ -469,14 +546,19 @@
 
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>OFF SANI ABACHA ROAD, OLD KAR RD, ANGWAR HASHIMU, 961105</p>
+                    <p class="mb-2">
+                        <i class="fa fa-map-marker-alt me-3"></i>
+                        <a class="footer-contact-link" href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer">
+                            Epitome Model Islamic Schools, Mararaba
+                        </a>
+                    </p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a class="footer-contact-link" href="tel:08172022402">0817 202 2402</a></p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i><a class="footer-contact-link" href="mailto:epitomeschools17@gmail.com">epitomeschools17@gmail.com</a></p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-outline-light btn-social" href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://maps.google.com/?q=OFF+SANI+ABACHA+ROAD,+OLD+KAR+RD,+ANGWAR+HASHIMU,+961105" target="_blank" rel="noopener noreferrer"><i class="fa fa-map-marker-alt"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer"><i class="fa fa-map-marker-alt"></i></a>
                     </div>
                 </div>
 

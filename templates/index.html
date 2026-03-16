@@ -41,42 +41,157 @@
     <!-- Spinner End -->
 
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-
-    <a href="{{ url_for('home') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-    <img src="{{ url_for('static', filename='images/emis3.png') }}" alt="EMIS Logo" class="navbar-logo me-2">
-
-    <div class="brand-text-wrap">
-        <h2 class="m-0 brand-main-text">EMIS</h2>
-        <div class="brand-subtitle">Epitome Model Islamic Schools</div>
-        <div class="brand-tagline">...for total academic excellence</div>
+    <!-- Announcement Bar Start -->
+    <div class="announcement-bar">
+        <div class="container-fluid">
+            <div class="announcement-inner">
+                <span class="announcement-label">
+                    <i class="fa fa-bullhorn me-2"></i>Announcement:
+                </span>
+                <div class="announcement-marquee-wrap">
+                    <marquee behavior="scroll" direction="left" scrollamount="6">
+                        Admissions are ongoing at Epitome Model Islamic School • Nursery • Primary • Secondary • Full-Time Tahfeez • Adult Classes • Contact us for enquiries and enrollment support.
+                    </marquee>
+                </div>
+            </div>
+        </div>
     </div>
-</a>
+    <!-- Announcement Bar End -->
 
+
+    <!-- Top Header Start -->
+    <div class="topbar-wrap">
+        <div class="container-fluid">
+            <div class="topbar-content">
+                <div class="topbar-left">
+                    <a href="mailto:epitomeschools17@gmail.com" class="topbar-link">
+                        <i class="fa fa-envelope-open me-2"></i>epitomeschools17@gmail.com
+                    </a>
+                    <a href="tel:08172022402" class="topbar-link">
+                        <i class="fa fa-phone-alt me-2"></i>0817 202 2402
+                    </a>
+                </div>
+                <div class="topbar-right">
+                    <a class="topbar-social" href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="topbar-social" href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="topbar-social" href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a class="topbar-social" href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Header End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-xl bg-white navbar-light shadow sticky-top p-0 main-navbar">
+        <a href="{{ url_for('home') }}" class="navbar-brand d-flex align-items-center px-3 px-lg-4">
+            <img src="{{ url_for('static', filename='images/emis3.png') }}" alt="EMIS Logo" class="navbar-logo me-2">
+            <div class="brand-text-wrap">
+                <h2 class="m-0 brand-main-text">EMIS</h2>
+                <div class="brand-subtitle">Epitome Model Islamic Schools</div>
+                <div class="brand-tagline">...for total academic excellence</div>
+            </div>
+        </a>
 
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <div class="navbar-nav mx-auto p-4 p-xl-0 align-items-xl-center">
+
                 <a href="{{ url_for('home') }}" class="nav-item nav-link active">Home</a>
-                <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
-                <a href="{{ url_for('programs') }}" class="nav-item nav-link">Programs</a>
+
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="{{ url_for('programs') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Programs</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="{{ url_for('staff') }}" class="dropdown-item">Our Staff</a>
-                        <a href="{{ url_for('testimonials') }}" class="dropdown-item">Testimonials</a>
-                        <a href="{{ url_for('page_404') }}" class="dropdown-item">404 Page</a>
+                        <a href="{{ url_for('programs') }}" class="dropdown-item">Nursery</a>
+                        <a href="{{ url_for('programs') }}" class="dropdown-item">Primary</a>
+                        <a href="{{ url_for('programs') }}" class="dropdown-item">Secondary</a>
+                        <a href="{{ url_for('programs') }}" class="dropdown-item">Full-Time Tahfeez</a>
+                        <a href="{{ url_for('programs') }}" class="dropdown-item">Adult Classes</a>
                     </div>
                 </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">School Portal</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="#" class="dropdown-item">Staff Login</a>
+                        <a href="#" class="dropdown-item">School Portal</a>
+                        <a href="#" class="dropdown-item">Parent Login</a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Events and News</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="#" class="dropdown-item">Qur'an Musabaqah</a>
+                        <a href="#" class="dropdown-item">End of the Year Event</a>
+                        <a href="#" class="dropdown-item">Cultural Day</a>
+                        <a href="#" class="dropdown-item">Independence Day</a>
+                        <a href="#" class="dropdown-item">News</a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Careers</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="#" class="dropdown-item">Recruitment</a>
+                        <a href="#" class="dropdown-item">Staff Capacity Building</a>
+                        <a href="#" class="dropdown-item">Parent Login</a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="#" class="dropdown-item">Factory</a>
+                        <a href="#" class="dropdown-item">Kitchen</a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="{{ url_for('about') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="{{ url_for('about') }}" class="dropdown-item">About Us</a>
+                        <a href="{{ url_for('about') }}" class="dropdown-item">About the Founder</a>
+                        <a href="{{ url_for('about') }}" class="dropdown-item">School Governing Board</a>
+                        <a href="{{ url_for('about') }}" class="dropdown-item">Core Management</a>
+                    </div>
+                </div>
+
                 <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="{{ url_for('contact') }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
-                Contact School
-                <i class="fa fa-arrow-right ms-3"></i>
-            </a>
+
+            <div class="navbar-action-group d-flex align-items-center pe-3 pe-lg-4">
+                <div class="header-social-icons d-none d-xl-flex">
+                    <a class="header-social-link" href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="header-social-link" href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="header-social-link" href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a class="header-social-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+
+                <a href="tel:08172022402" class="header-call-icon ms-xl-3" aria-label="Call School">
+                    <i class="fa fa-phone-alt"></i>
+                </a>
+            </div>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -85,50 +200,92 @@
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">
+
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{{ url_for('static', filename='images/carousel-1.jpg') }}" alt="EMIS School Slide 1">
+                <img class="img-fluid" src="{{ url_for('static', filename='images/school.JPG') }}" alt="EMIS School Building Slide 1">
                 <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-start">
-                            <div class="col-sm-10 col-lg-8">
+                            <div class="col-sm-11 col-lg-8">
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Welcome to EMIS</h5>
-                                <h1 class="display-3 text-white animated slideInDown">A Blend of Islamic and Western Education</h1>
+                                <h1 class="display-3 text-white animated slideInDown">A Beautiful Environment for Learning and Character Building</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">
-                                    Epitome Model Islamic School offers quality learning from Creche to Senior Secondary,
-                                    with Tahfeezul-Qur’an and a strong Islamiyyah foundation.
+                                    Epitome Model Islamic School provides a nurturing environment where academic excellence,
+                                    Islamic values, and discipline grow together.
                                 </p>
-                <div class="hero-btn-group">
-                    <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
-                    <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Contact Us</a>
-                </div>
-                                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{{ url_for('static', filename='images/carousel-2.jpg') }}" alt="EMIS School Slide 2">
-                <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Academic Excellence</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Growing Young Minds with Knowledge and Values</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">
-                                    At EMIS, we nurture pupils and students with sound academics, Islamic morals,
-                                    discipline, and excellence at every stage of learning.
-                                </p>
-
-                <div class="hero-btn-group">
-                    <a href="{{ url_for('programs') }}" class="btn btn-primary animated slideInLeft">Our Programs</a>
-                    <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Enroll Today</a>
-                </div>
+                                <div class="hero-btn-group">
+                                    <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
+                                    <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Enroll Today</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="{{ url_for('static', filename='images/school2.jpeg') }}" alt="EMIS School Building Slide 2">
+                <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-11 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Our Programs</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Nursery, Primary, Secondary and Full-Time Tahfeez</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">
+                                    We serve learners across key stages with a balanced blend of Islamic and Western education.
+                                </p>
+                                <div class="hero-btn-group">
+                                    <a href="{{ url_for('programs') }}" class="btn btn-primary animated slideInLeft">View Programs</a>
+                                    <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Make Enquiry</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="{{ url_for('static', filename='images/school3.JPG') }}" alt="EMIS School Building Slide 3">
+                <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-11 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Academic Excellence</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Raising Learners with Knowledge, Discipline and Faith</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">
+                                    EMIS is committed to sound academics, moral training, and strong Islamic upbringing.
+                                </p>
+                                <div class="hero-btn-group">
+                                    <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Discover EMIS</a>
+                                    <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Visit School</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="{{ url_for('static', filename='images/school4.jpg') }}" alt="EMIS School Building Slide 4">
+                <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-11 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Admissions Ongoing</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Join a School Built for Total Academic Excellence</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">
+                                    From early years to advanced learning, EMIS supports every learner with care, structure, and purpose.
+                                </p>
+                                <div class="hero-btn-group">
+                                    <a href="{{ url_for('contact') }}" class="btn btn-primary animated slideInLeft">Apply Now</a>
+                                    <a href="{{ url_for('programs') }}" class="btn btn-light animated slideInRight">Explore Sections</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <!-- Carousel End -->
@@ -143,7 +300,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-school text-primary mb-4"></i>
                             <h5 class="mb-3">Quality Schooling</h5>
-                            <p>Structured learning environment for Creche, Nursery, Primary, Junior and Senior Secondary students.</p>
+                            <p>Structured learning environment for Nursery, Primary, Secondary and advanced Islamic studies.</p>
                         </div>
                     </div>
                 </div>
@@ -152,7 +309,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-book-reader text-primary mb-4"></i>
                             <h5 class="mb-3">Islamic Studies</h5>
-                            <p>Strong Islamiyyah programme designed to nurture discipline, values, and sound understanding.</p>
+                            <p>Strong Islamiyyah programme designed to nurture discipline, values, and understanding.</p>
                         </div>
                     </div>
                 </div>
@@ -161,7 +318,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-mosque text-primary mb-4"></i>
                             <h5 class="mb-3">Tahfeez Programme</h5>
-                            <p>Tahfeezul-Qur’an programme available from age 3, helping children begin early in Quranic memorization.</p>
+                            <p>Full-Time Tahfeez programme that helps students build a strong Qur’anic foundation.</p>
                         </div>
                     </div>
                 </div>
@@ -170,7 +327,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-user-graduate text-primary mb-4"></i>
                             <h5 class="mb-3">Balanced Excellence</h5>
-                            <p>A total blend of Islamic and Western education aimed at building excellent and responsible future leaders.</p>
+                            <p>A blend of academic development, moral discipline, and leadership training for the future.</p>
                         </div>
                     </div>
                 </div>
@@ -197,27 +354,27 @@
                         moral discipline, and sound Islamic values.
                     </p>
                     <p class="mb-4">
-                        We provide a rich blend of Islamic and Western education across Creche, Nursery, Primary,
-                        Junior Secondary, and Senior Secondary levels.
+                        We provide a rich blend of Islamic and Western education across Nursery, Primary,
+                        Secondary, Full-Time Tahfeez, and Adult Classes.
                     </p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Creche & Nursery</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Nursery</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Primary School</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Primary</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Junior Secondary</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Secondary</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Senior Secondary</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Full-Time Tahfeez</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Tahfeezul-Qur’an</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Adult Classes</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Islamiyyah Programme</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Islamiyyah Support</p>
                         </div>
                     </div>
                     <a class="btn btn-primary py-3 px-5 mt-2" href="{{ url_for('about') }}">Read More</a>
@@ -240,9 +397,9 @@
                     <div class="row g-3">
                         <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
                             <a class="position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
-                                <img class="img-fluid" src="{{ url_for('static', filename='images/cat-1.jpg') }}" alt="Creche and Nursery">
+                                <img class="img-fluid" src="{{ url_for('static', filename='images/cat-1.jpg') }}" alt="Nursery">
                                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
-                                    <h5 class="m-0">Creche & Nursery</h5>
+                                    <h5 class="m-0">Nursery</h5>
                                     <small class="text-primary">Strong Early Foundation</small>
                                 </div>
                             </a>
@@ -251,7 +408,7 @@
                             <a class="position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
                                 <img class="img-fluid" src="{{ url_for('static', filename='images/cat-2.jpg') }}" alt="Primary School">
                                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
-                                    <h5 class="m-0">Primary School</h5>
+                                    <h5 class="m-0">Primary</h5>
                                     <small class="text-primary">Knowledge & Character</small>
                                 </div>
                             </a>
@@ -260,7 +417,7 @@
                             <a class="position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
                                 <img class="img-fluid" src="{{ url_for('static', filename='images/cat-3.jpg') }}" alt="Secondary School">
                                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
-                                    <h5 class="m-0">Secondary School</h5>
+                                    <h5 class="m-0">Secondary</h5>
                                     <small class="text-primary">Academic Excellence</small>
                                 </div>
                             </a>
@@ -269,10 +426,10 @@
                 </div>
                 <div class="col-lg-5 col-md-6 wow zoomIn category-tall-card" data-wow-delay="0.7s">
                     <a class="position-relative d-block h-100 overflow-hidden" href="{{ url_for('programs') }}">
-                        <img class="img-fluid position-absolute w-100 h-100 about-image-cover" src="{{ url_for('static', filename='images/cat-4.jpg') }}" alt="Islamiyyah and Tahfeez">
+                        <img class="img-fluid position-absolute w-100 h-100 about-image-cover" src="{{ url_for('static', filename='images/cat-4.jpg') }}" alt="Tahfeez and Adult Classes">
                         <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
-                            <h5 class="m-0">Tahfeez & Islamiyyah</h5>
-                            <small class="text-primary">Unrivaled Islamic Training</small>
+                            <h5 class="m-0">Tahfeez & Adult Classes</h5>
+                            <small class="text-primary">Faith, Growth & Discipline</small>
                         </div>
                     </a>
                 </div>
@@ -321,12 +478,12 @@
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h5 class="mb-4">Tahfeezul-Qur’an Programme</h5>
-                            <p>Qur’anic memorization begins from age 3 with guidance tailored to early and growing learners.</p>
+                            <h5 class="mb-4">Full-Time Tahfeez Programme</h5>
+                            <p>Qur’anic memorization and deep Islamic grounding with support suited to growing learners.</p>
                         </div>
                         <div class="d-flex border-top">
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-mosque text-primary me-2"></i>Islamic Focus</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-child text-primary me-2"></i>From Age 3</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-child text-primary me-2"></i>Guided Support</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-heart text-primary me-2"></i>Values Based</small>
                         </div>
                     </div>
@@ -335,20 +492,20 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="course-item bg-light h-100">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="{{ url_for('static', filename='images/course-3.jpg') }}" alt="Islamiyyah Program">
+                            <img class="img-fluid" src="{{ url_for('static', filename='images/course-3.jpg') }}" alt="Adult Classes">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
                                 <a href="{{ url_for('about') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-left">Read More</a>
                                 <a href="{{ url_for('contact') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-right">Enroll</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h5 class="mb-4">Islamiyyah Programme</h5>
-                            <p>Comprehensive Islamic learning that supports discipline, faith, and responsible character formation.</p>
+                            <h5 class="mb-4">Adult Classes & Islamic Learning</h5>
+                            <p>Comprehensive learning options that support faith, growth, discipline, and lifelong development.</p>
                         </div>
                         <div class="d-flex border-top">
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-primary me-2"></i>Sound Morals</small>
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-users text-primary me-2"></i>Guided Training</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-award text-primary me-2"></i>Unrivaled Standard</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-award text-primary me-2"></i>High Standard</small>
                         </div>
                     </div>
                 </div>
@@ -504,21 +661,21 @@
                     <h4 class="text-white mb-3">Quick Links</h4>
                     <a class="btn btn-link" href="{{ url_for('about') }}">About Us</a>
                     <a class="btn btn-link" href="{{ url_for('programs') }}">Programs</a>
-                    <a class="btn btn-link" href="{{ url_for('staff') }}">Our Staff</a>
-                    <a class="btn btn-link" href="{{ url_for('testimonials') }}">Testimonials</a>
+                    <a class="btn btn-link" href="#">School Portal</a>
+                    <a class="btn btn-link" href="#">Events and News</a>
                     <a class="btn btn-link" href="{{ url_for('contact') }}">Contact Us</a>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>0817 202 2402</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@emis.edu.ng</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a class="footer-contact-link" href="tel:08172022402">0817 202 2402</a></p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a class="footer-contact-link" href="mailto:epitomeschools17@gmail.com">epitomeschools17@gmail.com</a></p>
                     <p class="mb-2"><i class="fa fa-school me-3"></i>Epitome Model Islamic School</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
 
@@ -535,13 +692,13 @@
                             <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-3.jpg') }}" alt="Gallery 3">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-2.jpg') }}" alt="Gallery 4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/school.JPG') }}" alt="Gallery 4">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-3.jpg') }}" alt="Gallery 5">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/school2.jpeg') }}" alt="Gallery 5">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-1.jpg') }}" alt="Gallery 6">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/school4.jpg') }}" alt="Gallery 6">
                         </div>
                     </div>
                 </div>
@@ -550,7 +707,7 @@
                     <h4 class="text-white mb-3">About EMIS</h4>
                     <p>
                         EMIS is a private Islamic school offering a total blend of Islamic and Western Education,
-                        from Creche to Senior Secondary level.
+                        from Nursery to Secondary level, including Tahfeez and Adult Classes.
                     </p>
                     <a href="{{ url_for('contact') }}" class="btn btn-primary py-2 px-4 mt-2">Get in Touch</a>
                 </div>
@@ -562,7 +719,7 @@
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="{{ url_for('home') }}">EMIS</a>, All Rights Reserved.
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        Designed by <a class="border-bottom" href="https://hakeem-portfolio-nv53.onrender.com/" target="_blank" rel="noopener noreferrer">Ace Tosin</a>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
@@ -577,6 +734,17 @@
         </div>
     </div>
     <!-- Footer End -->
+
+
+    <!-- Floating Chatbot Start -->
+    <a href="#" class="emis-chatbot-float" aria-label="Open School Chatbot">
+        <span class="emis-chatbot-ripple"></span>
+        <span class="emis-chatbot-ripple ripple-delay"></span>
+        <span class="emis-chatbot-icon">
+            <i class="fa fa-comments"></i>
+        </span>
+    </a>
+    <!-- Floating Chatbot End -->
 
 
     <!-- Back to Top -->
