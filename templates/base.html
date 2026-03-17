@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ page_title or 'EMIS' }}{% endblock %}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="{% block meta_keywords %}EMIS, Epitome Model Islamic School, Islamic School, Nursery, Primary, Secondary, Tahfeez, Islamiyyah{% endblock %}" name="keywords">
+    <meta content="{% block meta_description %}Epitome Model Islamic School (EMIS) is a private Islamic school blending Islamic and Western education from Creche to Senior Secondary level.{% endblock %}" name="description">
+
+    <link href="{{ url_for('static', filename='images/emis.png') }}" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary spinner-loader" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    {% block announcement %}
+    <div class="announcement-bar">
+        <div class="container-fluid">
+            <div class="announcement-inner">
+                <span class="announcement-label">
+                    <i class="fa fa-bullhorn me-2"></i>Announcement:
+                </span>
+
+                <div class="announcement-marquee-wrap">
+                    <div class="announcement-marquee-track">
+                        <span>
+                            Admissions are ongoing at Epitome Model Islamic School • Nursery • Primary • Secondary • Full-Time Tahfeez • Adult Classes • Contact us for enquiries and enrollment support.
+                        </span>
+                        <span aria-hidden="true">
+                            Admissions are ongoing at Epitome Model Islamic School • Nursery • Primary • Secondary • Full-Time Tahfeez • Adult Classes • Contact us for enquiries and enrollment support.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-xl bg-white navbar-light shadow sticky-top p-0 main-navbar">
+        <a href="{{ url_for('home') }}" class="navbar-brand d-flex align-items-center px-3 px-lg-4">
+            <img src="{{ url_for('static', filename='images/emis3.png') }}" alt="EMIS Logo" class="navbar-logo me-2">
+            <div class="brand-text-wrap">
+                <h2 class="m-0 brand-main-text">EMIS</h2>
+                <div class="brand-subtitle">Epitome Model Islamic Schools</div>
+                <div class="brand-tagline">...for total academic excellence</div>
+            </div>
+        </a>
+
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto p-4 p-xl-0 align-items-xl-center">
+
+                <a href="{{ url_for('home') }}" class="nav-item nav-link {% if current_page == 'home' %}active{% endif %}">Home</a>
+
+                <!-- Programs -->
+                <div class="nav-item dropdown nav-item-split">
+                    <div class="nav-link-group">
+                        <a href="{{ url_for('programs') }}" class="nav-link nav-link-main {% if current_page == 'programs' %}active{% endif %}">Programs</a>
+
+                        <button class="nav-link-toggle d-xl-none" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle Programs menu">
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+
+                        <a href="{{ url_for('programs') }}" class="nav-link dropdown-toggle nav-link-desktop d-none d-xl-inline-flex {% if current_page == 'programs' %}active{% endif %}">
+                            Programs
+                        </a>
+                    </div>
+
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="{{ url_for('programs') }}" class="dropdown-item">Nursery</a>
+                        <a href="{{ url_for('programs') }}" class="dropdown-item">Primary</a>
+                        <a href="{{ url_for('programs') }}" class="dropdown-item">Secondary</a>
+                        <a href="{{ url_for('programs') }}" class="dropdown-item">Full-Time Tahfeez</a>
+                        <a href="{{ url_for('programs') }}" class="dropdown-item">Adult Classes</a>
+                    </div>
+                </div>
+
+                <!-- School Portal -->
+                <div class="nav-item dropdown nav-item-split">
+                    <div class="nav-link-group">
+                        <span class="nav-link nav-link-main">School Portal</span>
+
+                        <button class="nav-link-toggle d-xl-none" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle School Portal menu">
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+
+                        <a href="#" class="nav-link dropdown-toggle nav-link-desktop d-none d-xl-inline-flex">
+                            School Portal
+                        </a>
+                    </div>
+
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="#" class="dropdown-item">Staff Login</a>
+                        <a href="#" class="dropdown-item">School Portal</a>
+                        <a href="#" class="dropdown-item">Parent Login</a>
+                    </div>
+                </div>
+
+                <!-- Events and News -->
+                <div class="nav-item dropdown nav-item-split">
+                    <div class="nav-link-group">
+                        <span class="nav-link nav-link-main">Events and News</span>
+
+                        <button class="nav-link-toggle d-xl-none" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle Events and News menu">
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+
+                        <a href="#" class="nav-link dropdown-toggle nav-link-desktop d-none d-xl-inline-flex">
+                            Events and News
+                        </a>
+                    </div>
+
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="#" class="dropdown-item">Qur'an Musabaqah</a>
+                        <a href="#" class="dropdown-item">End of the Year Event</a>
+                        <a href="#" class="dropdown-item">Cultural Day</a>
+                        <a href="#" class="dropdown-item">Independence Day</a>
+                        <a href="#" class="dropdown-item">News</a>
+                    </div>
+                </div>
+
+                <!-- Careers -->
+                <div class="nav-item dropdown nav-item-split">
+                    <div class="nav-link-group">
+                        <span class="nav-link nav-link-main">Careers</span>
+
+                        <button class="nav-link-toggle d-xl-none" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle Careers menu">
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+
+                        <a href="#" class="nav-link dropdown-toggle nav-link-desktop d-none d-xl-inline-flex">
+                            Careers
+                        </a>
+                    </div>
+
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="#" class="dropdown-item">Recruitment</a>
+                        <a href="#" class="dropdown-item">Staff Capacity Building</a>
+                        <a href="#" class="dropdown-item">Parent Login</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="nav-item dropdown nav-item-split">
+                    <div class="nav-link-group">
+                        <span class="nav-link nav-link-main">Services</span>
+
+                        <button class="nav-link-toggle d-xl-none" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle Services menu">
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+
+                        <a href="#" class="nav-link dropdown-toggle nav-link-desktop d-none d-xl-inline-flex">
+                            Services
+                        </a>
+                    </div>
+
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="#" class="dropdown-item">Factory</a>
+                        <a href="#" class="dropdown-item">Kitchen</a>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="nav-item dropdown nav-item-split">
+                    <div class="nav-link-group">
+                        <a href="{{ url_for('about') }}" class="nav-link nav-link-main {% if current_page == 'about' %}active{% endif %}">About</a>
+
+                        <button class="nav-link-toggle d-xl-none" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle About menu">
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+
+                        <a href="{{ url_for('about') }}" class="nav-link dropdown-toggle nav-link-desktop d-none d-xl-inline-flex {% if current_page == 'about' %}active{% endif %}">
+                            About
+                        </a>
+                    </div>
+
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="{{ url_for('about') }}" class="dropdown-item">About Us</a>
+                        <a href="{{ url_for('about') }}" class="dropdown-item">About the Founder</a>
+                        <a href="{{ url_for('about') }}" class="dropdown-item">School Governing Board</a>
+                        <a href="{{ url_for('about') }}" class="dropdown-item">Core Management</a>
+                    </div>
+                </div>
+
+                <a href="{{ url_for('contact') }}" class="nav-item nav-link {% if current_page == 'contact' %}active{% endif %}">Contact</a>
+            </div>
+
+            <div class="navbar-action-group d-flex align-items-center pe-3 pe-lg-4">
+                <div class="header-social-icons d-none d-xl-flex">
+                    <a class="header-social-link" href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="header-social-link" href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="header-social-link" href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a class="header-social-link" href="mailto:epitomeschools17@gmail.com" aria-label="Email EMIS">
+                        <i class="fa fa-envelope"></i>
+                    </a>
+                </div>
+
+                <a href="tel:08172022402" class="header-call-icon ms-xl-3" aria-label="Call School">
+                    <i class="fa fa-phone-alt"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    {% block content %}{% endblock %}
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Links</h4>
+                    <a class="btn btn-link" href="{{ url_for('about') }}">About Us</a>
+                    <a class="btn btn-link" href="{{ url_for('programs') }}">Programs</a>
+                    <a class="btn btn-link" href="#">School Portal</a>
+                    <a class="btn btn-link" href="#">Events and News</a>
+                    <a class="btn btn-link" href="{{ url_for('contact') }}">Contact Us</a>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a class="footer-contact-link" href="tel:08172022402">0817 202 2402</a></p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a class="footer-contact-link" href="mailto:epitomeschools17@gmail.com">epitomeschools17@gmail.com</a></p>
+                    <p class="mb-2"><i class="fa fa-school me-3"></i>Epitome Model Islamic School</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="mailto:epitomeschools17@gmail.com" aria-label="Email EMIS"><i class="fa fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-1.jpg') }}" alt="Gallery 1">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-2.jpg') }}" alt="Gallery 2">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-3.jpg') }}" alt="Gallery 3">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/school.JPG') }}" alt="Gallery 4">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/school2.jpeg') }}" alt="Gallery 5">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/school4.jpg') }}" alt="Gallery 6">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">About EMIS</h4>
+                    <p>
+                        EMIS is a private Islamic school offering a total blend of Islamic and Western Education,
+                        from Nursery to Secondary level, including Tahfeez and Adult Classes.
+                    </p>
+                    <a href="{{ url_for('contact') }}" class="btn btn-primary py-2 px-4 mt-2">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="{{ url_for('home') }}">EMIS</a>, All Rights Reserved.
+                        Designed by <a class="border-bottom" href="https://hakeem-portfolio-nv53.onrender.com/" target="_blank" rel="noopener noreferrer">Ace Tosin</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="{{ url_for('home') }}">Home</a>
+                            <a href="{{ url_for('about') }}">About</a>
+                            <a href="{{ url_for('programs') }}">Programs</a>
+                            <a href="{{ url_for('contact') }}">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block floating_extras %}
+    <a href="#" class="emis-chatbot-float" aria-label="Open School Chatbot">
+        <span class="emis-chatbot-ripple"></span>
+        <span class="emis-chatbot-ripple ripple-delay"></span>
+        <span class="emis-chatbot-icon">
+            <i class="fa fa-comments"></i>
+        </span>
+    </a>
+    {% endblock %}
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>

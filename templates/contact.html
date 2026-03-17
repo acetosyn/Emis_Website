@@ -1,639 +1,382 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="utf-8">
-    <title>{{ page_title or 'Contact EMIS' }}</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="EMIS, Epitome Model Islamic School, Contact EMIS, Islamic School" name="keywords">
-    <meta content="Contact Epitome Model Islamic School for admissions, enquiries, and school information." name="description">
+{% block title %}{{ page_title or 'Contact EMIS' }}{% endblock %}
 
-    <!-- Favicon -->
-    <link href="{{ url_for('static', filename='images/emis.png') }}" rel="icon">
+{% block meta_keywords %}EMIS, Epitome Model Islamic School, Contact EMIS, Islamic School{% endblock %}
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+{% block meta_description %}Contact Epitome Model Islamic School for admissions, enquiries, and school information.{% endblock %}
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+{% block body_class %}contact-page{% endblock %}
 
-    <!-- Libraries Stylesheet -->
-    <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/contact.css') }}" rel="stylesheet">
+{% endblock %}
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+{% block content %}
+<!-- Hero Start -->
+<section class="contact-hero">
+    <div class="container">
+        <div class="contact-hero-inner">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <div class="contact-hero-content wow fadeInUp" data-wow-delay="0.1s">
+                        <span class="contact-badge">Contact Epitome Model Islamic School</span>
+                        <h1 class="contact-hero-title">We’re here to help parents and guardians with every enquiry.</h1>
+                        <p class="contact-hero-text">
+                            Reach out to EMIS for admissions, school enquiries, class information,
+                            Tahfeez and Islamiyyah questions, or general support. We’ve simplified this page
+                            so the important contact options are easier to find and use.
+                        </p>
 
-    <!-- Main Template Stylesheet -->
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+                        <div class="contact-hero-actions">
+                            <a href="tel:08172022402" class="btn btn-primary btn-lg me-2 mb-2">
+                                <i class="fa fa-phone-alt me-2"></i>Call School
+                            </a>
+                            <a href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg mb-2 contact-hero-outline">
+                                <i class="fab fa-whatsapp me-2"></i>WhatsApp Chat
+                            </a>
+                        </div>
 
-    <!-- Contact Page Stylesheet -->
-    <link href="{{ url_for('static', filename='css/contact.css') }}" rel="stylesheet">
+                        <div class="contact-quick-pills mt-4">
+                            <a href="mailto:epitomeschools17@gmail.com" class="contact-pill">
+                                <i class="fa fa-envelope"></i>
+                                <span>Email Us</span>
+                            </a>
+                            <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                                <i class="fa fa-map-marker-alt"></i>
+                                <span>Open Map</span>
+                            </a>
+                            <a href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-    <style>
-        .map-big-btn {
-            padding: 16px 34px !important;
-            font-size: 1.05rem;
-            font-weight: 700;
-            border-radius: 12px;
-            min-width: 220px;
-            text-align: center;
-        }
+                <div class="col-lg-5">
+                    <div class="contact-summary-card wow fadeInUp" data-wow-delay="0.3s">
+                        <span class="panel-tag">Quick Overview</span>
+                        <h4 class="mt-2 mb-3">Contact details at a glance</h4>
+                        <p class="mb-0">
+                            Everything essential is shown once here clearly, without repeating the same number all over the page.
+                        </p>
 
-        .contact-summary-card {
-            background: #fff;
-            border-radius: 18px;
-            padding: 30px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
-            height: 100%;
-        }
+                        <div class="contact-summary-list">
+                            <div class="contact-summary-item">
+                                <i class="fa fa-phone-alt"></i>
+                                <div>
+                                    <h6>Phone</h6>
+                                    <a href="tel:08172022402">0817 202 2402</a>
+                                </div>
+                            </div>
 
-        .contact-summary-list {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            margin-top: 22px;
-        }
+                            <div class="contact-summary-item">
+                                <i class="fab fa-whatsapp"></i>
+                                <div>
+                                    <h6>WhatsApp</h6>
+                                    <a href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer">+234 817 202 2402</a>
+                                </div>
+                            </div>
 
-        .contact-summary-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-        }
+                            <div class="contact-summary-item">
+                                <i class="fa fa-envelope-open"></i>
+                                <div>
+                                    <h6>Email</h6>
+                                    <a href="mailto:epitomeschools17@gmail.com">epitomeschools17@gmail.com</a>
+                                </div>
+                            </div>
 
-        .contact-summary-item i {
-            width: 46px;
-            height: 46px;
-            border-radius: 12px;
-            background: rgba(6, 187, 204, 0.12);
-            color: #06BBCC;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            flex-shrink: 0;
-        }
+                            <div class="contact-summary-item">
+                                <i class="fa fa-clock"></i>
+                                <div>
+                                    <h6>School Hours</h6>
+                                    <span>Monday – Friday: 8:00am – 2:00pm</span>
+                                </div>
+                            </div>
 
-        .contact-summary-item h6 {
-            margin-bottom: 5px;
-        }
-
-        .contact-summary-item a,
-        .contact-summary-item span {
-            color: #52565b;
-            text-decoration: none;
-        }
-
-        .contact-summary-item a:hover {
-            color: #06BBCC;
-        }
-
-        .contact-hero-actions .btn {
-            min-width: 190px;
-        }
-
-        .contact-card-link span {
-            font-weight: 700;
-        }
-
-        .map-overlay-card p {
-            margin-bottom: 10px;
-        }
-
-        .visit-benefit-list {
-            list-style: none;
-            padding-left: 0;
-            margin: 0 0 24px;
-        }
-
-        .visit-benefit-list li {
-            margin-bottom: 12px;
-        }
-
-        .visit-benefit-list i {
-            color: #06BBCC;
-            margin-right: 10px;
-        }
-    </style>
-</head>
-
-<body class="contact-page">
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary spinner-loader" role="status">
-            <span class="sr-only">Loading...</span>
+                            <div class="contact-summary-item">
+                                <i class="fa fa-map-marker-alt"></i>
+                                <div>
+                                    <h6>Location</h6>
+                                    <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer">
+                                        Epitome Model Islamic Schools, Mararaba
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Spinner End -->
+</section>
+<!-- Hero End -->
 
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="{{ url_for('home') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="{{ url_for('static', filename='images/emis.png') }}" alt="EMIS Logo" class="navbar-logo me-2">
-            <h2 class="m-0 text-primary">EMIS</h2>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ url_for('home') }}" class="nav-item nav-link">Home</a>
-                <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
-                <a href="{{ url_for('programs') }}" class="nav-item nav-link">Programs</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="{{ url_for('staff') }}" class="dropdown-item">Our Staff</a>
-                        <a href="{{ url_for('testimonials') }}" class="dropdown-item">Testimonials</a>
-                        <a href="{{ url_for('page_404') }}" class="dropdown-item">404 Page</a>
-                    </div>
-                </div>
-                <a href="{{ url_for('contact') }}" class="nav-item nav-link active">Contact</a>
-            </div>
-            <a href="#contactFormSection" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
-                Send Enquiry
-                <i class="fa fa-arrow-right ms-3"></i>
-            </a>
+<!-- Contact Cards Start -->
+<section class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Get In Touch</h6>
+            <h1 class="mb-3">Choose the best way to reach us</h1>
+            <p class="contact-section-lead mx-auto">
+                The options below are simple, direct, and easy for parents and guardians to use instantly.
+            </p>
         </div>
-    </nav>
-    <!-- Navbar End -->
 
+        <div class="row g-4 mt-2">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <a href="tel:08172022402" class="contact-card contact-card-link">
+                    <div class="contact-card-icon"><i class="fa fa-phone-alt"></i></div>
+                    <h5>Call School</h5>
+                    <p>Speak directly with us for admissions, support, and general school enquiries.</p>
+                    <span>0817 202 2402</span>
+                </a>
+            </div>
 
-    <!-- Hero Start -->
-    <section class="contact-hero">
-        <div class="container">
-            <div class="contact-hero-inner">
-                <div class="row align-items-center g-4">
-                    <div class="col-lg-7">
-                        <div class="contact-hero-content wow fadeInUp" data-wow-delay="0.1s">
-                            <span class="contact-badge">Contact Epitome Model Islamic School</span>
-                            <h1 class="contact-hero-title">We’re here to help parents and guardians with every enquiry.</h1>
-                            <p class="contact-hero-text">
-                                Reach out to EMIS for admissions, school enquiries, class information,
-                                Tahfeez and Islamiyyah questions, or general support. We’ve simplified this page
-                                so the important contact options are easier to find and use.
-                            </p>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                <a href="mailto:epitomeschools17@gmail.com" class="contact-card contact-card-link">
+                    <div class="contact-card-icon"><i class="fa fa-envelope-open"></i></div>
+                    <h5>Email Us</h5>
+                    <p>Send your message anytime and we’ll respond to your school-related enquiries.</p>
+                    <span>epitomeschools17@gmail.com</span>
+                </a>
+            </div>
 
-                            <div class="contact-hero-actions">
-                                <a href="tel:08172022402" class="btn btn-primary btn-lg me-2 mb-2">
-                                    <i class="fa fa-phone-alt me-2"></i>Call School
-                                </a>
-                                <a href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg mb-2 contact-hero-outline">
-                                    <i class="fab fa-whatsapp me-2"></i>WhatsApp Chat
-                                </a>
-                            </div>
-
-                            <div class="contact-quick-pills mt-4">
-                                <a href="mailto:epitomeschools17@gmail.com" class="contact-pill">
-                                    <i class="fa fa-envelope"></i>
-                                    <span>Email Us</span>
-                                </a>
-                                <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer" class="contact-pill">
-                                    <i class="fa fa-map-marker-alt"></i>
-                                    <span>Open Map</span>
-                                </a>
-                                <a href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer" class="contact-pill">
-                                    <i class="fab fa-instagram"></i>
-                                    <span>Instagram</span>
-                                </a>
-                                <a href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer" class="contact-pill">
-                                    <i class="fab fa-facebook-f"></i>
-                                    <span>Facebook</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-5">
-                        <div class="contact-summary-card wow fadeInUp" data-wow-delay="0.3s">
-                            <span class="panel-tag">Quick Overview</span>
-                            <h4 class="mt-2 mb-3">Contact details at a glance</h4>
-                            <p class="mb-0">
-                                Everything essential is shown once here clearly, without repeating the same number all over the page.
-                            </p>
-
-                            <div class="contact-summary-list">
-                                <div class="contact-summary-item">
-                                    <i class="fa fa-phone-alt"></i>
-                                    <div>
-                                        <h6>Phone</h6>
-                                        <a href="tel:08172022402">0817 202 2402</a>
-                                    </div>
-                                </div>
-
-                                <div class="contact-summary-item">
-                                    <i class="fab fa-whatsapp"></i>
-                                    <div>
-                                        <h6>WhatsApp</h6>
-                                        <a href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer">+234 817 202 2402</a>
-                                    </div>
-                                </div>
-
-                                <div class="contact-summary-item">
-                                    <i class="fa fa-envelope-open"></i>
-                                    <div>
-                                        <h6>Email</h6>
-                                        <a href="mailto:epitomeschools17@gmail.com">epitomeschools17@gmail.com</a>
-                                    </div>
-                                </div>
-
-                                <div class="contact-summary-item">
-                                    <i class="fa fa-clock"></i>
-                                    <div>
-                                        <h6>School Hours</h6>
-                                        <span>Monday – Friday: 8:00am – 2:00pm</span>
-                                    </div>
-                                </div>
-
-                                <div class="contact-summary-item">
-                                    <i class="fa fa-map-marker-alt"></i>
-                                    <div>
-                                        <h6>Location</h6>
-                                        <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer">
-                                            Epitome Model Islamic Schools, Mararaba
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s">
+                <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer" class="contact-card contact-card-link">
+                    <div class="contact-card-icon"><i class="fa fa-map-marker-alt"></i></div>
+                    <h5>Visit Campus</h5>
+                    <p>Open the school directly in Google Maps and get directions faster.</p>
+                    <span>Open School Location</span>
+                </a>
             </div>
         </div>
-    </section>
-    <!-- Hero End -->
+    </div>
+</section>
+<!-- Contact Cards End -->
 
 
-    <!-- Contact Cards Start -->
-    <section class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Get In Touch</h6>
-                <h1 class="mb-3">Choose the best way to reach us</h1>
-                <p class="contact-section-lead mx-auto">
-                    The options below are simple, direct, and easy for parents and guardians to use instantly.
-                </p>
-            </div>
+<!-- Main Contact Section Start -->
+<section id="contactFormSection" class="container-xxl pb-5">
+    <div class="container">
+        <div class="contact-main-wrap">
+            <div class="row g-4 align-items-stretch">
 
-            <div class="row g-4 mt-2">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <a href="tel:08172022402" class="contact-card contact-card-link">
-                        <div class="contact-card-icon"><i class="fa fa-phone-alt"></i></div>
-                        <h5>Call School</h5>
-                        <p>Speak directly with us for admissions, support, and general school enquiries.</p>
-                        <span>0817 202 2402</span>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <a href="mailto:epitomeschools17@gmail.com" class="contact-card contact-card-link">
-                        <div class="contact-card-icon"><i class="fa fa-envelope-open"></i></div>
-                        <h5>Email Us</h5>
-                        <p>Send your message anytime and we’ll respond to your school-related enquiries.</p>
-                        <span>epitomeschools17@gmail.com</span>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s">
-                    <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer" class="contact-card contact-card-link">
-                        <div class="contact-card-icon"><i class="fa fa-map-marker-alt"></i></div>
-                        <h5>Visit Campus</h5>
-                        <p>Open the school directly in Google Maps and get directions faster.</p>
-                        <span>Open School Location</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Contact Cards End -->
-
-
-    <!-- Main Contact Section Start -->
-    <section id="contactFormSection" class="container-xxl pb-5">
-        <div class="container">
-            <div class="contact-main-wrap">
-                <div class="row g-4 align-items-stretch">
-
-                    <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
-                        <div class="contact-info-panel h-100">
-                            <div class="contact-info-top">
-                                <span class="panel-tag">School Contact Hub</span>
-                                <h2>Everything you need in one clean section.</h2>
-                                <p>
-                                    EMIS is a private Islamic school offering a total blend of Islamic and Western education,
-                                    from Creche to Senior Secondary level, with Tahfeezul-Qur’an and Islamiyyah programmes.
-                                </p>
-                            </div>
-
-                            <div class="contact-info-list">
-                                <div class="contact-info-item">
-                                    <div class="contact-info-icon"><i class="fa fa-map-marker-alt"></i></div>
-                                    <div>
-                                        <h6>School Location</h6>
-                                        <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer">
-                                            Epitome Model Islamic Schools, Mararaba
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="contact-info-item">
-                                    <div class="contact-info-icon"><i class="fa fa-envelope"></i></div>
-                                    <div>
-                                        <h6>Email Address</h6>
-                                        <a href="mailto:epitomeschools17@gmail.com">epitomeschools17@gmail.com</a>
-                                    </div>
-                                </div>
-
-                                <div class="contact-info-item">
-                                    <div class="contact-info-icon"><i class="fa fa-clock"></i></div>
-                                    <div>
-                                        <h6>Opening Hours</h6>
-                                        <span>Monday – Friday: 8:00am – 2:00pm</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="social-contact-box">
-                                <h5 class="mb-3">Connect on Socials</h5>
-                                <div class="social-contact-actions">
-                                    <a href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer" class="social-action whatsapp">
-                                        <i class="fab fa-whatsapp"></i>
-                                        <span>WhatsApp</span>
-                                    </a>
-                                    <a href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer" class="social-action instagram">
-                                        <i class="fab fa-instagram"></i>
-                                        <span>@epitome_schools</span>
-                                    </a>
-                                    <a href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer" class="social-action facebook">
-                                        <i class="fab fa-facebook-f"></i>
-                                        <span>Epitome Model Islamic Schools</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="contact-feature-grid">
-                                <div class="contact-feature-chip"><i class="fa fa-check-circle"></i> Online Classes</div>
-                                <div class="contact-feature-chip"><i class="fa fa-check-circle"></i> In-Person Classes</div>
-                                <div class="contact-feature-chip"><i class="fa fa-check-circle"></i> Admissions Support</div>
-                                <div class="contact-feature-chip"><i class="fa fa-check-circle"></i> Parent Enquiries</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="contact-form-panel h-100">
-                            <div class="form-panel-head">
-                                <span class="panel-tag">Enquiry Form</span>
-                                <h2>Send us a message</h2>
-                                <p>
-                                    Fill in your details and message clearly. For urgent enquiries,
-                                    calling or WhatsApp is usually the fastest option.
-                                </p>
-                            </div>
-
-                            <form class="contact-modern-form">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label class="contact-label" for="name">Full Name</label>
-                                        <div class="contact-input-wrap">
-                                            <i class="fa fa-user"></i>
-                                            <input type="text" class="form-control contact-control" id="name" placeholder="Enter your full name">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label class="contact-label" for="phone">Phone Number</label>
-                                        <div class="contact-input-wrap">
-                                            <i class="fa fa-phone-alt"></i>
-                                            <input type="text" class="form-control contact-control" id="phone" placeholder="Enter your phone number">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label class="contact-label" for="email">Email Address</label>
-                                        <div class="contact-input-wrap">
-                                            <i class="fa fa-envelope"></i>
-                                            <input type="email" class="form-control contact-control" id="email" placeholder="Enter your email">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label class="contact-label" for="interest">Enquiry Type</label>
-                                        <div class="contact-input-wrap">
-                                            <i class="fa fa-list-alt"></i>
-                                            <select class="form-control contact-control contact-select" id="interest">
-                                                <option value="">Select enquiry type</option>
-                                                <option>Admission Enquiry</option>
-                                                <option>Creche & Nursery</option>
-                                                <option>Primary School</option>
-                                                <option>Junior Secondary</option>
-                                                <option>Senior Secondary</option>
-                                                <option>Tahfeezul-Qur’an</option>
-                                                <option>Islamiyyah Programme</option>
-                                                <option>General Enquiry</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label class="contact-label" for="subject">Subject</label>
-                                        <div class="contact-input-wrap">
-                                            <i class="fa fa-tag"></i>
-                                            <input type="text" class="form-control contact-control" id="subject" placeholder="What is this about?">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label class="contact-label" for="message">Message</label>
-                                        <div class="contact-input-wrap textarea-wrap">
-                                            <i class="fa fa-comment-dots"></i>
-                                            <textarea class="form-control contact-control contact-textarea" id="message" placeholder="Write your message here..."></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <div class="contact-note-card">
-                                            <h6><i class="fa fa-info-circle me-2"></i>Quick Help</h6>
-                                            <p class="mb-0">
-                                                For the fastest response, use the call or WhatsApp button at the top of this page.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 d-flex align-items-end">
-                                        <button class="btn btn-primary w-100 py-3 contact-submit-btn" type="submit">
-                                            <i class="fa fa-paper-plane me-2"></i>Send Enquiry
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Main Contact Section End -->
-
-
-    <!-- Map + Visit Section Start -->
-    <section class="container-xxl pb-5">
-        <div class="container">
-            <div class="map-visit-wrap wow fadeInUp" data-wow-delay="0.1s">
-                <div class="row g-0 align-items-stretch">
-                    <div class="col-lg-7">
-                        <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer" class="map-visual">
-                            <div class="map-overlay-card">
-                                <span class="map-mini-badge">Open in Google Maps</span>
-                                <h3>Find Epitome Model Islamic Schools, Mararaba</h3>
-                                <p>Tap below to open the school directly on Google Maps.</p>
-                                <span class="map-cta">Get directions now <i class="fa fa-arrow-right ms-2"></i></span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-5">
-                        <div class="visit-side-panel">
-                            <span class="panel-tag">Visit & Connect</span>
-                            <h3>Planning a visit?</h3>
+                <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
+                    <div class="contact-info-panel h-100">
+                        <div class="contact-info-top">
+                            <span class="panel-tag">School Contact Hub</span>
+                            <h2>Everything you need in one clean section.</h2>
                             <p>
-                                Use the larger map button below to open the school directly on Google Maps.
-                                This now points to <strong>Epitome Model Islamic Schools Mararaba</strong>
-                                instead of the older address search.
+                                EMIS is a private Islamic school offering a total blend of Islamic and Western education,
+                                from Creche to Senior Secondary level, with Tahfeezul-Qur’an and Islamiyyah programmes.
                             </p>
+                        </div>
 
-                            <ul class="visit-benefit-list">
-                                <li><i class="fa fa-check-circle"></i> Direct Google Maps search result</li>
-                                <li><i class="fa fa-check-circle"></i> Bigger and easier-to-click map button</li>
-                                <li><i class="fa fa-check-circle"></i> Fast access for parents and visitors</li>
-                                <li><i class="fa fa-check-circle"></i> Quick phone support before visiting</li>
-                            </ul>
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fa fa-map-marker-alt"></i></div>
+                                <div>
+                                    <h6>School Location</h6>
+                                    <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer">
+                                        Epitome Model Islamic Schools, Mararaba
+                                    </a>
+                                </div>
+                            </div>
 
-                            <div class="visit-actions">
-                                <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer" class="btn btn-primary map-big-btn me-2 mb-2">
-                                    <i class="fa fa-map-marked-alt me-2"></i>Open School on Map
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fa fa-envelope"></i></div>
+                                <div>
+                                    <h6>Email Address</h6>
+                                    <a href="mailto:epitomeschools17@gmail.com">epitomeschools17@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fa fa-clock"></i></div>
+                                <div>
+                                    <h6>Opening Hours</h6>
+                                    <span>Monday – Friday: 8:00am – 2:00pm</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-contact-box">
+                            <h5 class="mb-3">Connect on Socials</h5>
+                            <div class="social-contact-actions">
+                                <a href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer" class="social-action whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
                                 </a>
-                                <a href="tel:08172022402" class="btn btn-outline-primary mb-2">
-                                    <i class="fa fa-phone-alt me-2"></i>Call School
+                                <a href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer" class="social-action instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>@epitome_schools</span>
+                                </a>
+                                <a href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer" class="social-action facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                    <span>Epitome Model Islamic Schools</span>
                                 </a>
                             </div>
                         </div>
+
+                        <div class="contact-feature-grid">
+                            <div class="contact-feature-chip"><i class="fa fa-check-circle"></i> Online Classes</div>
+                            <div class="contact-feature-chip"><i class="fa fa-check-circle"></i> In-Person Classes</div>
+                            <div class="contact-feature-chip"><i class="fa fa-check-circle"></i> Admissions Support</div>
+                            <div class="contact-feature-chip"><i class="fa fa-check-circle"></i> Parent Enquiries</div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="contact-form-panel h-100">
+                        <div class="form-panel-head">
+                            <span class="panel-tag">Enquiry Form</span>
+                            <h2>Send us a message</h2>
+                            <p>
+                                Fill in your details and message clearly. For urgent enquiries,
+                                calling or WhatsApp is usually the fastest option.
+                            </p>
+                        </div>
+
+                        <form class="contact-modern-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="contact-label" for="name">Full Name</label>
+                                    <div class="contact-input-wrap">
+                                        <i class="fa fa-user"></i>
+                                        <input type="text" class="form-control contact-control" id="name" placeholder="Enter your full name">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="contact-label" for="phone">Phone Number</label>
+                                    <div class="contact-input-wrap">
+                                        <i class="fa fa-phone-alt"></i>
+                                        <input type="text" class="form-control contact-control" id="phone" placeholder="Enter your phone number">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="contact-label" for="email">Email Address</label>
+                                    <div class="contact-input-wrap">
+                                        <i class="fa fa-envelope"></i>
+                                        <input type="email" class="form-control contact-control" id="email" placeholder="Enter your email">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="contact-label" for="interest">Enquiry Type</label>
+                                    <div class="contact-input-wrap">
+                                        <i class="fa fa-list-alt"></i>
+                                        <select class="form-control contact-control contact-select" id="interest">
+                                            <option value="">Select enquiry type</option>
+                                            <option>Admission Enquiry</option>
+                                            <option>Creche & Nursery</option>
+                                            <option>Primary School</option>
+                                            <option>Junior Secondary</option>
+                                            <option>Senior Secondary</option>
+                                            <option>Tahfeezul-Qur’an</option>
+                                            <option>Islamiyyah Programme</option>
+                                            <option>General Enquiry</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="contact-label" for="subject">Subject</label>
+                                    <div class="contact-input-wrap">
+                                        <i class="fa fa-tag"></i>
+                                        <input type="text" class="form-control contact-control" id="subject" placeholder="What is this about?">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="contact-label" for="message">Message</label>
+                                    <div class="contact-input-wrap textarea-wrap">
+                                        <i class="fa fa-comment-dots"></i>
+                                        <textarea class="form-control contact-control contact-textarea" id="message" placeholder="Write your message here..."></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="contact-note-card">
+                                        <h6><i class="fa fa-info-circle me-2"></i>Quick Help</h6>
+                                        <p class="mb-0">
+                                            For the fastest response, use the call or WhatsApp button at the top of this page.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 d-flex align-items-end">
+                                    <button class="btn btn-primary w-100 py-3 contact-submit-btn" type="submit">
+                                        <i class="fa fa-paper-plane me-2"></i>Send Enquiry
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </section>
-    <!-- Map + Visit Section End -->
+    </div>
+</section>
+<!-- Main Contact Section End -->
 
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Quick Links</h4>
-                    <a class="btn btn-link" href="{{ url_for('about') }}">About Us</a>
-                    <a class="btn btn-link" href="{{ url_for('programs') }}">Programs</a>
-                    <a class="btn btn-link" href="{{ url_for('staff') }}">Our Staff</a>
-                    <a class="btn btn-link" href="{{ url_for('testimonials') }}">Testimonials</a>
-                    <a class="btn btn-link" href="{{ url_for('contact') }}">Contact Us</a>
+<!-- Map + Visit Section Start -->
+<section class="container-xxl pb-5">
+    <div class="container">
+        <div class="map-visit-wrap wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row g-0 align-items-stretch">
+                <div class="col-lg-7">
+                    <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer" class="map-visual">
+                        <div class="map-overlay-card">
+                            <span class="map-mini-badge">Open in Google Maps</span>
+                            <h3>Find Epitome Model Islamic Schools, Mararaba</h3>
+                            <p>Tap below to open the school directly on Google Maps.</p>
+                            <span class="map-cta">Get directions now <i class="fa fa-arrow-right ms-2"></i></span>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2">
-                        <i class="fa fa-map-marker-alt me-3"></i>
-                        <a class="footer-contact-link" href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer">
-                            Epitome Model Islamic Schools, Mararaba
-                        </a>
-                    </p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a class="footer-contact-link" href="tel:08172022402">0817 202 2402</a></p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a class="footer-contact-link" href="mailto:epitomeschools17@gmail.com">epitomeschools17@gmail.com</a></p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/search/top?q=Epitome%20Model%20Islamic%20Schools" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer"><i class="fa fa-map-marker-alt"></i></a>
-                    </div>
-                </div>
+                <div class="col-lg-5">
+                    <div class="visit-side-panel">
+                        <span class="panel-tag">Visit & Connect</span>
+                        <h3>Planning a visit?</h3>
+                        <p>
+                            Use the larger map button below to open the school directly on Google Maps.
+                            This now points to <strong>Epitome Model Islamic Schools Mararaba</strong>
+                            instead of the older address search.
+                        </p>
 
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Gallery</h4>
-                    <div class="row g-2 pt-2">
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-1.jpg') }}" alt="Gallery 1">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-2.jpg') }}" alt="Gallery 2">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-3.jpg') }}" alt="Gallery 3">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-2.jpg') }}" alt="Gallery 4">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-3.jpg') }}" alt="Gallery 5">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-1.jpg') }}" alt="Gallery 6">
-                        </div>
-                    </div>
-                </div>
+                        <ul class="visit-benefit-list">
+                            <li><i class="fa fa-check-circle"></i> Direct Google Maps search result</li>
+                            <li><i class="fa fa-check-circle"></i> Bigger and easier-to-click map button</li>
+                            <li><i class="fa fa-check-circle"></i> Fast access for parents and visitors</li>
+                            <li><i class="fa fa-check-circle"></i> Quick phone support before visiting</li>
+                        </ul>
 
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">About EMIS</h4>
-                    <p>
-                        EMIS is a private Islamic school offering a total blend of Islamic and Western education,
-                        from Creche to Senior Secondary level.
-                    </p>
-                    <a href="#contactFormSection" class="btn btn-primary py-2 px-4 mt-2">Send Enquiry</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="{{ url_for('home') }}">EMIS</a>, All Rights Reserved.
-                        Designed by <a class="border-bottom" href="https://hakeem-portfolio-nv53.onrender.com/" target="_blank" rel="noopener noreferrer">Ace Tosin</a> | 08036691680
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a href="{{ url_for('home') }}">Home</a>
-                            <a href="{{ url_for('about') }}">About</a>
-                            <a href="{{ url_for('programs') }}">Programs</a>
-                            <a href="{{ url_for('contact') }}">Contact</a>
+                        <div class="visit-actions">
+                            <a href="https://maps.google.com/?q=Epitome+Model+Islamic+Schools+Mararaba" target="_blank" rel="noopener noreferrer" class="btn btn-primary map-big-btn me-2 mb-2">
+                                <i class="fa fa-map-marked-alt me-2"></i>Open School on Map
+                            </a>
+                            <a href="tel:08172022402" class="btn btn-outline-primary mb-2">
+                                <i class="fa fa-phone-alt me-2"></i>Call School
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
-        <i class="bi bi-arrow-up"></i>
-    </a>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
-
-    <!-- Template Javascript -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-</body>
-
-</html>
+</section>
+<!-- Map + Visit Section End -->
+{% endblock %}
