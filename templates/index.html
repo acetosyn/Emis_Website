@@ -12,20 +12,89 @@
 
 {% block content %}
 
+
+
 <!-- Carousel Start -->
+{% set carousel_slides = [
+    {
+        "image": "images/carousel/cover1.jpg",
+        "kicker": "Welcome to EMIS",
+        "title": "Explore Our World of Learning",
+        "text": "Register with us today and give your child a strong foundation in knowledge, discipline, and faith."
+    },
+    {
+        "image": "images/carousel/cover2.jpg",
+        "kicker": "Admissions Open",
+        "title": "A Calm Place to Learn and Grow",
+        "text": "Explore our programs and discover a school environment built for excellence and care."
+    },
+    {
+        "image": "images/carousel/cover3.jpg",
+        "kicker": "Academic Excellence",
+        "title": "Explore Our Programs",
+        "text": "From Nursery to Tahfeez, EMIS supports every learner with structure, purpose, and guidance."
+    },
+    {
+        "image": "images/carousel/cover4.jpg",
+        "kicker": "Join EMIS",
+        "title": "Register With Us Today",
+        "text": "A beautiful learning community where children are nurtured with sound academics and Islamic values."
+    },
+    {
+        "image": "images/carousel/cover5.jpg",
+        "kicker": "Faith & Knowledge",
+        "title": "Balanced Education for Every Child",
+        "text": "We combine strong academics with moral upbringing in a safe and inspiring environment."
+    },
+    {
+        "image": "images/carousel/cover6.jpg",
+        "kicker": "Future Ready",
+        "title": "Building Leaders of Tomorrow",
+        "text": "We prepare learners with confidence, character, and the skills they need for the future."
+    },
+    {
+        "image": "images/carousel/cover7.jpg",
+        "kicker": "Inspiring Growth",
+        "title": "Where Learning Feels Meaningful",
+        "text": "Every child is supported to grow intellectually, spiritually, and socially."
+    },
+    {
+        "image": "images/carousel/cover8.jpg",
+        "kicker": "Excellence Starts Here",
+        "title": "Nurturing Bright Young Minds",
+        "text": "Our classrooms encourage curiosity, discipline, creativity, and lifelong learning."
+    },
+    {
+        "image": "images/carousel/cover9.jpg",
+        "kicker": "A Caring Community",
+        "title": "A School Your Child Will Love",
+        "text": "We provide a welcoming atmosphere where learners feel safe, valued, and motivated."
+    },
+    {
+        "image": "images/carousel/cover10.jpg",
+        "kicker": "Enroll Now",
+        "title": "Start the EMIS Journey Today",
+        "text": "Give your child the opportunity to learn, grow, and succeed in a nurturing environment."
+    }
+] %}
+
 <div class="container-fluid p-0 mb-5">
     <div class="owl-carousel header-carousel position-relative">
-
+        {% for slide in carousel_slides %}
         <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="{{ url_for('static', filename='images/school.JPG') }}" alt="EMIS School Building Slide 1">
+            <img
+                class="img-fluid header-carousel-image"
+                src="{{ url_for('static', filename=slide.image) }}"
+                alt="EMIS Carousel Slide {{ loop.index }}"
+            >
             <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
                 <div class="container">
                     <div class="row justify-content-start">
                         <div class="col-sm-11 col-lg-7 col-xl-6">
                             <div class="hero-simple-card animated slideInLeft">
-                                <span class="hero-simple-kicker">Welcome to EMIS</span>
-                                <h1 class="hero-simple-title">Explore Our World of Learning</h1>
-                                <p class="hero-simple-text">Register with us today and give your child a strong foundation in knowledge, discipline, and faith.</p>
+                                <span class="hero-simple-kicker">{{ slide.kicker }}</span>
+                                <h1 class="hero-simple-title">{{ slide.title }}</h1>
+                                <p class="hero-simple-text">{{ slide.text }}</p>
                                 <div class="hero-btn-group">
                                     <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
                                     <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Enroll Today</a>
@@ -36,70 +105,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="{{ url_for('static', filename='images/school2.JPG') }}" alt="EMIS School Building Slide 2">
-            <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-sm-11 col-lg-7 col-xl-6">
-                            <div class="hero-simple-card animated slideInLeft">
-                                <span class="hero-simple-kicker">Admissions Open</span>
-                                <h1 class="hero-simple-title">A Calm Place to Learn and Grow</h1>
-                                <p class="hero-simple-text">Explore our programs and discover a school environment built for excellence and care.</p>
-                                <div class="hero-btn-group">
-                                    <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
-                                    <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Enroll Today</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="{{ url_for('static', filename='images/c.JPG') }}" alt="EMIS School Building Slide 3">
-            <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-sm-11 col-lg-7 col-xl-6">
-                            <div class="hero-simple-card animated slideInLeft">
-                                <span class="hero-simple-kicker">Academic Excellence</span>
-                                <h1 class="hero-simple-title">Explore Our Programs</h1>
-                                <p class="hero-simple-text">From Nursery to Tahfeez, EMIS supports every learner with structure, purpose, and guidance.</p>
-                                <div class="hero-btn-group">
-                                    <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
-                                    <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Enroll Today</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="{{ url_for('static', filename='images/d.JPG') }}" alt="EMIS School Building Slide 4">
-            <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-sm-11 col-lg-7 col-xl-6">
-                            <div class="hero-simple-card animated slideInLeft">
-                                <span class="hero-simple-kicker">Join EMIS</span>
-                                <h1 class="hero-simple-title">Register With Us Today</h1>
-                                <p class="hero-simple-text">A beautiful learning community where children are nurtured with sound academics and Islamic values.</p>
-                                <div class="hero-btn-group">
-                                    <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
-                                    <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Enroll Today</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
 </div>
 <!-- Carousel End -->
@@ -157,7 +163,7 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp about-image-column" data-wow-delay="0.1s">
                 <div class="position-relative h-100">
-                    <img class="img-fluid position-absolute w-100 h-100 about-image-cover" src="{{ url_for('static', filename='images/school2.jpeg') }}" alt="About EMIS">
+                    <img class="img-fluid position-absolute w-100 h-100 about-image-cover" src="{{ url_for('static', filename='images/school3.JPG') }}" alt="About EMIS">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -210,7 +216,7 @@
                 <div class="row g-3">
                     <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
                         <a class="position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
-                            <img class="img-fluid" src="{{ url_for('static', filename='images/cat-1.jpg') }}" alt="Nursery">
+                            <img class="img-fluid" src="{{ url_for('static', filename='images/nursery.jpg') }}" alt="Nursery">
                             <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
                                 <h5 class="m-0">Nursery</h5>
                                 <small class="text-primary">Strong Early Foundation</small>
@@ -219,7 +225,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
                         <a class="position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
-                            <img class="img-fluid" src="{{ url_for('static', filename='images/cat-2.jpg') }}" alt="Primary School">
+                            <img class="img-fluid" src="{{ url_for('static', filename='images/hij.jpg') }}" alt="Primary School">
                             <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
                                 <h5 class="m-0">Primary</h5>
                                 <small class="text-primary">Knowledge & Character</small>
@@ -228,7 +234,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
                         <a class="position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
-                            <img class="img-fluid" src="{{ url_for('static', filename='images/cat-3.jpg') }}" alt="Secondary School">
+                            <img class="img-fluid" src="{{ url_for('static', filename='images/hij2.jpg') }}" alt="Secondary School">
                             <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
                                 <h5 class="m-0">Secondary</h5>
                                 <small class="text-primary">Academic Excellence</small>
@@ -239,7 +245,7 @@
             </div>
             <div class="col-lg-5 col-md-6 wow zoomIn category-tall-card" data-wow-delay="0.7s">
                 <a class="position-relative d-block h-100 overflow-hidden" href="{{ url_for('programs') }}">
-                    <img class="img-fluid position-absolute w-100 h-100 about-image-cover" src="{{ url_for('static', filename='images/cat-4.jpg') }}" alt="Tahfeez and Adult Classes">
+                    <img class="img-fluid position-absolute w-100 h-100 about-image-cover" src="{{ url_for('static', filename='images/class.jpg') }}" alt="Tahfeez and Adult Classes">
                     <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
                         <h5 class="m-0">Tahfeez & Adult Classes</h5>
                         <small class="text-primary">Faith, Growth & Discipline</small>
@@ -252,81 +258,80 @@
 <!-- Categories End -->
 
 
-<!-- Programs Start -->
+<!-- Learning Stages Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Programs</h6>
-            <h1 class="mb-5">Featured Learning Areas</h1>
+            <h6 class="section-title bg-white text-center text-primary px-3">Learning Stages</h6>
+            <h1 class="mb-5">Programs Start Learning Stages</h1>
         </div>
-        <div class="row g-4 justify-content-center">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="course-item bg-light h-100">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='images/course-1.jpg') }}" alt="Western Education">
-                        <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                            <a href="{{ url_for('about') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-left">Read More</a>
-                            <a href="{{ url_for('contact') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-right">Enroll</a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 pb-0">
-                        <h5 class="mb-4">Western Education Curriculum</h5>
-                        <p>Well-structured classroom learning designed to help pupils and students thrive academically.</p>
-                    </div>
-                    <div class="d-flex border-top">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-school text-primary me-2"></i>All Levels</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-book text-primary me-2"></i>Structured Learning</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user-graduate text-primary me-2"></i>Excellent Output</small>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="course-item bg-light h-100">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='images/course-2.jpg') }}" alt="Tahfeez Program">
-                        <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                            <a href="{{ url_for('about') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-left">Read More</a>
-                            <a href="{{ url_for('contact') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-right">Enroll</a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 pb-0">
-                        <h5 class="mb-4">Full-Time Tahfeez Programme</h5>
-                        <p>Qur’anic memorization and deep Islamic grounding with support suited to growing learners.</p>
-                    </div>
-                    <div class="d-flex border-top">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-mosque text-primary me-2"></i>Islamic Focus</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-child text-primary me-2"></i>Guided Support</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-heart text-primary me-2"></i>Values Based</small>
-                    </div>
-                </div>
-            </div>
+        <div class="learning-stages-grid">
 
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="course-item bg-light h-100">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='images/course-3.jpg') }}" alt="Adult Classes">
-                        <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                            <a href="{{ url_for('about') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-left">Read More</a>
-                            <a href="{{ url_for('contact') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-right">Enroll</a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 pb-0">
-                        <h5 class="mb-4">Adult Classes & Islamic Learning</h5>
-                        <p>Comprehensive learning options that support faith, growth, discipline, and lifelong development.</p>
-                    </div>
-                    <div class="d-flex border-top">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-primary me-2"></i>Sound Morals</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-users text-primary me-2"></i>Guided Training</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-award text-primary me-2"></i>High Standard</small>
+            <a href="{{ url_for('about') }}" class="stage-card stage-card-wide wow fadeInUp" data-wow-delay="0.1s">
+                <img src="{{ url_for('static', filename='images/stages/stage1.jpg') }}" alt="Nursery Section">
+                <div class="stage-card-overlay">
+                    <div class="stage-card-badge">
+                        <h4>Nursery</h4>
+                        <p>Strong Early Foundation</p>
                     </div>
                 </div>
-            </div>
+            </a>
+
+            <a href="{{ url_for('about') }}" class="stage-card stage-card-tall wow fadeInUp" data-wow-delay="0.2s">
+                <img src="{{ url_for('static', filename='images/stages/stage2.jpg') }}" alt="Primary Section">
+                <div class="stage-card-overlay">
+                    <div class="stage-card-badge">
+                        <h4>Primary</h4>
+                        <p>Knowledge & Character</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{{ url_for('about') }}" class="stage-card wow fadeInUp" data-wow-delay="0.3s">
+                <img src="{{ url_for('static', filename='images/stages/stage3.jpg') }}" alt="Secondary Section">
+                <div class="stage-card-overlay">
+                    <div class="stage-card-badge">
+                        <h4>Secondary</h4>
+                        <p>Academic Excellence</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{{ url_for('about') }}" class="stage-card stage-card-tall wow fadeInUp" data-wow-delay="0.4s">
+                <img src="{{ url_for('static', filename='images/stages/stage4.jpg') }}" alt="Tahfeez and Adult Classes">
+                <div class="stage-card-overlay">
+                    <div class="stage-card-badge">
+                        <h4>Tahfeez & Adult Classes</h4>
+                        <p>Faith, Growth & Discipline</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{{ url_for('about') }}" class="stage-card wow fadeInUp" data-wow-delay="0.5s">
+                <img src="{{ url_for('static', filename='images/stages/stage5.jpg') }}" alt="Islamic Studies">
+                <div class="stage-card-overlay">
+                    <div class="stage-card-badge">
+                        <h4>Islamic Studies</h4>
+                        <p>Values Based Learning</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{{ url_for('about') }}" class="stage-card wow fadeInUp" data-wow-delay="0.6s">
+                <img src="{{ url_for('static', filename='images/stages/stage6.jpg') }}" alt="Creative Activities">
+                <div class="stage-card-overlay">
+                    <div class="stage-card-badge">
+                        <h4>Creative Activities</h4>
+                        <p>Skills, Confidence & Expression</p>
+                    </div>
+                </div>
+            </a>
+
         </div>
     </div>
 </div>
-<!-- Programs End -->
-
+<!-- Learning Stages End -->
 
 <!-- Staff Start -->
 <div class="container-xxl py-5">

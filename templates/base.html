@@ -22,6 +22,7 @@
 
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+     <link href="{{ url_for('static', filename='css/chatbot.css') }}" rel="stylesheet">
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -318,15 +319,181 @@
         </div>
     </div>
 
-    {% block floating_extras %}
-    <a href="#" class="emis-chatbot-float" aria-label="Open School Chatbot">
-        <span class="emis-chatbot-ripple"></span>
-        <span class="emis-chatbot-ripple ripple-delay"></span>
-        <span class="emis-chatbot-icon">
-            <i class="fa fa-comments"></i>
-        </span>
-    </a>
-    {% endblock %}
+{% block floating_extras %}
+<!-- EMIS Chatbot Float Button -->
+<button type="button" class="emis-chatbot-float" id="emisChatToggle" aria-label="Open EMIS Chatbot">
+    <span class="emis-chatbot-ripple"></span>
+    <span class="emis-chatbot-ripple ripple-delay"></span>
+    <span class="emis-chatbot-icon">
+        <i class="fa fa-comments"></i>
+    </span>
+</button>
+
+<!-- EMIS Chatbot Panel -->
+<div
+    class="emis-chatbot-panel"
+    id="emisChatPanel"
+    aria-hidden="true"
+    data-state="closed"
+>
+    <div class="emis-chatbot-window">
+
+        <!-- Header -->
+        <div class="emis-chatbot-header">
+            <div class="emis-chatbot-header-left">
+                <button
+                    type="button"
+                    class="emis-chat-icon-btn emis-chat-back-btn"
+                    id="emisChatMinimize"
+                    aria-label="Minimize chatbot"
+                >
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+
+                <div class="emis-chatbot-avatars" aria-hidden="true">
+                    <img
+                        src="{{ url_for('static', filename='images/emis3.png') }}"
+                        alt="EMIS Assistant"
+                        class="emis-chatbot-header-avatar emis-avatar-main"
+                    >
+                    <img
+                        src="{{ url_for('static', filename='images/emis3.png') }}"
+                        alt="EMIS Support"
+                        class="emis-chatbot-header-avatar emis-avatar-two"
+                    >
+                    <img
+                        src="{{ url_for('static', filename='images/emis3.png') }}"
+                        alt="EMIS Bot"
+                        class="emis-chatbot-header-avatar emis-avatar-three"
+                    >
+                </div>
+
+                <div class="emis-chatbot-header-meta">
+                    <h5 class="emis-chatbot-title">EMIS Assistant</h5>
+                    <div class="emis-chatbot-status">
+                        <i class="fa fa-clock"></i>
+                        <span>A few minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="emis-chatbot-header-actions">
+                <button
+                    type="button"
+                    class="emis-chat-icon-btn"
+                    id="emisChatMore"
+                    aria-label="More options"
+                >
+                    <i class="fa fa-ellipsis-h"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="emis-chat-icon-btn"
+                    id="emisChatClose"
+                    aria-label="Close chatbot"
+                >
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="emis-chatbot-body" id="emisChatMessages">
+            <div class="emis-chat-system-intro">
+                <p>
+                    Welcome to EMIS Support! Please send us your questions about admissions,
+                    programs, fees, school levels, Tahfeez, contact details, or any other
+                    information about Epitome Model Islamic School.
+                </p>
+            </div>
+
+            <div class="emis-chat-message emis-chat-message-bot">
+                <img
+                    src="{{ url_for('static', filename='images/emis3.png') }}"
+                    alt="Bot Avatar"
+                    class="emis-chat-avatar"
+                >
+                <div class="emis-chat-bubble-wrap">
+                    <div class="emis-chat-bubble">
+                        Hi there 👋 I’m the EMIS Assistant. Ask me anything about our school.
+                    </div>
+                    <div class="emis-chat-time">Just now</div>
+                </div>
+            </div>
+
+            <div class="emis-chat-message emis-chat-message-user">
+                <div class="emis-chat-bubble-wrap">
+                    <div class="emis-chat-bubble">
+                        Hello, I want to know more about your programs.
+                    </div>
+                    <div class="emis-chat-time">Just now</div>
+                </div>
+                <img
+                    src="{{ url_for('static', filename='images/user-avatar.png') }}"
+                    alt="User Avatar"
+                    class="emis-chat-avatar"
+                >
+            </div>
+
+            <div class="emis-chat-message emis-chat-message-bot">
+                <img
+                    src="{{ url_for('static', filename='images/emis3.png') }}"
+                    alt="Bot Avatar"
+                    class="emis-chat-avatar"
+                >
+                <div class="emis-chat-bubble-wrap">
+                    <div class="emis-chat-bubble">
+                        We offer Nursery, Primary, Secondary, Full-Time Tahfeez, and Adult Classes.
+                    </div>
+                    <div class="emis-chat-time">Just now</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Composer -->
+        <div class="emis-chatbot-composer">
+            <form id="emisChatForm" class="emis-chatbot-composer-box" action="javascript:void(0);">
+                <div class="emis-chatbot-input-row">
+                    <textarea
+                        id="emisChatInput"
+                        class="emis-chatbot-input"
+                        placeholder="Message..."
+                        rows="1"
+                    ></textarea>
+
+                    <button
+                        type="submit"
+                        class="emis-chat-send-btn"
+                        id="emisChatSend"
+                        aria-label="Send message"
+                    >
+                        <i class="fa fa-arrow-up"></i>
+                    </button>
+                </div>
+
+                <div class="emis-chatbot-tools">
+                    <button type="button" class="emis-chat-tool-btn" aria-label="Attach file">
+                        <i class="fa fa-paperclip"></i>
+                    </button>
+
+                    <button type="button" class="emis-chat-tool-btn" aria-label="Emoji">
+                        <i class="far fa-smile"></i>
+                    </button>
+
+                    <button type="button" class="emis-chat-tool-btn emis-chat-gif-btn" aria-label="GIF">
+                        <span class="emis-chat-gif-label">GIF</span>
+                    </button>
+
+                    <button type="button" class="emis-chat-tool-btn" id="emisChatMic" aria-label="Voice input">
+                        <i class="fa fa-microphone"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
 
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
         <i class="bi bi-arrow-up"></i>
@@ -339,6 +506,8 @@
     <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
     <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+
 
     {% block extra_js %}{% endblock %}
 </body>
