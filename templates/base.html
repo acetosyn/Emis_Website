@@ -22,7 +22,7 @@
 
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-     <link href="{{ url_for('static', filename='css/chatbot.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/chatbot.css') }}" rel="stylesheet">
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -103,45 +103,35 @@
                 </div>
 
                 <!-- School Portal -->
-                <div class="nav-item dropdown nav-item-split">
-                    <div class="nav-link-group">
-                        <span class="nav-link nav-link-main">School Portal</span>
-
-                        <button class="nav-link-toggle d-xl-none" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle School Portal menu">
-                            <i class="fa fa-chevron-down"></i>
-                        </button>
-
-                        <a href="#" class="nav-link dropdown-toggle nav-link-desktop d-none d-xl-inline-flex">
-                            School Portal
-                        </a>
-                    </div>
-
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="#" class="dropdown-item">Staff Login</a>
-                        <a href="#" class="dropdown-item">School Portal</a>
-                        <a href="#" class="dropdown-item">Parent Login</a>
-                    </div>
+                <div class="nav-item nav-item-split">
+                    <a
+                        href="https://epitomeschools.com/"
+                        class="nav-link nav-link-main nav-link-desktop d-inline-flex align-items-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        School Portal
+                    </a>
                 </div>
 
                 <!-- Events and News -->
                 <div class="nav-item dropdown nav-item-split">
                     <div class="nav-link-group">
-                        <span class="nav-link nav-link-main">Events and News</span>
+                        <span class="nav-link nav-link-main {% if current_page == 'culture' %}active{% endif %}">Events and News</span>
 
                         <button class="nav-link-toggle d-xl-none" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle Events and News menu">
                             <i class="fa fa-chevron-down"></i>
                         </button>
 
-                        <a href="#" class="nav-link dropdown-toggle nav-link-desktop d-none d-xl-inline-flex">
+                        <a href="#" class="nav-link dropdown-toggle nav-link-desktop d-none d-xl-inline-flex {% if current_page == 'culture' %}active{% endif %}">
                             Events and News
                         </a>
                     </div>
 
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="#" class="dropdown-item">Qur'an Musabaqah</a>
-                        <a href="#" class="dropdown-item">End of the Year Event</a>
-                        <a href="#" class="dropdown-item">Cultural Day</a>
+                        <a href="{{ url_for('culture') }}" class="dropdown-item {% if current_page == 'culture' %}active{% endif %}">Cultural Day</a>
                         <a href="#" class="dropdown-item">Independence Day</a>
+                        <a href="#" class="dropdown-item">End of the Year Event</a>
                         <a href="#" class="dropdown-item">News</a>
                     </div>
                 </div>
@@ -246,8 +236,8 @@
                     <h4 class="text-white mb-3">Quick Links</h4>
                     <a class="btn btn-link" href="{{ url_for('about') }}">About Us</a>
                     <a class="btn btn-link" href="{{ url_for('programs') }}">Programs</a>
-                    <a class="btn btn-link" href="#">School Portal</a>
-                    <a class="btn btn-link" href="#">Events and News</a>
+                    <a class="btn btn-link" href="https://epitomeschools.com/" target="_blank" rel="noopener noreferrer">School Portal</a>
+                    <a class="btn btn-link" href="{{ url_for('culture') }}">Cultural Day</a>
                     <a class="btn btn-link" href="{{ url_for('contact') }}">Contact Us</a>
                 </div>
 
@@ -261,30 +251,6 @@
                         <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/epitome_schools/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-outline-light btn-social" href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
                         <a class="btn btn-outline-light btn-social" href="mailto:epitomeschools17@gmail.com" aria-label="Email EMIS"><i class="fa fa-envelope"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Gallery</h4>
-                    <div class="row g-2 pt-2">
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-1.jpg') }}" alt="Gallery 1">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-2.jpg') }}" alt="Gallery 2">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/course-3.jpg') }}" alt="Gallery 3">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/school.JPG') }}" alt="Gallery 4">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/school2.jpeg') }}" alt="Gallery 5">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{ url_for('static', filename='images/school4.jpg') }}" alt="Gallery 6">
-                        </div>
                     </div>
                 </div>
 
@@ -319,181 +285,199 @@
         </div>
     </div>
 
-{% block floating_extras %}
-<!-- EMIS Chatbot Float Button -->
-<button type="button" class="emis-chatbot-float" id="emisChatToggle" aria-label="Open EMIS Chatbot">
-    <span class="emis-chatbot-ripple"></span>
-    <span class="emis-chatbot-ripple ripple-delay"></span>
-    <span class="emis-chatbot-icon">
-        <i class="fa fa-comments"></i>
-    </span>
-</button>
+    {% block floating_extras %}
+    <!-- EMIS Chatbot Float Button -->
+    <button type="button" class="emis-chatbot-float" id="emisChatToggle" aria-label="Open EMIS Chatbot">
+        <span class="emis-chatbot-ripple"></span>
+        <span class="emis-chatbot-ripple ripple-delay"></span>
+        <span class="emis-chatbot-icon">
+            <i class="fa fa-comments"></i>
+        </span>
+    </button>
 
-<!-- EMIS Chatbot Panel -->
-<div
-    class="emis-chatbot-panel"
-    id="emisChatPanel"
-    aria-hidden="true"
-    data-state="closed"
->
-    <div class="emis-chatbot-window">
+    <!-- EMIS Chatbot Panel -->
+    <div
+        class="emis-chatbot-panel"
+        id="emisChatPanel"
+        aria-hidden="true"
+        data-state="closed"
+    >
+        <div class="emis-chatbot-window">
 
-        <!-- Header -->
-        <div class="emis-chatbot-header">
-            <div class="emis-chatbot-header-left">
-                <button
-                    type="button"
-                    class="emis-chat-icon-btn emis-chat-back-btn"
-                    id="emisChatMinimize"
-                    aria-label="Minimize chatbot"
-                >
-                    <i class="fa fa-chevron-left"></i>
-                </button>
-
-                <div class="emis-chatbot-avatars" aria-hidden="true">
-                    <img
-                        src="{{ url_for('static', filename='images/emis3.png') }}"
-                        alt="EMIS Assistant"
-                        class="emis-chatbot-header-avatar emis-avatar-main"
+            <!-- Header -->
+            <div class="emis-chatbot-header">
+                <div class="emis-chatbot-header-left">
+                    <button
+                        type="button"
+                        class="emis-chat-icon-btn emis-chat-minimize-btn"
+                        id="emisChatMinimize"
+                        aria-label="Minimize chatbot"
+                        title="Minimize"
                     >
-                    <img
-                        src="{{ url_for('static', filename='images/emis3.png') }}"
-                        alt="EMIS Support"
-                        class="emis-chatbot-header-avatar emis-avatar-two"
+                        <i class="fa fa-minus"></i>
+                    </button>
+
+                    <div class="emis-chatbot-single-avatar-wrap" aria-hidden="true">
+                        <img
+                            src="{{ url_for('static', filename='images/emis3.png') }}"
+                            alt="EMIS Logo"
+                            class="emis-chatbot-single-avatar"
+                        >
+                    </div>
+
+                    <div class="emis-chatbot-header-meta">
+                        <h5 class="emis-chatbot-title">EMIS Assistant</h5>
+                        <div class="emis-chatbot-status">
+                            <i class="fa fa-clock"></i>
+                            <span>A few minutes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="emis-chatbot-header-actions">
+                    <button
+                        type="button"
+                        class="emis-chat-icon-btn"
+                        id="emisChatMore"
+                        aria-label="More options"
+                        title="More"
                     >
-                    <img
-                        src="{{ url_for('static', filename='images/emis3.png') }}"
-                        alt="EMIS Bot"
-                        class="emis-chatbot-header-avatar emis-avatar-three"
-                    >
-                </div>
-
-                <div class="emis-chatbot-header-meta">
-                    <h5 class="emis-chatbot-title">EMIS Assistant</h5>
-                    <div class="emis-chatbot-status">
-                        <i class="fa fa-clock"></i>
-                        <span>A few minutes</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="emis-chatbot-header-actions">
-                <button
-                    type="button"
-                    class="emis-chat-icon-btn"
-                    id="emisChatMore"
-                    aria-label="More options"
-                >
-                    <i class="fa fa-ellipsis-h"></i>
-                </button>
-
-                <button
-                    type="button"
-                    class="emis-chat-icon-btn"
-                    id="emisChatClose"
-                    aria-label="Close chatbot"
-                >
-                    <i class="fa fa-times"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Body -->
-        <div class="emis-chatbot-body" id="emisChatMessages">
-            <div class="emis-chat-system-intro">
-                <p>
-                    Welcome to EMIS Support! Please send us your questions about admissions,
-                    programs, fees, school levels, Tahfeez, contact details, or any other
-                    information about Epitome Model Islamic School.
-                </p>
-            </div>
-
-            <div class="emis-chat-message emis-chat-message-bot">
-                <img
-                    src="{{ url_for('static', filename='images/emis3.png') }}"
-                    alt="Bot Avatar"
-                    class="emis-chat-avatar"
-                >
-                <div class="emis-chat-bubble-wrap">
-                    <div class="emis-chat-bubble">
-                        Hi there 👋 I’m the EMIS Assistant. Ask me anything about our school.
-                    </div>
-                    <div class="emis-chat-time">Just now</div>
-                </div>
-            </div>
-
-            <div class="emis-chat-message emis-chat-message-user">
-                <div class="emis-chat-bubble-wrap">
-                    <div class="emis-chat-bubble">
-                        Hello, I want to know more about your programs.
-                    </div>
-                    <div class="emis-chat-time">Just now</div>
-                </div>
-                <img
-                    src="{{ url_for('static', filename='images/user-avatar.png') }}"
-                    alt="User Avatar"
-                    class="emis-chat-avatar"
-                >
-            </div>
-
-            <div class="emis-chat-message emis-chat-message-bot">
-                <img
-                    src="{{ url_for('static', filename='images/emis3.png') }}"
-                    alt="Bot Avatar"
-                    class="emis-chat-avatar"
-                >
-                <div class="emis-chat-bubble-wrap">
-                    <div class="emis-chat-bubble">
-                        We offer Nursery, Primary, Secondary, Full-Time Tahfeez, and Adult Classes.
-                    </div>
-                    <div class="emis-chat-time">Just now</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Composer -->
-        <div class="emis-chatbot-composer">
-            <form id="emisChatForm" class="emis-chatbot-composer-box" action="javascript:void(0);">
-                <div class="emis-chatbot-input-row">
-                    <textarea
-                        id="emisChatInput"
-                        class="emis-chatbot-input"
-                        placeholder="Message..."
-                        rows="1"
-                    ></textarea>
+                        <i class="fa fa-ellipsis-h"></i>
+                    </button>
 
                     <button
-                        type="submit"
-                        class="emis-chat-send-btn"
-                        id="emisChatSend"
-                        aria-label="Send message"
+                        type="button"
+                        class="emis-chat-icon-btn"
+                        id="emisChatClose"
+                        aria-label="Close chatbot"
+                        title="Close"
                     >
-                        <i class="fa fa-arrow-up"></i>
+                        <i class="fa fa-times"></i>
                     </button>
                 </div>
+            </div>
 
-                <div class="emis-chatbot-tools">
-                    <button type="button" class="emis-chat-tool-btn" aria-label="Attach file">
-                        <i class="fa fa-paperclip"></i>
-                    </button>
-
-                    <button type="button" class="emis-chat-tool-btn" aria-label="Emoji">
-                        <i class="far fa-smile"></i>
-                    </button>
-
-                    <button type="button" class="emis-chat-tool-btn emis-chat-gif-btn" aria-label="GIF">
-                        <span class="emis-chat-gif-label">GIF</span>
-                    </button>
-
-                    <button type="button" class="emis-chat-tool-btn" id="emisChatMic" aria-label="Voice input">
-                        <i class="fa fa-microphone"></i>
-                    </button>
+            <!-- Body -->
+            <div class="emis-chatbot-body" id="emisChatMessages">
+                <div class="emis-chat-system-intro">
+                    <p>
+                        Welcome to EMIS Support! Please send us your questions about admissions,
+                        programs, fees, school levels, Tahfeez, contact details, or any other
+                        information about Epitome Model Islamic School.
+                    </p>
                 </div>
-            </form>
+
+                <div class="emis-chat-message emis-chat-message-bot">
+                    <img
+                        src="{{ url_for('static', filename='images/hijab.png') }}"
+                        alt="Bot Avatar"
+                        class="emis-chat-avatar"
+                    >
+                    <div class="emis-chat-bubble-wrap">
+                        <div class="emis-chat-bubble">
+                            Hi there 👋 I’m the EMIS Assistant. Ask me anything about our school.
+                        </div>
+                        <div class="emis-chat-time">Just now</div>
+                    </div>
+                </div>
+
+                <div class="emis-chat-message emis-chat-message-user">
+                    <div class="emis-chat-bubble-wrap">
+                        <div class="emis-chat-bubble">
+                            Hello, I want to know more about your programs.
+                        </div>
+                        <div class="emis-chat-time">Just now</div>
+                    </div>
+                    <img
+                        src="{{ url_for('static', filename='images/student.png') }}"
+                        alt="User Avatar"
+                        class="emis-chat-avatar"
+                    >
+                </div>
+
+                <div class="emis-chat-message emis-chat-message-bot">
+                    <img
+                        src="{{ url_for('static', filename='images/hijab.png') }}"
+                        alt="Bot Avatar"
+                        class="emis-chat-avatar"
+                    >
+                    <div class="emis-chat-bubble-wrap">
+                        <div class="emis-chat-bubble">
+                            We offer Nursery, Primary, Secondary, Full-Time Tahfeez, and Adult Classes.
+                        </div>
+                        <div class="emis-chat-time">Just now</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Composer -->
+            <div class="emis-chatbot-composer">
+                <form id="emisChatForm" class="emis-chatbot-composer-box" action="javascript:void(0);">
+                    <div class="emis-chatbot-input-row">
+                        <textarea
+                            id="emisChatInput"
+                            class="emis-chatbot-input"
+                            placeholder="Message..."
+                            rows="1"
+                        ></textarea>
+
+                        <button
+                            type="submit"
+                            class="emis-chat-send-btn"
+                            id="emisChatSend"
+                            aria-label="Send message"
+                            title="Send"
+                        >
+                            <i class="fa fa-arrow-up"></i>
+                        </button>
+                    </div>
+
+                    <div class="emis-chatbot-tools">
+                        <button
+                            type="button"
+                            class="emis-chat-tool-btn"
+                            id="emisChatAttach"
+                            aria-label="Attach file"
+                            title="Attach"
+                        >
+                            <i class="fa fa-paperclip"></i>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="emis-chat-tool-btn"
+                            id="emisChatEmoji"
+                            aria-label="Emoji"
+                            title="Emoji"
+                        >
+                            <i class="far fa-smile"></i>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="emis-chat-tool-btn emis-chat-gif-btn"
+                            id="emisChatGif"
+                            aria-label="GIF"
+                            title="GIF"
+                        >
+                            <span class="emis-chat-gif-label">GIF</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="emis-chat-tool-btn"
+                            id="emisChatMic"
+                            aria-label="Voice input"
+                            title="Voice"
+                        >
+                            <i class="fa fa-microphone"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
 
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
         <i class="bi bi-arrow-up"></i>
@@ -506,8 +490,7 @@
     <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
     <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-     <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
-
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
 
     {% block extra_js %}{% endblock %}
 </body>

@@ -41,6 +41,10 @@ def page_404():
     return render_template( "404.html", page_title="Page Not Found", current_page="404"), 404
 
 
+@app.route("/culture")
+def culture():
+    return render_template("culture.html", page_title="EMIS Cultural Day", current_page="culture")
+
 # -----------------------------
 # Error Handlers
 # -----------------------------

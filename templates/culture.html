@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title or 'EMIS Cultural Day' }}{% endblock %}
+
+{% block meta_keywords %}EMIS Cultural Day, Nigerian Culture, EMIS Events, Yoruba, Igbo, Hausa, School Cultural Day, Nigerian Tribes, Kings and Queens{% endblock %}
+
+{% block meta_description %}Explore EMIS Cultural Day where students beautifully represent Nigerian cultures, traditions, royalty, drama, storytelling, and heritage through vibrant outfits and performances.{% endblock %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/culture.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<section class="culture-hero">
+    <div class="container">
+        <div class="culture-hero-inner">
+            <div class="culture-hero-copy wow fadeInUp" data-wow-delay="0.1s">
+                <span class="culture-kicker">EMIS Cultural Day</span>
+                <h1 class="culture-hero-title">A Beautiful Celebration of Nigeria’s Rich Heritage</h1>
+                <p class="culture-hero-text">
+                    At EMIS, Cultural Day is a colourful and memorable celebration where our pupils and students proudly
+                    showcase the beauty of Nigeria’s diverse traditions. Children appear in elegant native attires from
+                    different parts of the country, especially the major tribes such as Yoruba, Igbo, and Hausa, while
+                    embracing values of unity, confidence, and cultural pride.
+                </p>
+
+                <div class="culture-hero-stats">
+                    <div class="culture-stat-card">
+                        <strong>29</strong>
+                        <span>Beautiful Moments</span>
+                    </div>
+                    <div class="culture-stat-card">
+                        <strong>3</strong>
+                        <span>Experience Segments</span>
+                    </div>
+                    <div class="culture-stat-card">
+                        <strong>1</strong>
+                        <span>United Heritage</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="culture-hero-highlight wow zoomIn" data-wow-delay="0.3s">
+                <div class="culture-hero-feature-card">
+                    <div class="culture-feature-badge">
+                        <i class="fa fa-star"></i>
+                        <span>Culture • Colour • Confidence</span>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/culture/culture09.jpg') }}" alt="EMIS Cultural Day Featured Image" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="culture-section culture-section-light">
+    <div class="container">
+        <div class="culture-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="section-title bg-white text-center text-primary px-3">Segment One</span>
+            <h2 class="culture-section-title">The Beauty of EMIS Cultural Day</h2>
+            <p class="culture-section-text">
+                EMIS Cultural Day gives children the opportunity to appreciate the beauty of their roots and the richness
+                of Nigerian tradition. From finely styled native attire to graceful cultural presentation, the day reflects
+                unity in diversity and teaches our learners to value identity, heritage, and respect for one another.
+            </p>
+        </div>
+
+        <div class="culture-masonry-grid">
+            <article class="culture-card culture-card-feature wow fadeInUp" data-wow-delay="0.10s">
+                <img src="{{ url_for('static', filename='images/culture/culture01.jpg') }}" alt="EMIS Cultural Day Image 1" loading="lazy">
+            </article>
+            <article class="culture-card wow fadeInUp" data-wow-delay="0.15s">
+                <img src="{{ url_for('static', filename='images/culture/culture02.jpg') }}" alt="EMIS Cultural Day Image 2" loading="lazy">
+            </article>
+            <article class="culture-card wow fadeInUp" data-wow-delay="0.20s">
+                <img src="{{ url_for('static', filename='images/culture/culture03.jpg') }}" alt="EMIS Cultural Day Image 3" loading="lazy">
+            </article>
+            <article class="culture-card wow fadeInUp" data-wow-delay="0.25s">
+                <img src="{{ url_for('static', filename='images/culture/culture04.jpg') }}" alt="EMIS Cultural Day Image 4" loading="lazy">
+            </article>
+            <article class="culture-card wow fadeInUp" data-wow-delay="0.30s">
+                <img src="{{ url_for('static', filename='images/culture/culture05.jpg') }}" alt="EMIS Cultural Day Image 5" loading="lazy">
+            </article>
+            <article class="culture-card culture-card-feature wow fadeInUp" data-wow-delay="0.35s">
+                <img src="{{ url_for('static', filename='images/culture/culture06.jpg') }}" alt="EMIS Cultural Day Image 6" loading="lazy">
+            </article>
+            <article class="culture-card wow fadeInUp" data-wow-delay="0.40s">
+                <img src="{{ url_for('static', filename='images/culture/culture07.jpg') }}" alt="EMIS Cultural Day Image 7" loading="lazy">
+            </article>
+            <article class="culture-card wow fadeInUp" data-wow-delay="0.45s">
+                <img src="{{ url_for('static', filename='images/culture/culture08.jpg') }}" alt="EMIS Cultural Day Image 8" loading="lazy">
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="culture-section culture-section-royal">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <div class="culture-copy-block wow fadeInLeft" data-wow-delay="0.1s">
+                    <span class="section-title bg-white text-start text-primary pe-3">Segment Two</span>
+                    <h2 class="culture-section-title">Young Kings, Queens, and Joyful Celebration</h2>
+                    <p class="culture-section-text">
+                        One of the most exciting parts of the day is seeing our children dressed like young kings, queens,
+                        chiefs, princesses, and distinguished cultural icons. Their confidence, smiles, and elegance make
+                        the event truly unforgettable. Every appearance reflects creativity, pride, and the joy of learning
+                        through celebration.
+                    </p>
+                    <p class="culture-section-text">
+                        This segment highlights the lively atmosphere of the day, where students shine with poise and
+                        happiness while families, teachers, and fellow learners admire the beauty of every presentation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="culture-slider-stage" id="cultureRoyalStage">
+                    <div class="culture-slider-grid active">
+                        <article class="culture-slider-card slide-in-right delay-1">
+                            <img src="{{ url_for('static', filename='images/culture/culture10.jpg') }}" alt="Royal Cultural Day Image 10" loading="lazy">
+                        </article>
+                        <article class="culture-slider-card slide-in-right delay-2">
+                            <img src="{{ url_for('static', filename='images/culture/culture11.jpg') }}" alt="Royal Cultural Day Image 11" loading="lazy">
+                        </article>
+                        <article class="culture-slider-card slide-in-right delay-3">
+                            <img src="{{ url_for('static', filename='images/culture/culture12.jpg') }}" alt="Royal Cultural Day Image 12" loading="lazy">
+                        </article>
+                    </div>
+
+                    <div class="culture-slider-grid">
+                        <article class="culture-slider-card slide-in-right delay-1">
+                            <img src="{{ url_for('static', filename='images/culture/culture13.jpg') }}" alt="Royal Cultural Day Image 13" loading="lazy">
+                        </article>
+                        <article class="culture-slider-card slide-in-right delay-2">
+                            <img src="{{ url_for('static', filename='images/culture/culture14.jpg') }}" alt="Royal Cultural Day Image 14" loading="lazy">
+                        </article>
+                        <article class="culture-slider-card slide-in-right delay-3">
+                            <img src="{{ url_for('static', filename='images/culture/culture15.jpg') }}" alt="Royal Cultural Day Image 15" loading="lazy">
+                        </article>
+                    </div>
+
+                    <div class="culture-slider-grid">
+                        <article class="culture-slider-card slide-in-right delay-1">
+                            <img src="{{ url_for('static', filename='images/culture/culture16.jpg') }}" alt="Royal Cultural Day Image 16" loading="lazy">
+                        </article>
+                        <article class="culture-slider-card slide-in-right delay-2">
+                            <img src="{{ url_for('static', filename='images/culture/culture17.jpg') }}" alt="Royal Cultural Day Image 17" loading="lazy">
+                        </article>
+                        <article class="culture-slider-card slide-in-right delay-3">
+                            <img src="{{ url_for('static', filename='images/culture/culture18.jpg') }}" alt="Royal Cultural Day Image 18" loading="lazy">
+                        </article>
+                    </div>
+                </div>
+
+                <div class="culture-slider-indicators" id="cultureRoyalIndicators">
+                    <button class="active" type="button" aria-label="Show royal gallery slide 1"></button>
+                    <button type="button" aria-label="Show royal gallery slide 2"></button>
+                    <button type="button" aria-label="Show royal gallery slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="culture-section culture-section-story">
+    <div class="container">
+        <div class="culture-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="section-title bg-white text-center text-primary px-3">Segment Three</span>
+            <h2 class="culture-section-title">Drama, Narration, Storytelling, and Talent Showcase</h2>
+            <p class="culture-section-text">
+                Cultural Day at EMIS is more than clothing and colour. It is also a lively platform for drama, narration,
+                storytelling, poetry, cultural presentations, and talent display by both primary and secondary students.
+                These performances help children express themselves boldly while learning about the unique stories, values,
+                and traditions that make Nigeria special.
+            </p>
+            <p class="culture-section-text">
+                Through performances and presentations, learners participate actively, build confidence, and celebrate the
+                richness of our national identity in a meaningful and memorable way.
+            </p>
+        </div>
+
+        <div class="culture-emerge-grid">
+            <article class="culture-emerge-card wow zoomIn" data-wow-delay="0.10s">
+                <img src="{{ url_for('static', filename='images/culture/culture19.jpg') }}" alt="Storytelling Cultural Day Image 19" loading="lazy">
+            </article>
+            <article class="culture-emerge-card wow fadeInUp" data-wow-delay="0.15s">
+                <img src="{{ url_for('static', filename='images/culture/culture22.jpg') }}" alt="Storytelling Cultural Day Image 22" loading="lazy">
+            </article>
+            <article class="culture-emerge-card wow fadeInDown" data-wow-delay="0.20s">
+                <img src="{{ url_for('static', filename='images/culture/culture23.jpg') }}" alt="Storytelling Cultural Day Image 23" loading="lazy">
+            </article>
+            <article class="culture-emerge-card wow zoomIn" data-wow-delay="0.25s">
+                <img src="{{ url_for('static', filename='images/culture/culture24.jpg') }}" alt="Storytelling Cultural Day Image 24" loading="lazy">
+            </article>
+            <article class="culture-emerge-card wow fadeInLeft" data-wow-delay="0.30s">
+                <img src="{{ url_for('static', filename='images/culture/culture25.jpg') }}" alt="Storytelling Cultural Day Image 25" loading="lazy">
+            </article>
+            <article class="culture-emerge-card culture-emerge-wide wow fadeInRight" data-wow-delay="0.35s">
+                <img src="{{ url_for('static', filename='images/culture/culture26.jpg') }}" alt="Storytelling Cultural Day Image 26" loading="lazy">
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="culture-section culture-section-gallery">
+    <div class="container">
+        <div class="culture-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="section-title bg-white text-center text-primary px-3">Final Gallery</span>
+            <h2 class="culture-section-title">More Beautiful Moments from the Day</h2>
+            <p class="culture-section-text">
+                Every frame tells a story of colour, grace, learning, and cultural pride.
+            </p>
+        </div>
+
+        <div class="culture-final-grid">
+            <article class="culture-final-card culture-final-card-tall wow fadeInUp" data-wow-delay="0.10s">
+                <img src="{{ url_for('static', filename='images/culture/culture28.jpg') }}" alt="EMIS Cultural Day Image 28" loading="lazy">
+            </article>
+            <article class="culture-final-card culture-final-card-wide wow fadeInUp" data-wow-delay="0.15s">
+                <img src="{{ url_for('static', filename='images/culture/culture27.jpg') }}" alt="EMIS Cultural Day Image 27" loading="lazy">
+            </article>
+            <article class="culture-final-card culture-final-card-wide wow fadeInUp" data-wow-delay="0.20s">
+                <img src="{{ url_for('static', filename='images/culture/culture29.jpg') }}" alt="EMIS Cultural Day Image 29" loading="lazy">
+            </article>
+            <article class="culture-final-card culture-final-card-wide wow fadeInUp" data-wow-delay="0.25s">
+                <img src="{{ url_for('static', filename='images/culture/culture30.jpg') }}" alt="EMIS Cultural Day Image 30" loading="lazy">
+            </article>
+            <article class="culture-final-card culture-final-card-wide wow fadeInUp" data-wow-delay="0.30s">
+                <img src="{{ url_for('static', filename='images/culture/culture31.jpg') }}" alt="EMIS Cultural Day Image 31" loading="lazy">
+            </article>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/culture.js') }}"></script>
+{% endblock %}

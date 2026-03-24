@@ -1,0 +1,784 @@
+/********** Culture Page **********/
+
+.culture-hero {
+    position: relative;
+    padding: 110px 0 80px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(6, 187, 204, 0.12), transparent 22%),
+        radial-gradient(circle at 88% 15%, rgba(244, 180, 0, 0.16), transparent 18%),
+        linear-gradient(180deg, #fafdff 0%, #f4fbff 38%, #ffffff 100%);
+}
+
+.culture-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.35;
+}
+
+.culture-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.06fr) minmax(320px, 0.94fr);
+    align-items: center;
+    gap: 42px;
+}
+
+.culture-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    background: rgba(6, 187, 204, 0.10);
+    color: var(--primary-dark);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    margin-bottom: 18px;
+}
+
+.culture-hero-title {
+    font-size: clamp(2.3rem, 4.8vw, 4.35rem);
+    line-height: 0.98;
+    margin-bottom: 18px;
+    color: var(--secondary);
+    text-shadow: 0 12px 34px rgba(15, 39, 71, 0.08);
+}
+
+.culture-hero-text {
+    font-size: 1.05rem;
+    line-height: 1.95;
+    max-width: 720px;
+    margin-bottom: 30px;
+}
+
+.culture-hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.culture-stat-card {
+    min-width: 140px;
+    padding: 18px 20px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 39, 71, 0.08);
+    box-shadow: 0 16px 40px rgba(8, 26, 51, 0.08);
+    backdrop-filter: blur(12px);
+}
+
+.culture-stat-card strong {
+    display: block;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--secondary);
+    margin-bottom: 8px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.culture-stat-card span {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.culture-hero-highlight {
+    position: relative;
+}
+
+.culture-hero-feature-card {
+    position: relative;
+    border-radius: 34px;
+    overflow: hidden;
+    min-height: 650px;
+    border: 1px solid rgba(15, 39, 71, 0.10);
+    box-shadow: 0 28px 70px rgba(8, 26, 51, 0.16);
+    background: #eaf6fb;
+}
+
+.culture-hero-feature-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 650px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.culture-hero-feature-card:hover img {
+    transform: scale(1.03);
+}
+
+.culture-hero-feature-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(8, 26, 51, 0.04) 0%, rgba(8, 26, 51, 0.10) 38%, rgba(8, 26, 51, 0.52) 100%);
+    pointer-events: none;
+}
+
+.culture-feature-badge {
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(15, 39, 71, 0.08);
+    box-shadow: 0 18px 40px rgba(8, 26, 51, 0.14);
+    color: var(--secondary);
+    font-weight: 800;
+}
+
+.culture-feature-badge i {
+    color: var(--accent);
+}
+
+.culture-section {
+    position: relative;
+    padding: 90px 0;
+}
+
+.culture-section-light {
+    background:
+        linear-gradient(180deg, rgba(248, 251, 255, 0.78), rgba(255,255,255,1));
+}
+
+.culture-section-royal {
+    background:
+        radial-gradient(circle at top right, rgba(244, 180, 0, 0.11), transparent 20%),
+        linear-gradient(180deg, #ffffff 0%, #f9fcff 100%);
+}
+
+.culture-section-story {
+    background:
+        radial-gradient(circle at left center, rgba(6, 187, 204, 0.08), transparent 24%),
+        linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.culture-section-gallery {
+    background:
+        linear-gradient(180deg, #ffffff 0%, #f6fbff 100%);
+    padding-top: 70px;
+    padding-bottom: 110px;
+}
+
+.culture-section-head {
+    max-width: 900px;
+    margin: 0 auto 44px;
+}
+
+.culture-copy-block {
+    max-width: 560px;
+}
+
+.culture-section-title {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: 1.08;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.culture-section-text {
+    font-size: 1rem;
+    line-height: 1.95;
+    margin-bottom: 0;
+}
+
+.culture-section-text + .culture-section-text {
+    margin-top: 14px;
+}
+
+/********** Generic Culture Cards **********/
+.culture-card,
+.culture-slider-card,
+.culture-emerge-card,
+.culture-final-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    border: 1px solid rgba(15, 39, 71, 0.08);
+    background: #eef5fb;
+    box-shadow: 0 18px 42px rgba(8, 26, 51, 0.10);
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.culture-card:hover,
+.culture-slider-card:hover,
+.culture-emerge-card:hover,
+.culture-final-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 26px 58px rgba(8, 26, 51, 0.15);
+}
+
+.culture-card img,
+.culture-slider-card img,
+.culture-emerge-card img,
+.culture-final-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.8s ease, filter 0.45s ease;
+}
+
+.culture-card:hover img,
+.culture-slider-card:hover img,
+.culture-emerge-card:hover img,
+.culture-final-card:hover img {
+    transform: scale(1.04);
+    filter: saturate(1.04);
+}
+
+.culture-card::after,
+.culture-slider-card::after,
+.culture-emerge-card::after,
+.culture-final-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8,26,51,0.02) 0%, rgba(8,26,51,0.10) 100%);
+    pointer-events: none;
+}
+
+/********** Segment 1 Portrait-Friendly Grid **********/
+.culture-masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.culture-masonry-grid .culture-card {
+    min-height: 380px;
+}
+
+.culture-masonry-grid .culture-card-feature {
+    min-height: 520px;
+}
+
+/********** Segment 2 Animated Stage **********/
+.culture-slider-stage {
+    position: relative;
+    min-height: 640px;
+    border-radius: 34px;
+    padding: 22px;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,251,255,0.96));
+    border: 1px solid rgba(15, 39, 71, 0.08);
+    box-shadow: 0 24px 60px rgba(8, 26, 51, 0.12);
+    overflow: hidden;
+}
+
+.culture-slider-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 86% 14%, rgba(244, 180, 0, 0.16), transparent 18%),
+        radial-gradient(circle at 14% 86%, rgba(6, 187, 204, 0.14), transparent 22%);
+    pointer-events: none;
+}
+
+.culture-slider-grid {
+    position: absolute;
+    inset: 22px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(70px);
+    transition: opacity 0.75s ease, transform 0.75s ease, visibility 0.75s ease;
+}
+
+.culture-slider-grid.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.culture-slider-grid .culture-slider-card:nth-child(1) {
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 12;
+}
+
+.culture-slider-grid .culture-slider-card:nth-child(2) {
+    grid-column: 6 / span 3;
+    grid-row: 1 / span 6;
+}
+
+.culture-slider-grid .culture-slider-card:nth-child(3) {
+    grid-column: 9 / span 4;
+    grid-row: 1 / span 12;
+}
+
+.culture-slider-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.culture-slider-indicators button {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(15, 39, 71, 0.20);
+    transition: all 0.35s ease;
+}
+
+.culture-slider-indicators button.active {
+    width: 34px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+/********** Slide animation **********/
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(80px) scale(0.96);
+}
+
+.culture-slider-grid.active .slide-in-right {
+    animation: cultureSlideInRight 0.9s ease forwards;
+}
+
+.culture-slider-grid.active .delay-1 {
+    animation-delay: 0.1s;
+}
+
+.culture-slider-grid.active .delay-2 {
+    animation-delay: 0.28s;
+}
+
+.culture-slider-grid.active .delay-3 {
+    animation-delay: 0.46s;
+}
+
+@keyframes cultureSlideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(90px) scale(0.94);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(-8px) scale(1.01);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/********** Segment 3 Balanced Grid **********/
+.culture-emerge-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 95px;
+    gap: 18px;
+}
+
+.culture-emerge-card {
+    animation: cultureBreath 5.8s ease-in-out infinite;
+}
+
+.culture-emerge-card:nth-child(odd) {
+    animation-duration: 6.6s;
+}
+
+.culture-emerge-card:nth-child(even) {
+    animation-duration: 5.2s;
+}
+
+.culture-emerge-grid .culture-emerge-card:nth-child(1) {
+    grid-column: 1 / span 3;
+    grid-row: span 4;
+}
+
+.culture-emerge-grid .culture-emerge-card:nth-child(2) {
+    grid-column: 4 / span 3;
+    grid-row: span 4;
+}
+
+.culture-emerge-grid .culture-emerge-card:nth-child(3) {
+    grid-column: 7 / span 3;
+    grid-row: span 4;
+}
+
+.culture-emerge-grid .culture-emerge-card:nth-child(4) {
+    grid-column: 10 / span 3;
+    grid-row: span 4;
+}
+
+.culture-emerge-grid .culture-emerge-card:nth-child(5) {
+    grid-column: 1 / span 4;
+    grid-row: span 4;
+}
+
+.culture-emerge-grid .culture-emerge-wide {
+    grid-column: 5 / span 8;
+    grid-row: span 4;
+}
+
+.culture-emerge-wide img {
+    object-position: center center;
+}
+
+@keyframes cultureBreath {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 18px 45px rgba(8, 26, 51, 0.10);
+    }
+    50% {
+        transform: scale(1.012);
+        box-shadow: 0 24px 55px rgba(8, 26, 51, 0.14);
+    }
+}
+
+/********** Final Grid **********/
+.culture-final-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 100px;
+    gap: 18px;
+}
+
+.culture-final-card-tall {
+    grid-column: 1 / span 3;
+    grid-row: span 6;
+}
+
+.culture-final-card-wide:nth-child(2) {
+    grid-column: 4 / span 9;
+    grid-row: span 3;
+}
+
+.culture-final-card-wide:nth-child(3) {
+    grid-column: 4 / span 4;
+    grid-row: span 3;
+}
+
+.culture-final-card-wide:nth-child(4) {
+    grid-column: 8 / span 5;
+    grid-row: span 3;
+}
+
+.culture-final-card-wide:nth-child(5) {
+    grid-column: 1 / span 12;
+    grid-row: span 4;
+}
+
+.culture-final-card-wide img {
+    object-position: center center;
+}
+
+/********** Responsive **********/
+@media (max-width: 1399.98px) {
+    .culture-hero-feature-card,
+    .culture-hero-feature-card img {
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .culture-hero {
+        padding-top: 90px;
+    }
+
+    .culture-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .culture-hero-copy {
+        max-width: 100%;
+    }
+
+    .culture-hero-feature-card,
+    .culture-hero-feature-card img {
+        min-height: 560px;
+    }
+
+    .culture-masonry-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .culture-slider-stage {
+        min-height: 580px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .culture-section {
+        padding: 75px 0;
+    }
+
+    .culture-hero-text,
+    .culture-section-text {
+        line-height: 1.85;
+    }
+
+    .culture-masonry-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .culture-masonry-grid .culture-card,
+    .culture-masonry-grid .culture-card-feature {
+        min-height: 360px;
+    }
+
+    .culture-slider-stage {
+        min-height: 520px;
+        padding: 16px;
+        border-radius: 28px;
+    }
+
+    .culture-slider-grid {
+        inset: 16px;
+        gap: 12px;
+    }
+
+    .culture-slider-grid .culture-slider-card:nth-child(1) {
+        grid-column: 1 / span 5;
+        grid-row: 1 / span 10;
+    }
+
+    .culture-slider-grid .culture-slider-card:nth-child(2) {
+        grid-column: 6 / span 3;
+        grid-row: 1 / span 5;
+    }
+
+    .culture-slider-grid .culture-slider-card:nth-child(3) {
+        grid-column: 9 / span 4;
+        grid-row: 1 / span 10;
+    }
+
+    .culture-emerge-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 220px;
+    }
+
+    .culture-emerge-card,
+    .culture-emerge-wide {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        min-height: 220px;
+    }
+
+    .culture-final-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 220px;
+    }
+
+    .culture-final-card,
+    .culture-final-card-tall,
+    .culture-final-card-wide:nth-child(2),
+    .culture-final-card-wide:nth-child(3),
+    .culture-final-card-wide:nth-child(4),
+    .culture-final-card-wide:nth-child(5) {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        min-height: 220px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .culture-hero {
+        padding: 70px 0 55px;
+    }
+
+    .culture-hero-title {
+        font-size: 2rem;
+    }
+
+    .culture-hero-text {
+        font-size: 0.96rem;
+        margin-bottom: 22px;
+    }
+
+    .culture-hero-stats {
+        gap: 12px;
+    }
+
+    .culture-stat-card {
+        flex: 1 1 calc(50% - 12px);
+        min-width: 0;
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .culture-stat-card strong {
+        font-size: 1.45rem;
+    }
+
+    .culture-hero-feature-card,
+    .culture-hero-feature-card img {
+        min-height: 420px;
+        border-radius: 24px;
+    }
+
+    .culture-feature-badge {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        width: calc(100% - 28px);
+        justify-content: center;
+        text-align: center;
+        padding: 12px 14px;
+        border-radius: 16px;
+    }
+
+    .culture-section-title {
+        font-size: 1.6rem;
+    }
+
+    .culture-masonry-grid,
+    .culture-emerge-grid,
+    .culture-final-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .culture-masonry-grid .culture-card,
+    .culture-masonry-grid .culture-card-feature,
+    .culture-emerge-card,
+    .culture-final-card {
+        min-height: 340px;
+        border-radius: 20px;
+    }
+
+    .culture-slider-stage {
+        min-height: 720px;
+        border-radius: 22px;
+    }
+
+    .culture-slider-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12, 1fr);
+    }
+
+    .culture-slider-grid .culture-slider-card:nth-child(1),
+    .culture-slider-grid .culture-slider-card:nth-child(2),
+    .culture-slider-grid .culture-slider-card:nth-child(3) {
+        grid-column: 1 / -1 !important;
+    }
+
+    .culture-slider-grid .culture-slider-card:nth-child(1) {
+        grid-row: 1 / span 4 !important;
+    }
+
+    .culture-slider-grid .culture-slider-card:nth-child(2) {
+        grid-row: 5 / span 3 !important;
+    }
+
+    .culture-slider-grid .culture-slider-card:nth-child(3) {
+        grid-row: 8 / span 5 !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .culture-hero-title {
+        font-size: 1.7rem;
+    }
+
+    .culture-kicker {
+        font-size: 0.68rem;
+        padding: 0.58rem 0.85rem;
+    }
+
+    .culture-hero-feature-card,
+    .culture-hero-feature-card img {
+        min-height: 340px;
+    }
+
+    .culture-stat-card {
+        flex: 1 1 100%;
+    }
+
+    .culture-slider-stage {
+        min-height: 640px;
+        padding: 12px;
+    }
+
+    .culture-slider-grid {
+        inset: 12px;
+        gap: 10px;
+    }
+
+    .culture-masonry-grid .culture-card,
+    .culture-masonry-grid .culture-card-feature,
+    .culture-emerge-card,
+    .culture-final-card {
+        min-height: 300px;
+    }
+}
+
+/********** Extra Small Screen Polish **********/
+@media (max-width: 430px) {
+    .culture-hero {
+        padding: 58px 0 48px;
+    }
+
+    .culture-hero-title {
+        font-size: 1.52rem;
+        line-height: 1.06;
+    }
+
+    .culture-hero-text,
+    .culture-section-text {
+        font-size: 0.90rem;
+        line-height: 1.75;
+    }
+
+    .culture-section {
+        padding: 62px 0;
+    }
+
+    .culture-section-title {
+        font-size: 1.38rem;
+    }
+
+    .culture-hero-feature-card,
+    .culture-hero-feature-card img {
+        min-height: 290px;
+    }
+
+    .culture-slider-stage {
+        min-height: 580px;
+        border-radius: 18px;
+    }
+
+    .culture-masonry-grid .culture-card,
+    .culture-masonry-grid .culture-card-feature,
+    .culture-emerge-card,
+    .culture-final-card {
+        min-height: 260px;
+        border-radius: 18px;
+    }
+
+    .culture-feature-badge {
+        font-size: 0.82rem;
+        gap: 8px;
+        padding: 10px 12px;
+    }
+}

@@ -70,8 +70,8 @@
     position: fixed;
     right: 14px;
     bottom: 14px;
-    width: min(520px, calc(100vw - 18px));
-    height: min(810px, calc(100vh - 18px));
+    width: min(440px, calc(100vw - 28px));
+    height: min(760px, calc(100vh - 42px));
     z-index: 1080;
     opacity: 0;
     visibility: hidden;
@@ -92,7 +92,7 @@
     width: 100%;
     height: 100%;
     background: #f5f5f6;
-    border-radius: 34px;
+    border-radius: 32px;
     overflow: hidden;
     box-shadow: 0 32px 80px rgba(8, 26, 51, 0.28);
     border: 1px solid rgba(15, 39, 71, 0.08);
@@ -115,6 +115,7 @@
     align-items: center;
     gap: 12px;
     min-width: 0;
+    flex: 1 1 auto;
 }
 
 .emis-chatbot-header-actions {
@@ -136,58 +137,59 @@
     justify-content: center;
     transition: all 0.3s ease;
     padding: 0;
-}
-
-.emis-chat-icon-btn:hover {
-    background: rgba(15, 39, 71, 0.06);
-    color: #0f2747;
-}
-
-.emis-chatbot-avatars {
-    position: relative;
-    width: 112px;
-    height: 38px;
+    cursor: pointer;
     flex-shrink: 0;
 }
 
-.emis-chatbot-header-avatar {
-    width: 38px;
-    height: 38px;
+.emis-chat-icon-btn:hover,
+.emis-chat-icon-btn:focus {
+    background: rgba(15, 39, 71, 0.06);
+    color: #0f2747;
+    outline: none;
+}
+
+.emis-chat-minimize-btn i {
+    font-size: 0.88rem;
+}
+
+.emis-chatbot-single-avatar-wrap {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emis-chatbot-single-avatar {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #ffffff;
-    position: absolute;
-    top: 0;
+    object-fit: contain;
+    display: block;
     background: #ffffff;
+    border: 2px solid #ffffff;
     box-shadow: 0 8px 18px rgba(15, 39, 71, 0.10);
-}
-
-.emis-avatar-main {
-    left: 0;
-    z-index: 3;
-}
-
-.emis-avatar-two {
-    left: 26px;
-    z-index: 2;
-}
-
-.emis-avatar-three {
-    left: 52px;
-    z-index: 1;
+    padding: 2px;
 }
 
 .emis-chatbot-header-meta {
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .emis-chatbot-title {
     margin: 0;
-    font-size: 1.08rem;
+    font-size: 1.02rem;
     line-height: 1.2;
     color: #111827;
     font-weight: 700;
     font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .emis-chatbot-status {
@@ -195,9 +197,10 @@
     align-items: center;
     gap: 6px;
     color: #667085;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     line-height: 1.2;
     margin-top: 3px;
+    white-space: nowrap;
 }
 
 .emis-chatbot-body {
@@ -210,7 +213,7 @@
 
 .emis-chat-system-intro {
     text-align: center;
-    max-width: 410px;
+    max-width: 360px;
     margin: 2px auto 24px;
 }
 
@@ -233,13 +236,14 @@
 }
 
 .emis-chat-avatar {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
     box-shadow: 0 8px 18px rgba(15, 39, 71, 0.10);
     background: #ffffff;
+    border: 2px solid #ffffff;
 }
 
 .emis-chat-bubble-wrap {
@@ -335,6 +339,13 @@
     transition: all 0.3s ease;
     flex-shrink: 0;
     padding: 0;
+    cursor: pointer;
+}
+
+.emis-chat-send-btn:hover,
+.emis-chat-send-btn:focus {
+    outline: none;
+    transform: scale(1.04);
 }
 
 .emis-chat-send-btn.is-active {
@@ -357,19 +368,23 @@
     border: none;
     background: transparent;
     color: #7b8190;
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
     transition: all 0.3s ease;
     padding: 0;
+    cursor: pointer;
 }
 
-.emis-chat-tool-btn:hover {
+.emis-chat-tool-btn:hover,
+.emis-chat-tool-btn:focus {
     background: rgba(15, 39, 71, 0.06);
     color: #0f2747;
+    outline: none;
+    transform: translateY(-1px);
 }
 
 .emis-chat-gif-label {
@@ -403,65 +418,65 @@ body.chatbot-open {
 
 @media (max-width: 991.98px) {
     .emis-chatbot-panel {
-        width: min(500px, calc(100vw - 16px));
-        height: min(760px, calc(100vh - 16px));
-        right: 8px;
-        bottom: 8px;
+        width: min(390px, calc(100vw - 28px));
+        height: min(620px, calc(100vh - 90px));
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .emis-chat-system-intro {
+        max-width: 300px;
     }
 }
 
 @media (max-width: 767.98px) {
     .emis-chatbot-panel {
-        right: 8px;
-        bottom: 8px;
-        width: calc(100vw - 16px);
-        height: calc(100vh - 16px);
+        right: 10px;
+        bottom: 10px;
+        width: calc(100vw - 36px);
+        max-width: 340px;
+        height: min(500px, calc(100vh - 150px));
     }
 
     .emis-chatbot-window {
-        border-radius: 28px;
+        border-radius: 22px;
     }
 
     .emis-chatbot-header {
-        padding: 12px;
+        padding: 11px 12px;
+        min-height: 60px;
     }
 
-    .emis-chatbot-avatars {
-        width: 92px;
-    }
-
-    .emis-chatbot-header-avatar {
+    .emis-chatbot-single-avatar-wrap {
         width: 34px;
         height: 34px;
     }
 
-    .emis-avatar-two {
-        left: 22px;
-    }
-
-    .emis-avatar-three {
-        left: 44px;
+    .emis-chatbot-single-avatar {
+        width: 34px;
+        height: 34px;
+        padding: 2px;
     }
 
     .emis-chatbot-title {
-        font-size: 0.96rem;
+        font-size: 0.94rem;
     }
 
     .emis-chatbot-status {
-        font-size: 0.82rem;
+        font-size: 0.79rem;
     }
 
     .emis-chatbot-body {
-        padding: 16px 12px 10px;
+        padding: 14px 12px 10px;
     }
 
     .emis-chat-system-intro {
         max-width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
 
     .emis-chat-system-intro p {
-        font-size: 0.92rem;
+        font-size: 0.90rem;
     }
 
     .emis-chat-bubble-wrap {
@@ -469,7 +484,7 @@ body.chatbot-open {
     }
 
     .emis-chat-bubble {
-        font-size: 0.91rem;
+        font-size: 0.90rem;
     }
 
     .emis-chatbot-composer {
@@ -477,64 +492,87 @@ body.chatbot-open {
     }
 
     .emis-chatbot-composer-box {
-        min-height: 96px;
-        border-radius: 22px;
-        padding: 12px 12px 8px;
+        min-height: 92px;
+        border-radius: 18px;
+        padding: 11px 11px 8px;
     }
 
     .emis-chatbot-input {
-        font-size: 0.95rem;
+        font-size: 0.94rem;
     }
 
     .emis-chatbot-float {
         right: 18px;
         bottom: 82px;
-        width: 60px;
-        height: 60px;
+        width: 58px;
+        height: 58px;
     }
 
     .emis-chatbot-icon,
     .emis-chatbot-ripple {
-        width: 60px;
-        height: 60px;
+        width: 58px;
+        height: 58px;
     }
 
     .emis-chatbot-icon {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
 }
 
 @media (max-width: 479.98px) {
+    .emis-chatbot-panel {
+        width: calc(100vw - 28px);
+        max-width: 320px;
+        height: min(460px, calc(100vh - 170px));
+        right: 14px;
+        bottom: 14px;
+    }
+
     .emis-chatbot-header-left {
         gap: 8px;
     }
 
-    .emis-chatbot-avatars {
-        width: 78px;
-    }
-
-    .emis-chatbot-header-avatar {
+    .emis-chatbot-single-avatar-wrap {
         width: 30px;
         height: 30px;
     }
 
-    .emis-avatar-two {
-        left: 18px;
-    }
-
-    .emis-avatar-three {
-        left: 36px;
+    .emis-chatbot-single-avatar {
+        width: 30px;
+        height: 30px;
+        padding: 1px;
     }
 
     .emis-chatbot-title {
-        font-size: 0.90rem;
+        font-size: 0.87rem;
     }
 
     .emis-chatbot-status {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
+    }
+
+    .emis-chatbot-body {
+        padding: 12px 10px 8px;
+    }
+
+    .emis-chat-system-intro p {
+        font-size: 0.86rem;
+        line-height: 1.6;
+    }
+
+    .emis-chat-bubble {
+        font-size: 0.86rem;
+        padding: 11px 13px;
     }
 
     .emis-chatbot-composer-box {
-        min-height: 92px;
+        min-height: 86px;
+        border-radius: 16px;
+        padding: 10px 10px 7px;
+    }
+
+    .emis-chat-tool-btn {
+        width: 28px;
+        height: 28px;
     }
 }
