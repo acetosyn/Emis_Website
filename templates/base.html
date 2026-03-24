@@ -130,7 +130,7 @@
 
                     <div class="dropdown-menu fade-down m-0">
                         <a href="{{ url_for('culture') }}" class="dropdown-item {% if current_page == 'culture' %}active{% endif %}">Cultural Day</a>
-                        <a href="#" class="dropdown-item">Independence Day</a>
+                        <a href="{{ url_for('independence') }}" class="dropdown-item {% if current_page == 'independence' %}active{% endif %}">Independence Day</a>
                         <a href="#" class="dropdown-item">End of the Year Event</a>
                         <a href="#" class="dropdown-item">News</a>
                     </div>

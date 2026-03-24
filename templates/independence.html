@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title or 'EMIS Independence Day' }}{% endblock %}
+
+{% block meta_keywords %}EMIS Independence Day, Nigeria Independence Day, October 1st, Nigerian Flag, School Independence Celebration, EMIS Events{% endblock %}
+
+{% block meta_description %}Celebrate Nigeria Independence Day at EMIS with colourful moments, patriotic displays, student participation, and beautiful Independence Day memories.{% endblock %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/independence.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<section class="independence-hero">
+    <div class="container">
+        <div class="independence-hero-inner">
+            <div class="independence-hero-copy wow fadeInUp" data-wow-delay="0.1s">
+                <span class="independence-kicker">Nigeria Independence Day</span>
+                <h1 class="independence-hero-title">Celebrating the Spirit of October 1st</h1>
+                <p class="independence-hero-text">
+                    At EMIS, Independence Day is a joyful moment of patriotism, unity, and reflection as we celebrate
+                    the day Nigeria gained her independence. It is a day of green and white pride, cheerful smiles,
+                    and beautiful memories shared by our pupils and students.
+                </p>
+
+                <div class="independence-hero-stats">
+                    <div class="independence-stat-card">
+                        <strong>10</strong>
+                        <span>Patriotic Moments</span>
+                    </div>
+                    <div class="independence-stat-card">
+                        <strong>3</strong>
+                        <span>Photo Segments</span>
+                    </div>
+                    <div class="independence-stat-card">
+                        <strong>1</strong>
+                        <span>Nation to Celebrate</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="independence-hero-highlight wow zoomIn" data-wow-delay="0.3s">
+                <div class="independence-hero-feature-card">
+                    <div class="independence-feature-badge">
+                        <i class="fa fa-flag"></i>
+                        <span>Green • White • Greatness</span>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/independence/ind1.jpg') }}" alt="EMIS Independence Day Featured Image" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="independence-section independence-section-light">
+    <div class="container">
+        <div class="independence-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="section-title bg-white text-center text-primary px-3">Segment One</span>
+            <h2 class="independence-section-title">One Nation. One Flag. One Celebration.</h2>
+            <p class="independence-section-text">
+                A proud day to remember our freedom, honour our nation, and celebrate the beauty of Nigeria.
+            </p>
+        </div>
+
+        <div class="independence-masonry-grid">
+            <article class="independence-card independence-card-feature wow fadeInUp" data-wow-delay="0.10s">
+                <img src="{{ url_for('static', filename='images/independence/ind2.jpg') }}" alt="EMIS Independence Day Image 2" loading="lazy">
+            </article>
+            <article class="independence-card wow fadeInUp" data-wow-delay="0.15s">
+                <img src="{{ url_for('static', filename='images/independence/ind3.jpg') }}" alt="EMIS Independence Day Image 3" loading="lazy">
+            </article>
+            <article class="independence-card wow fadeInUp" data-wow-delay="0.20s">
+                <img src="{{ url_for('static', filename='images/independence/ind4.jpg') }}" alt="EMIS Independence Day Image 4" loading="lazy">
+            </article>
+            <article class="independence-card wow fadeInUp" data-wow-delay="0.25s">
+                <img src="{{ url_for('static', filename='images/independence/ind5.jpg') }}" alt="EMIS Independence Day Image 5" loading="lazy">
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="independence-section independence-section-pride">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <div class="independence-copy-block wow fadeInLeft" data-wow-delay="0.1s">
+                    <span class="section-title bg-white text-start text-primary pe-3">Segment Two</span>
+                    <h2 class="independence-section-title">Proud in Green and White</h2>
+                    <p class="independence-section-text">
+                        Our students mark the occasion with bright energy, patriotic colours, and joyful celebration.
+                    </p>
+                    <p class="independence-section-text">
+                        It is a moment to remember the journey of our nation and inspire hope for a better future.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="independence-slider-stage" id="independenceStage">
+                    <div class="independence-slider-grid active">
+                        <article class="independence-slider-card slide-in-right delay-1">
+                            <img src="{{ url_for('static', filename='images/independence/ind6.png') }}" alt="EMIS Independence Day Image 6" loading="lazy">
+                        </article>
+                        <article class="independence-slider-card slide-in-right delay-2">
+                            <img src="{{ url_for('static', filename='images/independence/ind7.png') }}" alt="EMIS Independence Day Image 7" loading="lazy">
+                        </article>
+                        <article class="independence-slider-card slide-in-right delay-3">
+                            <img src="{{ url_for('static', filename='images/independence/ind8.png') }}" alt="EMIS Independence Day Image 8" loading="lazy">
+                        </article>
+                    </div>
+
+                    <div class="independence-slider-grid">
+                        <article class="independence-slider-card slide-in-right delay-1">
+                            <img src="{{ url_for('static', filename='images/independence/ind9.png') }}" alt="EMIS Independence Day Image 9" loading="lazy">
+                        </article>
+                        <article class="independence-slider-card slide-in-right delay-2">
+                            <img src="{{ url_for('static', filename='images/independence/ind10.png') }}" alt="EMIS Independence Day Image 10" loading="lazy">
+                        </article>
+                        <article class="independence-slider-card slide-in-right delay-3">
+                            <img src="{{ url_for('static', filename='images/independence/ind1.jpg') }}" alt="EMIS Independence Day Image 1 Repeat Display" loading="lazy">
+                        </article>
+                    </div>
+                </div>
+
+                <div class="independence-slider-indicators" id="independenceIndicators">
+                    <button class="active" type="button" aria-label="Show independence gallery slide 1"></button>
+                    <button type="button" aria-label="Show independence gallery slide 2"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="independence-section independence-section-gallery">
+    <div class="container">
+        <div class="independence-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="section-title bg-white text-center text-primary px-3">Segment Three</span>
+            <h2 class="independence-section-title">Freedom. Unity. Hope.</h2>
+            <p class="independence-section-text">
+                A day of national pride, cheerful participation, and unforgettable school memories.
+            </p>
+        </div>
+
+        <div class="independence-final-grid">
+            <article class="independence-final-card independence-final-card-tall wow fadeInUp" data-wow-delay="0.10s">
+                <img src="{{ url_for('static', filename='images/independence/ind2.jpg') }}" alt="EMIS Independence Day Image 2 Repeat" loading="lazy">
+            </article>
+            <article class="independence-final-card independence-final-card-wide wow fadeInUp" data-wow-delay="0.15s">
+                <img src="{{ url_for('static', filename='images/independence/ind3.jpg') }}" alt="EMIS Independence Day Image 3 Repeat" loading="lazy">
+            </article>
+            <article class="independence-final-card independence-final-card-wide wow fadeInUp" data-wow-delay="0.20s">
+                <img src="{{ url_for('static', filename='images/independence/ind4.jpg') }}" alt="EMIS Independence Day Image 4 Repeat" loading="lazy">
+            </article>
+            <article class="independence-final-card independence-final-card-wide wow fadeInUp" data-wow-delay="0.25s">
+                <img src="{{ url_for('static', filename='images/independence/ind5.jpg') }}" alt="EMIS Independence Day Image 5 Repeat" loading="lazy">
+            </article>
+            <article class="independence-final-card independence-final-card-wide wow fadeInUp" data-wow-delay="0.30s">
+                <img src="{{ url_for('static', filename='images/independence/ind10.png') }}" alt="EMIS Independence Day Image 10 Repeat" loading="lazy">
+            </article>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/independence.js') }}"></script>
+{% endblock %}

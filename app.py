@@ -45,6 +45,11 @@ def page_404():
 def culture():
     return render_template("culture.html", page_title="EMIS Cultural Day", current_page="culture")
 
+
+@app.route("/independence")
+def independence():
+    return render_template("independence.html", page_title="EMIS Independence Day", current_page="independence")
+
 # -----------------------------
 # Error Handlers
 # -----------------------------

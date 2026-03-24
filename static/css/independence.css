@@ -1,0 +1,707 @@
+/********** Independence Page **********/
+
+.independence-hero {
+    position: relative;
+    padding: 110px 0 80px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(8, 148, 76, 0.14), transparent 22%),
+        radial-gradient(circle at 88% 15%, rgba(255, 255, 255, 0.32), transparent 18%),
+        linear-gradient(180deg, #f7fff9 0%, #eefaf2 38%, #ffffff 100%);
+}
+
+.independence-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.34;
+}
+
+.independence-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 120px;
+    background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.88));
+    pointer-events: none;
+}
+
+.independence-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+    align-items: center;
+    gap: 42px;
+}
+
+.independence-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.72rem 1rem;
+    border-radius: 999px;
+    background: rgba(8, 148, 76, 0.10);
+    color: #0b7a43;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    margin-bottom: 18px;
+}
+
+.independence-hero-title {
+    font-size: clamp(2.35rem, 4.8vw, 4.3rem);
+    line-height: 0.98;
+    margin-bottom: 18px;
+    color: var(--secondary);
+    text-shadow: 0 12px 34px rgba(15, 39, 71, 0.07);
+}
+
+.independence-hero-text {
+    font-size: 1.03rem;
+    line-height: 1.9;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+.independence-hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.independence-stat-card {
+    min-width: 145px;
+    padding: 18px 20px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(15, 39, 71, 0.08);
+    box-shadow: 0 16px 40px rgba(8, 26, 51, 0.08);
+    backdrop-filter: blur(12px);
+}
+
+.independence-stat-card strong {
+    display: block;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--secondary);
+    margin-bottom: 8px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.independence-stat-card span {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #0b7a43;
+}
+
+.independence-hero-highlight {
+    position: relative;
+}
+
+.independence-hero-feature-card {
+    position: relative;
+    border-radius: 34px;
+    overflow: hidden;
+    min-height: 650px;
+    border: 1px solid rgba(15, 39, 71, 0.10);
+    box-shadow: 0 28px 70px rgba(8, 26, 51, 0.16);
+    background: #eef9f1;
+}
+
+.independence-hero-feature-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 650px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.independence-hero-feature-card:hover img {
+    transform: scale(1.03);
+}
+
+.independence-hero-feature-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(8, 26, 51, 0.04) 0%, rgba(8, 26, 51, 0.10) 36%, rgba(8, 26, 51, 0.48) 100%);
+    pointer-events: none;
+}
+
+.independence-feature-badge {
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(15, 39, 71, 0.08);
+    box-shadow: 0 18px 40px rgba(8, 26, 51, 0.14);
+    color: var(--secondary);
+    font-weight: 800;
+}
+
+.independence-feature-badge i {
+    color: #0b8b4c;
+}
+
+/********** Sections **********/
+.independence-section {
+    position: relative;
+    padding: 90px 0;
+}
+
+.independence-section-light {
+    background:
+        linear-gradient(180deg, rgba(246, 255, 249, 0.9), rgba(255,255,255,1));
+}
+
+.independence-section-pride {
+    background:
+        radial-gradient(circle at top right, rgba(8, 148, 76, 0.10), transparent 20%),
+        linear-gradient(180deg, #ffffff 0%, #f7fcf8 100%);
+}
+
+.independence-section-gallery {
+    background:
+        radial-gradient(circle at left center, rgba(8, 148, 76, 0.08), transparent 22%),
+        linear-gradient(180deg, #f8fdf9 0%, #ffffff 100%);
+    padding-top: 70px;
+    padding-bottom: 110px;
+}
+
+.independence-section-head {
+    max-width: 860px;
+    margin: 0 auto 44px;
+}
+
+.independence-copy-block {
+    max-width: 540px;
+}
+
+.independence-section-title {
+    font-size: clamp(1.85rem, 3vw, 3rem);
+    line-height: 1.08;
+    margin-top: 18px;
+    margin-bottom: 16px;
+}
+
+.independence-section-text {
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 0;
+}
+
+.independence-section-text + .independence-section-text {
+    margin-top: 14px;
+}
+
+/********** Generic Cards **********/
+.independence-card,
+.independence-slider-card,
+.independence-final-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    border: 1px solid rgba(15, 39, 71, 0.08);
+    background: #eef7f1;
+    box-shadow: 0 18px 42px rgba(8, 26, 51, 0.10);
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.independence-card:hover,
+.independence-slider-card:hover,
+.independence-final-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 26px 58px rgba(8, 26, 51, 0.15);
+}
+
+.independence-card img,
+.independence-slider-card img,
+.independence-final-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.8s ease, filter 0.45s ease;
+}
+
+.independence-card:hover img,
+.independence-slider-card:hover img,
+.independence-final-card:hover img {
+    transform: scale(1.04);
+    filter: saturate(1.04);
+}
+
+.independence-card::after,
+.independence-slider-card::after,
+.independence-final-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8,26,51,0.02) 0%, rgba(8,26,51,0.10) 100%);
+    pointer-events: none;
+}
+
+/********** Segment 1 Grid **********/
+.independence-masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.independence-masonry-grid .independence-card {
+    min-height: 350px;
+}
+
+.independence-masonry-grid .independence-card-feature {
+    grid-column: span 2;
+    min-height: 430px;
+}
+
+/********** Segment 2 Slider Stage **********/
+.independence-slider-stage {
+    position: relative;
+    min-height: 620px;
+    border-radius: 34px;
+    padding: 22px;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(246,252,248,0.96));
+    border: 1px solid rgba(15, 39, 71, 0.08);
+    box-shadow: 0 24px 60px rgba(8, 26, 51, 0.12);
+    overflow: hidden;
+}
+
+.independence-slider-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(8, 148, 76, 0.16), transparent 18%),
+        radial-gradient(circle at 16% 84%, rgba(6, 187, 204, 0.10), transparent 22%);
+    pointer-events: none;
+}
+
+.independence-slider-grid {
+    position: absolute;
+    inset: 22px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(70px);
+    transition: opacity 0.75s ease, transform 0.75s ease, visibility 0.75s ease;
+}
+
+.independence-slider-grid.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.independence-slider-grid .independence-slider-card:nth-child(1) {
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 12;
+}
+
+.independence-slider-grid .independence-slider-card:nth-child(2) {
+    grid-column: 6 / span 3;
+    grid-row: 1 / span 6;
+}
+
+.independence-slider-grid .independence-slider-card:nth-child(3) {
+    grid-column: 9 / span 4;
+    grid-row: 1 / span 12;
+}
+
+.independence-slider-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.independence-slider-indicators button {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(15, 39, 71, 0.20);
+    transition: all 0.35s ease;
+}
+
+.independence-slider-indicators button.active {
+    width: 34px;
+    background: linear-gradient(135deg, #0b8b4c, #0f6e3e);
+}
+
+/********** Slide Animation **********/
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(80px) scale(0.96);
+}
+
+.independence-slider-grid.active .slide-in-right {
+    animation: independenceSlideInRight 0.9s ease forwards;
+}
+
+.independence-slider-grid.active .delay-1 {
+    animation-delay: 0.1s;
+}
+
+.independence-slider-grid.active .delay-2 {
+    animation-delay: 0.28s;
+}
+
+.independence-slider-grid.active .delay-3 {
+    animation-delay: 0.46s;
+}
+
+@keyframes independenceSlideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(90px) scale(0.94);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(-8px) scale(1.01);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/********** Segment 3 Final Grid **********/
+.independence-final-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 95px;
+    gap: 18px;
+}
+
+.independence-final-card-tall {
+    grid-column: 1 / span 3;
+    grid-row: span 6;
+}
+
+.independence-final-card-wide:nth-child(2) {
+    grid-column: 4 / span 9;
+    grid-row: span 3;
+}
+
+.independence-final-card-wide:nth-child(3) {
+    grid-column: 4 / span 4;
+    grid-row: span 3;
+}
+
+.independence-final-card-wide:nth-child(4) {
+    grid-column: 8 / span 5;
+    grid-row: span 3;
+}
+
+.independence-final-card-wide:nth-child(5) {
+    grid-column: 1 / span 12;
+    grid-row: span 4;
+}
+
+.independence-final-card-wide img {
+    object-position: center center;
+}
+
+/********** Responsive **********/
+@media (max-width: 1399.98px) {
+    .independence-hero-feature-card,
+    .independence-hero-feature-card img {
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .independence-hero {
+        padding-top: 90px;
+    }
+
+    .independence-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .independence-hero-copy {
+        max-width: 100%;
+    }
+
+    .independence-hero-feature-card,
+    .independence-hero-feature-card img {
+        min-height: 560px;
+    }
+
+    .independence-masonry-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .independence-masonry-grid .independence-card-feature {
+        grid-column: span 1;
+    }
+
+    .independence-slider-stage {
+        min-height: 580px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .independence-section {
+        padding: 75px 0;
+    }
+
+    .independence-hero-text,
+    .independence-section-text {
+        line-height: 1.82;
+    }
+
+    .independence-masonry-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .independence-masonry-grid .independence-card,
+    .independence-masonry-grid .independence-card-feature {
+        min-height: 340px;
+    }
+
+    .independence-slider-stage {
+        min-height: 520px;
+        padding: 16px;
+        border-radius: 28px;
+    }
+
+    .independence-slider-grid {
+        inset: 16px;
+        gap: 12px;
+    }
+
+    .independence-slider-grid .independence-slider-card:nth-child(1) {
+        grid-column: 1 / span 5;
+        grid-row: 1 / span 10;
+    }
+
+    .independence-slider-grid .independence-slider-card:nth-child(2) {
+        grid-column: 6 / span 3;
+        grid-row: 1 / span 5;
+    }
+
+    .independence-slider-grid .independence-slider-card:nth-child(3) {
+        grid-column: 9 / span 4;
+        grid-row: 1 / span 10;
+    }
+
+    .independence-final-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 220px;
+    }
+
+    .independence-final-card,
+    .independence-final-card-tall,
+    .independence-final-card-wide:nth-child(2),
+    .independence-final-card-wide:nth-child(3),
+    .independence-final-card-wide:nth-child(4),
+    .independence-final-card-wide:nth-child(5) {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        min-height: 220px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .independence-hero {
+        padding: 70px 0 55px;
+    }
+
+    .independence-hero-title {
+        font-size: 2rem;
+    }
+
+    .independence-hero-text {
+        font-size: 0.96rem;
+        margin-bottom: 22px;
+    }
+
+    .independence-hero-stats {
+        gap: 12px;
+    }
+
+    .independence-stat-card {
+        flex: 1 1 calc(50% - 12px);
+        min-width: 0;
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .independence-stat-card strong {
+        font-size: 1.45rem;
+    }
+
+    .independence-hero-feature-card,
+    .independence-hero-feature-card img {
+        min-height: 420px;
+        border-radius: 24px;
+    }
+
+    .independence-feature-badge {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        width: calc(100% - 28px);
+        justify-content: center;
+        text-align: center;
+        padding: 12px 14px;
+        border-radius: 16px;
+    }
+
+    .independence-section-title {
+        font-size: 1.6rem;
+    }
+
+    .independence-masonry-grid,
+    .independence-final-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .independence-masonry-grid .independence-card,
+    .independence-masonry-grid .independence-card-feature,
+    .independence-final-card {
+        min-height: 320px;
+        border-radius: 20px;
+    }
+
+    .independence-slider-stage {
+        min-height: 720px;
+        border-radius: 22px;
+    }
+
+    .independence-slider-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12, 1fr);
+    }
+
+    .independence-slider-grid .independence-slider-card:nth-child(1),
+    .independence-slider-grid .independence-slider-card:nth-child(2),
+    .independence-slider-grid .independence-slider-card:nth-child(3) {
+        grid-column: 1 / -1 !important;
+    }
+
+    .independence-slider-grid .independence-slider-card:nth-child(1) {
+        grid-row: 1 / span 4 !important;
+    }
+
+    .independence-slider-grid .independence-slider-card:nth-child(2) {
+        grid-row: 5 / span 3 !important;
+    }
+
+    .independence-slider-grid .independence-slider-card:nth-child(3) {
+        grid-row: 8 / span 5 !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .independence-hero-title {
+        font-size: 1.7rem;
+    }
+
+    .independence-kicker {
+        font-size: 0.68rem;
+        padding: 0.58rem 0.85rem;
+    }
+
+    .independence-hero-feature-card,
+    .independence-hero-feature-card img {
+        min-height: 340px;
+    }
+
+    .independence-stat-card {
+        flex: 1 1 100%;
+    }
+
+    .independence-slider-stage {
+        min-height: 640px;
+        padding: 12px;
+    }
+
+    .independence-slider-grid {
+        inset: 12px;
+        gap: 10px;
+    }
+
+    .independence-masonry-grid .independence-card,
+    .independence-masonry-grid .independence-card-feature,
+    .independence-final-card {
+        min-height: 290px;
+    }
+}
+
+@media (max-width: 430px) {
+    .independence-hero {
+        padding: 58px 0 48px;
+    }
+
+    .independence-hero-title {
+        font-size: 1.52rem;
+        line-height: 1.06;
+    }
+
+    .independence-hero-text,
+    .independence-section-text {
+        font-size: 0.90rem;
+        line-height: 1.75;
+    }
+
+    .independence-section {
+        padding: 62px 0;
+    }
+
+    .independence-section-title {
+        font-size: 1.38rem;
+    }
+
+    .independence-hero-feature-card,
+    .independence-hero-feature-card img {
+        min-height: 290px;
+    }
+
+    .independence-slider-stage {
+        min-height: 580px;
+        border-radius: 18px;
+    }
+
+    .independence-masonry-grid .independence-card,
+    .independence-masonry-grid .independence-card-feature,
+    .independence-final-card {
+        min-height: 250px;
+        border-radius: 18px;
+    }
+
+    .independence-feature-badge {
+        font-size: 0.82rem;
+        gap: 8px;
+        padding: 10px 12px;
+    }
+}
