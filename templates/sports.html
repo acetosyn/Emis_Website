@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title or 'EMIS Sports' }}{% endblock %}
+
+{% block meta_keywords %}EMIS Sports, School Sports, Athletics, Competition, EMIS Events, School Games, Student Sports, Running, Team Spirit{% endblock %}
+
+{% block meta_description %}Explore EMIS Sports moments filled with energy, teamwork, speed, confidence, and unforgettable competition as students shine on the field and beyond.{% endblock %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/sports.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<section class="sports-hero">
+    <div class="container">
+        <div class="sports-hero-inner">
+            <div class="sports-hero-copy wow fadeInUp" data-wow-delay="0.1s">
+                <span class="sports-kicker">
+                    <i class="fa fa-trophy"></i>
+                    EMIS Sports Day
+                </span>
+
+                <h1 class="sports-hero-title">Speed. Spirit. Strength. Smile.</h1>
+
+                <p class="sports-hero-text">
+                    From the first whistle to the final cheer, EMIS Sports Day is a vibrant display of teamwork,
+                    confidence, healthy competition, and joyful school memories.
+                </p>
+
+                <div class="sports-hero-pills">
+                    <span><i class="fa fa-bolt"></i> Energy</span>
+                    <span><i class="fa fa-users"></i> Teamwork</span>
+                    <span><i class="fa fa-flag-checkered"></i> Competition</span>
+                </div>
+
+                <div class="sports-hero-quote">
+                    <i class="fa fa-quote-left"></i>
+                    <p>“Champions keep playing until they get it right.”</p>
+                    <span>— Billie Jean King</span>
+                </div>
+            </div>
+
+            <div class="sports-hero-visual wow zoomIn" data-wow-delay="0.25s">
+                <div class="sports-hero-main-card">
+                    <img src="{{ url_for('static', filename='images/sports/sports1.jpg') }}" alt="EMIS Sports Hero Image" loading="lazy">
+
+                    <div class="sports-hero-badge badge-one">
+                        <i class="fa fa-running"></i>
+                        <span>Run with purpose</span>
+                    </div>
+
+                    <div class="sports-hero-badge badge-two">
+                        <i class="fa fa-medal"></i>
+                        <span>Play with pride</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sports-section sports-section-highlight">
+    <div class="container">
+        <div class="sports-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="section-title bg-white text-center text-primary px-3">Segment One</span>
+            <h2 class="sports-section-title">Moments That Move</h2>
+            <p class="sports-section-text">
+                Every frame tells a story of movement, courage, joy, and school spirit.
+            </p>
+        </div>
+
+        <div class="sports-mosaic-grid">
+            <article class="sports-mosaic-card sports-mosaic-feature wow fadeInUp" data-wow-delay="0.10s">
+                <img src="{{ url_for('static', filename='images/sports/sports2.jpg') }}" alt="EMIS Sports Image 2" loading="lazy">
+                <div class="sports-card-caption">
+                    <span>Fast feet. Focused minds.</span>
+                </div>
+            </article>
+
+            <article class="sports-mosaic-card wow fadeInUp" data-wow-delay="0.15s">
+                <img src="{{ url_for('static', filename='images/sports/sports3.jpg') }}" alt="EMIS Sports Image 3" loading="lazy">
+                <div class="sports-card-caption">
+                    <span>Every child, a shining star.</span>
+                </div>
+            </article>
+
+            <article class="sports-mosaic-card wow fadeInUp" data-wow-delay="0.20s">
+                <img src="{{ url_for('static', filename='images/sports/sports4.jpg') }}" alt="EMIS Sports Image 4" loading="lazy">
+                <div class="sports-card-caption">
+                    <span>Small steps. Big dreams.</span>
+                </div>
+            </article>
+
+            <article class="sports-mosaic-card wow fadeInUp" data-wow-delay="0.25s">
+                <img src="{{ url_for('static', filename='images/sports/sports5.jpg') }}" alt="EMIS Sports Image 5" loading="lazy">
+                <div class="sports-card-caption">
+                    <span>Strength in every stride.</span>
+                </div>
+            </article>
+
+            <article class="sports-mosaic-card sports-mosaic-feature wow fadeInUp" data-wow-delay="0.30s">
+                <img src="{{ url_for('static', filename='images/sports/sports6.jpg') }}" alt="EMIS Sports Image 6" loading="lazy">
+                <div class="sports-card-caption">
+                    <span>Built for the moment.</span>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="sports-section sports-section-showcase">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <div class="sports-copy-block wow fadeInLeft" data-wow-delay="0.1s">
+                    <span class="section-title bg-white text-start text-primary pe-3">Segment Two</span>
+                    <h2 class="sports-section-title">Team Spirit in Motion</h2>
+                    <p class="sports-section-text">
+                        Sports at EMIS is more than winning. It is confidence, discipline, courage, and the joy of showing up with heart.
+                    </p>
+
+                    <div class="sports-quote-stack">
+                        <div class="sports-mini-quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>“You miss 100% of the shots you don’t take.”</p>
+                            <span>— Wayne Gretzky</span>
+                        </div>
+
+                        <div class="sports-mini-quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>“Never say never because limits, like fears, are often just an illusion.”</p>
+                            <span>— Michael Jordan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="sports-stage" id="sportsStage">
+                    <div class="sports-slide-grid active">
+                        <article class="sports-stage-card slide-in-right delay-1">
+                            <img src="{{ url_for('static', filename='images/sports/sports7.png') }}" alt="EMIS Sports Image 7" loading="lazy">
+                            <div class="sports-overlay-note">
+                                <span>Driven by passion</span>
+                            </div>
+                        </article>
+
+                        <article class="sports-stage-card slide-in-right delay-2">
+                            <img src="{{ url_for('static', filename='images/sports/sports8.png') }}" alt="EMIS Sports Image 8" loading="lazy">
+                            <div class="sports-overlay-note">
+                                <span>Poise under pressure</span>
+                            </div>
+                        </article>
+
+                        <article class="sports-stage-card slide-in-right delay-3">
+                            <img src="{{ url_for('static', filename='images/sports/sports9.png') }}" alt="EMIS Sports Image 9" loading="lazy">
+                            <div class="sports-overlay-note">
+                                <span>Confidence on display</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="sports-slide-grid">
+                        <article class="sports-stage-card slide-in-right delay-1">
+                            <img src="{{ url_for('static', filename='images/sports/sports10.png') }}" alt="EMIS Sports Image 10" loading="lazy">
+                            <div class="sports-overlay-note">
+                                <span>Joy in every moment</span>
+                            </div>
+                        </article>
+
+                        <article class="sports-stage-card slide-in-right delay-2">
+                            <img src="{{ url_for('static', filename='images/sports/sports11.png') }}" alt="EMIS Sports Image 11" loading="lazy">
+                            <div class="sports-overlay-note">
+                                <span>Ready. Set. Shine.</span>
+                            </div>
+                        </article>
+
+                        <article class="sports-stage-card slide-in-right delay-3">
+                            <img src="{{ url_for('static', filename='images/sports/sports12.png') }}" alt="EMIS Sports Image 12" loading="lazy">
+                            <div class="sports-overlay-note">
+                                <span>Play bold</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="sports-stage-indicators" id="sportsIndicators">
+                    <button class="active" type="button" aria-label="Show sports gallery slide 1"></button>
+                    <button type="button" aria-label="Show sports gallery slide 2"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sports-section sports-section-energy">
+    <div class="container">
+        <div class="sports-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="section-title bg-white text-center text-primary px-3">Segment Three</span>
+            <h2 class="sports-section-title">Victory, Friendship, and Fun</h2>
+            <p class="sports-section-text">
+                The best part of the day is not only the race, but the smiles, teamwork, celebration, and unforgettable memories created together.
+            </p>
+        </div>
+
+        <div class="sports-energy-layout">
+            <article class="sports-energy-card sports-energy-wide wow fadeInUp" data-wow-delay="0.10s">
+                <img src="{{ url_for('static', filename='images/sports/sports13.png') }}" alt="EMIS Sports Image 13" loading="lazy">
+                <div class="sports-energy-content">
+                    <div class="sports-energy-icon">
+                        <i class="fa fa-camera"></i>
+                    </div>
+                    <div class="sports-energy-text">
+                        <h3>Picture Perfect Finish</h3>
+                        <p>Smiles. Memories. School pride.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="sports-closing-strip wow fadeInUp" data-wow-delay="0.2s">
+            <div class="sports-closing-item">
+                <i class="fa fa-heart"></i>
+                <span>Play fair</span>
+            </div>
+            <div class="sports-closing-item">
+                <i class="fa fa-fire"></i>
+                <span>Stay inspired</span>
+            </div>
+            <div class="sports-closing-item">
+                <i class="fa fa-star"></i>
+                <span>Shine bright</span>
+            </div>
+            <div class="sports-closing-item">
+                <i class="fa fa-trophy"></i>
+                <span>Celebrate effort</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/sports.js') }}"></script>
+{% endblock %}

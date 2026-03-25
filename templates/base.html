@@ -131,8 +131,9 @@
                     <div class="dropdown-menu fade-down m-0">
                         <a href="{{ url_for('culture') }}" class="dropdown-item {% if current_page == 'culture' %}active{% endif %}">Cultural Day</a>
                         <a href="{{ url_for('independence') }}" class="dropdown-item {% if current_page == 'independence' %}active{% endif %}">Independence Day</a>
-                        <a href="#" class="dropdown-item">End of the Year Event</a>
-                        <a href="#" class="dropdown-item">News</a>
+                        <a href="{{ url_for('sports') }}" class="dropdown-item {% if current_page == 'sports' %}active{% endif %}">Sports</a>
+                        <a href="{{ url_for('walimah') }}" class="dropdown-item {% if current_page == 'walimah' %}active{% endif %}">Walimah Ceremony</a>
+                        
                     </div>
                 </div>
 
@@ -363,7 +364,7 @@
                     <p>
                         Welcome to EMIS Support! Please send us your questions about admissions,
                         programs, fees, school levels, Tahfeez, contact details, or any other
-                        information about Epitome Model Islamic School.
+                        information about Epitome Model Islamic Schools.
                     </p>
                 </div>
 
@@ -375,7 +376,7 @@
                     >
                     <div class="emis-chat-bubble-wrap">
                         <div class="emis-chat-bubble">
-                            Hi there 👋 I’m the EMIS Assistant. Ask me anything about our school.
+                            Hi there 👋 I’m the EMIS Assistant. Ask me anything about our schools.
                         </div>
                         <div class="emis-chat-time">Just now</div>
                     </div>

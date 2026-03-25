@@ -50,6 +50,14 @@ def culture():
 def independence():
     return render_template("independence.html", page_title="EMIS Independence Day", current_page="independence")
 
+@app.route("/sports")
+def sports():
+    return render_template("sports.html", page_title="EMIS Sports Day", current_page="sports")
+
+@app.route("/walimah")
+def walimah():
+    return render_template("walimah.html", page_title="EMIS Walimah Ceremony", current_page="walimah")
+
 # -----------------------------
 # Error Handlers
 # -----------------------------

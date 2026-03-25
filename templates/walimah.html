@@ -1,0 +1,295 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title or 'EMIS Walimah Ceremony' }}{% endblock %}
+
+{% block meta_keywords %}EMIS Walimah, Tahfeez Graduation, Qur'anic Graduation, EMIS Events, Islamic School Ceremony, Walimah Ceremony, EMIS Tahfeez{% endblock %}
+
+{% block meta_description %}Explore the beauty of EMIS Walimah Ceremony, a graceful celebration of Qur'anic learning, Tahfeez progress, spiritual growth, confidence, and memorable achievement.{% endblock %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/walimah.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<section class="walimah-hero">
+    <div class="container">
+        <div class="walimah-hero-inner">
+            <div class="walimah-hero-copy wow fadeInUp" data-wow-delay="0.1s">
+                <span class="walimah-kicker">
+                    <i class="fa fa-moon"></i>
+                    EMIS Walimah Ceremony
+                </span>
+
+                <h1 class="walimah-hero-title">A Beautiful Celebration of Qur’anic Excellence</h1>
+
+                <p class="walimah-hero-text">
+                    A graceful day of honour, joy, and spiritual achievement as our learners celebrate a meaningful milestone in their Tahfeez journey.
+                </p>
+
+                <div class="walimah-hero-pills">
+                    <span><i class="fa fa-book-open"></i> Qur’anic Growth</span>
+                    <span><i class="fa fa-star-and-crescent"></i> Spiritual Joy</span>
+                    <span><i class="fa fa-award"></i> Honour & Pride</span>
+                </div>
+
+                <div class="walimah-hero-quote">
+                    <i class="fa fa-quote-left"></i>
+                    <p>“The best among you are those who learn the Qur’an and teach it.”</p>
+                    <span>— Prophet Muhammad ﷺ</span>
+                </div>
+            </div>
+
+            <div class="walimah-hero-visual wow zoomIn" data-wow-delay="0.25s">
+                <div class="walimah-hero-main-card">
+                    <img src="{{ url_for('static', filename='images/walimah/walimah1.png') }}" alt="EMIS Walimah Hero Image" loading="lazy">
+
+                    <div class="walimah-hero-badge badge-one">
+                        <i class="fa fa-quran"></i>
+                        <span>Honouring dedication</span>
+                    </div>
+
+                    <div class="walimah-hero-badge badge-two">
+                        <i class="fa fa-heart"></i>
+                        <span>Celebrating growth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="walimah-section walimah-section-radiance">
+    <div class="container">
+        <div class="walimah-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="section-title bg-white text-center text-primary px-3">Segment One</span>
+            <h2 class="walimah-section-title">Moments of Grace and Honour</h2>
+            <p class="walimah-section-text">
+                Every frame reflects beauty, effort, confidence, and a heartwarming journey in Islamic learning.
+            </p>
+        </div>
+
+        <div class="walimah-mosaic-grid">
+            <article class="walimah-mosaic-card walimah-mosaic-feature wow fadeInUp" data-wow-delay="0.10s">
+                <img src="{{ url_for('static', filename='images/walimah/walimah2.png') }}" alt="EMIS Walimah Image 2" loading="lazy">
+                <div class="walimah-card-caption">
+                    <span>Grace in every step.</span>
+                </div>
+            </article>
+
+            <article class="walimah-mosaic-card wow fadeInUp" data-wow-delay="0.15s">
+                <img src="{{ url_for('static', filename='images/walimah/walimah3.png') }}" alt="EMIS Walimah Image 3" loading="lazy">
+                <div class="walimah-card-caption">
+                    <span>Bright hearts. Noble journey.</span>
+                </div>
+            </article>
+
+            <article class="walimah-mosaic-card wow fadeInUp" data-wow-delay="0.20s">
+                <img src="{{ url_for('static', filename='images/walimah/walimah4.png') }}" alt="EMIS Walimah Image 4" loading="lazy">
+                <div class="walimah-card-caption">
+                    <span>Joy wrapped in dignity.</span>
+                </div>
+            </article>
+
+            <article class="walimah-mosaic-card wow fadeInUp" data-wow-delay="0.25s">
+                <img src="{{ url_for('static', filename='images/walimah/walimah5.png') }}" alt="EMIS Walimah Image 5" loading="lazy">
+                <div class="walimah-card-caption">
+                    <span>Celebrating sacred effort.</span>
+                </div>
+            </article>
+
+            <article class="walimah-mosaic-card walimah-mosaic-feature wow fadeInUp" data-wow-delay="0.30s">
+                <img src="{{ url_for('static', filename='images/walimah/walimah6.png') }}" alt="EMIS Walimah Image 6" loading="lazy">
+                <div class="walimah-card-caption">
+                    <span>Poise. Light. Achievement.</span>
+                </div>
+            </article>
+
+            <article class="walimah-mosaic-card wow fadeInUp" data-wow-delay="0.35s">
+                <img src="{{ url_for('static', filename='images/walimah/walimah7.png') }}" alt="EMIS Walimah Image 7" loading="lazy">
+                <div class="walimah-card-caption">
+                    <span>A beautiful milestone.</span>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="walimah-section walimah-section-crown">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <div class="walimah-copy-block wow fadeInLeft" data-wow-delay="0.1s">
+                    <span class="section-title bg-white text-start text-primary pe-3">Segment Two</span>
+                    <h2 class="walimah-section-title">A Ceremony of Faith, Learning, and Joy</h2>
+                    <p class="walimah-section-text">
+                        Walimah at EMIS is a proud and memorable celebration that honours learners who have reached a special stage in their Qur’anic and Tahfeez journey.
+                    </p>
+
+                    <div class="walimah-quote-stack">
+                        <div class="walimah-mini-quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>“Indeed, this Qur’an guides to that which is most upright.”</p>
+                            <span>— Qur’an 17:9</span>
+                        </div>
+
+                        <div class="walimah-mini-quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>“And say, ‘My Lord, increase me in knowledge.’”</p>
+                            <span>— Qur’an 20:114</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="walimah-stage" id="walimahStage">
+                    <div class="walimah-slide-grid active">
+                        <article class="walimah-stage-card slide-in-soft delay-1">
+                            <img src="{{ url_for('static', filename='images/walimah/walimah8.png') }}" alt="EMIS Walimah Image 8" loading="lazy">
+                            <div class="walimah-overlay-note">
+                                <span>Faith with confidence</span>
+                            </div>
+                        </article>
+
+                        <article class="walimah-stage-card slide-in-soft delay-2">
+                            <img src="{{ url_for('static', filename='images/walimah/walimah9.png') }}" alt="EMIS Walimah Image 9" loading="lazy">
+                            <div class="walimah-overlay-note">
+                                <span>Learning with honour</span>
+                            </div>
+                        </article>
+
+                        <article class="walimah-stage-card slide-in-soft delay-3">
+                            <img src="{{ url_for('static', filename='images/walimah/walimah10.png') }}" alt="EMIS Walimah Image 10" loading="lazy">
+                            <div class="walimah-overlay-note">
+                                <span>Milestones worth celebrating</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="walimah-slide-grid">
+                        <article class="walimah-stage-card slide-in-soft delay-1">
+                            <img src="{{ url_for('static', filename='images/walimah/walimah11.png') }}" alt="EMIS Walimah Image 11" loading="lazy">
+                            <div class="walimah-overlay-note">
+                                <span>Grace in every smile</span>
+                            </div>
+                        </article>
+
+                        <article class="walimah-stage-card slide-in-soft delay-2">
+                            <img src="{{ url_for('static', filename='images/walimah/walimah12.png') }}" alt="EMIS Walimah Image 12" loading="lazy">
+                            <div class="walimah-overlay-note">
+                                <span>Radiance of achievement</span>
+                            </div>
+                        </article>
+
+                        <article class="walimah-stage-card slide-in-soft delay-3">
+                            <img src="{{ url_for('static', filename='images/walimah/walimah13.png') }}" alt="EMIS Walimah Image 13" loading="lazy">
+                            <div class="walimah-overlay-note">
+                                <span>Hearts full of gratitude</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="walimah-slide-grid">
+                        <article class="walimah-stage-card slide-in-soft delay-1">
+                            <img src="{{ url_for('static', filename='images/walimah/walimah14.png') }}" alt="EMIS Walimah Image 14" loading="lazy">
+                            <div class="walimah-overlay-note">
+                                <span>Beauty of sacred learning</span>
+                            </div>
+                        </article>
+
+                        <article class="walimah-stage-card slide-in-soft delay-2">
+                            <img src="{{ url_for('static', filename='images/walimah/walimah15.png') }}" alt="EMIS Walimah Image 15" loading="lazy">
+                            <div class="walimah-overlay-note">
+                                <span>Marked by excellence</span>
+                            </div>
+                        </article>
+
+                        <article class="walimah-stage-card slide-in-soft delay-3">
+                            <img src="{{ url_for('static', filename='images/walimah/walimah16.png') }}" alt="EMIS Walimah Image 16" loading="lazy">
+                            <div class="walimah-overlay-note">
+                                <span>A proud Tahfeez journey</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="walimah-stage-indicators" id="walimahIndicators">
+                    <button class="active" type="button" aria-label="Show walimah gallery slide 1"></button>
+                    <button type="button" aria-label="Show walimah gallery slide 2"></button>
+                    <button type="button" aria-label="Show walimah gallery slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="walimah-section walimah-section-reflections">
+    <div class="container">
+        <div class="walimah-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="section-title bg-white text-center text-primary px-3">Segment Three</span>
+            <h2 class="walimah-section-title">A Day of Light, Memories, and Meaning</h2>
+            <p class="walimah-section-text">
+                More than a ceremony, Walimah is a treasured reminder of discipline, devotion, and a future built on knowledge.
+            </p>
+        </div>
+
+        <div class="walimah-reflection-grid">
+            <article class="walimah-reflection-card walimah-reflection-tall wow fadeInUp" data-wow-delay="0.10s">
+                <img src="{{ url_for('static', filename='images/walimah/walimah17.png') }}" alt="EMIS Walimah Image 17" loading="lazy">
+                <div class="walimah-reflection-caption">
+                    <span>Faith. Effort. Fulfilment.</span>
+                </div>
+            </article>
+
+            <article class="walimah-reflection-card walimah-reflection-wide wow fadeInUp" data-wow-delay="0.15s">
+                <div class="walimah-reflection-content">
+                    <div class="walimah-reflection-icon">
+                        <i class="fa fa-mosque"></i>
+                    </div>
+                    <div class="walimah-reflection-text">
+                        <h3>Rooted in Learning</h3>
+                        <p>Where sacred knowledge meets confidence, discipline, and noble character.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="walimah-reflection-card walimah-reflection-wide wow fadeInUp" data-wow-delay="0.20s">
+                <div class="walimah-reflection-content">
+                    <div class="walimah-reflection-icon">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="walimah-reflection-text">
+                        <h3>Marked by Honour</h3>
+                        <p>A graceful celebration of progress, effort, and spiritual growth.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="walimah-closing-strip wow fadeInUp" data-wow-delay="0.25s">
+            <div class="walimah-closing-item">
+                <i class="fa fa-book"></i>
+                <span>Learn with sincerity</span>
+            </div>
+            <div class="walimah-closing-item">
+                <i class="fa fa-lightbulb"></i>
+                <span>Grow in knowledge</span>
+            </div>
+            <div class="walimah-closing-item">
+                <i class="fa fa-heart"></i>
+                <span>Live with purpose</span>
+            </div>
+            <div class="walimah-closing-item">
+                <i class="fa fa-award"></i>
+                <span>Celebrate progress</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/walimah.js') }}"></script>
+{% endblock %}
