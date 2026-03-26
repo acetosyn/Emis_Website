@@ -62,7 +62,7 @@ def walimah():
 
 @app.route("/founder")
 def founder():
-    return render_template("founderr.html", page_title="EMIS Founder", current_page="founder")
+    return render_template("founder.html", page_title="EMIS Founder", current_page="founder")
     
 # -----------------------------
 # Error Handlers
