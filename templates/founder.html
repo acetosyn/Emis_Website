@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title or 'Founder - EMIS' }}{% endblock %}
+
+{% block meta_keywords %}EMIS Founder, Dr. Kola Adeyemi, Epitome Model Islamic Schools Founder, School Chairman, EMIS Leadership, Islamic School Founder{% endblock %}
+
+{% block meta_description %}Meet Dr. Kola Adeyemi, the founder of Epitome Model Islamic Schools, whose vision for balanced Western and Islamic education continues to shape lives with excellence, character, and purpose.{% endblock %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/founder.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<section class="founder-hero">
+    <div class="container">
+        <div class="founder-hero-inner">
+            <div class="founder-hero-copy wow fadeInUp" data-wow-delay="0.1s">
+                <span class="founder-kicker">
+                    <i class="fa fa-user-tie"></i>
+                    Founder & Chairman
+                </span>
+
+                <h1 class="founder-hero-title">Meet the Vision Behind EMIS</h1>
+
+                <p class="founder-hero-text">
+                    Dr. Kola Adeyemi is a visionary leader whose passion for education, character, and purposeful development continues to shape the identity of Epitome Model Islamic Schools.
+                </p>
+
+                <div class="founder-hero-pills">
+                    <span><i class="fa fa-graduation-cap"></i> Visionary Leadership</span>
+                    <span><i class="fa fa-balance-scale"></i> Values & Structure</span>
+                    <span><i class="fa fa-lightbulb"></i> Purposeful Education</span>
+                </div>
+
+                <div class="founder-hero-quote">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Education should develop the mind, the character, and the spirit together.</p>
+                    <span>— EMIS Foundational Vision</span>
+                </div>
+            </div>
+
+            <div class="founder-hero-visual wow zoomIn" data-wow-delay="0.25s">
+                <div class="founder-hero-main-card">
+                    <img src="{{ url_for('static', filename='images/founder/chairman1.jpg') }}" alt="Dr. Kola Adeyemi, Founder of EMIS" loading="lazy">
+
+                    <div class="founder-hero-badge badge-one">
+                        <i class="fa fa-star"></i>
+                        <span>Founder of EMIS</span>
+                    </div>
+
+                    <div class="founder-hero-badge badge-two">
+                        <i class="fa fa-award"></i>
+                        <span>Leadership with purpose</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="founder-section founder-section-story">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="founder-copy-block wow fadeInLeft" data-wow-delay="0.1s">
+                    <span class="section-title bg-white text-start text-primary pe-3">About the Founder</span>
+                    <h2 class="founder-section-title">A Life Shaped by Vision, Learning, and Impact</h2>
+
+                    <p class="founder-section-text">
+                        Dr. Kola Adeyemi is a visionary leader with a deep passion for education and human development. His background spans Communications, Public Relations, and Law, giving him a well-rounded perspective on leadership and impact.
+                    </p>
+
+                    <p class="founder-section-text">
+                        As the founder of Epitome Model Islamic Schools, he has created something intentional — a system that brings together Western education and Islamic teachings in a way that feels balanced and purposeful.
+                    </p>
+
+                    <p class="founder-section-text">
+                        The goal is not just academic success, but raising individuals who are grounded in values and aware of who they are.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="founder-side-card wow fadeInRight" data-wow-delay="0.2s">
+                    <img src="{{ url_for('static', filename='images/founder/chairman2.jpg') }}" alt="Dr. Kola Adeyemi portrait image" loading="lazy">
+                    <div class="founder-side-caption">
+                        <span>Intentional leadership. Lasting influence.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="founder-section founder-section-values">
+    <div class="container">
+        <div class="founder-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="section-title bg-white text-center text-primary px-3">His Educational Philosophy</span>
+            <h2 class="founder-section-title">Building Minds, Character, and Spirit</h2>
+            <p class="founder-section-text founder-section-text-narrow">
+                His approach to education goes beyond the classroom. It focuses on shaping character, building discipline, and encouraging students to think for themselves while staying rooted in strong moral principles.
+            </p>
+        </div>
+
+        <div class="founder-values-grid">
+            <article class="founder-value-card wow fadeInUp" data-wow-delay="0.10s">
+                <div class="founder-value-icon">
+                    <i class="fa fa-book-reader"></i>
+                </div>
+                <h3>Balanced Learning</h3>
+                <p>Bringing together Western education and Islamic teachings with clarity and purpose.</p>
+            </article>
+
+            <article class="founder-value-card wow fadeInUp" data-wow-delay="0.18s">
+                <div class="founder-value-icon">
+                    <i class="fa fa-shield-alt"></i>
+                </div>
+                <h3>Strong Character</h3>
+                <p>Raising learners who are disciplined, grounded, and guided by values.</p>
+            </article>
+
+            <article class="founder-value-card wow fadeInUp" data-wow-delay="0.26s">
+                <div class="founder-value-icon">
+                    <i class="fa fa-seedling"></i>
+                </div>
+                <h3>Meaningful Impact</h3>
+                <p>Encouraging students to grow into individuals who contribute positively to society.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="founder-section founder-section-legacy">
+    <div class="container">
+        <div class="founder-legacy-grid">
+            <div class="founder-legacy-copy wow fadeInUp" data-wow-delay="0.1s">
+                <span class="section-title bg-white text-start text-primary pe-3">Legacy</span>
+                <h2 class="founder-section-title">A School Built on Quality, Structure, and Consistency</h2>
+
+                <p class="founder-section-text">
+                    Under his leadership, Epitome schools has grown into a place known for quality, structure, and consistency. It is a space where students are not only taught to excel in their studies, but also to live with integrity and contribute meaningfully to their communities.
+                </p>
+
+                <p class="founder-section-text">
+                    Dr. Kola Adeyemi’s commitment to excellence continues to influence everyone connected to the school, from students to parents to staff.
+                </p>
+            </div>
+
+            <article class="founder-legacy-image wow fadeInUp" data-wow-delay="0.2s">
+                <img src="{{ url_for('static', filename='images/founder/chairman3.jpg') }}" alt="Founder of EMIS leadership image" loading="lazy">
+                <div class="founder-legacy-caption">
+                    <span>Excellence that inspires generations.</span>
+                </div>
+            </article>
+        </div>
+
+        <div class="founder-closing-strip wow fadeInUp" data-wow-delay="0.25s">
+            <div class="founder-closing-item">
+                <i class="fa fa-check-circle"></i>
+                <span>Quality</span>
+            </div>
+            <div class="founder-closing-item">
+                <i class="fa fa-layer-group"></i>
+                <span>Structure</span>
+            </div>
+            <div class="founder-closing-item">
+                <i class="fa fa-compass"></i>
+                <span>Purpose</span>
+            </div>
+            <div class="founder-closing-item">
+                <i class="fa fa-hands-helping"></i>
+                <span>Impact</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/founder.js') }}"></script>
+{% endblock %}

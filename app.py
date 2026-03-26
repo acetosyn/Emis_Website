@@ -58,6 +58,12 @@ def sports():
 def walimah():
     return render_template("walimah.html", page_title="EMIS Walimah Ceremony", current_page="walimah")
 
+
+
+@app.route("/founder")
+def founder():
+    return render_template("founderr.html", page_title="EMIS Founder", current_page="founder")
+    
 # -----------------------------
 # Error Handlers
 # -----------------------------
