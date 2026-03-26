@@ -180,12 +180,17 @@
 
                 <!-- About -->
                 <div class="nav-item dropdown nav-item-split">
-                    <div class ="nav-link-group">
-                       <a href = "{{ url_for('static', filename='images/logo.png') }}" class="nav-link nav-link-main">
-                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="EMIS Logo" class="img-fluid" style="height: 40px;">
-                        </a>
+                    <div class="nav-link-group">
+                        <a href="{{ url_for('about') }}" class="nav-link nav-link-main {% if current_page == 'about' %}active{% endif %}">About</a>
 
-                        <button class="nav">
+                        <button class="nav-link-toggle d-xl-none" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle About menu">
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+
+                        <a href="{{ url_for('about') }}" class="nav-link dropdown-toggle nav-link-desktop d-none d-xl-inline-flex {% if current_page == 'about' %}active{% endif %}">
+                            About
+                        </a>
+                    </div>
 
                     <div class="dropdown-menu fade-down m-0">
                         <a href="{{ url_for('founder') }}" class="dropdown-item">About the Founder</a>
