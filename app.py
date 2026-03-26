@@ -8,7 +8,7 @@ app = Flask(__name__)
 # -----------------------------
 @app.route("/")
 def home():
-    return render_template("index.html", page_title="EMIS | Home", current_page="home") 
+    return render_template( "index.html", page_title="Home", current_page="home" )
 
 
 @app.route("/about")
