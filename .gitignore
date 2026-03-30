@@ -1,20 +1,7 @@
-# gitignore template for ecu.test workspaces - by tracetronic https://tracetronic.com
-# website: https://www.ecu-test.com
-#   * all directories are related to the default directories, please adapt the .gitignore if you use customized directories
-
-
-# Test results and test execution related content
-#   * Git is not intended to store and provide test results for all iterations
-#   * We recommend to use test.guide (https://www.test-guide.info) for the test report management
+# Test results
 TestReports
 
-# Report generators and templates
-#   * if you want to provide (f.e.) your own report generators exclude the directory here and ignore only the unnecessary subdirectories
-
-# optional, default for external Python libraries
-
-# Exclude large binary artifacts
-#  * you can manage your artifacts also with test.guide (https://www.test-guide.info) and reference them via Playbooks
+# Large binary artifacts
 Offline-FIUs
 Offline-Models
 Offline-SGBDs
@@ -22,11 +9,12 @@ Offline-SGBDs
 *.msi
 *.zip
 *.7z
+*.env
 
-# Exclude default and custom temporary directories
+# Temporary directories
 Backup_*
 
-# Python bytecode and cache files
+# Python cache
 __pycache__/
 *.py[cod]
 .env
