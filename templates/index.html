@@ -8,6 +8,7 @@
 
 {% block extra_css %}
 <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/reg.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -97,7 +98,10 @@
                                 <p class="hero-simple-text">{{ slide.text }}</p>
                                 <div class="hero-btn-group">
                                     <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
-                                    <a href="{{ url_for('contact') }}" class="btn btn-light animated slideInRight">Enroll Today</a>
+
+        <ahref="#" class="btn btn-light animated slideInRight" data-bs-toggle="modal" data-bs-target="#emisRegistrationModal"> Enroll Today </a>
+
+                                    
                                 </div>
                             </div>
                         </div>
@@ -468,5 +472,211 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- Registration Modal Start -->
+<div
+    class="modal fade emis-reg-modal"
+    id="emisRegistrationModal"
+    tabindex="-1"
+    aria-labelledby="emisRegistrationModalLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered modal-lg emis-reg-dialog">
+        <div class="modal-content emis-reg-content">
+
+            <div class="emis-reg-shell">
+                <button
+                    type="button"
+                    class="btn-close emis-reg-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                ></button>
+
+                <div class="emis-reg-grid">
+                    <!-- Left Panel -->
+                    <div class="emis-reg-aside">
+                        <span class="emis-reg-kicker">
+                            <i class="fa fa-user-graduate"></i>
+                            Enroll at EMIS
+                        </span>
+
+                        <h2 class="emis-reg-title" id="emisRegistrationModalLabel">
+                            Start your child’s admission enquiry today.
+                        </h2>
+
+                        <p class="emis-reg-text">
+                            Fill in this quick form and our team will reach out to guide you on
+                            enrollment, school programmes, class placement, Tahfeez, Islamiyyah,
+                            or any other enquiry you may have.
+                        </p>
+
+                        <div class="emis-reg-pills">
+                            <span><i class="fa fa-check-circle"></i> Fast Response</span>
+                            <span><i class="fa fa-check-circle"></i> Parent Friendly</span>
+                            <span><i class="fa fa-check-circle"></i> Secure Submission</span>
+                        </div>
+
+                        <div class="emis-reg-quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>
+                                A simple first step for parents and guardians who want to
+                                learn more about EMIS or begin the enrollment process.
+                            </p>
+                            <span>EMIS Admissions Support</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel -->
+                    <div class="emis-reg-form-wrap">
+                        <div class="emis-reg-form-head">
+                            <span class="emis-reg-form-tag">Quick Registration Form</span>
+                            <h3>Tell us a little about you</h3>
+                            <p>
+                                Fields marked with <strong>*</strong> are required.
+                            </p>
+                        </div>
+
+                        <form class="emis-reg-form">
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label for="emisParentName" class="emis-reg-label">
+                                        Name <span>*</span>
+                                    </label>
+                                    <div class="emis-reg-input-wrap">
+                                        <i class="fa fa-user"></i>
+                                        <input
+                                            type="text"
+                                            class="form-control emis-reg-control"
+                                            id="emisParentName"
+                                            name="name"
+                                            placeholder="Enter your name"
+                                            required
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="emisParentPhone" class="emis-reg-label">
+                                        Phone Number <span>*</span>
+                                    </label>
+                                    <div class="emis-reg-input-wrap">
+                                        <i class="fa fa-phone-alt"></i>
+                                        <input
+                                            type="tel"
+                                            class="form-control emis-reg-control"
+                                            id="emisParentPhone"
+                                            name="phone"
+                                            placeholder="Enter your phone number"
+                                            required
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="emisParentEmail" class="emis-reg-label">
+                                        E-mail Address <span>*</span>
+                                    </label>
+                                    <div class="emis-reg-input-wrap">
+                                        <i class="fa fa-envelope"></i>
+                                        <input
+                                            type="email"
+                                            class="form-control emis-reg-control"
+                                            id="emisParentEmail"
+                                            name="email"
+                                            placeholder="Enter your e-mail address"
+                                            required
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="emisParentLocation" class="emis-reg-label">
+                                        Location
+                                    </label>
+                                    <div class="emis-reg-input-wrap">
+                                        <i class="fa fa-map-marker-alt"></i>
+                                        <input
+                                            type="text"
+                                            class="form-control emis-reg-control"
+                                            id="emisParentLocation"
+                                            name="location"
+                                            placeholder="Enter your location"
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="emisPurpose" class="emis-reg-label">
+                                        Purpose <span>*</span>
+                                    </label>
+                                    <div class="emis-reg-input-wrap">
+                                        <i class="fa fa-list-alt"></i>
+                                        <select
+                                            class="form-control emis-reg-control emis-reg-select"
+                                            id="emisPurpose"
+                                            name="purpose"
+                                            required
+                                        >
+                                            <option value="">Select purpose</option>
+                                            <option value="Enrollment">Enrollment</option>
+                                            <option value="Admission Enquiry">Admission Enquiry</option>
+                                            <option value="Programme Information">Programme Information</option>
+                                            <option value="Class Placement Enquiry">Class Placement Enquiry</option>
+                                            <option value="Tahfeez Enquiry">Tahfeez Enquiry</option>
+                                            <option value="Islamiyyah Enquiry">Islamiyyah Enquiry</option>
+                                            <option value="School Visit Request">School Visit Request</option>
+                                            <option value="Transfer Enquiry">Transfer Enquiry</option>
+                                            <option value="Complaint">Complaint</option>
+                                            <option value="General Enquiry">General Enquiry</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="emisMessage" class="emis-reg-label">
+                                        Additional Note
+                                    </label>
+                                    <div class="emis-reg-input-wrap emis-reg-textarea-wrap">
+                                        <i class="fa fa-comment-dots"></i>
+                                        <textarea
+                                            class="form-control emis-reg-control emis-reg-textarea"
+                                            id="emisMessage"
+                                            name="message"
+                                            placeholder="Add any extra detail here..."
+                                        ></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="emis-reg-note">
+                                        <i class="fa fa-info-circle"></i>
+                                        <span>
+                                            This is a quick enquiry form. After submission, the school team can follow up with you.
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn emis-reg-submit-btn">
+                                        <i class="fa fa-paper-plane me-2"></i>
+                                        Submit Registration
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Registration Modal End -->
+
+
 <!-- Testimonial End -->
 {% endblock %}

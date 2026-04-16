@@ -1,0 +1,878 @@
+/********** Staffs Page **********/
+
+.staff-hero {
+    position: relative;
+    padding: 112px 0 92px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 10% 16%, rgba(34, 197, 94, 0.10), transparent 24%),
+        radial-gradient(circle at 88% 12%, rgba(245, 158, 11, 0.11), transparent 18%),
+        radial-gradient(circle at 80% 82%, rgba(168, 85, 247, 0.08), transparent 20%),
+        linear-gradient(180deg, #fffef9 0%, #f8fff9 44%, #ffffff 100%);
+}
+
+.staff-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.34;
+}
+
+.staff-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 24%, rgba(255,255,255,0.32), transparent 10%),
+        radial-gradient(circle at 74% 30%, rgba(255,255,255,0.22), transparent 12%),
+        radial-gradient(circle at 60% 82%, rgba(255,255,255,0.18), transparent 12%);
+    animation: staffGlowFloat 10s linear infinite;
+}
+
+@keyframes staffGlowFloat {
+    0% {
+        transform: translateY(0);
+        opacity: 0.82;
+    }
+    50% {
+        transform: translateY(-8px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.82;
+    }
+}
+
+.staff-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(380px, 0.98fr);
+    align-items: center;
+    gap: 52px;
+}
+
+.staff-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.76rem 1.08rem;
+    border-radius: 999px;
+    background: rgba(34, 197, 94, 0.10);
+    color: #176034;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    margin-bottom: 18px;
+    box-shadow: 0 12px 34px rgba(34, 197, 94, 0.10);
+    backdrop-filter: blur(10px);
+}
+
+.staff-kicker i {
+    color: #f59e0b;
+}
+
+.staff-hero-title {
+    font-size: clamp(2rem, 3.8vw, 3.25rem);
+    line-height: 1.04;
+    margin-bottom: 18px;
+    color: #182338;
+    text-shadow: 0 10px 24px rgba(24, 35, 56, 0.05);
+    max-width: 560px;
+}
+
+.staff-hero-text {
+    font-size: 1.05rem;
+    line-height: 1.92;
+    max-width: 720px;
+    margin-bottom: 0;
+    color: #556070;
+}
+
+/********** Hero Visual **********/
+.staff-hero-visual {
+    position: relative;
+}
+
+.staff-hero-frame {
+    position: relative;
+    min-height: 760px;
+    border-radius: 38px;
+    padding: 30px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.12), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.10), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,251,248,0.98));
+    border: 1px solid rgba(24, 35, 56, 0.08);
+    box-shadow: 0 30px 80px rgba(17, 24, 39, 0.14);
+    isolation: isolate;
+}
+
+.staff-hero-frame::before {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border-radius: 28px;
+    border: 1px dashed rgba(34, 197, 94, 0.16);
+    pointer-events: none;
+}
+
+.staff-hero-orbit {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(245, 158, 11, 0.16);
+    pointer-events: none;
+    animation: orbitSpin 18s linear infinite;
+}
+
+.orbit-one {
+    width: 360px;
+    height: 360px;
+    top: 54px;
+    right: 28px;
+}
+
+.orbit-two {
+    width: 260px;
+    height: 260px;
+    left: 38px;
+    bottom: 66px;
+    animation-direction: reverse;
+    animation-duration: 20s;
+}
+
+@keyframes orbitSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.staff-hero-highlight-card {
+    position: absolute;
+    z-index: 2;
+    width: 308px;
+    border-radius: 30px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.97);
+    border: 1px solid rgba(24, 35, 56, 0.08);
+    box-shadow: 0 24px 60px rgba(17, 24, 39, 0.14);
+    transition: transform 0.45s ease, box-shadow 0.45s ease, opacity 0.35s ease;
+}
+
+.staff-hero-highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 32px 72px rgba(17, 24, 39, 0.18);
+}
+
+.staff-hero-highlight-card-main {
+    width: 330px;
+    box-shadow: 0 34px 82px rgba(17, 24, 39, 0.18);
+}
+
+.staff-hero-highlight-card-main::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 6px;
+    background: linear-gradient(90deg, #f59e0b, #22c55e, #a855f7);
+    z-index: 3;
+}
+
+.card-eda {
+    top: 28px;
+    left: 6px;
+    z-index: 4;
+    transform-origin: center center;
+}
+
+.card-edo {
+    top: 208px;
+    right: 6px;
+    z-index: 3;
+}
+
+.staff-hero-highlight-image {
+    position: relative;
+    height: 370px;
+    overflow: hidden;
+    background: #eef7f0;
+}
+
+.staff-hero-highlight-card-main .staff-hero-highlight-image {
+    height: 390px;
+}
+
+.staff-hero-highlight-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(24,35,56,0.02) 0%, rgba(24,35,56,0.13) 100%);
+    pointer-events: none;
+}
+
+.staff-hero-highlight-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.9s ease, filter 0.45s ease;
+}
+
+.staff-hero-highlight-card:hover .staff-hero-highlight-image img {
+    transform: scale(1.05);
+    filter: saturate(1.06);
+}
+
+.staff-hero-highlight-copy {
+    position: relative;
+    padding: 22px 20px 24px;
+}
+
+.staff-hero-highlight-copy span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.54rem 0.84rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.staff-hero-highlight-copy span i {
+    color: #f59e0b;
+}
+
+.card-eda .staff-hero-highlight-copy span {
+    background: rgba(245, 158, 11, 0.12);
+    color: #8a5300;
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.10);
+}
+
+.card-edo .staff-hero-highlight-copy span {
+    background: rgba(34, 197, 94, 0.10);
+    color: #176034;
+}
+
+.staff-hero-highlight-copy h3 {
+    font-size: 1.14rem;
+    line-height: 1.42;
+    color: #182338;
+    margin-bottom: 8px;
+}
+
+.staff-hero-highlight-card-main .staff-hero-highlight-copy h3 {
+    font-size: 1.18rem;
+}
+
+.staff-hero-highlight-copy p {
+    margin: 0;
+    color: #556070;
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+.staff-hero-highlight-card-main .staff-hero-highlight-copy::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(245,158,11,0.14), rgba(34,197,94,0.12));
+    box-shadow: 0 12px 24px rgba(17, 24, 39, 0.08);
+    pointer-events: none;
+}
+
+.staff-hero-highlight-card-main .staff-hero-highlight-copy::before {
+    content: "\f521";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 38px;
+    bottom: 36px;
+    z-index: 1;
+    color: #1f2937;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+/********** Management Grid Section **********/
+.staff-section {
+    position: relative;
+    padding: 92px 0 108px;
+}
+
+.staff-section-management {
+    background:
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 18%),
+        linear-gradient(180deg, rgba(249,253,250,0.9), rgba(255,255,255,1));
+}
+
+.staff-management-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+/********** Staff Cards **********/
+.staff-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    border: 1px solid rgba(24, 35, 56, 0.08);
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.99), rgba(248,252,249,0.98));
+    box-shadow: 0 18px 42px rgba(17, 24, 39, 0.10);
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+    padding: 22px 20px 24px;
+}
+
+.staff-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 60px rgba(17, 24, 39, 0.15);
+}
+
+.staff-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 5px;
+    background: linear-gradient(90deg, #22c55e, #f59e0b, #a855f7);
+}
+
+.staff-card-rank {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+}
+
+.staff-card-rank span {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.96);
+    border: 1px solid rgba(24, 35, 56, 0.08);
+    box-shadow: 0 16px 34px rgba(17, 24, 39, 0.10);
+    color: #182338;
+    font-weight: 800;
+    font-size: 0.96rem;
+}
+
+.staff-card-image-wrap {
+    position: relative;
+    margin-bottom: 18px;
+    border-radius: 26px;
+    overflow: hidden;
+    background: #eef7f0;
+}
+
+.staff-card-image-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(24,35,56,0.01) 34%, rgba(24,35,56,0.10) 100%);
+    pointer-events: none;
+}
+
+.staff-card-image-wrap img {
+    width: 100%;
+    height: 320px;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.9s ease, filter 0.45s ease;
+}
+
+.staff-card:hover .staff-card-image-wrap img {
+    transform: scale(1.045);
+    filter: saturate(1.05);
+}
+
+.staff-card-icon {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    z-index: 2;
+    width: 54px;
+    height: 54px;
+    border-radius: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(24, 35, 56, 0.08);
+    box-shadow: 0 16px 34px rgba(17, 24, 39, 0.12);
+    color: #16a34a;
+    font-size: 1.1rem;
+    backdrop-filter: blur(12px);
+}
+
+.staff-card-copy h3 {
+    font-size: 1.15rem;
+    line-height: 1.45;
+    margin-bottom: 10px;
+    color: #182338;
+}
+
+.staff-card-role {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin: 0;
+    color: #556070;
+    font-weight: 700;
+    line-height: 1.72;
+}
+
+.staff-card-role i {
+    color: #f59e0b;
+    margin-top: 4px;
+}
+
+/********** Scroll Reveal Support **********/
+.staff-reveal {
+    opacity: 0;
+    transform: translateY(34px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.staff-reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/********** Responsive **********/
+@media (max-width: 1399.98px) {
+    .staff-hero {
+        padding: 104px 0 86px;
+    }
+
+    .staff-hero-inner {
+        gap: 42px;
+    }
+
+    .staff-hero-frame {
+        min-height: 700px;
+    }
+
+    .staff-hero-highlight-card {
+        width: 280px;
+    }
+
+    .staff-hero-highlight-card-main {
+        width: 306px;
+    }
+
+    .staff-hero-highlight-image {
+        height: 330px;
+    }
+
+    .staff-hero-highlight-card-main .staff-hero-highlight-image {
+        height: 356px;
+    }
+
+    .staff-management-grid {
+        gap: 22px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .staff-hero {
+        padding: 92px 0 78px;
+    }
+
+    .staff-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .staff-hero-copy {
+        max-width: 760px;
+    }
+
+    .staff-hero-title {
+        max-width: 620px;
+    }
+
+    .staff-hero-frame {
+        min-height: 660px;
+    }
+
+    .card-eda {
+        left: 18px;
+        top: 24px;
+    }
+
+    .card-edo {
+        right: 18px;
+        top: 190px;
+    }
+
+    .staff-management-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .staff-section-intro {
+        margin-bottom: 34px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .staff-section {
+        padding: 76px 0 88px;
+    }
+
+    .staff-hero-text,
+    .staff-section-subtext {
+        line-height: 1.8;
+    }
+
+    .staff-hero-frame {
+        min-height: auto;
+        padding: 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+        border-radius: 28px;
+    }
+
+    .staff-hero-highlight-card,
+    .staff-hero-highlight-card-main {
+        position: relative;
+        width: 100%;
+        top: auto;
+        left: auto;
+        right: auto;
+        transform: none !important;
+    }
+
+    .staff-hero-highlight-image,
+    .staff-hero-highlight-card-main .staff-hero-highlight-image {
+        height: 320px;
+    }
+
+    .staff-hero-highlight-copy h3 {
+        font-size: 1.08rem;
+    }
+
+    .orbit-one,
+    .orbit-two {
+        display: none;
+    }
+
+    .staff-management-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .staff-card-image-wrap img {
+        height: 300px;
+    }
+
+    .staff-section-intro {
+        max-width: 720px;
+        margin-bottom: 30px;
+    }
+
+    .staff-section-heading {
+        font-size: 2rem;
+    }
+
+    .card-eda .staff-hero-highlight-image img,
+    .card-edo .staff-hero-highlight-image img {
+        object-fit: cover;
+        object-position: center top;
+        transform: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .staff-hero {
+        padding: 72px 0 54px;
+    }
+
+    .staff-hero-inner {
+        gap: 28px;
+    }
+
+    .staff-hero-title {
+        font-size: 1.75rem;
+        line-height: 1.1;
+        max-width: 100%;
+    }
+
+    .staff-hero-text {
+        font-size: 0.96rem;
+    }
+
+    .staff-hero-frame {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        border-radius: 24px;
+        gap: 18px;
+    }
+
+    .staff-hero-highlight-image,
+    .staff-hero-highlight-card-main .staff-hero-highlight-image {
+        height: 250px;
+    }
+
+    .staff-hero-highlight-copy {
+        padding: 18px 16px 20px;
+    }
+
+    .staff-management-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .staff-card {
+        padding: 18px 16px 20px;
+        border-radius: 22px;
+    }
+
+    .staff-card-image-wrap {
+        border-radius: 18px;
+    }
+
+    .staff-card-image-wrap img {
+        height: 280px;
+    }
+
+    .staff-card-rank span {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        font-size: 0.9rem;
+    }
+
+    .staff-card-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 16px;
+        font-size: 1rem;
+    }
+
+    .staff-section-intro {
+        margin-bottom: 26px;
+    }
+
+    .staff-section-kicker {
+        font-size: 0.72rem;
+        padding: 0.66rem 0.92rem;
+        margin-bottom: 14px;
+    }
+
+    .staff-section-heading {
+        font-size: 1.65rem;
+        line-height: 1.14;
+    }
+
+    .staff-section-subtext {
+        font-size: 0.95rem;
+    }
+
+    .card-eda .staff-hero-highlight-image img {
+        object-fit: cover;
+        object-position: center 18%;
+        transform: scale(1.01);
+    }
+
+    .card-edo .staff-hero-highlight-image img {
+        object-fit: cover;
+        object-position: center 12%;
+        transform: scale(1.01);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .staff-hero {
+        padding: 62px 0 48px;
+    }
+
+    .staff-hero-title {
+        font-size: 1.55rem;
+        line-height: 1.12;
+    }
+
+    .staff-hero-text {
+        font-size: 0.92rem;
+        line-height: 1.74;
+    }
+
+    .staff-kicker {
+        font-size: 0.67rem;
+        padding: 0.56rem 0.82rem;
+    }
+
+    .staff-hero-frame {
+        padding: 16px;
+        border-radius: 22px;
+    }
+
+    .staff-hero-highlight-image,
+    .staff-hero-highlight-card-main .staff-hero-highlight-image {
+        height: 220px;
+    }
+
+    .staff-hero-highlight-copy {
+        padding: 16px 14px 18px;
+    }
+
+    .staff-hero-highlight-copy span {
+        font-size: 0.68rem;
+        padding: 0.48rem 0.72rem;
+    }
+
+    .staff-hero-highlight-copy h3 {
+        font-size: 1rem;
+    }
+
+    .staff-hero-highlight-copy p {
+        font-size: 0.92rem;
+    }
+
+    .staff-card {
+        padding: 16px 14px 18px;
+    }
+
+    .staff-card-image-wrap img {
+        height: 245px;
+    }
+
+    .staff-card-copy h3 {
+        font-size: 1.02rem;
+    }
+
+    .staff-card-role {
+        font-size: 0.92rem;
+        line-height: 1.64;
+    }
+
+    .staff-section-intro {
+        margin-bottom: 22px;
+    }
+
+    .staff-section-heading {
+        font-size: 1.48rem;
+    }
+
+    .staff-section-subtext {
+        font-size: 0.92rem;
+        line-height: 1.72;
+    }
+
+    .card-eda .staff-hero-highlight-image img {
+        object-position: center 16%;
+        transform: scale(1);
+    }
+
+    .card-edo .staff-hero-highlight-image img {
+        object-position: center 10%;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 430px) {
+    .staff-hero {
+        padding: 56px 0 44px;
+    }
+
+    .staff-hero-title {
+        font-size: 1.36rem;
+        line-height: 1.14;
+    }
+
+    .staff-hero-text {
+        font-size: 0.88rem;
+        line-height: 1.68;
+    }
+
+    .staff-section {
+        padding: 60px 0 76px;
+    }
+
+    .staff-hero-frame {
+        padding: 14px;
+        gap: 16px;
+    }
+
+    .staff-hero-highlight-image,
+    .staff-hero-highlight-card-main .staff-hero-highlight-image {
+        height: 195px;
+    }
+
+    .staff-card-image-wrap img {
+        height: 210px;
+    }
+
+    .staff-card-rank {
+        top: 12px;
+        right: 12px;
+    }
+
+    .staff-card-rank span {
+        width: 40px;
+        height: 40px;
+        border-radius: 13px;
+        font-size: 0.84rem;
+    }
+
+    .staff-card-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        left: 12px;
+        bottom: 12px;
+    }
+
+    .staff-card-copy h3 {
+        font-size: 0.98rem;
+    }
+
+    .staff-card-role {
+        font-size: 0.88rem;
+    }
+
+    .staff-section-kicker {
+        font-size: 0.66rem;
+        padding: 0.54rem 0.8rem;
+    }
+
+    .staff-section-heading {
+        font-size: 1.32rem;
+        line-height: 1.14;
+    }
+
+    .staff-section-subtext {
+        font-size: 0.88rem;
+        line-height: 1.66;
+    }
+
+    .card-eda .staff-hero-highlight-image img {
+        object-position: center 14%;
+    }
+
+    .card-edo .staff-hero-highlight-image img {
+        object-position: center 8%;
+    }
+}

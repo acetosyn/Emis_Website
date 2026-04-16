@@ -13,398 +13,295 @@
 {% endblock %}
 
 {% block content %}
-<!-- Hero Start -->
+
 <section class="about-hero">
     <div class="container">
         <div class="about-hero-inner">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-7">
-                    <div class="about-hero-content wow fadeInUp" data-wow-delay="0.1s">
-                        <span class="about-badge">About Epitome Model Islamic Schools</span>
-                        <h1 class="about-hero-title">Faith-rooted education shaping excellent minds, character, and future leaders.</h1>
-                        <p class="about-hero-text">
-                            Epitome Model Islamic Schools is a group of co-educational institutions established in 2008,
-                            committed to raising a generation guided by knowledge, discipline, moral excellence, and the fear of Allah.
-                        </p>
+            <div class="about-hero-copy wow fadeInUp" data-wow-delay="0.1s">
+                <span class="about-kicker">
+                    <i class="fa fa-school"></i>
+                    About EMIS
+                </span>
 
-                        <div class="about-hero-pills">
-                            <span class="about-pill"><i class="fa fa-calendar-alt"></i> Established in 2008</span>
-                            <span class="about-pill"><i class="fa fa-book-reader"></i> Total Education</span>
-                            <span class="about-pill"><i class="fa fa-mosque"></i> Islamic & Western Learning</span>
-                        </div>
-                    </div>
+                <h1 class="about-hero-title">Faith-rooted education for excellence, character, and purpose.</h1>
+
+                <p class="about-hero-text">
+                    Epitome Model Islamic Schools is committed to raising learners through a balanced blend of Islamic and Western education, guided by discipline, values, and academic excellence.
+                </p>
+
+                <div class="about-hero-points">
+                    <span><i class="fa fa-calendar-alt"></i> Established 2008</span>
+                    <span><i class="fa fa-book-reader"></i> Total Education</span>
+                    <span><i class="fa fa-mosque"></i> Faith & Knowledge</span>
                 </div>
+            </div>
 
-                <div class="col-lg-5">
-                    <div class="about-hero-panel wow fadeInUp" data-wow-delay="0.3s">
-                        <h4 class="mb-4">EMIS at a Glance</h4>
+            <div class="about-hero-visual wow zoomIn" data-wow-delay="0.25s">
+                <div class="about-hero-frame">
+                    <div class="about-hero-orbit orbit-one"></div>
+                    <div class="about-hero-orbit orbit-two"></div>
 
-                        <div class="hero-stat-row">
-                            <div class="hero-stat-box">
-                                <h3>2008</h3>
-                                <p>Founded</p>
-                            </div>
-                            <div class="hero-stat-box">
-                                <h3>10</h3>
-                                <p>Core Aims</p>
+                    <article class="about-hero-card">
+                        <div class="about-hero-card-image">
+                            <img src="{{ url_for('static', filename='images/about.PNG') }}" alt="About Epitome Model Islamic Schools" loading="lazy">
+
+                            <div class="about-hero-image-badges">
+                                <span><i class="fa fa-award"></i> Excellence</span>
+                                <span><i class="fa fa-heart"></i> Values</span>
                             </div>
                         </div>
 
-                        <div class="about-panel-points">
-                            <div class="about-panel-point">
-                                <i class="fa fa-check-circle"></i>
-                                <span>Co-educational institution with a strong moral and academic foundation</span>
-                            </div>
-                            <div class="about-panel-point">
-                                <i class="fa fa-check-circle"></i>
-                                <span>Vision-driven learning centered on faith, responsibility, and excellence</span>
-                            </div>
-                            <div class="about-panel-point">
-                                <i class="fa fa-check-circle"></i>
-                                <span>Supportive school community for students, staff, and parents</span>
+                        <div class="about-hero-card-content">
+                            <span class="about-hero-badge">
+                                <i class="fa fa-star"></i>
+                                EMIS at a Glance
+                            </span>
+
+                            <h3>Epitome Model Islamic Schools</h3>
+
+                            <p class="about-hero-card-text">
+                                A school community shaped by faith, discipline, purposeful learning, and future-focused education.
+                            </p>
+
+                            <div class="about-hero-mini-grid">
+                                <div class="about-mini-card">
+                                    <i class="fa fa-user-graduate"></i>
+                                    <span>Future Leaders</span>
+                                </div>
+                                <div class="about-mini-card">
+                                    <i class="fa fa-balance-scale"></i>
+                                    <span>Balanced Learning</span>
+                                </div>
                             </div>
                         </div>
-
-                        <a href="{{ url_for('programs') }}" class="btn btn-primary w-100 py-3 mt-3">
-                            Explore Our Programs
-                        </a>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Hero End -->
 
-
-<!-- Quick Identity Section Start -->
-<section class="container-xxl py-5">
+<section class="about-section about-section-identity">
     <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="about-feature-card">
-                    <div class="about-feature-icon"><i class="fa fa-school"></i></div>
-                    <h5>Who We Are</h5>
-                    <p>A group of co-educational institutions committed to raising children in knowledge, discipline, and faith.</p>
-                </div>
-            </div>
+        <div class="about-identity-grid">
+            <article class="about-feature-card wow fadeInUp" data-wow-delay="0.10s">
+                <div class="about-feature-icon"><i class="fa fa-school"></i></div>
+                <h3>Who We Are</h3>
+                <p>A co-educational institution focused on knowledge, discipline, and faith.</p>
+            </article>
 
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="about-feature-card">
-                    <div class="about-feature-icon"><i class="fa fa-balance-scale"></i></div>
-                    <h5>Total Education</h5>
-                    <p>We provide a balanced blend of Western and Islamic education with a strong focus on complete child development.</p>
-                </div>
-            </div>
+            <article class="about-feature-card wow fadeInUp" data-wow-delay="0.18s">
+                <div class="about-feature-icon"><i class="fa fa-book-open"></i></div>
+                <h3>Total Education</h3>
+                <p>A balanced combination of Islamic and Western education for complete child development.</p>
+            </article>
 
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="about-feature-card">
-                    <div class="about-feature-icon"><i class="fa fa-heart"></i></div>
-                    <h5>Values Driven</h5>
-                    <p>Our learning culture is built on care, acceptance, responsibility, and excellence in every area of school life.</p>
-                </div>
-            </div>
+            <article class="about-feature-card wow fadeInUp" data-wow-delay="0.26s">
+                <div class="about-feature-icon"><i class="fa fa-heart"></i></div>
+                <h3>Values Driven</h3>
+                <p>We build a culture of care, responsibility, discipline, and excellence.</p>
+            </article>
 
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="about-feature-card">
-                    <div class="about-feature-icon"><i class="fa fa-user-graduate"></i></div>
-                    <h5>Future Focused</h5>
-                    <p>We prepare students for a future of leadership, meaningful contribution, and God-conscious living.</p>
-                </div>
-            </div>
+            <article class="about-feature-card wow fadeInUp" data-wow-delay="0.34s">
+                <div class="about-feature-icon"><i class="fa fa-compass"></i></div>
+                <h3>Future Focused</h3>
+                <p>We prepare students for leadership, contribution, and God-conscious living.</p>
+            </article>
         </div>
     </div>
 </section>
-<!-- Quick Identity Section End -->
 
-
-<!-- About Story Start -->
-<section class="container-xxl pb-5">
+<section class="about-section about-section-story">
     <div class="container">
-        <div class="about-story-wrap">
-            <div class="row g-4 align-items-center">
-                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                    <div class="about-story-image">
-                        <img src="{{ url_for('static', filename='images/about.PNG') }}" alt="About EMIS">
-                        <div class="story-image-badge">
-                            <i class="fa fa-award me-2"></i>
-                            A school programme built on faith, discipline, and purposeful learning
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-                    <div class="about-story-content">
-                        <span class="section-kicker">About EMIS</span>
-                        <h2>Preparing young minds for a better future through faith and education.</h2>
-                        <p>
-                            Epitome Model Islamic Schools was established with the aim of preparing youth for a future where
-                            issues such as ethnicity, tribalism, and nepotism will not have a place.
-                        </p>
-                        <p>
-                            Our school programme is part of a broader effort to build a society free from crisis, where the
-                            fear of God guides the actions of young people instead of the influence of ungodly societal pressures.
-                        </p>
-
-                        <div class="about-inline-list">
-                            <div><i class="fa fa-check-circle"></i> Faith-centered learning</div>
-                            <div><i class="fa fa-check-circle"></i> Strong moral direction</div>
-                            <div><i class="fa fa-check-circle"></i> Academic excellence</div>
-                            <div><i class="fa fa-check-circle"></i> Leadership preparation</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- About Story End -->
-
-
-<!-- Vision Mission Start -->
-<section class="container-xxl pb-5">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Our Foundation</h6>
-            <h1 class="mb-3">Vision, Mission & Educational Purpose</h1>
-            <p class="about-section-lead mx-auto">
-                EMIS is guided by a clear direction rooted in faith, total education, and a commitment to raising responsible future leaders.
+        <div class="about-section-intro text-center wow fadeInUp" data-wow-delay="0.08s">
+            <span class="about-section-kicker">
+                <i class="fa fa-info-circle"></i>
+                Our Story
+            </span>
+            <h2 class="about-section-heading">Built on faith, shaped by purpose</h2>
+            <p class="about-section-subtext">
+                EMIS was established to nurture learners with knowledge, strong values, and a clear sense of direction.
             </p>
         </div>
 
-        <div class="row g-4 mt-2">
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="foundation-card foundation-card-vision">
-                    <div class="foundation-icon"><i class="fa fa-eye"></i></div>
-                    <h3>Our Vision</h3>
-                    <p>
-                        Preparing for a nation where the fear of Allah will be paramount in the minds of leaders
-                        and mutual suspicion among tribes will be a thing of the past.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="foundation-card foundation-card-mission">
-                    <div class="foundation-icon"><i class="fa fa-bullseye"></i></div>
-                    <h3>Our Mission</h3>
-                    <p>
-                        To reduce the level of illiteracy to the barest minimum through the provision of total education
-                        in Western and Islamic studies, sciences, languages, arts, and crafts.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="foundation-card foundation-card-purpose">
-                    <div class="foundation-icon"><i class="fa fa-star"></i></div>
-                    <h3>Our Core Focus</h3>
-                    <p>
-                        To build a disciplined, knowledgeable, supportive, and God-conscious school community where
-                        students are prepared for excellence in life and service to society.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Vision Mission End -->
-
-
-<!-- Values Start -->
-<section class="container-xxl pb-5">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Our Values</h6>
-            <h1 class="mb-3">The character of our school community</h1>
-        </div>
-
-        <div class="row g-4 mt-2">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="about-feature-card h-100">
-                    <div class="about-feature-icon"><i class="fa fa-hands-helping"></i></div>
-                    <h5>Care</h5>
-                    <p class="mb-2">Students are considerate and kind.</p>
-                    <p class="mb-2">Staff members are respectful and considerate.</p>
-                    <p class="mb-0">All are supportive of each other.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="about-feature-card h-100">
-                    <div class="about-feature-icon"><i class="fa fa-users"></i></div>
-                    <h5>Acceptance</h5>
-                    <p class="mb-2">Students are tolerant and understanding.</p>
-                    <p class="mb-2">Teachers and students are mindful of others' rights and needs.</p>
-                    <p class="mb-0">Our community is open-minded and inclusive.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="about-feature-card h-100">
-                    <div class="about-feature-icon"><i class="fa fa-shield-alt"></i></div>
-                    <h5>Responsibility</h5>
-                    <p class="mb-2">We are responsible in all our actions.</p>
-                    <p class="mb-2">We are reliable.</p>
-                    <p class="mb-0">Staff members are dedicated and professional.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="about-feature-card h-100">
-                    <div class="about-feature-icon"><i class="fa fa-award"></i></div>
-                    <h5>Excellence</h5>
-                    <p class="mb-2">All students strive to do their best.</p>
-                    <p class="mb-2">Teaching staff offers high-quality education.</p>
-                    <p class="mb-0">Our environment is serene and conducive.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Values End -->
-
-
-<!-- Aims Start -->
-<section class="container-xxl pb-5">
-    <div class="container">
-        <div class="goals-panel wow fadeInUp" data-wow-delay="0.1s">
-            <div class="row g-4 align-items-start">
-                <div class="col-lg-5">
-                    <div class="goals-intro">
-                        <span class="section-kicker">Our Aims</span>
-                        <h2>What EMIS is committed to achieving</h2>
-                        <p>
-                            Our aims reflect our commitment to academic excellence, holistic development,
-                            healthy learning, strong values, innovation, and wise school governance.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-7">
-                    <div class="goals-grid">
-                        <div class="goal-item">
-                            <i class="fa fa-check-circle"></i>
-                            <span>Maintain a school culture of excellence in teaching, achievement, innovation, and self-improvement</span>
-                        </div>
-                        <div class="goal-item">
-                            <i class="fa fa-check-circle"></i>
-                            <span>Maintain a supportive, healthy, and secured environment for learning and teaching</span>
-                        </div>
-                        <div class="goal-item">
-                            <i class="fa fa-check-circle"></i>
-                            <span>Deliver a balanced and holistic international education program centered on Islamic and Western education</span>
-                        </div>
-                        <div class="goal-item">
-                            <i class="fa fa-check-circle"></i>
-                            <span>Integrate technology as a meaningful and effective part of the educational process</span>
-                        </div>
-                        <div class="goal-item">
-                            <i class="fa fa-check-circle"></i>
-                            <span>Deliver enriching co/extra-curricular opportunities for students</span>
-                        </div>
-                        <div class="goal-item">
-                            <i class="fa fa-check-circle"></i>
-                            <span>Provide outstanding facilities and resources</span>
-                        </div>
-                        <div class="goal-item">
-                            <i class="fa fa-check-circle"></i>
-                            <span>Attract and retain excellent and dedicated staff</span>
-                        </div>
-                        <div class="goal-item">
-                            <i class="fa fa-check-circle"></i>
-                            <span>Heighten student awareness and engagement through social, environmental, and intercultural activities</span>
-                        </div>
-                        <div class="goal-item">
-                            <i class="fa fa-check-circle"></i>
-                            <span>Ensure wise and effective school governance</span>
-                        </div>
-                        <div class="goal-item">
-                            <i class="fa fa-check-circle"></i>
-                            <span>Ensure a financially sound and operationally efficient organization</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Aims End -->
-
-
-<!-- Staff Start -->
-<section class="container-xxl pb-5">
-    <div class="container">
-        <div class="row g-4 align-items-stretch">
-            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                <div class="why-card why-card-dark h-100">
-                    <span class="section-kicker section-kicker-dark">Our Staff</span>
-                    <h2>Professional, supportive, and committed to every learner.</h2>
-                    <p>
-                        Teachers and other staff at EMIS are fully committed to serving the needs of students
-                        and parents in our community. All teachers have professional qualifications and experience.
-                    </p>
-                    <p>
-                        One of the most frequently heard comments about EMIS staff is that they are
-                        <strong>“personable, disciplined and professional.”</strong>
+        <div class="about-story-grid">
+            <div class="about-story-copy wow fadeInLeft" data-wow-delay="0.1s">
+                <div class="about-copy-card">
+                    <p class="about-section-text">
+                        Since 2008, EMIS has remained committed to raising children who are academically sound, morally upright, and spiritually grounded.
                     </p>
 
-                    <div class="why-list">
-                        <div><i class="fa fa-check-circle"></i> Professional and experienced educators</div>
-                        <div><i class="fa fa-check-circle"></i> Strong support for students and parents</div>
-                        <div><i class="fa fa-check-circle"></i> Dedicated and disciplined school culture</div>
-                        <div><i class="fa fa-check-circle"></i> Enthusiastic about the school’s mission</div>
+                    <p class="about-section-text">
+                        Our programme is designed to guide young minds with the fear of Allah, discipline, and a strong sense of responsibility in society.
+                    </p>
+
+                    <div class="about-inline-highlights">
+                        <div><i class="fa fa-check-circle"></i> Faith-centered learning</div>
+                        <div><i class="fa fa-check-circle"></i> Leadership development</div>
+                        <div><i class="fa fa-check-circle"></i> Strong moral direction</div>
+                        <div><i class="fa fa-check-circle"></i> Academic excellence</div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-                <div class="why-card why-card-light h-100">
-                    <span class="section-kicker">Staff Community</span>
-                    <h2>A collaborative team building a positive school atmosphere.</h2>
-                    <p>
-                        At EMIS, staff members are very supportive of the school’s mission and proud to work
-                        in a diverse community representing different cultural backgrounds and nationalities.
-                    </p>
-                    <p>
-                        In the same way students are encouraged to support one another, our staff work together
-                        in a <strong>Professional Learning Community</strong>, sharing ideas and improving teaching practice.
-                    </p>
-                    <p class="mb-0">
-                        EMIS staff enjoy a work environment and set of conditions that contribute greatly to
-                        the school’s very positive atmosphere.
-                    </p>
-                </div>
+            <div class="about-story-visual wow fadeInRight" data-wow-delay="0.2s">
+                <article class="about-image-card">
+                    <img src="{{ url_for('static', filename='images/about.PNG') }}" alt="About EMIS" loading="lazy">
+                    <div class="about-image-card-caption">
+                        <span>Faith, learning, and purposeful growth.</span>
+                    </div>
+                </article>
             </div>
         </div>
     </div>
 </section>
-<!-- Staff End -->
 
-
-<!-- CTA Start -->
-<section class="container-xxl pb-5">
+<section class="about-section about-section-foundation">
     <div class="container">
-        <div class="about-hero-panel wow fadeInUp" data-wow-delay="0.1s">
-            <div class="row g-4 align-items-center">
-                <div class="col-lg-8">
-                    <h2 class="mb-3">Discover a school community built on faith, excellence, and purpose.</h2>
-                    <p class="mb-0">
-                        Learn more about our academic structure, values, and programs designed to support the growth
-                        of every child academically, morally, and spiritually.
-                    </p>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a href="{{ url_for('programs') }}" class="btn btn-primary py-3 px-4 me-2 mb-2 mb-lg-0">
-                        View Programs
-                    </a>
-                    <a href="{{ url_for('contact') }}" class="btn btn-outline-primary py-3 px-4">
-                        Contact Us
-                    </a>
-                </div>
+        <div class="about-section-intro text-center wow fadeInUp" data-wow-delay="0.08s">
+            <span class="about-section-kicker">
+                <i class="fa fa-bullseye"></i>
+                Our Foundation
+            </span>
+            <h2 class="about-section-heading">Vision, mission, and core focus</h2>
+            <p class="about-section-subtext">
+                Everything we do is guided by faith, educational balance, and a commitment to raising responsible future leaders.
+            </p>
+        </div>
+
+        <div class="about-foundation-grid">
+            <article class="about-foundation-card wow fadeInUp" data-wow-delay="0.10s">
+                <div class="about-foundation-icon"><i class="fa fa-eye"></i></div>
+                <h3>Vision</h3>
+                <p>To raise future leaders guided by the fear of Allah and free from division, suspicion, and moral decline.</p>
+            </article>
+
+            <article class="about-foundation-card wow fadeInUp" data-wow-delay="0.18s">
+                <div class="about-foundation-icon"><i class="fa fa-bullseye"></i></div>
+                <h3>Mission</h3>
+                <p>To provide total education through Islamic and Western studies, sciences, languages, arts, and practical learning.</p>
+            </article>
+
+            <article class="about-foundation-card wow fadeInUp" data-wow-delay="0.26s">
+                <div class="about-foundation-icon"><i class="fa fa-star"></i></div>
+                <h3>Core Focus</h3>
+                <p>To build a disciplined, knowledgeable, supportive, and God-conscious school community.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="about-section about-section-values">
+    <div class="container">
+        <div class="about-section-intro text-center wow fadeInUp" data-wow-delay="0.08s">
+            <span class="about-section-kicker">
+                <i class="fa fa-gem"></i>
+                Our Values
+            </span>
+            <h2 class="about-section-heading">The character of our school community</h2>
+        </div>
+
+        <div class="about-values-grid">
+            <article class="about-value-card wow fadeInUp" data-wow-delay="0.10s">
+                <div class="about-value-icon"><i class="fa fa-hands-helping"></i></div>
+                <h3>Care</h3>
+                <p>We build a considerate, kind, and supportive environment.</p>
+            </article>
+
+            <article class="about-value-card wow fadeInUp" data-wow-delay="0.18s">
+                <div class="about-value-icon"><i class="fa fa-users"></i></div>
+                <h3>Acceptance</h3>
+                <p>We promote tolerance, understanding, and respect for others.</p>
+            </article>
+
+            <article class="about-value-card wow fadeInUp" data-wow-delay="0.26s">
+                <div class="about-value-icon"><i class="fa fa-shield-alt"></i></div>
+                <h3>Responsibility</h3>
+                <p>We value reliability, dedication, and responsible action.</p>
+            </article>
+
+            <article class="about-value-card wow fadeInUp" data-wow-delay="0.34s">
+                <div class="about-value-icon"><i class="fa fa-award"></i></div>
+                <h3>Excellence</h3>
+                <p>We encourage every learner and staff member to do their best.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="about-section about-section-aims">
+    <div class="container">
+        <div class="about-aims-panel wow fadeInUp" data-wow-delay="0.1s">
+            <div class="about-section-intro text-center">
+                <span class="about-section-kicker">
+                    <i class="fa fa-check-circle"></i>
+                    Our Aims
+                </span>
+                <h2 class="about-section-heading">What EMIS is committed to achieving</h2>
+            </div>
+
+            <div class="about-aims-grid">
+                <div class="about-aim-item"><i class="fa fa-check-circle"></i><span>Excellence in teaching and learning</span></div>
+                <div class="about-aim-item"><i class="fa fa-check-circle"></i><span>A safe and supportive school environment</span></div>
+                <div class="about-aim-item"><i class="fa fa-check-circle"></i><span>Balanced Islamic and Western education</span></div>
+                <div class="about-aim-item"><i class="fa fa-check-circle"></i><span>Meaningful use of technology in learning</span></div>
+                <div class="about-aim-item"><i class="fa fa-check-circle"></i><span>Rich co-curricular opportunities</span></div>
+                <div class="about-aim-item"><i class="fa fa-check-circle"></i><span>Strong facilities and learning resources</span></div>
+                <div class="about-aim-item"><i class="fa fa-check-circle"></i><span>Dedicated and excellent staff</span></div>
+                <div class="about-aim-item"><i class="fa fa-check-circle"></i><span>Wise and effective school governance</span></div>
             </div>
         </div>
     </div>
 </section>
-<!-- CTA End -->
+
+<section class="about-section about-section-staff">
+    <div class="container">
+        <div class="about-staff-grid">
+            <article class="about-staff-card about-staff-card-dark wow fadeInLeft" data-wow-delay="0.1s">
+                <span class="about-section-kicker about-section-kicker-dark">
+                    <i class="fa fa-user-tie"></i>
+                    Our Staff
+                </span>
+                <h3>Professional, supportive, and committed.</h3>
+                <p>Our staff are qualified, experienced, and fully dedicated to the needs of students and parents.</p>
+                <div class="about-staff-points">
+                    <div><i class="fa fa-check-circle"></i> Professional educators</div>
+                    <div><i class="fa fa-check-circle"></i> Strong student support</div>
+                    <div><i class="fa fa-check-circle"></i> Disciplined school culture</div>
+                </div>
+            </article>
+
+            <article class="about-staff-card wow fadeInRight" data-wow-delay="0.2s">
+                <span class="about-section-kicker">
+                    <i class="fa fa-users"></i>
+                    Staff Community
+                </span>
+                <h3>A collaborative team with a positive school atmosphere.</h3>
+                <p>Our staff work together in a supportive professional community, sharing ideas and strengthening teaching practice.</p>
+                <div class="about-staff-points">
+                    <div><i class="fa fa-check-circle"></i> Teamwork and support</div>
+                    <div><i class="fa fa-check-circle"></i> Shared growth and development</div>
+                    <div><i class="fa fa-check-circle"></i> Positive learning atmosphere</div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="about-section about-section-cta">
+    <div class="container">
+        <div class="about-cta-card wow fadeInUp" data-wow-delay="0.1s">
+            <div class="about-cta-copy">
+                <h2>Discover a school community built on faith, excellence, and purpose.</h2>
+                <p>Learn more about our programs and school structure designed to help every child grow academically, morally, and spiritually.</p>
+            </div>
+
+            <div class="about-cta-actions">
+                <a href="{{ url_for('programs') }}" class="btn btn-primary py-3 px-4">View Programs</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline-primary py-3 px-4">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
