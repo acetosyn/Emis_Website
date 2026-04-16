@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title or 'School Management - EMIS' }}{% endblock %}
+
+{% block meta_keywords %}EMIS School Management, EMIS Team Leads, Epitome Model Islamic Schools Leadership, School Management Team, EMIS Staffs{% endblock %}
+
+{% block meta_description %}Meet the school management team of Epitome Model Islamic Schools — a refined leadership page showcasing the key staff guiding administration, operations, academics, compliance, school affairs, public relations, and spiritual development.{% endblock %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/staffs.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<section class="staff-hero">
+    <div class="container">
+        <div class="staff-hero-inner">
+            <div class="staff-hero-copy wow fadeInUp" data-wow-delay="0.1s">
+                <span class="staff-kicker">
+                    <i class="fa fa-sitemap"></i>
+                    School Management
+                </span>
+<h1 class="staff-hero-title">Meet the Team Leads Behind EMIS</h1>
+
+                <p class="staff-hero-text">
+                    Meet the key staff guiding administration, operations, academics, compliance, school coordination, public engagement, and spiritual direction across EMIS.
+                </p>
+            </div>
+
+            <div class="staff-hero-visual wow zoomIn" data-wow-delay="0.25s">
+                <div class="staff-hero-frame">
+                    <div class="staff-hero-orbit orbit-one"></div>
+                    <div class="staff-hero-orbit orbit-two"></div>
+
+                    <article class="staff-hero-highlight-card card-eda staff-hero-highlight-card-main">
+                        <div class="staff-hero-highlight-image">
+                            <img src="{{ url_for('static', filename='images/staffs/eda.jpeg') }}" alt="Mrs Naja'at Adeyemi - Adetoye, Executive Director of Administration" loading="lazy">
+                        </div>
+                        <div class="staff-hero-highlight-copy">
+                            <span><i class="fa fa-crown"></i> Head of School Management</span>
+                            <h3>Executive Director of Administration (EDA)</h3>
+                            <p>Mrs Naja'at Adeyemi - Adetoye</p>
+                        </div>
+                    </article>
+
+                    <article class="staff-hero-highlight-card card-edo">
+                        <div class="staff-hero-highlight-image">
+                            <img src="{{ url_for('static', filename='images/staffs/edo.jpeg') }}" alt="Mrs Nahimat Adeyemi - Olatunde, Executive Director of Operations" loading="lazy">
+                        </div>
+                        <div class="staff-hero-highlight-copy">
+                            <span><i class="fa fa-briefcase"></i> Operations Lead</span>
+                            <h3>Executive Director of Operations (EDO)</h3>
+                            <p>Mrs Nahimat Adeyemi - Olatunde</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="staff-section staff-section-management">
+    <div class="container">
+
+<div class="staff-section-intro text-center wow fadeInUp" data-wow-delay="0.08s">
+    <span class="staff-section-kicker">
+        <i class="fa fa-users"></i>
+        Team leads across EMIS
+    </span>
+    <h2 class="staff-section-heading">Our Staffs</h2>
+    <p class="staff-section-subtext">
+        Meet the experienced team members supporting leadership, academics, compliance, coordination, public engagement, and spiritual guidance at EMIS.
+    </p>
+</div>
+
+        <div class="staff-management-grid">
+
+            <article class="staff-card wow fadeInUp" data-wow-delay="0.10s">
+                <div class="staff-card-rank"><span>03</span></div>
+                <div class="staff-card-image-wrap">
+                    <img src="{{ url_for('static', filename='images/staffs/dos.jpeg') }}" alt="Mr Abesin Moshood Owoade" loading="lazy">
+                    <div class="staff-card-icon">
+                        <i class="fa fa-book-open"></i>
+                    </div>
+                </div>
+                <div class="staff-card-copy">
+                    <h3>Mr Abesin Moshood Owoade</h3>
+                    <p class="staff-card-role">
+                        <i class="fa fa-graduation-cap"></i>
+                        Director of Studies (DOS)
+                    </p>
+                </div>
+            </article>
+
+            <article class="staff-card wow fadeInUp" data-wow-delay="0.16s">
+                <div class="staff-card-rank"><span>04</span></div>
+                <div class="staff-card-image-wrap">
+                    <img src="{{ url_for('static', filename='images/staffs/doc.jpeg') }}" alt="Mr Adewobi Aderemi Rauf" loading="lazy">
+                    <div class="staff-card-icon">
+                        <i class="fa fa-shield-alt"></i>
+                    </div>
+                </div>
+                <div class="staff-card-copy">
+                    <h3>Mr Adewobi Aderemi Rauf</h3>
+                    <p class="staff-card-role">
+                        <i class="fa fa-check-circle"></i>
+                        Director of Compliance (DOC)
+                    </p>
+                </div>
+            </article>
+
+            <article class="staff-card wow fadeInUp" data-wow-delay="0.22s">
+                <div class="staff-card-rank"><span>05</span></div>
+                <div class="staff-card-image-wrap">
+                    <img src="{{ url_for('static', filename='images/staffs/hos.jpeg') }}" alt="Mr Ibrahim Sunday" loading="lazy">
+                    <div class="staff-card-icon">
+                        <i class="fa fa-school"></i>
+                    </div>
+                </div>
+                <div class="staff-card-copy">
+                    <h3>Mr Ibrahim Sunday</h3>
+                    <p class="staff-card-role">
+                        <i class="fa fa-chalkboard-teacher"></i>
+                        Head of Schools 1 (HOS 1)
+                    </p>
+                </div>
+            </article>
+
+            <article class="staff-card wow fadeInUp" data-wow-delay="0.28s">
+                <div class="staff-card-rank"><span>06</span></div>
+                <div class="staff-card-image-wrap">
+                    <img src="{{ url_for('static', filename='images/staffs/hos2.jpeg') }}" alt="Ms. Abifarin Oluwaremilekun" loading="lazy">
+                    <div class="staff-card-icon">
+                        <i class="fa fa-school"></i>
+                    </div>
+                </div>
+                <div class="staff-card-copy">
+                    <h3>Ms. Abifarin Oluwaremilekun</h3>
+                    <p class="staff-card-role">
+                        <i class="fa fa-user-graduate"></i>
+                        Head of Schools 2 (HOS 2)
+                    </p>
+                </div>
+            </article>
+
+            <article class="staff-card wow fadeInUp" data-wow-delay="0.34s">
+                <div class="staff-card-rank"><span>07</span></div>
+                <div class="staff-card-image-wrap">
+                    <img src="{{ url_for('static', filename='images/staffs/pro.jpeg') }}" alt="Mrs Rahmat Olarinde" loading="lazy">
+                    <div class="staff-card-icon">
+                        <i class="fa fa-bullhorn"></i>
+                    </div>
+                </div>
+                <div class="staff-card-copy">
+                    <h3>Mrs Rahmat Olarinde</h3>
+                    <p class="staff-card-role">
+                        <i class="fa fa-comments"></i>
+                        Public Relations Officer (PRO)
+                    </p>
+                </div>
+            </article>
+
+            <article class="staff-card wow fadeInUp" data-wow-delay="0.40s">
+                <div class="staff-card-rank"><span>08</span></div>
+                <div class="staff-card-image-wrap">
+                    <img src="{{ url_for('static', filename='images/staffs/imam.jpeg') }}" alt="Mal Idrees Adedokun" loading="lazy">
+                    <div class="staff-card-icon">
+                        <i class="fa fa-mosque"></i>
+                    </div>
+                </div>
+                <div class="staff-card-copy">
+                    <h3>Mal Idrees Adedokun</h3>
+                    <p class="staff-card-role">
+                        <i class="fa fa-star-and-crescent"></i>
+                        School Imam
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/staffs.js') }}"></script>
+{% endblock %}

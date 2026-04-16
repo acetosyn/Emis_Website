@@ -68,6 +68,10 @@ def independence():
 def sports():
     return render_template("sports.html", page_title="EMIS Sports Day", current_page="sports")
 
+@app.route("/staffs")
+def staffs():
+    return render_template("staffs.html", page_title="Our Staff", current_page="staffs")
+
 
 @app.route("/walimah")
 def walimah():

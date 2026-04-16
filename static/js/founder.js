@@ -1,13 +1,19 @@
 (function () {
     "use strict";
 
-    const revealItems = document.querySelectorAll(
-        ".founder-side-card, .founder-value-card, .founder-legacy-image, .founder-closing-item, .founder-hero-quote"
+    const founderCards = document.querySelectorAll(
+        ".founder-copy-card, .founder-image-card, .founder-value-card, .founder-legacy-image-card, .founder-closing-item"
     );
 
-    if (revealItems.length) {
-        revealItems.forEach((item) => item.classList.add("founder-reveal"));
-    }
+    const heroCards = document.querySelectorAll(
+        ".founder-hero-highlight-card, .founder-hero-side-card"
+    );
+
+    const revealItems = document.querySelectorAll(
+        ".founder-hero-copy, .founder-hero-highlight-card, .founder-hero-side-card, .founder-copy-card, .founder-image-card, .founder-value-card, .founder-legacy-image-card, .founder-closing-item, .founder-section-intro"
+    );
+
+    revealItems.forEach((item) => item.classList.add("founder-reveal"));
 
     function setupScrollReveal() {
         if (!("IntersectionObserver" in window) || !revealItems.length) {
@@ -33,42 +39,31 @@
         revealItems.forEach((item) => observer.observe(item));
     }
 
-    function parallaxHeroBadges() {
-        const hero = document.querySelector(".founder-hero");
-        const badges = document.querySelectorAll(".founder-hero-badge");
+    function setRevealSequence() {
+        const valueCards = document.querySelectorAll(".founder-value-card");
+        const closingItems = document.querySelectorAll(".founder-closing-item");
 
-        if (!hero || !badges.length || window.innerWidth < 992) return;
-
-        window.addEventListener("mousemove", function (event) {
-            const rect = hero.getBoundingClientRect();
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-
-            const moveX = (x / rect.width - 0.5) * 10;
-            const moveY = (y / rect.height - 0.5) * 10;
-
-            badges.forEach((badge, index) => {
-                const strength = index === 0 ? 1 : 1.3;
-                badge.style.transform =
-                    "translate(" + (moveX * strength) + "px, " + (moveY * strength) + "px)";
-            });
+        heroCards.forEach((card, index) => {
+            card.style.transitionDelay = `${80 + (index * 120)}ms`;
         });
 
-        hero.addEventListener("mouseleave", function () {
-            badges.forEach((badge) => {
-                badge.style.transform = "";
-            });
+        founderCards.forEach((card, index) => {
+            card.style.transitionDelay = `${100 + (index * 70)}ms`;
+        });
+
+        valueCards.forEach((card, index) => {
+            card.style.transitionDelay = `${90 + (index * 90)}ms`;
+        });
+
+        closingItems.forEach((item, index) => {
+            item.style.transitionDelay = `${100 + (index * 70)}ms`;
         });
     }
 
     function addGentleTiltEffect() {
-        const cards = document.querySelectorAll(
-            ".founder-side-card, .founder-value-card, .founder-legacy-image"
-        );
+        if (window.innerWidth < 992) return;
 
-        if (!cards.length || window.innerWidth < 992) return;
-
-        cards.forEach((card) => {
+        founderCards.forEach((card) => {
             card.addEventListener("mousemove", function (event) {
                 const rect = card.getBoundingClientRect();
                 const x = event.clientX - rect.left;
@@ -78,7 +73,7 @@
                 const rotateX = ((y / rect.height) - 0.5) * -5;
 
                 card.style.transform =
-                    "perspective(1000px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-6px)";
+                    `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
             });
 
             card.addEventListener("mouseleave", function () {
@@ -87,7 +82,86 @@
         });
     }
 
+    function heroHoverFocus() {
+        if (!heroCards.length) return;
+
+        heroCards.forEach((card) => {
+            card.addEventListener("mouseenter", function () {
+                if (window.innerWidth <= 991) return;
+
+                heroCards.forEach((otherCard) => {
+                    if (otherCard !== card) {
+                        otherCard.style.opacity = "0.9";
+                        otherCard.style.transform = "scale(0.985)";
+                    }
+                });
+            });
+
+            card.addEventListener("mouseleave", function () {
+                heroCards.forEach((otherCard) => {
+                    otherCard.style.opacity = "";
+                    otherCard.style.transform = "";
+                });
+            });
+        });
+    }
+
+    function addParallaxToImages() {
+        const images = document.querySelectorAll(
+            ".founder-hero-highlight-image img, .founder-image-card img, .founder-legacy-image-card img"
+        );
+
+        if (!images.length) return;
+
+        let ticking = false;
+
+        function handleScrollEffects() {
+            if (window.innerWidth <= 991) {
+                ticking = false;
+                return;
+            }
+
+            images.forEach((img) => {
+                const parent = img.closest(
+                    ".founder-hero-highlight-card, .founder-image-card, .founder-legacy-image-card"
+                );
+
+                if (!parent) return;
+
+                const rect = parent.getBoundingClientRect();
+                const inView = rect.top < window.innerHeight && rect.bottom > 0;
+
+                if (inView) {
+                    const move = rect.top * -0.016;
+                    img.style.transform = `scale(1.04) translateY(${move}px)`;
+                }
+            });
+
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                window.requestAnimationFrame(handleScrollEffects);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener("scroll", requestTick, { passive: true });
+        handleScrollEffects();
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth <= 991) {
+                images.forEach((img) => {
+                    img.style.transform = "";
+                });
+            }
+        });
+    }
+
     setupScrollReveal();
-    parallaxHeroBadges();
+    setRevealSequence();
     addGentleTiltEffect();
+    heroHoverFocus();
+    addParallaxToImages();
 })();
