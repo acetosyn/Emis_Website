@@ -42,8 +42,29 @@ class EMISChatBot:
         self.model = "llama-3.3-70b-versatile"
 
         self.contact_info = {
-            "phones": ["08054464613", "08172022402"],
-            "email": "adetomi.epitomeschools@gmail.com",
+            "contacts": [
+                {
+                    "role": "EDA",
+                    "title": "Executive Director Administration",
+                    "phone": "08172022401",
+                },
+                {
+                    "role": "EDO",
+                    "title": "Executive Director Operations",
+                    "phone": "08054464613",
+                },
+                {
+                    "role": "DOS",
+                    "title": "Director of Studies",
+                    "phone": "08034486651",
+                },
+                {
+                    "role": "School Accountant",
+                    "title": "Accounts and school fees enquiries",
+                    "phone": "08062277046",
+                },
+            ],
+            "email": "epitomeschools17@gmail.com",
         }
 
         self.school_knowledge = self._build_school_knowledge()
@@ -109,8 +130,12 @@ class EMISChatBot:
                 "Additional EMIS highlights include scholarships for outstanding students, school awards, supportive facilities, and a structured learning environment."
             ),
             "contact": (
-                "For enquiries, contact EMIS via phone numbers 08054464613 or 08172022402, "
-                "or email adetomi.epitomeschools@gmail.com."
+                "For enquiries, contact EMIS through the appropriate school contact: "
+                "EDA, Executive Director of Administration: 08172022401. "
+                "EDO, Executive Director of Operations: 08054464613. "
+                "DOS, Director of Studies: 08034486651. "
+                "School Accountant, for accounts and school fees enquiries: 08062277046. "
+                "Email: epitomeschools17@gmail.com."
             ),
         }
 
@@ -132,13 +157,27 @@ class EMISChatBot:
             "islamiyyah": ["islamiyyah", "islamic studies", "deen", "islamic"],
             "features": ["boarding", "transport", "online", "in-person", "campus", "campuses"],
             "activities": ["sport", "sports", "activities", "club", "clubs", "chess", "football", "basketball", "self-defense"],
-            "hours": ["time", "hours", "open", "closing", "close", "school hours"],
-            "location": ["where", "location", "address", "map", "mararaba", "lugbe", "abuja", "nasarawa"],
-            "staff": ["teacher", "teachers", "staff", "educators"],
+            "hours": ["time", "hours", "open", "opening", "closing", "close", "school hours"],
+            "location": ["where", "location", "address", "map", "mararaba", "maraba", "lugbe", "abuja", "nasarawa"],
+            "staff": ["teacher", "teachers", "staff", "educators", "management", "director", "dos", "eda", "edo", "accountant"],
             "admission": ["admission", "register", "registration", "enroll", "enrol", "apply", "class registration"],
             "security": ["security", "cctv", "safe", "patrol"],
             "highlights": ["scholarship", "award", "awards", "highlight", "benefit"],
-            "contact": ["contact", "phone", "email", "whatsapp", "call"],
+            "contact": [
+                "contact",
+                "phone",
+                "number",
+                "email",
+                "whatsapp",
+                "call",
+                "eda",
+                "edo",
+                "dos",
+                "director of studies",
+                "accountant",
+                "school fees",
+                "accounts",
+            ],
         }
 
         scores = []
@@ -206,7 +245,8 @@ class EMISChatBot:
             "emis", "epitome", "school", "admission", "class", "program",
             "courses", "creche", "nursery", "primary", "secondary",
             "tahfeez", "islamiyyah", "staff", "contact", "location",
-            "hours", "boarding", "transport"
+            "hours", "boarding", "transport", "eda", "edo", "dos",
+            "accountant", "school fees"
         ]
 
         has_school_term = any(term in q for term in school_terms)
@@ -258,13 +298,20 @@ class EMISChatBot:
             )
         return "\n\n".join(lines)
 
+    def _formatted_contacts_text(self) -> str:
+        return (
+            "📞 EDA: 0817 202 2401\n"
+            "📞 EDO: 0805 446 4613\n"
+            "📞 DOS: 0803 448 6651\n"
+            "📞 School Accountant: 0806 227 7046\n"
+            f"📧 {self.contact_info['email']}"
+        )
+
     def _contact_fallback_text(self) -> str:
         return (
             "I couldn’t find a reliable answer for that right now 😊\n\n"
             "Please contact EMIS directly for help:\n"
-            f"📞 08054464613\n"
-            f"📞 08172022402\n"
-            f"📧 {self.contact_info['email']}\n\n"
+            f"{self._formatted_contacts_text()}\n\n"
             "They’ll be able to guide you properly 🤝"
         )
 
@@ -302,10 +349,15 @@ class EMISChatBot:
                     "Always prioritize EMIS internal school information when answering school-related questions. "
                     "If the question is about admissions, classes, registration, Tahfeez, Islamiyyah, school programs, hours, or contact details, "
                     "answer from the EMIS context provided. "
+                    "If a user asks for contact details, phone numbers, WhatsApp numbers, school fees contact, accountant, EDA, EDO, or DOS, "
+                    "provide the relevant EMIS contacts clearly. "
                     "If the answer is uncertain or not available in the EMIS context, use the web context if available. "
                     "If both are insufficient, politely say you are not fully sure and provide these contact details exactly:\n"
-                    "Phone: 08054464613, 08172022402\n"
-                    "Email: adetomi.epitomeschools@gmail.com\n\n"
+                    "EDA: 0817 202 2401\n"
+                    "EDO: 0805 446 4613\n"
+                    "DOS: 0803 448 6651\n"
+                    "School Accountant: 0806 227 7046\n"
+                    "Email: epitomeschools17@gmail.com\n\n"
                     "Keep answers concise, friendly, and useful. "
                     "Do not invent school fees, deadlines, or admissions rules that were not provided."
                 ),

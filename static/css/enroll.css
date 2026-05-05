@@ -1,0 +1,206 @@
+/********** Simple Enroll Modal **********/
+
+.emis-reg-modal .modal-dialog {
+    max-width: 760px;
+    width: calc(100% - 2rem);
+    margin: 1.2rem auto;
+}
+
+.emis-reg-modal .modal-content {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+.emis-reg-shell {
+    position: relative;
+    border-radius: 24px;
+    background: #ffffff;
+    border: 1px solid rgba(24, 35, 56, 0.08);
+    box-shadow: 0 24px 60px rgba(17, 24, 39, 0.16);
+    overflow: hidden;
+}
+
+.emis-reg-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 5;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 8px 18px rgba(17, 24, 39, 0.10);
+    opacity: 1;
+}
+
+.emis-reg-simple-wrap {
+    padding: 28px 24px 24px;
+}
+
+.emis-reg-form-head {
+    margin-bottom: 18px;
+    padding-right: 42px;
+}
+
+.emis-reg-form-tag {
+    display: inline-block;
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(34, 197, 94, 0.10);
+    color: #176034;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.emis-reg-form-head h3 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    color: #182338;
+    margin-bottom: 6px;
+}
+
+.emis-reg-form-head p {
+    margin: 0;
+    color: #667085;
+    font-size: 0.94rem;
+    line-height: 1.6;
+}
+
+.emis-reg-label {
+    display: inline-block;
+    margin-bottom: 7px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #182338;
+}
+
+.emis-reg-label span {
+    color: #dc2626;
+}
+
+.emis-reg-control {
+    min-height: 48px;
+    border-radius: 14px;
+    border: 1px solid #d7dde5;
+    background: #ffffff;
+    box-shadow: none;
+    padding: 0.75rem 0.9rem;
+    color: #182338;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.emis-reg-control::placeholder {
+    color: #8a94a6;
+    font-size: 0.95rem;
+}
+
+.emis-reg-control:focus {
+    border-color: rgba(34, 197, 94, 0.45);
+    box-shadow: 0 0 0 0.18rem rgba(34, 197, 94, 0.10);
+}
+
+.emis-reg-select {
+    appearance: auto;
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    cursor: pointer;
+}
+
+.emis-reg-textarea {
+    min-height: 96px;
+    resize: vertical;
+}
+
+.emis-reg-submit-btn {
+    width: 100%;
+    min-height: 50px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #16a34a, #0ea5a6);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.96rem;
+    box-shadow: 0 14px 26px rgba(22, 163, 74, 0.16);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.emis-reg-submit-btn:hover {
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 16px 28px rgba(14, 165, 166, 0.18);
+}
+
+.emis-reg-submit-btn:focus {
+    color: #ffffff;
+    box-shadow: 0 0 0 0.2rem rgba(22, 163, 74, 0.15);
+}
+
+.modal-backdrop.show {
+    opacity: 0.65;
+}
+
+/********** Responsive **********/
+@media (max-width: 767.98px) {
+    .emis-reg-modal .modal-dialog {
+        width: calc(100% - 1rem);
+        margin: 0.5rem auto;
+    }
+
+    .emis-reg-shell {
+        border-radius: 18px;
+    }
+
+    .emis-reg-simple-wrap {
+        padding: 20px 14px 16px;
+    }
+
+    .emis-reg-form-head {
+        margin-bottom: 14px;
+        padding-right: 34px;
+    }
+
+    .emis-reg-form-head h3 {
+        font-size: 1.08rem;
+    }
+
+    .emis-reg-form-head p {
+        font-size: 0.88rem;
+    }
+
+    .emis-reg-label {
+        font-size: 0.88rem;
+    }
+
+    .emis-reg-control {
+        min-height: 44px;
+        border-radius: 12px;
+        font-size: 0.92rem;
+        padding: 0.68rem 0.8rem;
+    }
+
+    .emis-reg-control::placeholder {
+        font-size: 0.9rem;
+    }
+
+    .emis-reg-textarea {
+        min-height: 84px;
+    }
+
+    .emis-reg-submit-btn {
+        min-height: 46px;
+        border-radius: 12px;
+        font-size: 0.92rem;
+    }
+
+    .emis-reg-close {
+        width: 34px;
+        height: 34px;
+        top: 10px;
+        right: 10px;
+    }
+}

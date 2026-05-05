@@ -24,6 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const FALLBACK_AVATAR = "/static/images/emis3.png";
     const STORAGE_KEY = "emis_chat_history_v1";
 
+    const EMIS_CONTACT_TEXT =
+        "📞 EDA: 0817 202 2401\n" +
+        "📞 EDO: 0805 446 4613\n" +
+        "📞 DOS: 0803 448 6651\n" +
+        "📞 School Accountant: 0806 227 7046\n" +
+        "📧 epitomeschools17@gmail.com";
+
     // Increase this for slower typing
     const TYPEWRITER_SPEED = 38;
     const TYPEWRITER_PUNCTUATION_DELAY = 90;
@@ -403,9 +410,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const fallbackText =
                 "Sorry, the EMIS assistant is having trouble right now 😊\n\n" +
                 "Please contact us directly:\n" +
-                "📞 08054464613\n" +
-                "📞 08172022402\n" +
-                "📧 adetomi.epitomeschools@gmail.com";
+                EMIS_CONTACT_TEXT;
 
             await typeWriterBotMessage(fallbackText, {
                 timeText: "Just now"
@@ -459,6 +464,8 @@ document.addEventListener("DOMContentLoaded", function () {
             "🕌 Tahfeez and Islamiyyah\n" +
             "🕒 School hours\n" +
             "📍 Location and contact details\n\n" +
+            "For direct enquiries, you may contact:\n" +
+            EMIS_CONTACT_TEXT + "\n\n" +
             "How may I help you today?";
 
         appendBotMessage(formatReplyHTML(welcomeText), {
