@@ -9,11 +9,10 @@
 {% block extra_css %}
 <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
 <link href="{{ url_for('static', filename='css/reg.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/enroll.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-
-
 
 <!-- Carousel Start -->
 {% set carousel_slides = [
@@ -79,7 +78,7 @@
     }
 ] %}
 
-<div class="container-fluid p-0 mb-5">
+<section class="home-hero-wrap">
     <div class="owl-carousel header-carousel position-relative">
         {% for slide in carousel_slides %}
         <div class="owl-carousel-item position-relative">
@@ -88,21 +87,27 @@
                 src="{{ url_for('static', filename=slide.image) }}"
                 alt="EMIS Carousel Slide {{ loop.index }}"
             >
-            <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-sm-11 col-lg-7 col-xl-6">
-                            <div class="hero-simple-card animated slideInLeft">
-                                <span class="hero-simple-kicker">{{ slide.kicker }}</span>
-                                <h1 class="hero-simple-title">{{ slide.title }}</h1>
-                                <p class="hero-simple-text">{{ slide.text }}</p>
-                                <div class="hero-btn-group">
-                                    <a href="{{ url_for('about') }}" class="btn btn-primary animated slideInLeft">Learn More</a>
 
-        <ahref="#" class="btn btn-light animated slideInRight" data-bs-toggle="modal" data-bs-target="#emisRegistrationModal"> Enroll Today </a>
+            <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100">
+                <div class="container h-100">
+                    <div class="hero-content-grid">
+                        <div class="hero-simple-card animated slideInLeft">
+                            <span class="hero-card-accent"></span>
 
-                                    
-                                </div>
+                            <span class="hero-simple-kicker">{{ slide.kicker }}</span>
+
+                            <h1 class="hero-simple-title">{{ slide.title }}</h1>
+
+                            <p class="hero-simple-text">{{ slide.text }}</p>
+
+                            <div class="hero-btn-group">
+                                <a href="{{ url_for('about') }}" class="btn hero-primary-btn animated slideInLeft">
+                                    Learn More
+                                </a>
+
+                                <a href="#" class="btn hero-light-btn animated slideInRight" data-bs-toggle="modal" data-bs-target="#emisRegistrationModal">
+                                    Enroll Today
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -111,163 +116,186 @@
         </div>
         {% endfor %}
     </div>
-</div>
+</section>
 <!-- Carousel End -->
 
 
 <!-- Service Start -->
-<div class="container-xxl py-5">
+<section class="home-service-section">
     <div class="container">
+        <div class="home-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="home-section-kicker">
+                <i class="fa fa-graduation-cap"></i>
+                Why Choose EMIS
+            </span>
+            <h2>Faith, Knowledge and Character</h2>
+            <p>
+                We provide a balanced learning environment where children grow academically,
+                morally, spiritually, and socially.
+            </p>
+        </div>
+
         <div class="row g-4">
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item text-center pt-3 h-100">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-school text-primary mb-4"></i>
-                        <h5 class="mb-3">Quality Schooling</h5>
-                        <p>Structured learning environment for Nursery, Primary, Secondary and advanced Islamic studies.</p>
+                <div class="service-item text-center h-100">
+                    <div class="service-icon">
+                        <i class="fa fa-school"></i>
                     </div>
+                    <h5>Quality Schooling</h5>
+                    <p>Structured learning environment for Nursery, Primary, Secondary and advanced Islamic studies.</p>
                 </div>
             </div>
+
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item text-center pt-3 h-100">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-book-reader text-primary mb-4"></i>
-                        <h5 class="mb-3">Islamic Studies</h5>
-                        <p>Strong Islamiyyah programme designed to nurture discipline, values, and understanding.</p>
+                <div class="service-item text-center h-100">
+                    <div class="service-icon">
+                        <i class="fa fa-book-reader"></i>
                     </div>
+                    <h5>Islamic Studies</h5>
+                    <p>Strong Islamiyyah programme designed to nurture discipline, values, and understanding.</p>
                 </div>
             </div>
+
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item text-center pt-3 h-100">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-mosque text-primary mb-4"></i>
-                        <h5 class="mb-3">Tahfeez Programme</h5>
-                        <p>Full-Time Tahfeez programme that helps students build a strong Qur’anic foundation.</p>
+                <div class="service-item text-center h-100">
+                    <div class="service-icon">
+                        <i class="fa fa-mosque"></i>
                     </div>
+                    <h5>Tahfeez Programme</h5>
+                    <p>Full-Time Tahfeez programme that helps students build a strong Qur’anic foundation.</p>
                 </div>
             </div>
+
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item text-center pt-3 h-100">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-user-graduate text-primary mb-4"></i>
-                        <h5 class="mb-3">Balanced Excellence</h5>
-                        <p>A blend of academic development, moral discipline, and leadership training for the future.</p>
+                <div class="service-item text-center h-100">
+                    <div class="service-icon">
+                        <i class="fa fa-user-graduate"></i>
                     </div>
+                    <h5>Balanced Excellence</h5>
+                    <p>A blend of academic development, moral discipline, and leadership training for the future.</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 <!-- Service End -->
 
 
 <!-- About Start -->
-<div class="container-xxl py-5">
+<section class="home-about-section">
     <div class="container">
-        <div class="row g-5">
+        <div class="row g-5 align-items-center">
             <div class="col-lg-6 wow fadeInUp about-image-column" data-wow-delay="0.1s">
-                <div class="position-relative h-100">
-                    <img class="img-fluid position-absolute w-100 h-100 about-image-cover" src="{{ url_for('static', filename='images/school3.JPG') }}" alt="About EMIS">
+                <div class="home-about-image-wrap">
+                    <img class="img-fluid about-image-cover" src="{{ url_for('static', filename='images/school3.JPG') }}" alt="About EMIS">
                 </div>
             </div>
+
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
+                <span class="home-section-kicker">
+                    <i class="fa fa-school"></i>
+                    About Us
+                </span>
+
+                <h2 class="home-section-title">Raising learners with excellence, discipline and values.</h2>
+
                 <p class="mb-4">
                     EMIS is a private Islamic school committed to raising children with academic excellence,
                     moral discipline, and sound Islamic values.
                 </p>
+
                 <p class="mb-4">
                     We provide a rich blend of Islamic and Western education across Nursery, Primary,
                     Secondary, Full-Time Tahfeez, and Adult Classes.
                 </p>
-                <div class="row gy-2 gx-4 mb-4">
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Nursery</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Primary</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Secondary</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Full-Time Tahfeez</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Adult Classes</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Islamiyyah Support</p>
-                    </div>
+
+                <div class="home-about-points">
+                    <span><i class="fa fa-arrow-right"></i> Nursery</span>
+                    <span><i class="fa fa-arrow-right"></i> Primary</span>
+                    <span><i class="fa fa-arrow-right"></i> Secondary</span>
+                    <span><i class="fa fa-arrow-right"></i> Full-Time Tahfeez</span>
+                    <span><i class="fa fa-arrow-right"></i> Adult Classes</span>
+                    <span><i class="fa fa-arrow-right"></i> Islamiyyah Support</span>
                 </div>
-                <a class="btn btn-primary py-3 px-5 mt-2" href="{{ url_for('about') }}">Read More</a>
+
+                <a class="btn home-primary-btn mt-4" href="{{ url_for('about') }}">Read More</a>
             </div>
         </div>
     </div>
-</div>
+</section>
 <!-- About End -->
 
 
 <!-- Categories Start -->
-<div class="container-xxl py-5 category">
+<section class="container-xxl py-5 category">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Our Sections</h6>
-            <h1 class="mb-5">Learning Stages at EMIS</h1>
+            <span class="home-section-kicker">
+                <i class="fa fa-layer-group"></i>
+                Our Sections
+            </span>
+            <h2 class="home-section-title text-center mb-5">Learning Stages at EMIS</h2>
         </div>
+
         <div class="row g-3">
             <div class="col-lg-7 col-md-6">
                 <div class="row g-3">
                     <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                        <a class="position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
+                        <a class="home-category-card position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
                             <img class="img-fluid" src="{{ url_for('static', filename='images/nursery.jpg') }}" alt="Nursery">
-                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
+                            <div class="category-card-label">
                                 <h5 class="m-0">Nursery</h5>
-                                <small class="text-primary">Strong Early Foundation</small>
+                                <small>Strong Early Foundation</small>
                             </div>
                         </a>
                     </div>
+
                     <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
+                        <a class="home-category-card position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
                             <img class="img-fluid" src="{{ url_for('static', filename='images/hij.jpg') }}" alt="Primary School">
-                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
+                            <div class="category-card-label">
                                 <h5 class="m-0">Primary</h5>
-                                <small class="text-primary">Knowledge & Character</small>
+                                <small>Knowledge & Character</small>
                             </div>
                         </a>
                     </div>
+
                     <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                        <a class="position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
+                        <a class="home-category-card position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
                             <img class="img-fluid" src="{{ url_for('static', filename='images/hij2.jpg') }}" alt="Secondary School">
-                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
+                            <div class="category-card-label">
                                 <h5 class="m-0">Secondary</h5>
-                                <small class="text-primary">Academic Excellence</small>
+                                <small>Academic Excellence</small>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-5 col-md-6 wow zoomIn category-tall-card" data-wow-delay="0.7s">
-                <a class="position-relative d-block h-100 overflow-hidden" href="{{ url_for('programs') }}">
+                <a class="home-category-card position-relative d-block h-100 overflow-hidden" href="{{ url_for('programs') }}">
                     <img class="img-fluid position-absolute w-100 h-100 about-image-cover" src="{{ url_for('static', filename='images/class.jpg') }}" alt="Tahfeez and Adult Classes">
-                    <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
+                    <div class="category-card-label">
                         <h5 class="m-0">Tahfeez & Adult Classes</h5>
-                        <small class="text-primary">Faith, Growth & Discipline</small>
+                        <small>Faith, Growth & Discipline</small>
                     </div>
                 </a>
             </div>
         </div>
     </div>
-</div>
+</section>
 <!-- Categories End -->
 
 
 <!-- Learning Stages Start -->
-<div class="container-xxl py-5">
+<section class="home-learning-section">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Learning Stages</h6>
-            <h1 class="mb-5">Programs Start Learning Stages</h1>
+            <span class="home-section-kicker">
+                <i class="fa fa-book-open"></i>
+                Learning Stages
+            </span>
+            <h2 class="home-section-title text-center mb-5">Programs and Learning Pathways</h2>
         </div>
 
         <div class="learning-stages-grid">
@@ -334,105 +362,21 @@
 
         </div>
     </div>
-</div>
+</section>
 <!-- Learning Stages End -->
-
-<!-- Staff Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Our Staff</h6>
-            <h1 class="mb-5">Dedicated Educators</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item bg-light">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='images/team-1.jpg') }}" alt="Teaching Staff 1">
-                    </div>
-                    <div class="position-relative d-flex justify-content-center team-social-wrap">
-                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                            <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4">
-                        <h5 class="mb-0">Qualified Teachers</h5>
-                        <small>Committed to excellence</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item bg-light">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='images/team-2.jpg') }}" alt="Teaching Staff 2">
-                    </div>
-                    <div class="position-relative d-flex justify-content-center team-social-wrap">
-                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                            <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4">
-                        <h5 class="mb-0">Islamic Instructors</h5>
-                        <small>Faith and knowledge</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item bg-light">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='images/team-3.jpg') }}" alt="Teaching Staff 3">
-                    </div>
-                    <div class="position-relative d-flex justify-content-center team-social-wrap">
-                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                            <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4">
-                        <h5 class="mb-0">Supportive Mentors</h5>
-                        <small>Guiding every learner</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="team-item bg-light">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='images/team-4.jpg') }}" alt="Teaching Staff 4">
-                    </div>
-                    <div class="position-relative d-flex justify-content-center team-social-wrap">
-                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                            <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-sm-square btn-primary mx-1" href="#"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4">
-                        <h5 class="mb-0">Academic Leaders</h5>
-                        <small>Building future excellence</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Staff End -->
 
 
 <!-- Testimonial Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+<section class="home-testimonial-section wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
         <div class="text-center">
-            <h6 class="section-title bg-white text-center text-primary px-3">Testimonials</h6>
-            <h1 class="mb-5">What People Say About EMIS</h1>
+            <span class="home-section-kicker">
+                <i class="fa fa-comments"></i>
+                Testimonials
+            </span>
+            <h2 class="home-section-title text-center mb-5">What People Say About EMIS</h2>
         </div>
+
         <div class="owl-carousel testimonial-carousel position-relative">
             <div class="testimonial-item text-center">
                 <img class="border rounded-circle p-2 mx-auto mb-3 testimonial-avatar" src="{{ url_for('static', filename='images/testimonial-1.jpg') }}" alt="Parent Testimonial 1">
@@ -471,8 +415,8 @@
             </div>
         </div>
     </div>
-</div>
-
+</section>
+<!-- Testimonial End -->
 
 
 <!-- Registration Modal Start -->
@@ -483,9 +427,8 @@
     aria-labelledby="emisRegistrationModalLabel"
     aria-hidden="true"
 >
-    <div class="modal-dialog modal-dialog-centered modal-lg emis-reg-dialog">
+    <div class="modal-dialog modal-dialog-centered emis-reg-dialog">
         <div class="modal-content emis-reg-content">
-
             <div class="emis-reg-shell">
                 <button
                     type="button"
@@ -494,189 +437,140 @@
                     aria-label="Close"
                 ></button>
 
-                <div class="emis-reg-grid">
-                    <!-- Left Panel -->
-                    <div class="emis-reg-aside">
-                        <span class="emis-reg-kicker">
-                            <i class="fa fa-user-graduate"></i>
-                            Enroll at EMIS
-                        </span>
-
-                        <h2 class="emis-reg-title" id="emisRegistrationModalLabel">
-                            Start your child’s admission enquiry today.
-                        </h2>
-
-                        <p class="emis-reg-text">
-                            Fill in this quick form and our team will reach out to guide you on
-                            enrollment, school programmes, class placement, Tahfeez, Islamiyyah,
-                            or any other enquiry you may have.
+                <div class="emis-reg-simple-wrap">
+                    <div class="emis-reg-form-head">
+                        <span class="emis-reg-form-tag">Enrollment Form</span>
+                        <h3 id="emisRegistrationModalLabel">Enroll at EMIS</h3>
+                        <p>
+                            Please fill this simple form and our admissions team will contact you.
                         </p>
-
-                        <div class="emis-reg-pills">
-                            <span><i class="fa fa-check-circle"></i> Fast Response</span>
-                            <span><i class="fa fa-check-circle"></i> Parent Friendly</span>
-                            <span><i class="fa fa-check-circle"></i> Secure Submission</span>
-                        </div>
-
-                        <div class="emis-reg-quote">
-                            <i class="fa fa-quote-left"></i>
-                            <p>
-                                A simple first step for parents and guardians who want to
-                                learn more about EMIS or begin the enrollment process.
-                            </p>
-                            <span>EMIS Admissions Support</span>
-                        </div>
                     </div>
 
-                    <!-- Right Panel -->
-                    <div class="emis-reg-form-wrap">
-                        <div class="emis-reg-form-head">
-                            <span class="emis-reg-form-tag">Quick Registration Form</span>
-                            <h3>Tell us a little about you</h3>
-                            <p>
-                                Fields marked with <strong>*</strong> are required.
-                            </p>
-                        </div>
-
-                        <form class="emis-reg-form">
-                            <div class="row g-3">
-
-                                <div class="col-md-6">
-                                    <label for="emisParentName" class="emis-reg-label">
-                                        Name <span>*</span>
-                                    </label>
-                                    <div class="emis-reg-input-wrap">
-                                        <i class="fa fa-user"></i>
-                                        <input
-                                            type="text"
-                                            class="form-control emis-reg-control"
-                                            id="emisParentName"
-                                            name="name"
-                                            placeholder="Enter your name"
-                                            required
-                                        >
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="emisParentPhone" class="emis-reg-label">
-                                        Phone Number <span>*</span>
-                                    </label>
-                                    <div class="emis-reg-input-wrap">
-                                        <i class="fa fa-phone-alt"></i>
-                                        <input
-                                            type="tel"
-                                            class="form-control emis-reg-control"
-                                            id="emisParentPhone"
-                                            name="phone"
-                                            placeholder="Enter your phone number"
-                                            required
-                                        >
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="emisParentEmail" class="emis-reg-label">
-                                        E-mail Address <span>*</span>
-                                    </label>
-                                    <div class="emis-reg-input-wrap">
-                                        <i class="fa fa-envelope"></i>
-                                        <input
-                                            type="email"
-                                            class="form-control emis-reg-control"
-                                            id="emisParentEmail"
-                                            name="email"
-                                            placeholder="Enter your e-mail address"
-                                            required
-                                        >
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="emisParentLocation" class="emis-reg-label">
-                                        Location
-                                    </label>
-                                    <div class="emis-reg-input-wrap">
-                                        <i class="fa fa-map-marker-alt"></i>
-                                        <input
-                                            type="text"
-                                            class="form-control emis-reg-control"
-                                            id="emisParentLocation"
-                                            name="location"
-                                            placeholder="Enter your location"
-                                        >
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="emisPurpose" class="emis-reg-label">
-                                        Purpose <span>*</span>
-                                    </label>
-                                    <div class="emis-reg-input-wrap">
-                                        <i class="fa fa-list-alt"></i>
-                                        <select
-                                            class="form-control emis-reg-control emis-reg-select"
-                                            id="emisPurpose"
-                                            name="purpose"
-                                            required
-                                        >
-                                            <option value="">Select purpose</option>
-                                            <option value="Enrollment">Enrollment</option>
-                                            <option value="Admission Enquiry">Admission Enquiry</option>
-                                            <option value="Programme Information">Programme Information</option>
-                                            <option value="Class Placement Enquiry">Class Placement Enquiry</option>
-                                            <option value="Tahfeez Enquiry">Tahfeez Enquiry</option>
-                                            <option value="Islamiyyah Enquiry">Islamiyyah Enquiry</option>
-                                            <option value="School Visit Request">School Visit Request</option>
-                                            <option value="Transfer Enquiry">Transfer Enquiry</option>
-                                            <option value="Complaint">Complaint</option>
-                                            <option value="General Enquiry">General Enquiry</option>
-                                            <option value="Other">Other</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="emisMessage" class="emis-reg-label">
-                                        Additional Note
-                                    </label>
-                                    <div class="emis-reg-input-wrap emis-reg-textarea-wrap">
-                                        <i class="fa fa-comment-dots"></i>
-                                        <textarea
-                                            class="form-control emis-reg-control emis-reg-textarea"
-                                            id="emisMessage"
-                                            name="message"
-                                            placeholder="Add any extra detail here..."
-                                        ></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="emis-reg-note">
-                                        <i class="fa fa-info-circle"></i>
-                                        <span>
-                                            This is a quick enquiry form. After submission, the school team can follow up with you.
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <button type="submit" class="btn emis-reg-submit-btn">
-                                        <i class="fa fa-paper-plane me-2"></i>
-                                        Submit Registration
-                                    </button>
-                                </div>
+                    <form class="emis-reg-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="emisParentName" class="emis-reg-label">
+                                    Full Name <span>*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control emis-reg-control"
+                                    id="emisParentName"
+                                    name="name"
+                                    placeholder="Enter full name"
+                                    required
+                                >
                             </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
 
+                            <div class="col-md-6">
+                                <label for="emisParentPhone" class="emis-reg-label">
+                                    Phone Number <span>*</span>
+                                </label>
+                                <input
+                                    type="tel"
+                                    class="form-control emis-reg-control"
+                                    id="emisParentPhone"
+                                    name="phone"
+                                    placeholder="Enter phone number"
+                                    required
+                                >
+                            </div>
+
+                            <div class="col-12">
+                                <label for="emisParentEmail" class="emis-reg-label">
+                                    E-mail Address <span>*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    class="form-control emis-reg-control"
+                                    id="emisParentEmail"
+                                    name="email"
+                                    placeholder="Enter e-mail address"
+                                    required
+                                >
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="emisParentLocation" class="emis-reg-label">
+                                    Location
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control emis-reg-control"
+                                    id="emisParentLocation"
+                                    name="location"
+                                    placeholder="Enter location"
+                                >
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="emisPurpose" class="emis-reg-label">
+                                    Purpose <span>*</span>
+                                </label>
+                                <select
+                                    class="form-control emis-reg-control emis-reg-select"
+                                    id="emisPurpose"
+                                    name="purpose"
+                                    required
+                                >
+                                    <option value="">Select purpose</option>
+                                    <option value="Enrollment">Enrollment</option>
+                                    <option value="Admission Enquiry">Admission Enquiry</option>
+                                    <option value="Programme Information">Programme Information</option>
+                                    <option value="Class Placement Enquiry">Class Placement Enquiry</option>
+                                    <option value="Tahfeez Enquiry">Tahfeez Enquiry</option>
+                                    <option value="Islamiyyah Enquiry">Islamiyyah Enquiry</option>
+                                    <option value="School Visit Request">School Visit Request</option>
+                                    <option value="Transfer Enquiry">Transfer Enquiry</option>
+                                    <option value="General Enquiry">General Enquiry</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="emisChildClass" class="emis-reg-label">
+                                    Preferred Class / Programme
+                                </label>
+                                <select
+                                    class="form-control emis-reg-control emis-reg-select"
+                                    id="emisChildClass"
+                                    name="preferred_class"
+                                >
+                                    <option value="">Select option</option>
+                                    <option value="Nursery">Nursery</option>
+                                    <option value="Primary">Primary</option>
+                                    <option value="Secondary">Secondary</option>
+                                    <option value="Full-Time Tahfeez">Full-Time Tahfeez</option>
+                                    <option value="Adult Classes">Adult Classes</option>
+                                    <option value="Islamiyyah">Islamiyyah</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="emisMessage" class="emis-reg-label">
+                                    Additional Note
+                                </label>
+                                <textarea
+                                    class="form-control emis-reg-control emis-reg-textarea"
+                                    id="emisMessage"
+                                    name="message"
+                                    placeholder="Write any extra detail here..."
+                                ></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn emis-reg-submit-btn">
+                                    Submit Registration
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
 <!-- Registration Modal End -->
 
-
-<!-- Testimonial End -->
 {% endblock %}
