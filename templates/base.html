@@ -36,28 +36,61 @@
     </div>
     <!-- Spinner End -->
 
-    {% block announcement %}
-    <div class="announcement-bar">
-        <div class="container-fluid">
-            <div class="announcement-inner">
-                <span class="announcement-label">
-                    <i class="fa fa-bullhorn me-2"></i>Announcement:
+ {% block announcement %}
+<div class="announcement-bar">
+    <div class="container-fluid">
+        <div class="announcement-inner">
+            <div class="announcement-label">
+                <span class="announcement-icon">
+                    <i class="fa fa-bullhorn"></i>
                 </span>
+                <span>Admissions Update</span>
+            </div>
 
-                <div class="announcement-marquee-wrap">
-                    <div class="announcement-marquee-track">
-                        <span>
-                            Admissions are ongoing at Epitome Model Islamic School • Nursery • Primary • Secondary • Full-Time Tahfeez • Adult Classes • Contact us for enquiries and enrollment support.
-                        </span>
-                        <span aria-hidden="true">
-                            Admissions are ongoing at Epitome Model Islamic School • Nursery • Primary • Secondary • Full-Time Tahfeez • Adult Classes • Contact us for enquiries and enrollment support.
-                        </span>
-                    </div>
+            <div class="announcement-marquee-wrap">
+                <div class="announcement-marquee-track">
+                    <span>
+                        <i class="fa fa-star"></i>
+                        Admissions are ongoing at Epitome Model Islamic School
+                        <strong>Nursery</strong>
+                        <span class="announcement-dot"></span>
+                        <strong>Primary</strong>
+                        <span class="announcement-dot"></span>
+                        <strong>Secondary</strong>
+                        <span class="announcement-dot"></span>
+                        <strong>Full-Time Tahfeez</strong>
+                        <span class="announcement-dot"></span>
+                        <strong>Adult Classes</strong>
+                        <span class="announcement-dot"></span>
+                        Contact us for enquiries and enrollment support.
+                    </span>
+
+                    <span aria-hidden="true">
+                        <i class="fa fa-star"></i>
+                        Admissions are ongoing at Epitome Model Islamic School
+                        <strong>Nursery</strong>
+                        <span class="announcement-dot"></span>
+                        <strong>Primary</strong>
+                        <span class="announcement-dot"></span>
+                        <strong>Secondary</strong>
+                        <span class="announcement-dot"></span>
+                        <strong>Full-Time Tahfeez</strong>
+                        <span class="announcement-dot"></span>
+                        <strong>Adult Classes</strong>
+                        <span class="announcement-dot"></span>
+                        Contact us for enquiries and enrollment support.
+                    </span>
                 </div>
             </div>
+
+            <a href="{{ url_for('contact') }}" class="announcement-action">
+                Enquire Now
+                <i class="fa fa-arrow-right"></i>
+            </a>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-xl bg-white navbar-light shadow sticky-top p-0 main-navbar">

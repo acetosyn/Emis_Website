@@ -198,72 +198,239 @@ img {
     box-shadow: var(--shadow-md);
 }
 
-/********** Announcement Bar **********/
+/********** Announcement Bar - Modern Animated **********/
 .announcement-bar {
-    background: linear-gradient(90deg, #c99612, #e0b63f, #f3d36a);
-    color: var(--secondary-deep);
     position: relative;
     z-index: 1036;
-    border-bottom: 1px solid rgba(15, 39, 71, 0.08);
-    box-shadow: 0 8px 20px rgba(201, 150, 18, 0.18);
+    overflow: hidden;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at 8% 50%, rgba(34, 197, 94, 0.35), transparent 24%),
+        radial-gradient(circle at 88% 50%, rgba(6, 187, 204, 0.38), transparent 24%),
+        linear-gradient(90deg, #061a33 0%, #073b4c 42%, #057184 72%, #06bbcc 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 28px rgba(6, 187, 204, 0.22);
+}
+
+.announcement-bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.12) 18%, transparent 34%),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 240px 100%, 28px 28px;
+    animation: announcementShine 7s linear infinite;
+    pointer-events: none;
+}
+
+.announcement-bar::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 2px;
+    background: linear-gradient(90deg, #22c55e, #06bbcc, #ffffff, #22c55e);
+    background-size: 240% 100%;
+    animation: announcementGlowLine 5s linear infinite;
+    opacity: 0.85;
 }
 
 .announcement-inner {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
     gap: 18px;
-    min-height: 46px;
-    padding: 0 14px;
+    min-height: 48px;
+    padding: 0 18px;
     overflow: hidden;
 }
 
 .announcement-label {
-    font-size: 0.92rem;
-    font-weight: 800;
-    white-space: nowrap;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    color: #14263f;
     flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 34px;
+    padding: 0.42rem 0.9rem 0.42rem 0.48rem;
+    border-radius: 999px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+    backdrop-filter: blur(10px);
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+.announcement-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #073b4c;
+    background: #ffffff;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.12);
+    animation: announcementPulse 1.9s ease-in-out infinite;
+}
+
+.announcement-icon i {
+    font-size: 0.78rem;
 }
 
 .announcement-marquee-wrap {
     position: relative;
     flex: 1;
     min-width: 0;
+    height: 30px;
     overflow: hidden;
-    height: 28px;
     display: flex;
     align-items: center;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
 }
 
 .announcement-marquee-track {
     display: flex;
     align-items: center;
-    gap: 56px;
+    gap: 70px;
     width: max-content;
     min-width: max-content;
     white-space: nowrap;
-    animation: emisAnnouncementScroll 24s linear infinite;
+    animation: emisAnnouncementScroll 26s linear infinite;
     will-change: transform;
+}
+
+.announcement-marquee-wrap:hover .announcement-marquee-track {
+    animation-play-state: paused;
 }
 
 .announcement-marquee-track span {
     flex-shrink: 0;
-    display: inline-block;
-    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.94);
     font-size: 0.95rem;
     font-weight: 700;
-    color: #18324a;
     line-height: 1;
+    white-space: nowrap;
+}
+
+.announcement-marquee-track i {
+    color: #f8d568;
+    font-size: 0.82rem;
+    animation: announcementStarSpin 4s linear infinite;
+}
+
+.announcement-marquee-track strong {
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.announcement-dot {
+    width: 7px;
+    height: 7px;
+    display: inline-flex;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.14);
+}
+
+.announcement-action {
+    flex-shrink: 0;
+    min-height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0.46rem 0.92rem;
+    border-radius: 999px;
+    color: #073b4c;
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.14);
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.35s ease;
+}
+
+.announcement-action:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #22c55e, #06bbcc);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(6, 187, 204, 0.28);
+}
+
+.announcement-action i {
+    font-size: 0.72rem;
+    transition: transform 0.35s ease;
+}
+
+.announcement-action:hover i {
+    transform: translateX(3px);
 }
 
 @keyframes emisAnnouncementScroll {
     0% {
         transform: translateX(0);
     }
+
     100% {
-        transform: translateX(calc(-50% - 28px));
+        transform: translateX(calc(-50% - 35px));
+    }
+}
+
+@keyframes announcementShine {
+    0% {
+        background-position: -240px 0, 0 0;
+    }
+
+    100% {
+        background-position: 240px 0, 28px 0;
+    }
+}
+
+@keyframes announcementGlowLine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 240% 50%;
+    }
+}
+
+@keyframes announcementPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.12);
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.18);
+    }
+}
+
+@keyframes announcementStarSpin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.18);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
     }
 }
 
