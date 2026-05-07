@@ -120,303 +120,395 @@
 <!-- Carousel End -->
 
 
-<!-- Service Start -->
-<section class="home-service-section">
+<!-- Quick Actions Start -->
+<section class="emis-quick-actions-section">
     <div class="container">
-        <div class="home-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
-            <span class="home-section-kicker">
-                <i class="fa fa-graduation-cap"></i>
-                Why Choose EMIS
+        <div class="emis-section-heading text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="emis-mini-label">
+                <i class="fa fa-bolt"></i>
+                Quick Actions
             </span>
-            <h2>Faith, Knowledge and Character</h2>
-            <p>
-                We provide a balanced learning environment where children grow academically,
-                morally, spiritually, and socially.
-            </p>
+            <h2>Start Your EMIS Journey Faster</h2>
+            <p>Fast access to the most important school services for parents, pupils and visitors.</p>
         </div>
 
-        <div class="row g-4">
+        <div class="emis-actions-wrap wow fadeInUp" data-wow-delay="0.2s">
+            <a href="#" class="emis-action-item" data-bs-toggle="modal" data-bs-target="#emisRegistrationModal">
+                <span class="emis-action-icon">
+                    <i class="fa fa-user-plus"></i>
+                </span>
+                <strong>Enroll Now</strong>
+                <small>Begin admission</small>
+            </a>
+
+            <a href="{{ url_for('programs') }}" class="emis-action-item">
+                <span class="emis-action-icon">
+                    <i class="fa fa-layer-group"></i>
+                </span>
+                <strong>Programs</strong>
+                <small>Explore classes</small>
+            </a>
+
+            <a href="https://epitomeschools.com/" target="_blank" rel="noopener" class="emis-action-item">
+                <span class="emis-action-icon">
+                    <i class="fa fa-laptop"></i>
+                </span>
+                <strong>School Portal</strong>
+                <small>Open portal</small>
+            </a>
+
+            <a href="{{ url_for('contact') }}" class="emis-action-item">
+                <span class="emis-action-icon">
+                    <i class="fa fa-map-marker-alt"></i>
+                </span>
+                <strong>Visit EMIS</strong>
+                <small>Contact us</small>
+            </a>
+
+            <a href="{{ url_for('staffs') }}" class="emis-action-item">
+                <span class="emis-action-icon">
+                    <i class="fa fa-users"></i>
+                </span>
+                <strong>Management</strong>
+                <small>Meet our team</small>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Quick Actions End -->
+
+
+<!-- Feature Cards Start -->
+<section class="emis-feature-wall-section">
+    <div class="container">
+        <div class="emis-feature-wall">
+            <a href="{{ url_for('programs') }}" class="emis-feature-card emis-feature-large wow fadeInUp" data-wow-delay="0.1s">
+                <img src="{{ url_for('static', filename='images/school3.JPG') }}" alt="EMIS academic environment">
+                <span class="emis-card-shade"></span>
+                <div class="emis-feature-content">
+                    <span>Academic Excellence</span>
+                    <h3>Balanced Western and Islamic Education</h3>
+                    <p>Creche, Nursery, Primary, Secondary, Tahfeez and Adult Classes.</p>
+                    <b>Explore Programs <i class="fa fa-arrow-right"></i></b>
+                </div>
+            </a>
+
+            <a href="#" class="emis-feature-card wow fadeInUp" data-wow-delay="0.2s" data-bs-toggle="modal" data-bs-target="#emisRegistrationModal">
+                <img src="{{ url_for('static', filename='images/nursery.jpg') }}" alt="EMIS admission">
+                <span class="emis-card-shade"></span>
+                <div class="emis-feature-content">
+                    <span>Admission</span>
+                    <h3>Enrollment is Open</h3>
+                    <p>Register your child for a strong start.</p>
+                    <b>Enroll Today <i class="fa fa-arrow-right"></i></b>
+                </div>
+            </a>
+
+            <a href="{{ url_for('about') }}" class="emis-feature-card wow fadeInUp" data-wow-delay="0.3s">
+                <img src="{{ url_for('static', filename='images/hij.jpg') }}" alt="EMIS values">
+                <span class="emis-card-shade"></span>
+                <div class="emis-feature-content">
+                    <span>Values</span>
+                    <h3>Faith, Discipline and Character</h3>
+                    <p>Children are guided with care and purpose.</p>
+                    <b>Read More <i class="fa fa-arrow-right"></i></b>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Feature Cards End -->
+
+
+<!-- Why EMIS Start -->
+<section class="emis-modern-service-section">
+    <div class="container">
+        <div class="row g-4 align-items-end">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <span class="emis-mini-label">
+                    <i class="fa fa-graduation-cap"></i>
+                    Why Choose EMIS
+                </span>
+                <h2 class="emis-section-title">A school built for knowledge, faith and future confidence.</h2>
+            </div>
+
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                <p class="emis-section-lead">
+                    EMIS gives every child a nurturing space to learn, behave well, grow spiritually,
+                    and become prepared for the future.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-3">
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item text-center h-100">
-                    <div class="service-icon">
-                        <i class="fa fa-school"></i>
-                    </div>
+                <div class="emis-service-tile">
+                    <span><i class="fa fa-school"></i></span>
                     <h5>Quality Schooling</h5>
-                    <p>Structured learning environment for Nursery, Primary, Secondary and advanced Islamic studies.</p>
+                    <p>Structured classes from early years to secondary education.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="emis-service-tile">
+                    <span><i class="fa fa-book-reader"></i></span>
+                    <h5>Islamic Studies</h5>
+                    <p>Strong moral and spiritual foundation for every learner.</p>
                 </div>
             </div>
 
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item text-center h-100">
-                    <div class="service-icon">
-                        <i class="fa fa-book-reader"></i>
-                    </div>
-                    <h5>Islamic Studies</h5>
-                    <p>Strong Islamiyyah programme designed to nurture discipline, values, and understanding.</p>
+                <div class="emis-service-tile">
+                    <span><i class="fa fa-mosque"></i></span>
+                    <h5>Tahfeez</h5>
+                    <p>Dedicated Qur’anic learning with discipline and guidance.</p>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item text-center h-100">
-                    <div class="service-icon">
-                        <i class="fa fa-mosque"></i>
-                    </div>
-                    <h5>Tahfeez Programme</h5>
-                    <p>Full-Time Tahfeez programme that helps students build a strong Qur’anic foundation.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item text-center h-100">
-                    <div class="service-icon">
-                        <i class="fa fa-user-graduate"></i>
-                    </div>
-                    <h5>Balanced Excellence</h5>
-                    <p>A blend of academic development, moral discipline, and leadership training for the future.</p>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="emis-service-tile">
+                    <span><i class="fa fa-user-graduate"></i></span>
+                    <h5>Future Ready</h5>
+                    <p>Confidence, leadership, creativity and lifelong learning.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Service End -->
+<!-- Why EMIS End -->
 
 
-<!-- About Start -->
-<section class="home-about-section">
+<!-- Programs Showcase Start -->
+<section class="emis-program-showcase-section">
     <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-6 wow fadeInUp about-image-column" data-wow-delay="0.1s">
-                <div class="home-about-image-wrap">
-                    <img class="img-fluid about-image-cover" src="{{ url_for('static', filename='images/school3.JPG') }}" alt="About EMIS">
+        <div class="emis-section-heading text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="emis-mini-label">
+                <i class="fa fa-compass"></i>
+                Learning Pathways
+            </span>
+            <h2>Choose the Right Path for Your Child</h2>
+            <p>Simple, visual access to our major academic and Islamic learning sections.</p>
+        </div>
+
+        <div class="emis-program-grid">
+            <a href="{{ url_for('programs') }}" class="emis-program-card wow zoomIn" data-wow-delay="0.1s">
+                <img src="{{ url_for('static', filename='images/stages/stage1.jpg') }}" alt="Nursery">
+                <div>
+                    <span><i class="fa fa-child"></i></span>
+                    <h4>Nursery</h4>
+                    <p>Early foundation</p>
+                </div>
+            </a>
+
+            <a href="{{ url_for('programs') }}" class="emis-program-card emis-program-card-tall wow zoomIn" data-wow-delay="0.2s">
+                <img src="{{ url_for('static', filename='images/stages/stage2.jpg') }}" alt="Primary">
+                <div>
+                    <span><i class="fa fa-pencil-alt"></i></span>
+                    <h4>Primary</h4>
+                    <p>Knowledge and character</p>
+                </div>
+            </a>
+
+            <a href="{{ url_for('programs') }}" class="emis-program-card wow zoomIn" data-wow-delay="0.3s">
+                <img src="{{ url_for('static', filename='images/stages/stage3.jpg') }}" alt="Secondary">
+                <div>
+                    <span><i class="fa fa-award"></i></span>
+                    <h4>Secondary</h4>
+                    <p>Academic excellence</p>
+                </div>
+            </a>
+
+            <a href="{{ url_for('programs') }}" class="emis-program-card emis-program-card-wide wow zoomIn" data-wow-delay="0.4s">
+                <img src="{{ url_for('static', filename='images/stages/stage4.jpg') }}" alt="Tahfeez">
+                <div>
+                    <span><i class="fa fa-quran"></i></span>
+                    <h4>Full-Time Tahfeez</h4>
+                    <p>Qur’anic memorisation and discipline</p>
+                </div>
+            </a>
+
+            <a href="{{ url_for('programs') }}" class="emis-program-card wow zoomIn" data-wow-delay="0.5s">
+                <img src="{{ url_for('static', filename='images/stages/stage5.jpg') }}" alt="Adult Classes">
+                <div>
+                    <span><i class="fa fa-users"></i></span>
+                    <h4>Adult Classes</h4>
+                    <p>Continuous Islamic learning</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Programs Showcase End -->
+
+
+<!-- Mission Slider Start -->
+<section class="emis-mission-slider-section">
+    <div class="container-fluid px-0">
+        <div class="emis-mission-slider js-emis-mission-slider">
+            <div class="emis-mission-slide active">
+                <img src="{{ url_for('static', filename='images/class.jpg') }}" alt="EMIS mission">
+                <span class="emis-mission-overlay"></span>
+                <div class="emis-mission-content">
+                    <span>Our Mission</span>
+                    <h2>Raising excellent learners with faith, discipline and purpose.</h2>
                 </div>
             </div>
 
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                <span class="home-section-kicker">
-                    <i class="fa fa-school"></i>
-                    About Us
+            <div class="emis-mission-slide">
+                <img src="{{ url_for('static', filename='images/hij2.jpg') }}" alt="EMIS vision">
+                <span class="emis-mission-overlay"></span>
+                <div class="emis-mission-content">
+                    <span>Our Vision</span>
+                    <h2>Building confident children prepared for school, society and the hereafter.</h2>
+                </div>
+            </div>
+
+            <div class="emis-mission-slide">
+                <img src="{{ url_for('static', filename='images/nursery.jpg') }}" alt="EMIS care">
+                <span class="emis-mission-overlay"></span>
+                <div class="emis-mission-content">
+                    <span>Our Promise</span>
+                    <h2>A safe, caring and inspiring environment for every child.</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="emis-mission-controls">
+            <button type="button" class="js-emis-mission-prev" aria-label="Previous mission slide">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+
+            <div class="emis-mission-dots js-emis-mission-dots"></div>
+
+            <button type="button" class="js-emis-mission-next" aria-label="Next mission slide">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+<!-- Mission Slider End -->
+
+
+<!-- Admission Banner Start -->
+<section class="emis-admission-banner-section">
+    <div class="container">
+        <div class="emis-admission-banner wow fadeInUp" data-wow-delay="0.1s">
+            <div class="emis-admission-copy">
+                <span class="emis-mini-label">
+                    <i class="fa fa-star"></i>
+                    Admissions Open
                 </span>
-
-                <h2 class="home-section-title">Raising learners with excellence, discipline and values.</h2>
-
-                <p class="mb-4">
-                    EMIS is a private Islamic school committed to raising children with academic excellence,
-                    moral discipline, and sound Islamic values.
+                <h2>Give your child a strong foundation in learning and Islamic values.</h2>
+                <p>
+                    Speak with our admissions team today and learn more about placement,
+                    classes, programmes and school visit arrangements.
                 </p>
 
-                <p class="mb-4">
-                    We provide a rich blend of Islamic and Western education across Nursery, Primary,
-                    Secondary, Full-Time Tahfeez, and Adult Classes.
-                </p>
-
-                <div class="home-about-points">
-                    <span><i class="fa fa-arrow-right"></i> Nursery</span>
-                    <span><i class="fa fa-arrow-right"></i> Primary</span>
-                    <span><i class="fa fa-arrow-right"></i> Secondary</span>
-                    <span><i class="fa fa-arrow-right"></i> Full-Time Tahfeez</span>
-                    <span><i class="fa fa-arrow-right"></i> Adult Classes</span>
-                    <span><i class="fa fa-arrow-right"></i> Islamiyyah Support</span>
+                <div class="emis-admission-buttons">
+                    <a href="#" class="btn emis-primary-btn" data-bs-toggle="modal" data-bs-target="#emisRegistrationModal">
+                        Register Interest
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="btn emis-outline-btn">
+                        Contact School
+                    </a>
                 </div>
+            </div>
 
-                <a class="btn home-primary-btn mt-4" href="{{ url_for('about') }}">Read More</a>
+            <div class="emis-admission-image">
+                <img src="{{ url_for('static', filename='images/school3.JPG') }}" alt="EMIS admission">
+                <span class="emis-floating-badge">
+                    <i class="fa fa-check-circle"></i>
+                    Nursery to Secondary
+                </span>
             </div>
         </div>
     </div>
 </section>
-<!-- About End -->
+<!-- Admission Banner End -->
 
 
-<!-- Categories Start -->
-<section class="container-xxl py-5 category">
+<!-- Testimonials Start -->
+<section class="emis-testimonial-section wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <span class="home-section-kicker">
-                <i class="fa fa-layer-group"></i>
-                Our Sections
-            </span>
-            <h2 class="home-section-title text-center mb-5">Learning Stages at EMIS</h2>
-        </div>
-
-        <div class="row g-3">
-            <div class="col-lg-7 col-md-6">
-                <div class="row g-3">
-                    <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                        <a class="home-category-card position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
-                            <img class="img-fluid" src="{{ url_for('static', filename='images/nursery.jpg') }}" alt="Nursery">
-                            <div class="category-card-label">
-                                <h5 class="m-0">Nursery</h5>
-                                <small>Strong Early Foundation</small>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="home-category-card position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
-                            <img class="img-fluid" src="{{ url_for('static', filename='images/hij.jpg') }}" alt="Primary School">
-                            <div class="category-card-label">
-                                <h5 class="m-0">Primary</h5>
-                                <small>Knowledge & Character</small>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                        <a class="home-category-card position-relative d-block overflow-hidden" href="{{ url_for('programs') }}">
-                            <img class="img-fluid" src="{{ url_for('static', filename='images/hij2.jpg') }}" alt="Secondary School">
-                            <div class="category-card-label">
-                                <h5 class="m-0">Secondary</h5>
-                                <small>Academic Excellence</small>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-5 col-md-6 wow zoomIn category-tall-card" data-wow-delay="0.7s">
-                <a class="home-category-card position-relative d-block h-100 overflow-hidden" href="{{ url_for('programs') }}">
-                    <img class="img-fluid position-absolute w-100 h-100 about-image-cover" src="{{ url_for('static', filename='images/class.jpg') }}" alt="Tahfeez and Adult Classes">
-                    <div class="category-card-label">
-                        <h5 class="m-0">Tahfeez & Adult Classes</h5>
-                        <small>Faith, Growth & Discipline</small>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Categories End -->
-
-
-<!-- Learning Stages Start -->
-<section class="home-learning-section">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <span class="home-section-kicker">
-                <i class="fa fa-book-open"></i>
-                Learning Stages
-            </span>
-            <h2 class="home-section-title text-center mb-5">Programs and Learning Pathways</h2>
-        </div>
-
-        <div class="learning-stages-grid">
-
-            <a href="{{ url_for('about') }}" class="stage-card stage-card-wide wow fadeInUp" data-wow-delay="0.1s">
-                <img src="{{ url_for('static', filename='images/stages/stage1.jpg') }}" alt="Nursery Section">
-                <div class="stage-card-overlay">
-                    <div class="stage-card-badge">
-                        <h4>Nursery</h4>
-                        <p>Strong Early Foundation</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="{{ url_for('about') }}" class="stage-card stage-card-tall wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{{ url_for('static', filename='images/stages/stage2.jpg') }}" alt="Primary Section">
-                <div class="stage-card-overlay">
-                    <div class="stage-card-badge">
-                        <h4>Primary</h4>
-                        <p>Knowledge & Character</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="{{ url_for('about') }}" class="stage-card wow fadeInUp" data-wow-delay="0.3s">
-                <img src="{{ url_for('static', filename='images/stages/stage3.jpg') }}" alt="Secondary Section">
-                <div class="stage-card-overlay">
-                    <div class="stage-card-badge">
-                        <h4>Secondary</h4>
-                        <p>Academic Excellence</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="{{ url_for('about') }}" class="stage-card stage-card-tall wow fadeInUp" data-wow-delay="0.4s">
-                <img src="{{ url_for('static', filename='images/stages/stage4.jpg') }}" alt="Tahfeez and Adult Classes">
-                <div class="stage-card-overlay">
-                    <div class="stage-card-badge">
-                        <h4>Tahfeez & Adult Classes</h4>
-                        <p>Faith, Growth & Discipline</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="{{ url_for('about') }}" class="stage-card wow fadeInUp" data-wow-delay="0.5s">
-                <img src="{{ url_for('static', filename='images/stages/stage5.jpg') }}" alt="Islamic Studies">
-                <div class="stage-card-overlay">
-                    <div class="stage-card-badge">
-                        <h4>Islamic Studies</h4>
-                        <p>Values Based Learning</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="{{ url_for('about') }}" class="stage-card wow fadeInUp" data-wow-delay="0.6s">
-                <img src="{{ url_for('static', filename='images/stages/stage6.jpg') }}" alt="Creative Activities">
-                <div class="stage-card-overlay">
-                    <div class="stage-card-badge">
-                        <h4>Creative Activities</h4>
-                        <p>Skills, Confidence & Expression</p>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-    </div>
-</section>
-<!-- Learning Stages End -->
-
-
-<!-- Testimonial Start -->
-<section class="home-testimonial-section wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="text-center">
-            <span class="home-section-kicker">
+        <div class="emis-section-heading text-center">
+            <span class="emis-mini-label">
                 <i class="fa fa-comments"></i>
                 Testimonials
             </span>
-            <h2 class="home-section-title text-center mb-5">What People Say About EMIS</h2>
+            <h2>What People Say About EMIS</h2>
+            <p>Short words from our school community.</p>
         </div>
 
         <div class="owl-carousel testimonial-carousel position-relative">
-            <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3 testimonial-avatar" src="{{ url_for('static', filename='images/parents/parent1.jpg') }}" alt="Parent Testimonial 1">
-                <h5 class="mb-0">Parent</h5>
-                <p>School Community</p>
-                <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">EMIS offers a beautiful blend of sound academics and Islamic values in a disciplined learning environment.</p>
+            <div class="emis-testimonial-card">
+                <div class="emis-testimonial-icon">
+                    <i class="fa fa-quote-left"></i>
+                </div>
+                <p>EMIS offers a beautiful blend of sound academics and Islamic values in a disciplined learning environment.</p>
+                <div>
+                    <strong>Parent</strong>
+                    <span>School Community</span>
                 </div>
             </div>
 
-            <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3 testimonial-avatar" src="{{ url_for('static', filename='images/parents/parent2.jpg') }}" alt="Parent Testimonial 2">
-                <h5 class="mb-0">Guardian</h5>
-                <p>School Community</p>
-                <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">The Tahfeez and Islamiyyah programmes are outstanding, and the children are trained with both care and excellence.</p>
+            <div class="emis-testimonial-card">
+                <div class="emis-testimonial-icon">
+                    <i class="fa fa-quote-left"></i>
+                </div>
+                <p>The Tahfeez and Islamiyyah programmes are outstanding, and the children are trained with care and excellence.</p>
+                <div>
+                    <strong>Guardian</strong>
+                    <span>School Community</span>
                 </div>
             </div>
 
-            <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3 testimonial-avatar" src="{{ url_for('static', filename='images/parents/parent3.jpg') }}" alt="Parent Testimonial 3">
-                <h5 class="mb-0">Parent</h5>
-                <p>School Community</p>
-                <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">We appreciate the balance between Western education and Islamic upbringing. It gives the children a strong foundation.</p>
+            <div class="emis-testimonial-card">
+                <div class="emis-testimonial-icon">
+                    <i class="fa fa-quote-left"></i>
+                </div>
+                <p>We appreciate the balance between Western education and Islamic upbringing. It gives the children a strong foundation.</p>
+                <div>
+                    <strong>Parent</strong>
+                    <span>School Community</span>
                 </div>
             </div>
 
-            <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3 testimonial-avatar" src="{{ url_for('static', filename='images/parents/parent4.jpg') }}" alt="Parent Testimonial 4">
-                <h5 class="mb-0">Community Member</h5>
-                <p>School Supporter</p>
-                <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">EMIS stands out for discipline, moral training, and the commitment to raising excellent young learners.</p>
+            <div class="emis-testimonial-card">
+                <div class="emis-testimonial-icon">
+                    <i class="fa fa-quote-left"></i>
+                </div>
+                <p>EMIS stands out for discipline, moral training, and commitment to raising excellent young learners.</p>
+                <div>
+                    <strong>Community Member</strong>
+                    <span>School Supporter</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Testimonial End -->
+<!-- Testimonials End -->
+
+
+<!-- Floating Admission Notice Start -->
+<div class="emis-floating-ad js-emis-floating-ad" aria-live="polite">
+    <button type="button" class="emis-floating-ad-close js-emis-floating-ad-close" aria-label="Close admission notice">
+        <i class="fa fa-times"></i>
+    </button>
+
+    <div class="emis-floating-ad-icon">
+        <i class="fa fa-bullhorn"></i>
+    </div>
+
+    <div class="emis-floating-ad-text">
+        <strong class="js-emis-ad-title">Admissions Open</strong>
+        <span class="js-emis-ad-message">Register your child for Nursery, Primary, Secondary or Tahfeez.</span>
+    </div>
+
+    <a href="#" class="emis-floating-ad-btn" data-bs-toggle="modal" data-bs-target="#emisRegistrationModal">
+        Apply
+    </a>
+</div>
+<!-- Floating Admission Notice End -->
 
 
 <!-- Registration Modal Start -->
@@ -572,5 +664,7 @@
     </div>
 </div>
 <!-- Registration Modal End -->
+
+<script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
 
 {% endblock %}
