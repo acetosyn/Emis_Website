@@ -730,8 +730,8 @@ button.contact-action-card {
     position: fixed;
     inset: 0;
     z-index: 9997;
-    background: rgba(15, 23, 42, 0.48);
-    backdrop-filter: blur(8px);
+    background: rgba(15, 23, 42, 0.38);
+    backdrop-filter: blur(6px);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.35s ease, visibility 0.35s ease;
@@ -749,7 +749,7 @@ button.contact-action-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 22px;
+    padding: 20px;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -764,18 +764,21 @@ button.contact-action-card {
 
 .contact-choice-box {
     position: relative;
-    width: min(100%, 520px);
-    overflow: hidden;
-    border-radius: 30px;
-    padding: 26px;
+    width: min(100%, 460px);
+    max-height: 82vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 24px;
+    padding: 20px 18px 18px;
     background:
-        radial-gradient(circle at top left, rgba(34, 197, 94, 0.12), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.14), transparent 28%),
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.10), transparent 26%),
+        radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.11), transparent 28%),
         linear-gradient(180deg, #ffffff 0%, #f8fcf9 100%);
     border: 1px solid rgba(24, 35, 56, 0.10);
-    box-shadow: 0 34px 90px rgba(15, 23, 42, 0.26);
-    transform: translateY(30px) scale(0.94);
+    box-shadow: 0 26px 70px rgba(15, 23, 42, 0.23);
+    transform: translateY(22px) scale(0.96);
     transition: transform 0.42s cubic-bezier(.2,.8,.2,1);
+    scrollbar-width: thin;
 }
 
 .contact-choice-panel.active .contact-choice-box {
@@ -786,26 +789,28 @@ button.contact-action-card {
     content: "";
     position: absolute;
     inset: 0 0 auto 0;
-    height: 6px;
+    height: 5px;
     background: linear-gradient(90deg, #22c55e, #f59e0b, #0ea5e9);
 }
 
 .contact-choice-close {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    width: 42px;
-    height: 42px;
+    position: sticky;
+    top: 0;
+    margin-left: auto;
+    margin-bottom: 8px;
+    width: 38px;
+    height: 38px;
     border: none;
-    border-radius: 15px;
-    display: inline-flex;
+    border-radius: 13px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(24, 35, 56, 0.06);
+    background: rgba(24, 35, 56, 0.07);
     color: #182338;
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
-    z-index: 2;
+    z-index: 15;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
 }
 
 .contact-choice-close:hover {
@@ -815,19 +820,19 @@ button.contact-action-card {
 }
 
 .contact-choice-head {
-    padding-right: 46px;
-    margin-bottom: 20px;
+    padding-right: 0;
+    margin-bottom: 14px;
 }
 
 .contact-choice-head span {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    padding: 0.62rem 0.9rem;
+    gap: 8px;
+    padding: 0.52rem 0.78rem;
     border-radius: 999px;
     background: rgba(34, 197, 94, 0.10);
     color: #176034;
-    font-size: 0.72rem;
+    font-size: 0.66rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -838,35 +843,37 @@ button.contact-action-card {
 }
 
 .contact-choice-head h3 {
-    margin: 16px 0 8px;
+    margin: 12px 0 6px;
     color: #182338;
-    font-size: 1.55rem;
-    line-height: 1.2;
+    font-size: 1.22rem;
+    line-height: 1.22;
     font-weight: 900;
+    letter-spacing: -0.025em;
 }
 
 .contact-choice-head p {
     margin: 0;
     color: #556070;
+    font-size: 0.9rem;
     font-weight: 700;
-    line-height: 1.65;
+    line-height: 1.55;
 }
 
 .contact-choice-list {
     display: grid;
-    gap: 14px;
+    gap: 10px;
 }
 
 .contact-choice-item {
     display: grid;
-    grid-template-columns: 60px 1fr 42px;
-    gap: 14px;
+    grid-template-columns: 46px 1fr 36px;
+    gap: 10px;
     align-items: center;
-    padding: 16px;
-    border-radius: 22px;
+    padding: 12px;
+    border-radius: 18px;
     background: rgba(255,255,255,0.94);
     border: 1px solid rgba(24, 35, 56, 0.08);
-    box-shadow: 0 14px 30px rgba(17, 24, 39, 0.08);
+    box-shadow: 0 10px 22px rgba(17, 24, 39, 0.07);
     text-decoration: none;
     transform: translateY(8px);
     opacity: 0;
@@ -879,80 +886,92 @@ button.contact-action-card {
 }
 
 .contact-choice-panel.active .contact-choice-item:nth-child(1) {
-    transition-delay: 0.08s;
+    transition-delay: 0.06s;
 }
 
 .contact-choice-panel.active .contact-choice-item:nth-child(2) {
-    transition-delay: 0.15s;
+    transition-delay: 0.10s;
+}
+
+.contact-choice-panel.active .contact-choice-item:nth-child(3) {
+    transition-delay: 0.14s;
+}
+
+.contact-choice-panel.active .contact-choice-item:nth-child(4) {
+    transition-delay: 0.18s;
 }
 
 .contact-choice-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 22px 44px rgba(17, 24, 39, 0.13);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgba(17, 24, 39, 0.11);
     text-decoration: none;
 }
 
 .contact-choice-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: #182338;
     background: linear-gradient(135deg, rgba(34,197,94,0.16), rgba(245,158,11,0.18));
-    font-size: 1.15rem;
+    font-size: 0.95rem;
 }
 
 .contact-choice-copy h4 {
-    margin: 0 0 3px;
+    margin: 0 0 2px;
     color: #182338;
     font-weight: 900;
-    font-size: 1.05rem;
+    font-size: 0.98rem;
+    line-height: 1.2;
 }
 
 .contact-choice-copy p {
-    margin: 0 0 5px;
+    margin: 0 0 4px;
     color: #556070;
     font-weight: 700;
-    line-height: 1.45;
-    font-size: 0.9rem;
+    line-height: 1.3;
+    font-size: 0.78rem;
 }
 
 .contact-choice-copy span {
     display: inline-flex;
     color: #176034;
     font-weight: 900;
-    font-size: 0.92rem;
+    font-size: 0.84rem;
+    line-height: 1.2;
 }
 
 .contact-choice-arrow {
-    width: 42px;
-    height: 42px;
-    border-radius: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 13px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
     background: linear-gradient(135deg, #16833d, #22c55e);
+    font-size: 0.86rem;
     transition: transform 0.35s ease;
 }
 
 .contact-choice-item:hover .contact-choice-arrow {
-    transform: translateX(4px);
+    transform: translateX(3px);
 }
 
 .contact-choice-note {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
-    margin-top: 16px;
-    padding: 14px;
-    border-radius: 18px;
+    gap: 9px;
+    margin-top: 12px;
+    padding: 11px 12px;
+    border-radius: 16px;
     background: rgba(245, 158, 11, 0.12);
     color: #8a5300;
     font-weight: 800;
-    line-height: 1.55;
+    font-size: 0.82rem;
+    line-height: 1.45;
 }
 
 .contact-choice-note i {
@@ -992,6 +1011,11 @@ button.contact-action-card {
     .contact-main-card,
     .contact-map-card {
         border-radius: 26px;
+    }
+
+    .contact-choice-box {
+        width: min(100%, 440px);
+        max-height: 80vh;
     }
 }
 
@@ -1036,6 +1060,96 @@ button.contact-action-card {
     .map-pattern {
         inset: 16px;
         padding: 24px 20px;
+    }
+
+    .contact-choice-backdrop {
+        background: rgba(15, 23, 42, 0.34);
+        backdrop-filter: blur(5px);
+    }
+
+    .contact-choice-panel {
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0 10px 12px;
+    }
+
+    .contact-choice-box {
+        width: 100%;
+        max-width: 430px;
+        max-height: 78vh;
+        border-radius: 22px;
+        padding: 16px 12px 12px;
+        box-shadow: 0 18px 50px rgba(15, 23, 42, 0.22);
+        transform: translateY(24px) scale(0.97);
+    }
+
+    .contact-choice-close {
+        width: 38px;
+        height: 38px;
+        border-radius: 13px;
+    }
+
+    .contact-choice-head {
+        margin-bottom: 12px;
+    }
+
+    .contact-choice-head span {
+        padding: 0.5rem 0.72rem;
+        font-size: 0.62rem;
+        gap: 7px;
+    }
+
+    .contact-choice-head h3 {
+        margin: 10px 0 5px;
+        font-size: 1.08rem;
+        line-height: 1.22;
+    }
+
+    .contact-choice-head p {
+        font-size: 0.84rem;
+        line-height: 1.5;
+    }
+
+    .contact-choice-list {
+        gap: 9px;
+    }
+
+    .contact-choice-item {
+        grid-template-columns: 42px 1fr 34px;
+        gap: 9px;
+        padding: 11px;
+        border-radius: 16px;
+    }
+
+    .contact-choice-avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        font-size: 0.88rem;
+    }
+
+    .contact-choice-copy h4 {
+        font-size: 0.92rem;
+    }
+
+    .contact-choice-copy p {
+        font-size: 0.74rem;
+    }
+
+    .contact-choice-copy span {
+        font-size: 0.8rem;
+    }
+
+    .contact-choice-arrow {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+    }
+
+    .contact-choice-note {
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 0.78rem;
     }
 }
 
@@ -1107,50 +1221,67 @@ button.contact-action-card {
     }
 
     .contact-choice-panel {
-        align-items: flex-end;
-        padding: 12px;
+        padding: 0 8px 10px;
     }
 
     .contact-choice-box {
-        width: 100%;
-        border-radius: 26px 26px 18px 18px;
-        padding: 22px 16px 18px;
-        transform: translateY(100%) scale(1);
+        max-width: 100%;
+        max-height: 76vh;
+        border-radius: 20px;
+        padding: 14px 10px 10px;
     }
 
-    .contact-choice-panel.active .contact-choice-box {
-        transform: translateY(0) scale(1);
-    }
-
-    .contact-choice-head {
-        padding-right: 42px;
+    .contact-choice-close {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        font-size: 0.88rem;
+        margin-bottom: 6px;
     }
 
     .contact-choice-head h3 {
-        font-size: 1.28rem;
+        font-size: 1rem;
+    }
+
+    .contact-choice-head p {
+        font-size: 0.8rem;
     }
 
     .contact-choice-item {
-        grid-template-columns: 52px 1fr 38px;
-        gap: 12px;
-        padding: 14px;
-        border-radius: 20px;
+        grid-template-columns: 40px 1fr 32px;
+        gap: 8px;
+        padding: 10px;
+        border-radius: 15px;
     }
 
     .contact-choice-avatar {
-        width: 52px;
-        height: 52px;
-        border-radius: 18px;
+        width: 40px;
+        height: 40px;
+        border-radius: 13px;
+        font-size: 0.84rem;
     }
 
-    .contact-choice-arrow {
-        width: 38px;
-        height: 38px;
-        border-radius: 14px;
+    .contact-choice-copy h4 {
+        font-size: 0.88rem;
     }
 
     .contact-choice-copy p {
-        font-size: 0.84rem;
+        font-size: 0.71rem;
+    }
+
+    .contact-choice-copy span {
+        font-size: 0.78rem;
+    }
+
+    .contact-choice-arrow {
+        width: 32px;
+        height: 32px;
+        border-radius: 11px;
+    }
+
+    .contact-choice-note {
+        font-size: 0.74rem;
+        line-height: 1.4;
     }
 }
 
@@ -1177,17 +1308,60 @@ button.contact-action-card {
         min-height: 270px;
     }
 
-    .contact-choice-item {
-        grid-template-columns: 1fr;
-        text-align: left;
+    .contact-choice-panel {
+        padding: 0 7px 9px;
     }
 
-    .contact-choice-arrow {
-        display: none;
+    .contact-choice-box {
+        max-height: 74vh;
+        border-radius: 18px;
+        padding: 12px 9px 9px;
+    }
+
+    .contact-choice-head span {
+        font-size: 0.58rem;
+        padding: 0.46rem 0.66rem;
+    }
+
+    .contact-choice-head h3 {
+        font-size: 0.96rem;
+    }
+
+    .contact-choice-head p {
+        font-size: 0.76rem;
+    }
+
+    .contact-choice-item {
+        grid-template-columns: 38px 1fr 30px;
+        text-align: left;
+        padding: 9px;
     }
 
     .contact-choice-avatar {
-        width: 48px;
-        height: 48px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .contact-choice-arrow {
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+    }
+
+    .contact-choice-copy h4 {
+        font-size: 0.84rem;
+    }
+
+    .contact-choice-copy p {
+        font-size: 0.68rem;
+    }
+
+    .contact-choice-copy span {
+        font-size: 0.74rem;
+    }
+
+    .contact-choice-note {
+        font-size: 0.72rem;
+        padding: 9px;
     }
 }

@@ -683,41 +683,64 @@
     }
 }
 
-/********** Mobile Hero — Buttons Only **********/
+/********** Mobile Hero — Rebranded Clean Landing **********/
 @media (max-width: 767.98px) {
+    .home-hero-wrap {
+        background: #ffffff;
+        overflow: hidden;
+    }
+
     .header-carousel,
     .header-carousel .owl-stage-outer,
     .header-carousel .owl-stage,
     .header-carousel .owl-item,
     .header-carousel .owl-carousel-item {
-        height: auto;
-        min-height: 560px;
+        height: 470px !important;
+        min-height: 470px !important;
+        max-height: 470px !important;
+        background: #ffffff !important;
+    }
+
+    .header-carousel .owl-stage-outer {
+        overflow: hidden !important;
     }
 
     .header-carousel .owl-carousel-item img,
     .header-carousel-image {
+        width: 100%;
+        height: 470px !important;
+        min-height: 470px !important;
+        object-fit: cover;
         object-position: center top;
-        filter: brightness(1.02) saturate(1.06);
+        transform: none;
+        filter: brightness(0.86) saturate(1.08);
     }
 
     .carousel-overlay {
-        align-items: center;
+        align-items: flex-end;
         background:
-            linear-gradient(180deg, rgba(10, 24, 42, 0.10) 0%, rgba(10, 24, 42, 0.14) 50%, rgba(10, 24, 42, 0.26) 100%);
+            linear-gradient(180deg, rgba(7, 17, 31, 0.08) 0%, rgba(7, 17, 31, 0.10) 44%, rgba(7, 17, 31, 0.46) 100%);
+    }
+
+    .header-carousel .owl-carousel-item::after {
+        background:
+            radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08), transparent 26%),
+            linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.18) 100%);
     }
 
     .hero-content-grid {
-        min-height: 560px;
+        min-height: 470px !important;
+        height: 470px !important;
         display: flex;
         align-items: flex-end;
-        justify-content: flex-start;
-        padding-bottom: 185px;
+        justify-content: center;
+        padding: 0 0 22px;
     }
 
     .hero-simple-card {
         width: 100%;
         max-width: 100%;
-        padding: 0;
+        padding: 0 18px;
         margin: 0;
         border: none;
         border-radius: 0;
@@ -726,7 +749,7 @@
         backdrop-filter: none;
         overflow: visible;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .hero-card-accent,
@@ -737,74 +760,102 @@
     }
 
     .hero-btn-group {
-        width: auto;
-        display: inline-flex;
-        justify-content: flex-start;
-        align-items: center;
+        position: relative;
+        width: min(100%, 340px);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 0;
-        padding: 0;
-        margin-left: 18px;
-        border-radius: 18px;
+        padding: 6px;
+        margin: 0 auto;
+        border-radius: 999px;
         overflow: hidden;
-        box-shadow: 0 18px 42px rgba(15, 23, 42, 0.24);
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(255, 255, 255, 0.58);
+        box-shadow: 0 18px 44px rgba(2, 8, 23, 0.28);
+        backdrop-filter: blur(12px);
     }
 
     .hero-btn-group .btn {
-        min-width: 128px;
-        min-height: 48px;
-        padding: 12px 16px !important;
-        border-radius: 0 !important;
-        font-size: 0.88rem;
+        width: 100%;
+        min-width: 0;
+        min-height: 50px;
+        padding: 12px 12px !important;
+        border-radius: 999px !important;
+        font-size: 0.9rem;
         font-weight: 900;
         box-shadow: none !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
     }
 
     .hero-btn-group .hero-primary-btn {
-        border-radius: 18px 0 0 18px !important;
+        background: linear-gradient(135deg, #119447, #20c45a) !important;
+        color: #ffffff !important;
     }
 
     .hero-btn-group .hero-light-btn {
-        border-radius: 0 18px 18px 0 !important;
-        border-left: 1px solid rgba(24, 35, 56, 0.08) !important;
-        background: rgba(255, 255, 255, 0.96) !important;
+        background: transparent !important;
+        color: #182338 !important;
+        border: none !important;
     }
 
-    .header-carousel .owl-nav {
-        top: auto;
-        bottom: 50px;
-        right: 18px;
-        left: auto;
+    .hero-btn-group .hero-light-btn:hover,
+    .hero-btn-group .hero-primary-btn:hover {
         transform: none;
-        flex-direction: row;
-        gap: 12px;
     }
 
-    .header-carousel .owl-nav .owl-prev,
-    .header-carousel .owl-nav .owl-next {
-        width: 44px;
-        height: 44px;
-        border-radius: 15px;
-        font-size: 20px;
-    }
-
+    .header-carousel .owl-nav,
     .header-carousel .owl-dots {
-        bottom: 54px;
-        left: 20px;
-        transform: none;
-        justify-content: flex-start;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
     }
 
     .home-service-section {
-        margin-top: -30px;
-        padding: 54px 0 58px;
-        border-radius: 26px 26px 0 0;
+        margin-top: 0 !important;
+        padding: 34px 0 54px;
+        border-radius: 0;
+        box-shadow: none;
+        background:
+            radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.10), transparent 24%),
+            linear-gradient(180deg, #ffffff 0%, #f8fcf9 100%);
+    }
+
+    .home-service-section::before {
+        display: none;
+    }
+
+    .home-section-head {
+        margin-bottom: 26px;
+        padding: 0 4px;
+    }
+
+    .home-section-head h2,
+    .home-section-title {
+        font-size: 1.72rem;
+        line-height: 1.14;
+        letter-spacing: -0.03em;
+    }
+
+    .home-section-head p {
+        font-size: 0.98rem;
+        line-height: 1.7;
+        font-weight: 700;
+    }
+
+    .service-item {
+        padding: 24px 18px 22px;
+        border-radius: 24px;
     }
 
     .home-about-section,
     .home-learning-section,
     .home-staff-section,
     .home-testimonial-section {
-        padding: 64px 0;
+        padding: 60px 0;
     }
 
     .about-image-column,
@@ -814,6 +865,11 @@
 
     .home-about-points {
         grid-template-columns: 1fr;
+    }
+
+    .category {
+        padding-top: 58px !important;
+        padding-bottom: 58px !important;
     }
 
     .category-tall-card {
@@ -842,41 +898,36 @@
     .header-carousel .owl-stage,
     .header-carousel .owl-item,
     .header-carousel .owl-carousel-item {
-        min-height: 525px;
+        height: 445px !important;
+        min-height: 445px !important;
+        max-height: 445px !important;
+    }
+
+    .header-carousel .owl-carousel-item img,
+    .header-carousel-image {
+        height: 445px !important;
+        min-height: 445px !important;
     }
 
     .hero-content-grid {
-        min-height: 525px;
-        padding-bottom: 178px;
+        height: 445px !important;
+        min-height: 445px !important;
+        padding-bottom: 20px;
+    }
+
+    .hero-simple-card {
+        padding: 0 16px;
     }
 
     .hero-btn-group {
-        margin-left: 16px;
+        width: min(100%, 318px);
+        padding: 5px;
     }
 
     .hero-btn-group .btn {
-        min-width: 116px;
-        min-height: 44px;
-        padding: 10px 13px !important;
-        font-size: 0.8rem;
-    }
-
-    .hero-btn-group .hero-primary-btn {
-        border-radius: 16px 0 0 16px !important;
-    }
-
-    .hero-btn-group .hero-light-btn {
-        border-radius: 0 16px 16px 0 !important;
-    }
-
-    .header-carousel .owl-nav {
-        bottom: 44px;
-        right: 16px;
-    }
-
-    .header-carousel .owl-dots {
-        bottom: 48px;
-        left: 18px;
+        min-height: 48px;
+        font-size: 0.86rem;
+        padding: 11px 10px !important;
     }
 
     .home-section-kicker {
@@ -886,12 +937,16 @@
 
     .home-section-head h2,
     .home-section-title {
-        font-size: 1.48rem;
+        font-size: 1.52rem;
     }
 
     .home-service-section {
-        margin-top: -28px;
-        padding-top: 52px;
+        padding-top: 32px;
+    }
+
+    .home-service-section .container {
+        padding-left: 18px;
+        padding-right: 18px;
     }
 
     .service-item {
@@ -917,37 +972,76 @@
     .header-carousel .owl-stage,
     .header-carousel .owl-item,
     .header-carousel .owl-carousel-item {
-        min-height: 500px;
+        height: 420px !important;
+        min-height: 420px !important;
+        max-height: 420px !important;
+    }
+
+    .header-carousel .owl-carousel-item img,
+    .header-carousel-image {
+        height: 420px !important;
+        min-height: 420px !important;
     }
 
     .hero-content-grid {
-        min-height: 500px;
-        padding-bottom: 165px;
+        height: 420px !important;
+        min-height: 420px !important;
+        padding-bottom: 18px;
+    }
+
+    .hero-simple-card {
+        padding: 0 14px;
     }
 
     .hero-btn-group {
-        margin-left: 14px;
+        width: min(100%, 300px);
+        border-radius: 999px;
     }
 
     .hero-btn-group .btn {
-        min-width: 104px;
-        min-height: 42px;
-        padding: 9px 11px !important;
-        font-size: 0.76rem;
+        min-height: 46px;
+        font-size: 0.82rem;
+        padding: 10px 8px !important;
     }
 
-    .header-carousel .owl-nav .owl-prev,
-    .header-carousel .owl-nav .owl-next {
-        width: 40px;
-        height: 40px;
+    .home-section-head h2,
+    .home-section-title {
+        font-size: 1.42rem;
     }
 
-    .header-carousel .owl-dot {
-        width: 9px;
-        height: 9px;
+    .home-section-head p {
+        font-size: 0.92rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .header-carousel,
+    .header-carousel .owl-stage-outer,
+    .header-carousel .owl-stage,
+    .header-carousel .owl-item,
+    .header-carousel .owl-carousel-item {
+        height: 395px !important;
+        min-height: 395px !important;
+        max-height: 395px !important;
     }
 
-    .header-carousel .owl-dot.active {
-        width: 28px;
+    .header-carousel .owl-carousel-item img,
+    .header-carousel-image {
+        height: 395px !important;
+        min-height: 395px !important;
+    }
+
+    .hero-content-grid {
+        height: 395px !important;
+        min-height: 395px !important;
+    }
+
+    .hero-btn-group {
+        width: min(100%, 282px);
+    }
+
+    .hero-btn-group .btn {
+        min-height: 44px;
+        font-size: 0.78rem;
     }
 }
