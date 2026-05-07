@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const chatClose = document.getElementById("emisChatClose");
     const chatMinimize = document.getElementById("emisChatMinimize");
     const chatMore = document.getElementById("emisChatMore");
+    const chatBadge = document.getElementById("emisChatBadge");
 
     const chatForm = document.getElementById("emisChatForm");
     const chatInput = document.getElementById("emisChatInput");
@@ -22,19 +23,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const BOT_AVATAR = "/static/images/hijab.png";
     const USER_AVATAR = "/static/images/student.png";
     const FALLBACK_AVATAR = "/static/images/emis3.png";
-    const STORAGE_KEY = "emis_chat_history_v1";
+    const STORAGE_KEY = "emis_chat_history_v2";
 
     const EMIS_CONTACT_TEXT =
-        "📞 EDA: 0817 202 2401\n" +
-        "📞 EDO: 0805 446 4613\n" +
-        "📞 DOS: 0803 448 6651\n" +
-        "📞 School Accountant: 0806 227 7046\n" +
-        "📧 epitomeschools17@gmail.com";
+        "EDA: 0817 202 2401\n" +
+        "EDO: 0805 446 4613\n" +
+        "DOS: 0803 448 6651\n" +
+        "Accountant: 0806 227 7046\n" +
+        "Email: epitomeschools17@gmail.com";
 
-    // Increase this for slower typing
-    const TYPEWRITER_SPEED = 38;
-    const TYPEWRITER_PUNCTUATION_DELAY = 90;
-    const TYPEWRITER_SPACE_DELAY = 8;
+    const TYPEWRITER_SPEED = 20;
+    const TYPEWRITER_PUNCTUATION_DELAY = 45;
+    const TYPEWRITER_SPACE_DELAY = 5;
 
     let isRequestInProgress = false;
     let chatHistory = loadChatHistory();
@@ -61,11 +61,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function clearChatHistory() {
+        chatHistory = [];
+        try {
+            localStorage.removeItem(STORAGE_KEY);
+        } catch (error) {
+            // Ignore storage errors silently
+        }
+
+        chatMessages.innerHTML = "";
+        addIntroCard();
+        addWelcomeMessageIfEmpty();
+        scrollToBottom();
+    }
+
+    function hideBadge() {
+        if (chatBadge) {
+            chatBadge.classList.add("is-hidden");
+        }
+    }
+
+    function showBadge() {
+        if (chatBadge && !chatHistory.length) {
+            chatBadge.classList.remove("is-hidden");
+        }
+    }
+
     function openChat() {
         chatPanel.classList.add("is-open");
         chatPanel.setAttribute("aria-hidden", "false");
         chatPanel.setAttribute("data-state", "open");
         document.body.classList.add("chatbot-open");
+        hideBadge();
 
         window.setTimeout(function () {
             chatInput.focus();
@@ -100,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function autoResizeTextarea() {
         chatInput.style.height = "auto";
-        chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + "px";
+        chatInput.style.height = Math.min(chatInput.scrollHeight, 118) + "px";
     }
 
     function resetTextarea() {
@@ -161,7 +188,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const messageRow = document.createElement("div");
         messageRow.className = "emis-chat-message emis-chat-message-bot";
 
-        const avatar = createAvatar(BOT_AVATAR, "EMIS Bot Avatar");
+        const avatar = createAvatar(BOT_AVATAR, "EMIS Assistant Avatar");
+
         const bubbleWrap = document.createElement("div");
         bubbleWrap.className = "emis-chat-bubble-wrap";
 
@@ -217,6 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
             options.timeText || "Just now",
             false
         );
+
         const avatar = createAvatar(USER_AVATAR, "User Avatar");
 
         messageRow.appendChild(bubbleWrap);
@@ -236,14 +265,14 @@ document.addEventListener("DOMContentLoaded", function () {
         typingRow.className = "emis-chat-message emis-chat-message-bot";
         typingRow.id = "emisTypingIndicator";
 
-        const avatar = createAvatar(BOT_AVATAR, "EMIS Bot Avatar");
+        const avatar = createAvatar(BOT_AVATAR, "EMIS Assistant Avatar");
 
         const bubbleWrap = document.createElement("div");
         bubbleWrap.className = "emis-chat-bubble-wrap";
 
         const bubble = document.createElement("div");
         bubble.className = "emis-chat-bubble emis-chat-bubble-typing";
-        bubble.innerHTML = "<span>Typing</span><span class='emis-dot'>.</span><span class='emis-dot'>.</span><span class='emis-dot'>.</span>";
+        bubble.innerHTML = "<span>EMIS is typing</span><span class='emis-dot'>.</span><span class='emis-dot'>.</span><span class='emis-dot'>.</span>";
 
         const time = document.createElement("div");
         time.className = "emis-chat-time";
@@ -332,7 +361,14 @@ document.addEventListener("DOMContentLoaded", function () {
             return TYPEWRITER_SPACE_DELAY;
         }
 
-        if (char === "." || char === "," || char === "!" || char === "?" || char === ":" || char === ";") {
+        if (
+            char === "." ||
+            char === "," ||
+            char === "!" ||
+            char === "?" ||
+            char === ":" ||
+            char === ";"
+        ) {
             return TYPEWRITER_PUNCTUATION_DELAY;
         }
 
@@ -352,7 +388,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (lineIndex > 0) {
                 elements.bubble.appendChild(document.createElement("br"));
                 scrollToBottom();
-                await delay(60);
+                await delay(30);
             }
 
             const textNode = document.createTextNode("");
@@ -379,10 +415,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         appendUserMessage(message);
+
         chatHistory.push({
             role: "user",
             content: message
         });
+
         saveChatHistory();
 
         resetTextarea();
@@ -403,13 +441,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 role: "assistant",
                 content: botReply
             });
+
             saveChatHistory();
         } catch (error) {
             removeTypingIndicator();
 
             const fallbackText =
-                "Sorry, the EMIS assistant is having trouble right now 😊\n\n" +
-                "Please contact us directly:\n" +
+                "I’m having trouble connecting right now 😊\n\n" +
+                "Please contact EMIS directly:\n" +
                 EMIS_CONTACT_TEXT;
 
             await typeWriterBotMessage(fallbackText, {
@@ -420,6 +459,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 role: "assistant",
                 content: fallbackText
             });
+
             saveChatHistory();
         } finally {
             setLoadingState(false);
@@ -430,8 +470,47 @@ document.addEventListener("DOMContentLoaded", function () {
         appendBotMessage(featureName + " feature will be available soon 😊");
     }
 
+    function addIntroCard() {
+        const intro = document.createElement("div");
+        intro.className = "emis-chat-system-intro";
+
+        intro.innerHTML =
+            "<span class='emis-chat-intro-tag'><i class='fa fa-bolt'></i> Quick Help</span>" +
+            "<h4>How can we help?</h4>" +
+            "<p>Ask about admissions, programs, Tahfeez, fees, location or school contacts.</p>" +
+            "<div class='emis-chat-quick-actions'>" +
+                "<button type='button' class='emis-chat-chip' data-chat-prompt='How can I register my child at EMIS?'><i class='fa fa-edit'></i> Admission</button>" +
+                "<button type='button' class='emis-chat-chip' data-chat-prompt='What programs and classes does EMIS offer?'><i class='fa fa-layer-group'></i> Programs</button>" +
+                "<button type='button' class='emis-chat-chip' data-chat-prompt='Tell me about the Tahfeez and Islamiyyah programmes.'><i class='fa fa-mosque'></i> Tahfeez</button>" +
+                "<button type='button' class='emis-chat-chip' data-chat-prompt='Give me EMIS contact details.'><i class='fa fa-phone-alt'></i> Contact</button>" +
+            "</div>";
+
+        chatMessages.appendChild(intro);
+        bindQuickReplyButtons();
+    }
+
+    function bindQuickReplyButtons() {
+        const chips = chatMessages.querySelectorAll(".emis-chat-chip");
+
+        chips.forEach(function (chip) {
+            chip.addEventListener("click", function () {
+                const prompt = chip.getAttribute("data-chat-prompt") || "";
+
+                if (!prompt) {
+                    return;
+                }
+
+                chatInput.value = prompt;
+                autoResizeTextarea();
+                updateSendState();
+                chatInput.focus();
+            });
+        });
+    }
+
     function renderStoredMessages() {
         if (!chatHistory.length) {
+            addIntroCard();
             return;
         }
 
@@ -457,16 +536,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const welcomeText =
-            "Assalamu alaikum 😊\n\n" +
-            "Welcome to EMIS Assistant. I can help you with:\n" +
-            "📚 Programs and classes\n" +
-            "📝 Admission and registration enquiries\n" +
-            "🕌 Tahfeez and Islamiyyah\n" +
-            "🕒 School hours\n" +
-            "📍 Location and contact details\n\n" +
-            "For direct enquiries, you may contact:\n" +
-            EMIS_CONTACT_TEXT + "\n\n" +
-            "How may I help you today?";
+            "Assalamu alaikum 😊\n" +
+            "I can help with admissions, programs, Tahfeez, location and EMIS contact details.";
 
         appendBotMessage(formatReplyHTML(welcomeText), {
             isHTML: true,
@@ -477,6 +548,7 @@ document.addEventListener("DOMContentLoaded", function () {
             role: "assistant",
             content: welcomeText
         });
+
         saveChatHistory();
     }
 
@@ -496,7 +568,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (chatMore) {
         chatMore.addEventListener("click", function () {
-            showFeatureNotice("More options");
+            const confirmClear = window.confirm("Clear EMIS chat history?");
+
+            if (confirmClear) {
+                clearChatHistory();
+            }
         });
     }
 
@@ -580,7 +656,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderStoredMessages();
     addWelcomeMessageIfEmpty();
+    bindQuickReplyButtons();
     updateSendState();
     autoResizeTextarea();
     scrollToBottom();
+    showBadge();
 });

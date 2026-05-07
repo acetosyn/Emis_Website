@@ -401,155 +401,188 @@
 
     {% block floating_extras %}
 
-    <!-- EMIS Chatbot Float Button -->
-    <button type="button" class="emis-chatbot-float" id="emisChatToggle" aria-label="Open EMIS Chatbot">
-        <span class="emis-chatbot-ripple"></span>
-        <span class="emis-chatbot-ripple ripple-delay"></span>
-        <span class="emis-chatbot-icon">
-            <i class="fa fa-comments"></i>
-        </span>
-    </button>
+<!-- EMIS Chatbot Float Button -->
+<button type="button" class="emis-chatbot-float" id="emisChatToggle" aria-label="Open EMIS Chatbot">
+    <span class="emis-chatbot-ripple"></span>
+    <span class="emis-chatbot-ripple ripple-delay"></span>
 
-    <!-- EMIS Chatbot Panel -->
-    <div
-        class="emis-chatbot-panel"
-        id="emisChatPanel"
-        aria-hidden="true"
-        data-state="closed"
-    >
-        <div class="emis-chatbot-window">
+    <span class="emis-chatbot-badge" id="emisChatBadge">1</span>
 
-            <!-- Header -->
-            <div class="emis-chatbot-header">
-                <div class="emis-chatbot-header-left">
-                    <button
-                        type="button"
-                        class="emis-chat-icon-btn emis-chat-minimize-btn"
-                        id="emisChatMinimize"
-                        aria-label="Minimize chatbot"
-                        title="Minimize"
+    <span class="emis-chatbot-icon">
+        <i class="fa fa-comments"></i>
+    </span>
+</button>
+
+<!-- EMIS Chatbot Panel -->
+<div
+    class="emis-chatbot-panel"
+    id="emisChatPanel"
+    aria-hidden="true"
+    data-state="closed"
+>
+    <div class="emis-chatbot-window">
+
+        <!-- Header -->
+        <div class="emis-chatbot-header">
+            <div class="emis-chatbot-header-left">
+                <button
+                    type="button"
+                    class="emis-chat-icon-btn emis-chat-minimize-btn"
+                    id="emisChatMinimize"
+                    aria-label="Minimize chatbot"
+                    title="Minimize"
+                >
+                    <i class="fa fa-minus"></i>
+                </button>
+
+                <div class="emis-chatbot-single-avatar-wrap" aria-hidden="true">
+                    <img
+                        src="{{ url_for('static', filename='images/emis3.png') }}"
+                        alt="EMIS Logo"
+                        class="emis-chatbot-single-avatar"
                     >
-                        <i class="fa fa-minus"></i>
-                    </button>
-
-                    <div class="emis-chatbot-single-avatar-wrap" aria-hidden="true">
-                        <img
-                            src="{{ url_for('static', filename='images/emis3.png') }}"
-                            alt="EMIS Logo"
-                            class="emis-chatbot-single-avatar"
-                        >
-                    </div>
-
-                    <div class="emis-chatbot-header-meta">
-                        <h5 class="emis-chatbot-title">EMIS Assistant</h5>
-                        <div class="emis-chatbot-status">
-                            <i class="fa fa-circle" style="font-size: 0.45rem; color: #10b981;"></i>
-                            <span>Online now</span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="emis-chatbot-header-actions">
-                    <button
-                        type="button"
-                        class="emis-chat-icon-btn"
-                        id="emisChatMore"
-                        aria-label="More options"
-                        title="More"
-                    >
-                        <i class="fa fa-ellipsis-h"></i>
-                    </button>
-
-                    <button
-                        type="button"
-                        class="emis-chat-icon-btn"
-                        id="emisChatClose"
-                        aria-label="Close chatbot"
-                        title="Close"
-                    >
-                        <i class="fa fa-times"></i>
-                    </button>
+                <div class="emis-chatbot-header-meta">
+                    <h5 class="emis-chatbot-title">EMIS Assistant</h5>
+                    <div class="emis-chatbot-status">
+                        <span class="emis-status-dot"></span>
+                        <span>Online now</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Body -->
-            <div class="emis-chatbot-body" id="emisChatMessages">
-                <div class="emis-chat-system-intro">
-                    <p>
-                        Ask about admissions, classes, registration, Tahfeez, Islamiyyah,
-                        school programs, contact details, location, and other EMIS information.
-                    </p>
-                </div>
-            </div>
+            <div class="emis-chatbot-header-actions">
+                <button
+                    type="button"
+                    class="emis-chat-icon-btn"
+                    id="emisChatMore"
+                    aria-label="More options"
+                    title="Clear chat"
+                >
+                    <i class="fa fa-redo-alt"></i>
+                </button>
 
-            <!-- Composer -->
-            <div class="emis-chatbot-composer">
-                <form id="emisChatForm" class="emis-chatbot-composer-box" action="javascript:void(0);">
-                    <div class="emis-chatbot-input-row">
-                        <textarea
-                            id="emisChatInput"
-                            class="emis-chatbot-input"
-                            placeholder="Ask EMIS Assistant anything..."
-                            rows="1"
-                            autocomplete="off"
-                        ></textarea>
-
-                        <button
-                            type="submit"
-                            class="emis-chat-send-btn"
-                            id="emisChatSend"
-                            aria-label="Send message"
-                            title="Send"
-                        >
-                            <i class="fa fa-arrow-up"></i>
-                        </button>
-                    </div>
-
-                    <div class="emis-chatbot-tools">
-                        <button
-                            type="button"
-                            class="emis-chat-tool-btn"
-                            id="emisChatAttach"
-                            aria-label="Attach file"
-                            title="Attach"
-                        >
-                            <i class="fa fa-paperclip"></i>
-                        </button>
-
-                        <button
-                            type="button"
-                            class="emis-chat-tool-btn"
-                            id="emisChatEmoji"
-                            aria-label="Emoji"
-                            title="Emoji"
-                        >
-                            <i class="far fa-smile"></i>
-                        </button>
-
-                        <button
-                            type="button"
-                            class="emis-chat-tool-btn emis-chat-gif-btn"
-                            id="emisChatGif"
-                            aria-label="GIF"
-                            title="GIF"
-                        >
-                            <span class="emis-chat-gif-label">GIF</span>
-                        </button>
-
-                        <button
-                            type="button"
-                            class="emis-chat-tool-btn"
-                            id="emisChatMic"
-                            aria-label="Voice input"
-                            title="Voice"
-                        >
-                            <i class="fa fa-microphone"></i>
-                        </button>
-                    </div>
-                </form>
+                <button
+                    type="button"
+                    class="emis-chat-icon-btn"
+                    id="emisChatClose"
+                    aria-label="Close chatbot"
+                    title="Close"
+                >
+                    <i class="fa fa-times"></i>
+                </button>
             </div>
         </div>
+
+        <!-- Body -->
+        <div class="emis-chatbot-body" id="emisChatMessages">
+            <div class="emis-chat-system-intro">
+                <span class="emis-chat-intro-tag">
+                    <i class="fa fa-bolt"></i>
+                    Quick Help
+                </span>
+
+                <h4>How can we help?</h4>
+
+                <p>
+                    Ask about admissions, programs, Tahfeez, fees, location or school contacts.
+                </p>
+
+                <div class="emis-chat-quick-actions">
+                    <button type="button" class="emis-chat-chip" data-chat-prompt="How can I register my child at EMIS?">
+                        <i class="fa fa-edit"></i>
+                        Admission
+                    </button>
+
+                    <button type="button" class="emis-chat-chip" data-chat-prompt="What programs and classes does EMIS offer?">
+                        <i class="fa fa-layer-group"></i>
+                        Programs
+                    </button>
+
+                    <button type="button" class="emis-chat-chip" data-chat-prompt="Tell me about the Tahfeez and Islamiyyah programmes.">
+                        <i class="fa fa-mosque"></i>
+                        Tahfeez
+                    </button>
+
+                    <button type="button" class="emis-chat-chip" data-chat-prompt="Give me EMIS contact details.">
+                        <i class="fa fa-phone-alt"></i>
+                        Contact
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Composer -->
+        <div class="emis-chatbot-composer">
+            <form id="emisChatForm" class="emis-chatbot-composer-box" action="javascript:void(0);">
+                <div class="emis-chatbot-input-row">
+                    <textarea
+                        id="emisChatInput"
+                        class="emis-chatbot-input"
+                        placeholder="Ask EMIS Assistant..."
+                        rows="1"
+                        autocomplete="off"
+                    ></textarea>
+
+                    <button
+                        type="submit"
+                        class="emis-chat-send-btn"
+                        id="emisChatSend"
+                        aria-label="Send message"
+                        title="Send"
+                    >
+                        <i class="fa fa-arrow-up"></i>
+                    </button>
+                </div>
+
+                <div class="emis-chatbot-tools">
+                    <button
+                        type="button"
+                        class="emis-chat-tool-btn"
+                        id="emisChatAttach"
+                        aria-label="Attach file"
+                        title="Attach"
+                    >
+                        <i class="fa fa-paperclip"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="emis-chat-tool-btn"
+                        id="emisChatEmoji"
+                        aria-label="Emoji"
+                        title="Emoji"
+                    >
+                        <i class="far fa-smile"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="emis-chat-tool-btn emis-chat-gif-btn"
+                        id="emisChatGif"
+                        aria-label="GIF"
+                        title="GIF"
+                    >
+                        <span class="emis-chat-gif-label">GIF</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="emis-chat-tool-btn"
+                        id="emisChatMic"
+                        aria-label="Voice input"
+                        title="Voice"
+                    >
+                        <i class="fa fa-microphone"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
+
+
     {% endblock %}
 
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
