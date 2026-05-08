@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const STORAGE_KEY = "emis_chat_history_v2";
 
     const EMIS_CONTACT_TEXT =
-        "EDA: 0817 202 2401\n" +
+        "EDA: 0817 202 2402\n" +
         "EDO: 0805 446 4613\n" +
         "DOS: 0803 448 6651\n" +
         "Accountant: 0806 227 7046\n" +

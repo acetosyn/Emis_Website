@@ -46,7 +46,7 @@ class EMISChatBot:
                 {
                     "role": "EDA",
                     "title": "Executive Director Administration",
-                    "phone": "08172022401",
+                    "phone": "08172022402",
                 },
                 {
                     "role": "EDO",
@@ -300,7 +300,7 @@ class EMISChatBot:
 
     def _formatted_contacts_text(self) -> str:
         return (
-            "📞 EDA: 0817 202 2401\n"
+            "📞 EDA: 0817 202 2402\n"
             "📞 EDO: 0805 446 4613\n"
             "📞 DOS: 0803 448 6651\n"
             "📞 School Accountant: 0806 227 7046\n"
@@ -353,7 +353,7 @@ class EMISChatBot:
                     "provide the relevant EMIS contacts clearly. "
                     "If the answer is uncertain or not available in the EMIS context, use the web context if available. "
                     "If both are insufficient, politely say you are not fully sure and provide these contact details exactly:\n"
-                    "EDA: 0817 202 2401\n"
+                    "EDA: 0817 202 2402\n"
                     "EDO: 0805 446 4613\n"
                     "DOS: 0803 448 6651\n"
                     "School Accountant: 0806 227 7046\n"
