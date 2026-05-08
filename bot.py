@@ -131,7 +131,7 @@ class EMISChatBot:
             ),
             "contact": (
                 "For enquiries, contact EMIS through the appropriate school contact: "
-                "EDA, Executive Director of Administration: 08172022401. "
+                "EDA, Executive Director of Administration: 08172022402. "
                 "EDO, Executive Director of Operations: 08054464613. "
                 "DOS, Director of Studies: 08034486651. "
                 "School Accountant, for accounts and school fees enquiries: 08062277046. "
