@@ -28,71 +28,69 @@
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
-    <!-- Spinner Start -->
+
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary spinner-loader" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <!-- Spinner End -->
 
- {% block announcement %}
-<div class="announcement-bar">
-    <div class="container-fluid">
-        <div class="announcement-inner">
-            <div class="announcement-label">
-                <span class="announcement-icon">
-                    <i class="fa fa-bullhorn"></i>
-                </span>
-                <span>Admissions Update</span>
-            </div>
-
-            <div class="announcement-marquee-wrap">
-                <div class="announcement-marquee-track">
-                    <span>
-                        <i class="fa fa-star"></i>
-                        Admissions are ongoing at Epitome Model Islamic School
-                        <strong>Nursery</strong>
-                        <span class="announcement-dot"></span>
-                        <strong>Primary</strong>
-                        <span class="announcement-dot"></span>
-                        <strong>Secondary</strong>
-                        <span class="announcement-dot"></span>
-                        <strong>Full-Time Tahfeez</strong>
-                        <span class="announcement-dot"></span>
-                        <strong>Adult Classes</strong>
-                        <span class="announcement-dot"></span>
-                        Contact us for enquiries and enrollment support.
+    {% block announcement %}
+    <div class="announcement-bar">
+        <div class="container-fluid">
+            <div class="announcement-inner">
+                <div class="announcement-label">
+                    <span class="announcement-icon">
+                        <i class="fa fa-bullhorn"></i>
                     </span>
-
-                    <span aria-hidden="true">
-                        <i class="fa fa-star"></i>
-                        Admissions are ongoing at Epitome Model Islamic School
-                        <strong>Nursery</strong>
-                        <span class="announcement-dot"></span>
-                        <strong>Primary</strong>
-                        <span class="announcement-dot"></span>
-                        <strong>Secondary</strong>
-                        <span class="announcement-dot"></span>
-                        <strong>Full-Time Tahfeez</strong>
-                        <span class="announcement-dot"></span>
-                        <strong>Adult Classes</strong>
-                        <span class="announcement-dot"></span>
-                        Contact us for enquiries and enrollment support.
-                    </span>
+                    <span>Admissions Update</span>
                 </div>
-            </div>
 
-            <a href="{{ url_for('contact') }}" class="announcement-action">
-                Enquire Now
-                <i class="fa fa-arrow-right"></i>
-            </a>
+                <div class="announcement-marquee-wrap">
+                    <div class="announcement-marquee-track">
+                        <span>
+                            <i class="fa fa-star"></i>
+                            Admissions are ongoing at Epitome Model Islamic School
+                            <strong>Nursery</strong>
+                            <span class="announcement-dot"></span>
+                            <strong>Primary</strong>
+                            <span class="announcement-dot"></span>
+                            <strong>Secondary</strong>
+                            <span class="announcement-dot"></span>
+                            <strong>Full-Time Tahfeez</strong>
+                            <span class="announcement-dot"></span>
+                            <strong>Adult Classes</strong>
+                            <span class="announcement-dot"></span>
+                            Contact us for enquiries and enrollment support.
+                        </span>
+
+                        <span aria-hidden="true">
+                            <i class="fa fa-star"></i>
+                            Admissions are ongoing at Epitome Model Islamic School
+                            <strong>Nursery</strong>
+                            <span class="announcement-dot"></span>
+                            <strong>Primary</strong>
+                            <span class="announcement-dot"></span>
+                            <strong>Secondary</strong>
+                            <span class="announcement-dot"></span>
+                            <strong>Full-Time Tahfeez</strong>
+                            <span class="announcement-dot"></span>
+                            <strong>Adult Classes</strong>
+                            <span class="announcement-dot"></span>
+                            Contact us for enquiries and enrollment support.
+                        </span>
+                    </div>
+                </div>
+
+                <a href="{{ url_for('contact') }}" class="announcement-action">
+                    Enquire Now
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
 
-    <!-- Navbar Start -->
     <nav class="navbar navbar-expand-xl bg-white navbar-light shadow sticky-top p-0 main-navbar">
         <a href="{{ url_for('home') }}" class="navbar-brand d-flex align-items-center px-3 px-lg-4">
             <img src="{{ url_for('static', filename='images/emis3.png') }}" alt="EMIS Logo" class="navbar-logo me-2">
@@ -112,30 +110,10 @@
 
                 <a href="{{ url_for('home') }}" class="nav-item nav-link {% if current_page == 'home' %}active{% endif %}">Home</a>
 
-                <!-- Programs -->
-                <div class="nav-item dropdown nav-item-split">
-                    <div class="nav-link-group">
-                        <a href="{{ url_for('programs') }}" class="nav-link nav-link-main {% if current_page == 'programs' %}active{% endif %}">Programs</a>
+                <a href="{{ url_for('programs') }}" class="nav-item nav-link {% if current_page == 'programs' %}active{% endif %}">
+                    Programs
+                </a>
 
-                        <button class="nav-link-toggle d-xl-none" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle Programs menu">
-                            <i class="fa fa-chevron-down"></i>
-                        </button>
-
-                        <a href="{{ url_for('programs') }}" class="nav-link dropdown-toggle nav-link-desktop d-none d-xl-inline-flex {% if current_page == 'programs' %}active{% endif %}">
-                            Programs
-                        </a>
-                    </div>
-
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="{{ url_for('programs') }}" class="dropdown-item">Nursery</a>
-                        <a href="{{ url_for('programs') }}" class="dropdown-item">Primary</a>
-                        <a href="{{ url_for('programs') }}" class="dropdown-item">Secondary</a>
-                        <a href="{{ url_for('programs') }}" class="dropdown-item">Full-Time Tahfeez</a>
-                        <a href="{{ url_for('programs') }}" class="dropdown-item">Adult Classes</a>
-                    </div>
-                </div>
-
-                <!-- School Portal -->
                 <div class="nav-item nav-item-split">
                     <a
                         href="https://epitomeschools.com/"
@@ -147,7 +125,6 @@
                     </a>
                 </div>
 
-                <!-- Events and News -->
                 <div class="nav-item dropdown nav-item-split">
                     <div class="nav-link-group">
                         <span class="nav-link nav-link-main {% if current_page == 'culture' %}active{% endif %}">Events and News</span>
@@ -169,7 +146,6 @@
                     </div>
                 </div>
 
-                <!-- Careers -->
                 <div class="nav-item dropdown nav-item-split">
                     <div class="nav-link-group">
                         <span class="nav-link nav-link-main">Careers</span>
@@ -192,7 +168,6 @@
                     </div>
                 </div>
 
-                <!-- Services -->
                 <div class="nav-item dropdown nav-item-split">
                     <div class="nav-link-group">
                         <span class="nav-link nav-link-main">Services</span>
@@ -213,7 +188,6 @@
                     </div>
                 </div>
 
-                <!-- About -->
                 <div class="nav-item dropdown nav-item-split">
                     <div class="nav-link-group">
                         <a href="{{ url_for('about') }}" class="nav-link nav-link-main {% if current_page == 'about' %}active{% endif %}">About</a>
@@ -247,32 +221,16 @@
                         <i class="fab fa-instagram"></i>
                     </a>
 
-                    <!-- WhatsApp Contact Dropdown -->
                     <div class="dropdown">
-                        <a
-                            href="#"
-                            class="header-social-link"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                            aria-label="WhatsApp EMIS"
-                        >
+                        <a href="#" class="header-social-link" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="WhatsApp EMIS">
                             <i class="fab fa-whatsapp"></i>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end fade-down m-0">
-                            <a class="dropdown-item" href="https://wa.me/2348172022401" target="_blank" rel="noopener noreferrer">
-                                EDA - 0817 202 2402
-                            </a>
-                            <a class="dropdown-item" href="https://wa.me/2348054464613" target="_blank" rel="noopener noreferrer">
-                                EDO - 0805 446 4613
-                            </a>
-                            <a class="dropdown-item" href="https://wa.me/2348034486651" target="_blank" rel="noopener noreferrer">
-                                DOS - 0803 448 6651
-                            </a>
-                            <a class="dropdown-item" href="https://wa.me/2348062277046" target="_blank" rel="noopener noreferrer">
-                                Accountant - 0806 227 7046
-                            </a>
+                            <a class="dropdown-item" href="https://wa.me/2348172022402" target="_blank" rel="noopener noreferrer">EDA - 0817 202 2402</a>
+                            <a class="dropdown-item" href="https://wa.me/2348054464613" target="_blank" rel="noopener noreferrer">EDO - 0805 446 4613</a>
+                            <a class="dropdown-item" href="https://wa.me/2348034486651" target="_blank" rel="noopener noreferrer">DOS - 0803 448 6651</a>
+                            <a class="dropdown-item" href="https://wa.me/2348062277046" target="_blank" rel="noopener noreferrer">Accountant - 0806 227 7046</a>
                         </div>
                     </div>
 
@@ -281,42 +239,24 @@
                     </a>
                 </div>
 
-                <!-- Call Contact Dropdown -->
                 <div class="dropdown ms-xl-3">
-                    <a
-                        href="#"
-                        class="header-call-icon"
-                        role="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                        aria-label="Call School"
-                    >
+                    <a href="#" class="header-call-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Call School">
                         <i class="fa fa-phone-alt"></i>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end fade-down m-0">
-                        <a class="dropdown-item" href="tel:08172022401">
-                            EDA - 0817 202 2402
-                        </a>
-                        <a class="dropdown-item" href="tel:08054464613">
-                            EDO - 0805 446 4613
-                        </a>
-                        <a class="dropdown-item" href="tel:08034486651">
-                            DOS - 0803 448 6651
-                        </a>
-                        <a class="dropdown-item" href="tel:08062277046">
-                            Accountant - 0806 227 7046
-                        </a>
+                        <a class="dropdown-item" href="tel:08172022402">EDA - 0817 202 2402</a>
+                        <a class="dropdown-item" href="tel:08054464613">EDO - 0805 446 4613</a>
+                        <a class="dropdown-item" href="tel:08034486651">DOS - 0803 448 6651</a>
+                        <a class="dropdown-item" href="tel:08062277046">Accountant - 0806 227 7046</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
 
     {% block content %}{% endblock %}
 
-    <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
@@ -334,7 +274,7 @@
 
                     <p class="mb-2">
                         <i class="fa fa-phone-alt me-3"></i>
-                        <a class="footer-contact-link" href="tel:08172022401">EDA: 0817 202 2402</a>
+                        <a class="footer-contact-link" href="tel:08172022402">EDA: 0817 202 2402</a>
                     </p>
 
                     <p class="mb-2">
@@ -401,187 +341,123 @@
 
     {% block floating_extras %}
 
-<!-- EMIS Chatbot Float Button -->
-<button type="button" class="emis-chatbot-float" id="emisChatToggle" aria-label="Open EMIS Chatbot">
-    <span class="emis-chatbot-ripple"></span>
-    <span class="emis-chatbot-ripple ripple-delay"></span>
+    <button type="button" class="emis-chatbot-float" id="emisChatToggle" aria-label="Open EMIS Chatbot">
+        <span class="emis-chatbot-ripple"></span>
+        <span class="emis-chatbot-ripple ripple-delay"></span>
+        <span class="emis-chatbot-badge" id="emisChatBadge">1</span>
+        <span class="emis-chatbot-icon">
+            <i class="fa fa-comments"></i>
+        </span>
+    </button>
 
-    <span class="emis-chatbot-badge" id="emisChatBadge">1</span>
+    <div class="emis-chatbot-panel" id="emisChatPanel" aria-hidden="true" data-state="closed">
+        <div class="emis-chatbot-window">
 
-    <span class="emis-chatbot-icon">
-        <i class="fa fa-comments"></i>
-    </span>
-</button>
+            <div class="emis-chatbot-header">
+                <div class="emis-chatbot-header-left">
+                    <button type="button" class="emis-chat-icon-btn emis-chat-minimize-btn" id="emisChatMinimize" aria-label="Minimize chatbot" title="Minimize">
+                        <i class="fa fa-minus"></i>
+                    </button>
 
-<!-- EMIS Chatbot Panel -->
-<div
-    class="emis-chatbot-panel"
-    id="emisChatPanel"
-    aria-hidden="true"
-    data-state="closed"
->
-    <div class="emis-chatbot-window">
+                    <div class="emis-chatbot-single-avatar-wrap" aria-hidden="true">
+                        <img src="{{ url_for('static', filename='images/emis3.png') }}" alt="EMIS Logo" class="emis-chatbot-single-avatar">
+                    </div>
 
-        <!-- Header -->
-        <div class="emis-chatbot-header">
-            <div class="emis-chatbot-header-left">
-                <button
-                    type="button"
-                    class="emis-chat-icon-btn emis-chat-minimize-btn"
-                    id="emisChatMinimize"
-                    aria-label="Minimize chatbot"
-                    title="Minimize"
-                >
-                    <i class="fa fa-minus"></i>
-                </button>
-
-                <div class="emis-chatbot-single-avatar-wrap" aria-hidden="true">
-                    <img
-                        src="{{ url_for('static', filename='images/emis3.png') }}"
-                        alt="EMIS Logo"
-                        class="emis-chatbot-single-avatar"
-                    >
+                    <div class="emis-chatbot-header-meta">
+                        <h5 class="emis-chatbot-title">EMIS Assistant</h5>
+                        <div class="emis-chatbot-status">
+                            <span class="emis-status-dot"></span>
+                            <span>Online now</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="emis-chatbot-header-meta">
-                    <h5 class="emis-chatbot-title">EMIS Assistant</h5>
-                    <div class="emis-chatbot-status">
-                        <span class="emis-status-dot"></span>
-                        <span>Online now</span>
+                <div class="emis-chatbot-header-actions">
+                    <button type="button" class="emis-chat-icon-btn" id="emisChatMore" aria-label="More options" title="Clear chat">
+                        <i class="fa fa-redo-alt"></i>
+                    </button>
+
+                    <button type="button" class="emis-chat-icon-btn" id="emisChatClose" aria-label="Close chatbot" title="Close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="emis-chatbot-body" id="emisChatMessages">
+                <div class="emis-chat-system-intro">
+                    <span class="emis-chat-intro-tag">
+                        <i class="fa fa-bolt"></i>
+                        Quick Help
+                    </span>
+
+                    <h4>How can we help?</h4>
+
+                    <p>
+                        Ask about admissions, programs, Tahfeez, fees, location or school contacts.
+                    </p>
+
+                    <div class="emis-chat-quick-actions">
+                        <button type="button" class="emis-chat-chip" data-chat-prompt="How can I register my child at EMIS?">
+                            <i class="fa fa-edit"></i>
+                            Admission
+                        </button>
+
+                        <button type="button" class="emis-chat-chip" data-chat-prompt="What programs and classes does EMIS offer?">
+                            <i class="fa fa-layer-group"></i>
+                            Programs
+                        </button>
+
+                        <button type="button" class="emis-chat-chip" data-chat-prompt="Tell me about the Tahfeez and Islamiyyah programmes.">
+                            <i class="fa fa-mosque"></i>
+                            Tahfeez
+                        </button>
+
+                        <button type="button" class="emis-chat-chip" data-chat-prompt="Give me EMIS contact details.">
+                            <i class="fa fa-phone-alt"></i>
+                            Contact
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <div class="emis-chatbot-header-actions">
-                <button
-                    type="button"
-                    class="emis-chat-icon-btn"
-                    id="emisChatMore"
-                    aria-label="More options"
-                    title="Clear chat"
-                >
-                    <i class="fa fa-redo-alt"></i>
-                </button>
+            <div class="emis-chatbot-composer">
+                <form id="emisChatForm" class="emis-chatbot-composer-box" action="javascript:void(0);">
+                    <div class="emis-chatbot-input-row">
+                        <textarea
+                            id="emisChatInput"
+                            class="emis-chatbot-input"
+                            placeholder="Ask EMIS Assistant..."
+                            rows="1"
+                            autocomplete="off"
+                        ></textarea>
 
-                <button
-                    type="button"
-                    class="emis-chat-icon-btn"
-                    id="emisChatClose"
-                    aria-label="Close chatbot"
-                    title="Close"
-                >
-                    <i class="fa fa-times"></i>
-                </button>
+                        <button type="submit" class="emis-chat-send-btn" id="emisChatSend" aria-label="Send message" title="Send">
+                            <i class="fa fa-arrow-up"></i>
+                        </button>
+                    </div>
+
+                    <div class="emis-chatbot-tools">
+                        <button type="button" class="emis-chat-tool-btn" id="emisChatAttach" aria-label="Attach file" title="Attach">
+                            <i class="fa fa-paperclip"></i>
+                        </button>
+
+                        <button type="button" class="emis-chat-tool-btn" id="emisChatEmoji" aria-label="Emoji" title="Emoji">
+                            <i class="far fa-smile"></i>
+                        </button>
+
+                        <button type="button" class="emis-chat-tool-btn emis-chat-gif-btn" id="emisChatGif" aria-label="GIF" title="GIF">
+                            <span class="emis-chat-gif-label">GIF</span>
+                        </button>
+
+                        <button type="button" class="emis-chat-tool-btn" id="emisChatMic" aria-label="Voice input" title="Voice">
+                            <i class="fa fa-microphone"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
-        </div>
 
-        <!-- Body -->
-        <div class="emis-chatbot-body" id="emisChatMessages">
-            <div class="emis-chat-system-intro">
-                <span class="emis-chat-intro-tag">
-                    <i class="fa fa-bolt"></i>
-                    Quick Help
-                </span>
-
-                <h4>How can we help?</h4>
-
-                <p>
-                    Ask about admissions, programs, Tahfeez, fees, location or school contacts.
-                </p>
-
-                <div class="emis-chat-quick-actions">
-                    <button type="button" class="emis-chat-chip" data-chat-prompt="How can I register my child at EMIS?">
-                        <i class="fa fa-edit"></i>
-                        Admission
-                    </button>
-
-                    <button type="button" class="emis-chat-chip" data-chat-prompt="What programs and classes does EMIS offer?">
-                        <i class="fa fa-layer-group"></i>
-                        Programs
-                    </button>
-
-                    <button type="button" class="emis-chat-chip" data-chat-prompt="Tell me about the Tahfeez and Islamiyyah programmes.">
-                        <i class="fa fa-mosque"></i>
-                        Tahfeez
-                    </button>
-
-                    <button type="button" class="emis-chat-chip" data-chat-prompt="Give me EMIS contact details.">
-                        <i class="fa fa-phone-alt"></i>
-                        Contact
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Composer -->
-        <div class="emis-chatbot-composer">
-            <form id="emisChatForm" class="emis-chatbot-composer-box" action="javascript:void(0);">
-                <div class="emis-chatbot-input-row">
-                    <textarea
-                        id="emisChatInput"
-                        class="emis-chatbot-input"
-                        placeholder="Ask EMIS Assistant..."
-                        rows="1"
-                        autocomplete="off"
-                    ></textarea>
-
-                    <button
-                        type="submit"
-                        class="emis-chat-send-btn"
-                        id="emisChatSend"
-                        aria-label="Send message"
-                        title="Send"
-                    >
-                        <i class="fa fa-arrow-up"></i>
-                    </button>
-                </div>
-
-                <div class="emis-chatbot-tools">
-                    <button
-                        type="button"
-                        class="emis-chat-tool-btn"
-                        id="emisChatAttach"
-                        aria-label="Attach file"
-                        title="Attach"
-                    >
-                        <i class="fa fa-paperclip"></i>
-                    </button>
-
-                    <button
-                        type="button"
-                        class="emis-chat-tool-btn"
-                        id="emisChatEmoji"
-                        aria-label="Emoji"
-                        title="Emoji"
-                    >
-                        <i class="far fa-smile"></i>
-                    </button>
-
-                    <button
-                        type="button"
-                        class="emis-chat-tool-btn emis-chat-gif-btn"
-                        id="emisChatGif"
-                        aria-label="GIF"
-                        title="GIF"
-                    >
-                        <span class="emis-chat-gif-label">GIF</span>
-                    </button>
-
-                    <button
-                        type="button"
-                        class="emis-chat-tool-btn"
-                        id="emisChatMic"
-                        aria-label="Voice input"
-                        title="Voice"
-                    >
-                        <i class="fa fa-microphone"></i>
-                    </button>
-                </div>
-            </form>
         </div>
     </div>
-</div>
-
 
     {% endblock %}
 
