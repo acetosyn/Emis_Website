@@ -2,364 +2,283 @@
 
 {% block title %}{{ page_title or 'EMIS | Programs' }}{% endblock %}
 
-{% block meta_keywords %}EMIS, Epitome Model Islamic School, Programs, Creche, Nursery, Primary, Secondary, Tahfeez, Islamiyyah{% endblock %}
+{% block meta_keywords %}EMIS Programs, Epitome Model Islamic Schools, Creche, Nursery, Primary, JSS, SSS, Admission Form{% endblock %}
 
-{% block meta_description %}Explore the academic structure, educational levels, facilities, extracurricular activities, and special programs offered by Epitome Model Islamic School.{% endblock %}
+{% block meta_description %}Explore EMIS academic programs from Creche to Senior Secondary School, including Islamic values, academics, admission form download, and school learning stages.{% endblock %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/courses.css') }}" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
-<!-- Header Start -->
-<div class="container-fluid bg-primary py-5 mb-5 page-header">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-                <h1 class="display-3 text-white animated slideInDown">Our Programs</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a class="text-white" href="{{ url_for('home') }}">Home</a></li>
-                        <li class="breadcrumb-item text-white active" aria-current="page">Programs</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Header End -->
 
-
-<!-- Levels Start -->
-<div class="container-xxl py-5 category">
+<section class="program-hero">
     <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Educational Levels</h6>
-            <h1 class="mb-5">Learning Stages at EMIS</h1>
-        </div>
-        <div class="row g-3">
-            <div class="col-lg-7 col-md-6">
-                <div class="row g-3">
-                    <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                        <a class="position-relative d-block overflow-hidden" href="#">
-                            <img class="img-fluid" src="{{ url_for('static', filename='images/cat-1.jpg') }}" alt="Creche and Nursery">
-                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
-                                <h5 class="m-0">Creche & Nursery</h5>
-                                <small class="text-primary">Early childhood care and education</small>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="#">
-                            <img class="img-fluid" src="{{ url_for('static', filename='images/cat-2.jpg') }}" alt="Primary School">
-                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
-                                <h5 class="m-0">Primary School</h5>
-                                <small class="text-primary">Elementary learning and growth</small>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                        <a class="position-relative d-block overflow-hidden" href="#">
-                            <img class="img-fluid" src="{{ url_for('static', filename='images/cat-3.jpg') }}" alt="Secondary School">
-                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
-                                <h5 class="m-0">Junior & Senior Secondary</h5>
-                                <small class="text-primary">Up to Year 12 / SS3</small>
-                            </div>
-                        </a>
-                    </div>
+        <div class="program-hero-grid">
+
+            <div class="program-hero-copy wow fadeInUp" data-wow-delay="0.1s">
+                <span class="program-kicker">
+                    <i class="fa fa-graduation-cap"></i>
+                    EMIS Programs
+                </span>
+
+                <h1>Learning Pathways from Early Years to Secondary School</h1>
+
+                <p>
+                    A balanced academic and Islamic learning journey designed to build confidence,
+                    character, discipline, creativity, and excellence.
+                </p>
+
+                <div class="program-hero-actions">
+                    <a href="#programLevels" class="program-btn primary">
+                        <i class="fa fa-layer-group"></i>
+                        Explore Classes
+                    </a>
+
+                    <a href="{{ url_for('static', filename='files/emis_form.pdf') }}" class="program-btn soft" download>
+                        <i class="fa fa-download"></i>
+                        Download Admission Form
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-5 col-md-6 wow zoomIn category-tall-card" data-wow-delay="0.7s">
-                <a class="position-relative d-block h-100 overflow-hidden" href="#">
-                    <img class="img-fluid position-absolute w-100 h-100 about-image-cover" src="{{ url_for('static', filename='images/cat-4.jpg') }}" alt="Tahfeez and Islamiyyah">
-                    <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3 category-card-label">
-                        <h5 class="m-0">Tahfeez & Islamiyyah</h5>
-                        <small class="text-primary">Qur’anic memorization and Islamic studies</small>
-                    </div>
+
+            <div class="program-hero-gallery wow zoomIn" data-wow-delay="0.2s">
+                <div class="hero-img hero-img-main">
+                    <img src="{{ url_for('static', filename='images/carousel/cover2.jpg') }}" alt="EMIS Students">
+                </div>
+                <div class="hero-img hero-img-small one">
+                    <img src="{{ url_for('static', filename='images/carousel/cover6.jpg') }}" alt="EMIS Learning">
+                </div>
+                <div class="hero-img hero-img-small two">
+                    <img src="{{ url_for('static', filename='images/carousel/cover8.jpg') }}" alt="EMIS Classroom">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="program-admission-strip">
+    <div class="container">
+        <div class="admission-box wow fadeInUp" data-wow-delay="0.1s">
+            <div class="admission-icon">
+                <i class="fa fa-file-signature"></i>
+            </div>
+
+            <div>
+                <span>Admission Form Notice</span>
+                <h2>
+                    The admission fee for Nursery and Primary Schools is ₦10,000,
+                    while the admission fee for Junior and Senior Secondary Schools is ₦15,000.
+                </h2>
+            </div>
+
+            <a href="{{ url_for('static', filename='files/emis_form.pdf') }}" class="admission-download" download>
+                <i class="fa fa-download"></i>
+                Download Form
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<section class="program-showcase">
+    <div class="container">
+        <div class="showcase-grid">
+            <div class="showcase-image wow fadeInLeft" data-wow-delay="0.1s">
+                <img src="{{ url_for('static', filename='images/carousel/cover9.jpg') }}" alt="EMIS Programs">
+            </div>
+
+            <div class="showcase-copy wow fadeInRight" data-wow-delay="0.2s">
+                <span class="program-section-kicker">
+                    <i class="fa fa-star"></i>
+                    Why Choose EMIS?
+                </span>
+
+                <h2>Balanced Education for This Life and the Hereafter</h2>
+
+                <p>
+                    Our programs combine academic excellence, Islamic values, confidence-building,
+                    examination preparation, and strong moral training.
+                </p>
+
+                <div class="showcase-points">
+                    <span><i class="fa fa-check"></i> Early Years to SSS3</span>
+                    <span><i class="fa fa-check"></i> Academic + Islamic learning</span>
+                    <span><i class="fa fa-check"></i> Strong exam preparation</span>
+                    <span><i class="fa fa-check"></i> Discipline and leadership</span>
+                </div>
+
+                <a href="{{ url_for('contact') }}" class="program-btn primary">
+                    <i class="fa fa-phone"></i>
+                    Ask About Admission
                 </a>
             </div>
         </div>
     </div>
-</div>
-<!-- Levels End -->
+</section>
 
 
-<!-- Programs Start -->
-<div class="container-xxl py-5">
+
+
+
+<section class="program-levels" id="programLevels">
     <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Program Structure</h6>
-            <h1 class="mb-5">What EMIS Offers</h1>
+        <div class="program-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="program-section-kicker">
+                <i class="fa fa-layer-group"></i>
+                Class Levels
+            </span>
+            <h2>EMIS Classes</h2>
+            <p>Simple class-by-class structure without too much text.</p>
         </div>
-        <div class="row g-4 justify-content-center">
 
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="course-item bg-light h-100">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='images/course-1.jpg') }}" alt="Academic Curriculum">
-                        <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                            <a href="{{ url_for('about') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-left">Read More</a>
-                            <a href="{{ url_for('contact') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-right">Enroll</a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 pb-0">
-                        <h5 class="mb-4">Academic Curriculum</h5>
-                        <p>
-                            EMIS combines the Nigerian curriculum, Islamic curriculum, and Montessori methods
-                            to provide a strong and balanced educational foundation.
-                        </p>
-                    </div>
-                    <div class="d-flex border-top">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-book text-primary me-2"></i>Nigerian Curriculum</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-mosque text-primary me-2"></i>Islamic Curriculum</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-child text-primary me-2"></i>Montessori Method</small>
-                    </div>
+        <div class="level-board">
+
+            <div class="level-column wow fadeInUp" data-wow-delay="0.1s">
+                <div class="level-column-head early">
+                    <i class="fa fa-child-reaching"></i>
+                    <h3>Early Years</h3>
+                </div>
+
+                <div class="level-list">
+                    <article><strong>Crèche</strong><span>Care, safety, play, sounds, colors.</span></article>
+                    <article><strong>Starters</strong><span>Letters, numbers, pencil control.</span></article>
+                    <article><strong>Preparatory</strong><span>Reading readiness and classroom confidence.</span></article>
+                    <article><strong>Nursery 1</strong><span>Alphabet, counting, shapes, morals.</span></article>
+                    <article><strong>Nursery 2</strong><span>Simple words, sentences, maths, Qur’an.</span></article>
+                    <article><strong>Reception</strong><span>Primary school preparation.</span></article>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="course-item bg-light h-100">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='images/course-2.jpg') }}" alt="Tahfeez Program">
-                        <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                            <a href="{{ url_for('about') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-left">Read More</a>
-                            <a href="{{ url_for('contact') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-right">Enroll</a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 pb-0">
-                        <h5 class="mb-4">Tahfeezul-Qur’an Programme</h5>
-                        <p>
-                            Specialized Qur’anic memorization begins from age 3, helping children build a strong
-                            relationship with the Qur’an from an early age.
-                        </p>
-                    </div>
-                    <div class="d-flex border-top">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-mosque text-primary me-2"></i>Islamic Focus</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-child text-primary me-2"></i>From Age 3</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-heart text-primary me-2"></i>Strong Foundation</small>
-                    </div>
+            <div class="level-column wow fadeInUp" data-wow-delay="0.2s">
+                <div class="level-column-head primary">
+                    <i class="fa fa-book-open-reader"></i>
+                    <h3>Primary</h3>
+                </div>
+
+                <div class="level-list">
+                    <article><strong>Primary 1</strong><span>Formal reading, writing, maths.</span></article>
+                    <article><strong>Primary 2</strong><span>Comprehension and problem-solving.</span></article>
+                    <article><strong>Primary 3</strong><span>Independent learning and composition.</span></article>
+                    <article><strong>Primary 4</strong><span>Critical thinking and computer studies.</span></article>
+                    <article><strong>Primary 5</strong><span>Leadership and assessment preparation.</span></article>
+                    <article><strong>Primary 6</strong><span>Common Entrance readiness.</span></article>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="course-item bg-light h-100">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='images/course-3.jpg') }}" alt="Islamiyyah Program">
-                        <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                            <a href="{{ url_for('about') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-left">Read More</a>
-                            <a href="{{ url_for('contact') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3 course-btn-right">Enroll</a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 pb-0">
-                        <h5 class="mb-4">Islamiyyah Programme</h5>
-                        <p>
-                            Our Islamiyyah programme supports deep Islamic learning, sound morals,
-                            discipline, and responsible character development.
-                        </p>
-                    </div>
-                    <div class="d-flex border-top">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-primary me-2"></i>Sound Morals</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-users text-primary me-2"></i>Guided Learning</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-award text-primary me-2"></i>Unrivaled Standard</small>
-                    </div>
+            <div class="level-column wow fadeInUp" data-wow-delay="0.3s">
+                <div class="level-column-head secondary">
+                    <i class="fa fa-user-graduate"></i>
+                    <h3>Secondary</h3>
+                </div>
+
+                <div class="level-list">
+                    <article><strong>JSS1</strong><span>Secondary foundation and practical learning.</span></article>
+                    <article><strong>JSS2</strong><span>Projects, essays, sciences, character.</span></article>
+                    <article><strong>JSS3</strong><span>BECE / Junior WAEC preparation.</span></article>
+                    <article><strong>SSS1</strong><span>Science, commercial, and arts pathways.</span></article>
+                    <article><strong>SSS2</strong><span>WAEC/NECO practice and career guidance.</span></article>
+                    <article><strong>SSS3</strong><span>WAEC, NECO, JAMB, and life readiness.</span></article>
                 </div>
             </div>
 
         </div>
     </div>
-</div>
-<!-- Programs End -->
+</section>
 
-
-<!-- Extra Features Start -->
-<div class="container-xxl py-5 bg-light">
+<section class="program-features">
     <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-light text-center text-primary px-3">Key Features</h6>
-            <h1 class="mb-5">More Than Just Classroom Learning</h1>
-        </div>
-        <div class="row g-4">
+        <div class="feature-grid">
 
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item text-center pt-3 h-100">
-                    <div class="p-4">
-                        <i class="fa fa-laptop fa-3x text-primary mb-4"></i>
-                        <h5 class="mb-3">Online & In-Person</h5>
-                        <p>Flexible learning support through online classes and classroom-based teaching.</p>
-                    </div>
-                </div>
-            </div>
+            <article class="feature-card wow fadeInUp" data-wow-delay="0.1s">
+                <i class="fa fa-mosque"></i>
+                <h3>Islamic Foundation</h3>
+                <p>Qur’an, morals, discipline, and character development.</p>
+            </article>
 
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item text-center pt-3 h-100">
-                    <div class="p-4">
-                        <i class="fa fa-bus fa-3x text-primary mb-4"></i>
-                        <h5 class="mb-3">Transport Services</h5>
-                        <p>Convenient transport support is available for students and families.</p>
-                    </div>
-                </div>
-            </div>
+            <article class="feature-card wow fadeInUp" data-wow-delay="0.18s">
+                <i class="fa fa-flask"></i>
+                <h3>Practical Learning</h3>
+                <p>Projects, labs, activities, and active classroom participation.</p>
+            </article>
 
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item text-center pt-3 h-100">
-                    <div class="p-4">
-                        <i class="fa fa-home fa-3x text-primary mb-4"></i>
-                        <h5 class="mb-3">Boarding Facilities</h5>
-                        <p>Boarding services are available across EMIS campuses for supported learners.</p>
-                    </div>
-                </div>
-            </div>
+            <article class="feature-card wow fadeInUp" data-wow-delay="0.26s">
+                <i class="fa fa-award"></i>
+                <h3>Exam Readiness</h3>
+                <p>Common Entrance, BECE, WAEC, NECO, and JAMB preparation.</p>
+            </article>
 
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item text-center pt-3 h-100">
-                    <div class="p-4">
-                        <i class="fa fa-map-marker-alt fa-3x text-primary mb-4"></i>
-                        <h5 class="mb-3">Multiple Campuses</h5>
-                        <p>Serving families through Lugbe, Mararaba, Abuja, and Nasarawa State locations.</p>
-                    </div>
-                </div>
-            </div>
+            <article class="feature-card wow fadeInUp" data-wow-delay="0.34s">
+                <i class="fa fa-heart"></i>
+                <h3>Character Building</h3>
+                <p>Confidence, responsibility, neatness, teamwork, and leadership.</p>
+            </article>
 
         </div>
     </div>
-</div>
-<!-- Extra Features End -->
+</section>
 
 
-<!-- Activities Start -->
-<div class="container-xxl py-5">
+
+
+
+<section class="program-overview">
     <div class="container">
-        <div class="row g-5 align-items-start">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-start text-primary pe-3">Extra Curricular Activities</h6>
-                <h1 class="mb-4">Building Well-Rounded Students</h1>
-                <p class="mb-4">
-                    EMIS encourages students to grow not only academically and spiritually, but also physically,
-                    mentally, and socially through engaging extracurricular activities.
-                </p>
-                <div class="row gy-2 gx-4 mb-4">
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Football</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Basketball</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Badminton</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Table Tennis</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skating</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Chess</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Polo</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Golf</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>French Club</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Arabic Club</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Board Games</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Self-Defense</p>
-                    </div>
+        <div class="program-section-head text-center wow fadeInUp" data-wow-delay="0.1s">
+            <span class="program-section-kicker">
+                <i class="fa fa-school"></i>
+                School Structure
+            </span>
+            <h2>One School, Complete Learning Journey</h2>
+            <p>
+                EMIS supports learners from early childhood care to full secondary school preparation.
+            </p>
+        </div>
+
+        <div class="overview-grid">
+            <article class="overview-card wow fadeInUp" data-wow-delay="0.1s">
+                <img src="{{ url_for('static', filename='images/class.jpg') }}" alt="Early Years">
+                <div>
+                    <span>01</span>
+                    <h3>Early Years</h3>
+                    <p>Crèche, Starters, Preparatory, Nursery 1, Nursery 2, and Reception.</p>
                 </div>
-                <a class="btn btn-primary py-3 px-5" href="{{ url_for('contact') }}">Ask About Admission</a>
-            </div>
+            </article>
 
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="bg-light rounded p-4 p-lg-5">
-                    <h3 class="mb-4">Additional School Highlights</h3>
-
-                    <div class="mb-4">
-                        <h5 class="text-primary">Scholarships</h5>
-                        <p class="mb-0">We give scholarships to our outstanding students.</p>
-                    </div>
-
-                    <div class="mb-4">
-                        <h5 class="text-primary">School Awards</h5>
-                        <p class="mb-0">EMIS has earned quite a few awards through excellence and strong student development.</p>
-                    </div>
-
-                    <div class="mb-4">
-                        <h5 class="text-primary">Security Measures</h5>
-                        <p class="mb-2"><i class="fa fa-check-circle text-primary me-2"></i>CCTV Cameras</p>
-                        <p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>Security Patrol</p>
-                    </div>
-
-                    <div class="mb-4">
-                        <h5 class="text-primary">School Hours</h5>
-                        <p class="mb-1">Monday – Friday: 8:00am – 2:00pm</p>
-                        <p class="mb-1">Saturday: Closed</p>
-                        <p class="mb-0">Sunday: Closed</p>
-                    </div>
-
-                    <div>
-                        <h5 class="text-primary">Location</h5>
-                        <p class="mb-0">Epitome Model Islamic Schools, Off Angwar Hasimu Road, Maraba, Nigeria</p>
-                    </div>
+            <article class="overview-card wow fadeInUp" data-wow-delay="0.18s">
+                <img src="{{ url_for('static', filename='images/hij.jpg') }}" alt="Primary School">
+                <div>
+                    <span>02</span>
+                    <h3>Primary School</h3>
+                    <p>Primary 1 to Primary 6 with strong academic, moral, and Islamic foundation.</p>
                 </div>
-            </div>
+            </article>
+
+            <article class="overview-card wow fadeInUp" data-wow-delay="0.26s">
+                <img src="{{ url_for('static', filename='images/hij2.jpg') }}" alt="Secondary School">
+                <div>
+                    <span>03</span>
+                    <h3>Secondary School</h3>
+                    <p>JSS1 to SSS3 with BECE, WAEC, NECO, and JAMB preparation.</p>
+                </div>
+            </article>
         </div>
     </div>
-</div>
-<!-- Activities End -->
+</section>
 
 
-<!-- Testimonial Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="text-center">
-            <h6 class="section-title bg-white text-center text-primary px-3">Why EMIS</h6>
-            <h1 class="mb-5">What Makes Our Programs Stand Out</h1>
-        </div>
-        <div class="owl-carousel testimonial-carousel position-relative">
 
-            <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3 testimonial-avatar" src="{{ url_for('static', filename='images/testimonial-1.jpg') }}" alt="Balanced Education">
-                <h5 class="mb-0">Balanced Learning</h5>
-                <p>Islamic & Western Education</p>
-                <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Our students enjoy a total blend of Nigerian academics, Islamic knowledge, and character-building education.</p>
-                </div>
-            </div>
 
-            <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3 testimonial-avatar" src="{{ url_for('static', filename='images/testimonial-2.jpg') }}" alt="Tahfeez Training">
-                <h5 class="mb-0">Strong Islamic Foundation</h5>
-                <p>Tahfeez & Islamiyyah</p>
-                <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">From age 3, children can begin Tahfeez while also benefiting from a solid Islamiyyah programme.</p>
-                </div>
-            </div>
-
-            <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3 testimonial-avatar" src="{{ url_for('static', filename='images/testimonial-3.jpg') }}" alt="Facilities">
-                <h5 class="mb-0">Supportive Facilities</h5>
-                <p>Boarding & Transport</p>
-                <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">EMIS supports families with boarding options, transport services, and a structured learning environment.</p>
-                </div>
-            </div>
-
-            <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3 testimonial-avatar" src="{{ url_for('static', filename='images/testimonial-4.jpg') }}" alt="Student Development">
-                <h5 class="mb-0">Holistic Growth</h5>
-                <p>Academics, Sports & Skills</p>
-                <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Beyond academics, students develop through sports, clubs, games, self-defense, and leadership-building experiences.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- Testimonial End -->
 {% endblock %}
