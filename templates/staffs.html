@@ -4,7 +4,7 @@
 
 {% block meta_keywords %}EMIS School Management, EMIS Team Leads, Epitome Model Islamic Schools Leadership, School Management Team, EMIS Staffs{% endblock %}
 
-{% block meta_description %}Meet the school management team of Epitome Model Islamic Schools — a refined leadership page showcasing the key staff guiding administration, operations, academics, compliance, school affairs, public relations, and spiritual development.{% endblock %}
+{% block meta_description %}Meet the school management team of Epitome Model Islamic Schools — a refined leadership page showcasing the key staff guiding administration, operations, academics, compliance, school affairs, Lugbe branch, public relations, and spiritual development.{% endblock %}
 
 {% block extra_css %}
 <link href="{{ url_for('static', filename='css/staffs.css') }}" rel="stylesheet">
@@ -14,47 +14,61 @@
 
 <section class="staff-hero">
     <div class="container">
-        <div class="staff-hero-inner">
-            <div class="staff-hero-copy wow fadeInUp" data-wow-delay="0.1s">
-                <span class="staff-kicker">
-                    <i class="fa fa-sitemap"></i>
-                    School Management
-                </span>
-<h1 class="staff-hero-title">Meet the Team Leads Behind EMIS</h1>
 
-                <p class="staff-hero-text">
-                    Meet the key staff guiding administration, operations, academics, compliance, school coordination, public engagement, and spiritual direction across EMIS.
-                </p>
+        <div class="staff-hero-header wow fadeInUp" data-wow-delay="0.08s">
+            <span class="staff-kicker">
+                <i class="fa fa-sitemap"></i>
+                School Management
+            </span>
+
+            <h1 class="staff-hero-title">Meet the EMIS Leadership Team</h1>
+
+            <p class="staff-hero-text">
+                The team guiding administration, operations, academics, compliance, coordination, Lugbe branch growth, and spiritual direction.
+            </p>
+        </div>
+
+        <div class="staff-family-tree wow fadeInUp" data-wow-delay="0.18s">
+
+            <div class="tree-top">
+                <article class="lead-card lead-card-main">
+                    <div class="lead-image">
+                        <img src="{{ url_for('static', filename='images/staffs/eda.jpeg') }}" alt="Mrs Naja'at Adeyemi - Adetoye" loading="lazy">
+                    </div>
+                    <div class="lead-copy">
+                        <span><i class="fa fa-crown"></i> Head of Team Leads</span>
+                        <h3>Mrs Naja'at Adeyemi - Adetoye</h3>
+                        <p>Executive Director Administration (EDA)</p>
+                    </div>
+                </article>
             </div>
 
-            <div class="staff-hero-visual wow zoomIn" data-wow-delay="0.25s">
-                <div class="staff-hero-frame">
-                    <div class="staff-hero-orbit orbit-one"></div>
-                    <div class="staff-hero-orbit orbit-two"></div>
+            <div class="tree-line"></div>
 
-                    <article class="staff-hero-highlight-card card-eda staff-hero-highlight-card-main">
-                        <div class="staff-hero-highlight-image">
-                            <img src="{{ url_for('static', filename='images/staffs/eda.jpeg') }}" alt="Mrs Naja'at Adeyemi - Adetoye, Executive Director of Administration" loading="lazy">
-                        </div>
-                        <div class="staff-hero-highlight-copy">
-                            <span><i class="fa fa-crown"></i> Head of Team Leads</span>
-                            <h3>Executive Director Administration (EDA)</h3>
-                            <p>Mrs Naja'at Adeyemi - Adetoye</p>
-                        </div>
-                    </article>
+            <div class="tree-bottom">
+                <article class="lead-card">
+                    <div class="lead-image">
+                        <img src="{{ url_for('static', filename='images/staffs/edo.jpeg') }}" alt="Mrs Nahimat Adeyemi - Olatunde" loading="lazy">
+                    </div>
+                    <div class="lead-copy">
+                        <span><i class="fa fa-briefcase"></i> Operations Lead</span>
+                        <h3>Mrs Nahimat Adeyemi - Olatunde</h3>
+                        <p>Executive Director Operations (EDO)</p>
+                    </div>
+                </article>
 
-                    <article class="staff-hero-highlight-card card-edo">
-                        <div class="staff-hero-highlight-image">
-                            <img src="{{ url_for('static', filename='images/staffs/edo.jpeg') }}" alt="Mrs Nahimat Adeyemi - Olatunde, Executive Director of Operations" loading="lazy">
-                        </div>
-                        <div class="staff-hero-highlight-copy">
-                            <span><i class="fa fa-briefcase"></i> Operations Lead</span>
-                            <h3>Executive Director Operations (EDO)</h3>
-                            <p>Mrs Nahimat Adeyemi - Olatunde</p>
-                        </div>
-                    </article>
-                </div>
+                <article class="lead-card">
+                    <div class="lead-image">
+                        <img src="{{ url_for('static', filename='images/staffs/dos.jpeg') }}" alt="Mr Abesin Moshood Owoade" loading="lazy">
+                    </div>
+                    <div class="lead-copy">
+                        <span><i class="fa fa-book-open"></i> Academics Lead</span>
+                        <h3>Mr Abesin Moshood Owoade</h3>
+                        <p>Director of Studies (DOS)</p>
+                    </div>
+                </article>
             </div>
+
         </div>
     </div>
 </section>
@@ -62,38 +76,21 @@
 <section class="staff-section staff-section-management">
     <div class="container">
 
-<div class="staff-section-intro text-center wow fadeInUp" data-wow-delay="0.08s">
-    <span class="staff-section-kicker">
-        <i class="fa fa-users"></i>
-        Team leads across EMIS
-    </span>
-    <h2 class="staff-section-heading">Our Staffs</h2>
-    <p class="staff-section-subtext">
-        Meet the experienced team members supporting leadership, academics, compliance, coordination, public engagement, and spiritual guidance at EMIS.
-    </p>
-</div>
+        <div class="staff-section-intro text-center wow fadeInUp" data-wow-delay="0.08s">
+            <span class="staff-section-kicker">
+                <i class="fa fa-users"></i>
+                EMIS Staff Directory
+            </span>
+            <h2 class="staff-section-heading">Our Staffs</h2>
+            <p class="staff-section-subtext">
+                Meet the team members supporting EMIS main school and Lugbe branch.
+            </p>
+        </div>
 
         <div class="staff-management-grid">
 
             <article class="staff-card wow fadeInUp" data-wow-delay="0.10s">
-                <div class="staff-card-rank"><span>03</span></div>
-                <div class="staff-card-image-wrap">
-                    <img src="{{ url_for('static', filename='images/staffs/dos.jpeg') }}" alt="Mr Abesin Moshood Owoade" loading="lazy">
-                    <div class="staff-card-icon">
-                        <i class="fa fa-book-open"></i>
-                    </div>
-                </div>
-                <div class="staff-card-copy">
-                    <h3>Mr Abesin Moshood Owoade</h3>
-                    <p class="staff-card-role">
-                        <i class="fa fa-graduation-cap"></i>
-                        Director of Studies (DOS)
-                    </p>
-                </div>
-            </article>
-
-            <article class="staff-card wow fadeInUp" data-wow-delay="0.16s">
-                <div class="staff-card-rank"><span>04</span></div>
+                <div class="staff-card-rank"><span>01</span></div>
                 <div class="staff-card-image-wrap">
                     <img src="{{ url_for('static', filename='images/staffs/doc.jpeg') }}" alt="Mr Adewobi Aderemi Rauf" loading="lazy">
                     <div class="staff-card-icon">
@@ -109,8 +106,8 @@
                 </div>
             </article>
 
-            <article class="staff-card wow fadeInUp" data-wow-delay="0.22s">
-                <div class="staff-card-rank"><span>05</span></div>
+            <article class="staff-card wow fadeInUp" data-wow-delay="0.14s">
+                <div class="staff-card-rank"><span>02</span></div>
                 <div class="staff-card-image-wrap">
                     <img src="{{ url_for('static', filename='images/staffs/hos.jpeg') }}" alt="Mr Ibrahim Sunday" loading="lazy">
                     <div class="staff-card-icon">
@@ -126,8 +123,8 @@
                 </div>
             </article>
 
-            <article class="staff-card wow fadeInUp" data-wow-delay="0.28s">
-                <div class="staff-card-rank"><span>06</span></div>
+            <article class="staff-card wow fadeInUp" data-wow-delay="0.18s">
+                <div class="staff-card-rank"><span>03</span></div>
                 <div class="staff-card-image-wrap">
                     <img src="{{ url_for('static', filename='images/staffs/hos2.jpeg') }}" alt="Ms. Abifarin Oluwaremilekun" loading="lazy">
                     <div class="staff-card-icon">
@@ -143,8 +140,8 @@
                 </div>
             </article>
 
-            <article class="staff-card wow fadeInUp" data-wow-delay="0.34s">
-                <div class="staff-card-rank"><span>07</span></div>
+            <article class="staff-card wow fadeInUp" data-wow-delay="0.22s">
+                <div class="staff-card-rank"><span>04</span></div>
                 <div class="staff-card-image-wrap">
                     <img src="{{ url_for('static', filename='images/staffs/pro.jpeg') }}" alt="Mrs Rahmat Olarinde" loading="lazy">
                     <div class="staff-card-icon">
@@ -160,8 +157,8 @@
                 </div>
             </article>
 
-            <article class="staff-card wow fadeInUp" data-wow-delay="0.40s">
-                <div class="staff-card-rank"><span>08</span></div>
+            <article class="staff-card wow fadeInUp" data-wow-delay="0.26s">
+                <div class="staff-card-rank"><span>05</span></div>
                 <div class="staff-card-image-wrap">
                     <img src="{{ url_for('static', filename='images/staffs/imam.jpeg') }}" alt="Mal Idrees Adedokun" loading="lazy">
                     <div class="staff-card-icon">
@@ -173,6 +170,60 @@
                     <p class="staff-card-role">
                         <i class="fa fa-star-and-crescent"></i>
                         School Imam
+                    </p>
+                </div>
+            </article>
+
+            <article class="staff-card staff-card-lugbe wow fadeInUp" data-wow-delay="0.30s">
+                <div class="staff-card-rank"><span>06</span></div>
+                <div class="staff-branch-badge">Lugbe Branch</div>
+                <div class="staff-card-image-wrap">
+                    <img src="{{ url_for('static', filename='images/staffs/lugbe1.jpeg') }}" alt="Mrs Sadiat Okunlola" loading="lazy">
+                    <div class="staff-card-icon">
+                        <i class="fa fa-user-tie"></i>
+                    </div>
+                </div>
+                <div class="staff-card-copy">
+                    <h3>Mrs Sadiat Okunlola</h3>
+                    <p class="staff-card-role">
+                        <i class="fa fa-school"></i>
+                        Head Teacher Lugbe
+                    </p>
+                </div>
+            </article>
+
+            <article class="staff-card staff-card-lugbe wow fadeInUp" data-wow-delay="0.34s">
+                <div class="staff-card-rank"><span>07</span></div>
+                <div class="staff-branch-badge">Lugbe Branch</div>
+                <div class="staff-card-image-wrap">
+                    <img src="{{ url_for('static', filename='images/staffs/lugbe2.jpeg') }}" alt="Mr Lukman Abdullateef" loading="lazy">
+                    <div class="staff-card-icon">
+                        <i class="fa fa-user-check"></i>
+                    </div>
+                </div>
+                <div class="staff-card-copy">
+                    <h3>Mr Lukman Abdullateef</h3>
+                    <p class="staff-card-role">
+                        <i class="fa fa-chalkboard-user"></i>
+                        Ass. Head Teacher Lugbe
+                    </p>
+                </div>
+            </article>
+
+            <article class="staff-card staff-card-lugbe wow fadeInUp" data-wow-delay="0.38s">
+                <div class="staff-card-rank"><span>08</span></div>
+                <div class="staff-branch-badge">Lugbe Branch</div>
+                <div class="staff-card-image-wrap">
+                    <img src="{{ url_for('static', filename='images/staffs/lugbe3.jpeg') }}" alt="Mr Mohammad" loading="lazy">
+                    <div class="staff-card-icon">
+                        <i class="fa fa-id-card"></i>
+                    </div>
+                </div>
+                <div class="staff-card-copy">
+                    <h3>Mr Mohammad</h3>
+                    <p class="staff-card-role">
+                        <i class="fa fa-file-signature"></i>
+                        Admission Officer Lugbe
                     </p>
                 </div>
             </article>

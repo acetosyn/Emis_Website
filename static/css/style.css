@@ -2137,3 +2137,133 @@ body.mobile-nav-open {
         color: var(--primary-dark);
     }
 }
+
+
+
+
+
+/********** Mobile Brand Fix — EMIS Logo, Text & Tagline **********/
+@media (max-width: 767.98px) {
+    .navbar-light .navbar-brand {
+        min-height: 84px !important;
+        gap: 5px !important;
+        padding-left: 14px !important;
+        padding-right: 6px !important;
+        max-width: calc(100% - 92px) !important;
+        margin-right: 4px !important;
+    }
+
+    .navbar-logo {
+        width: 56px !important;
+        height: 56px !important;
+        margin-right: 2px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .brand-text-wrap {
+        gap: 2px !important;
+        margin-left: 0 !important;
+        justify-content: center !important;
+    }
+
+    .brand-main-text {
+        font-size: 1.78rem !important;
+        line-height: 0.9 !important;
+        letter-spacing: -0.04em !important;
+    }
+
+    .brand-subtitle {
+        font-size: 0.62rem !important;
+        line-height: 1.18 !important;
+        max-width: 205px !important;
+        white-space: nowrap !important;
+        font-weight: 900 !important;
+    }
+
+    .brand-tagline {
+        display: block !important;
+        font-size: 0.50rem !important;
+        line-height: 1.12 !important;
+        max-width: 205px !important;
+        white-space: nowrap !important;
+        color: #9f7d18 !important;
+        font-style: italic !important;
+        font-weight: 900 !important;
+        margin-top: 2px !important;
+    }
+
+    .navbar-toggler {
+        margin-right: 14px !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar-light .navbar-brand {
+        min-height: 82px !important;
+        gap: 4px !important;
+        padding-left: 12px !important;
+        max-width: calc(100% - 88px) !important;
+    }
+
+    .navbar-logo {
+        width: 52px !important;
+        height: 52px !important;
+        margin-right: 1px !important;
+    }
+
+    .brand-main-text {
+        font-size: 1.62rem !important;
+    }
+
+    .brand-subtitle {
+        font-size: 0.58rem !important;
+        max-width: 190px !important;
+        white-space: nowrap !important;
+        font-weight: 900 !important;
+    }
+
+    .brand-tagline {
+        display: block !important;
+        font-size: 0.46rem !important;
+        max-width: 190px !important;
+        white-space: nowrap !important;
+        font-weight: 900 !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .navbar-light .navbar-brand {
+        min-height: 80px !important;
+        gap: 3px !important;
+        padding-left: 10px !important;
+        max-width: calc(100% - 84px) !important;
+    }
+
+    .navbar-logo {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .brand-main-text {
+        font-size: 1.52rem !important;
+    }
+
+    .brand-subtitle {
+        font-size: 0.54rem !important;
+        max-width: 175px !important;
+        white-space: nowrap !important;
+        font-weight: 900 !important;
+    }
+
+    .brand-tagline {
+        display: block !important;
+        font-size: 0.43rem !important;
+        max-width: 175px !important;
+        white-space: nowrap !important;
+        font-weight: 900 !important;
+    }
+
+    .navbar-toggler {
+        margin-right: 10px !important;
+    }
+}
